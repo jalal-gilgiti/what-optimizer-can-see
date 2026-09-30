@@ -1,0 +1,4 @@
+workload_id,classification,decision_type,evidence,semantic_valid,execution_interpretation
+tpch_q6,FULL_CHANGED_DECISION,"predicate pushdown; cardinality-dependent filter placement",Selective plan has separate UDF FILTER EC=6001215; full plan has scan filters EC=1200243,yes,valid within-system pair
+tpch_q19,UNKNOWN,"predicate pushdown; cardinality estimate","Plans differ but PRISM compiled function fails exact equivalence",no,no performance inference
+getManufact_complex_boundary,REPRESENTATION_ONLY_CHANGE,query motion and region outlining,"Three SELECT expressions remain in residual and two regions are outlined; residual is not executable",not_available,no runtime inference

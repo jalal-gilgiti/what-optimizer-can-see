@@ -1,0 +1,55 @@
+family,selectivity,threshold,cost,plan_signature,plan_nodes,estimated_total_cost,estimated_rows,filter_text,udf_calls_during_explain
+D1_QUALIFIERS,s001,100,1,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,10.46,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s001,100,10,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,12.71,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s001,100,100,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,35.21,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s001,100,1000,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,260.21,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s001,100,10000,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,2510.21,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s001,100,100000,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,25010.21,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s010,1000,1,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,42.96,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s010,1000,10,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,65.46,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s010,1000,100,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,290.46,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s010,1000,1000,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,2540.46,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s010,1000,10000,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,25040.46,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s010,1000,100000,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,250040.46,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s050,5000,1,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,199.63,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s050,5000,10,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,312.13,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s050,5000,100,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,1437.13,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s050,5000,1000,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,12687.13,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s050,5000,10000,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,125187.13,1,opaque_pred(fact.id),0
+D1_QUALIFIERS,s050,5000,100000,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,1250187.13,1,opaque_pred(fact.id),0
+D2_INDEXED,s001,100,1,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,10.46,1,opaque_pred(fact.id),0
+D2_INDEXED,s001,100,10,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,12.71,1,opaque_pred(fact.id),0
+D2_INDEXED,s001,100,100,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,35.21,1,opaque_pred(fact.id),0
+D2_INDEXED,s001,100,1000,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,260.21,1,opaque_pred(fact.id),0
+D2_INDEXED,s001,100,10000,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,2510.21,1,opaque_pred(fact.id),0
+D2_INDEXED,s001,100,100000,6e621924840af5d4b3c13a9eb7c35f26be583a92a5b7338c8339672809119cbf,Aggregate > Index Scan,25010.21,1,opaque_pred(fact.id),0
+D2_INDEXED,s010,1000,1,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,42.96,1,opaque_pred(fact.id),0
+D2_INDEXED,s010,1000,10,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,65.46,1,opaque_pred(fact.id),0
+D2_INDEXED,s010,1000,100,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,290.46,1,opaque_pred(fact.id),0
+D2_INDEXED,s010,1000,1000,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,2540.46,1,opaque_pred(fact.id),0
+D2_INDEXED,s010,1000,10000,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,25040.46,1,opaque_pred(fact.id),0
+D2_INDEXED,s010,1000,100000,05d713aa0daa4f5b4de8074e1c018a10e9ca2d33ed2abd47c74d08e2cea1eed2,Aggregate > Index Scan,250040.46,1,opaque_pred(fact.id),0
+D2_INDEXED,s050,5000,1,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,199.63,1,opaque_pred(fact.id),0
+D2_INDEXED,s050,5000,10,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,312.13,1,opaque_pred(fact.id),0
+D2_INDEXED,s050,5000,100,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,1437.13,1,opaque_pred(fact.id),0
+D2_INDEXED,s050,5000,1000,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,12687.13,1,opaque_pred(fact.id),0
+D2_INDEXED,s050,5000,10000,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,125187.13,1,opaque_pred(fact.id),0
+D2_INDEXED,s050,5000,100000,37ea27398042e5865cd9f5ac3fe0a0e2eaad08913591635a93ccb24db6e2a2b4,Aggregate > Index Scan,1250187.13,1,opaque_pred(fact.id),0
+D3_JOIN,s001,100,1,3017ebe15ce66bcda4170852f1b46995d19ecec4be930d23bd6d9d33097785cf,Aggregate > Nested Loop > Index Scan > Bitmap Heap Scan > Bitmap Index Scan,90.97,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s001,100,10,3017ebe15ce66bcda4170852f1b46995d19ecec4be930d23bd6d9d33097785cf,Aggregate > Nested Loop > Index Scan > Bitmap Heap Scan > Bitmap Index Scan,91.19,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s001,100,100,3017ebe15ce66bcda4170852f1b46995d19ecec4be930d23bd6d9d33097785cf,Aggregate > Nested Loop > Index Scan > Bitmap Heap Scan > Bitmap Index Scan,93.44,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s001,100,1000,3017ebe15ce66bcda4170852f1b46995d19ecec4be930d23bd6d9d33097785cf,Aggregate > Nested Loop > Index Scan > Bitmap Heap Scan > Bitmap Index Scan,115.94,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s001,100,10000,3017ebe15ce66bcda4170852f1b46995d19ecec4be930d23bd6d9d33097785cf,Aggregate > Nested Loop > Index Scan > Bitmap Heap Scan > Bitmap Index Scan,340.94,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s001,100,100000,3017ebe15ce66bcda4170852f1b46995d19ecec4be930d23bd6d9d33097785cf,Aggregate > Nested Loop > Index Scan > Bitmap Heap Scan > Bitmap Index Scan,2590.94,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s010,1000,1,e7c6598fbd3e1f8e79b0164a6d7f954ff6963477658d153f20308f834aabc2ed,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,193.96,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s010,1000,10,e7c6598fbd3e1f8e79b0164a6d7f954ff6963477658d153f20308f834aabc2ed,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,196.21,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s010,1000,100,e7c6598fbd3e1f8e79b0164a6d7f954ff6963477658d153f20308f834aabc2ed,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,218.71,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s010,1000,1000,e7c6598fbd3e1f8e79b0164a6d7f954ff6963477658d153f20308f834aabc2ed,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,443.71,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s010,1000,10000,e7c6598fbd3e1f8e79b0164a6d7f954ff6963477658d153f20308f834aabc2ed,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,2693.71,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s010,1000,100000,b5cfeb6ca1ed4200890508785a76ffcddeacee809d1a8b3ebcd95ee8e040340a,Aggregate > Nested Loop > Index Scan > Index Scan,25305.23,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s050,5000,1,c62dc7c5c8ce649cc51e4021636a54a85990e35070733fe3d02d5b7e82c6cffa,Aggregate > Hash Join > Seq Scan > Hash > Seq Scan,214.31,1,((d.bucket < 500) AND opaque_pred((d.id)::bigint)),0
+D3_JOIN,s050,5000,10,3edda91145884b45283cb01927f80bb09fd682cb673f7ff113e1b31076cfc7ab,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,232.59,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s050,5000,100,3edda91145884b45283cb01927f80bb09fd682cb673f7ff113e1b31076cfc7ab,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,345.09,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s050,5000,1000,3edda91145884b45283cb01927f80bb09fd682cb673f7ff113e1b31076cfc7ab,Aggregate > Hash Join > Seq Scan > Hash > Index Scan,1470.09,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s050,5000,10000,24752cae3df2d37ab37d8932b9787e7c6f739f7f96bb91cd3a2352399dc2fec1,Aggregate > Hash Join > Index Scan > Hash > Seq Scan,12835.84,1,opaque_pred((d.id)::bigint),0
+D3_JOIN,s050,5000,100000,2376adb4f773dbb23265fbdff57ea5b841eb20f2bb2e60d8c9c1183512d06d8d,Aggregate > Nested Loop > Index Scan > Index Scan,125406.16,1,opaque_pred((d.id)::bigint),0

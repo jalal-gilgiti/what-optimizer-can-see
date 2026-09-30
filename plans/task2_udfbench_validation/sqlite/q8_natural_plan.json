@@ -1,0 +1,18 @@
+{
+  "classification_input": "natural released SQL",
+  "plan": [
+    [
+      5,
+      0,
+      0,
+      "SCAN artifact_citations"
+    ],
+    [
+      7,
+      0,
+      0,
+      "SEARCH artifact_authorlists USING INDEX sqlite_autoindex_artifact_authorlists_1 (artifactid=?)"
+    ]
+  ],
+  "sql": "Select aggregate_avg(jsoncount(target)), aggregate_avg(jsoncount(authorlist)) from artifact_citations,artifact_authorlists where artifact_citations.artifactid=artifact_authorlists.artifactid"
+}

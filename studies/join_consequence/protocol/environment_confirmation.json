@@ -1,0 +1,61 @@
+{
+  "version": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, 64-bit",
+  "cpu_operator_cost": "0.0025",
+  "fact_by_segment": [
+    [
+      "CHEAP",
+      760079,
+      10,
+      10
+    ],
+    [
+      "COSTLY",
+      39921,
+      1000,
+      1000
+    ]
+  ],
+  "customers_by_tier": [
+    [
+      "GOLD",
+      400
+    ],
+    [
+      "SILVER",
+      19600
+    ]
+  ],
+  "indexes": [
+    [
+      "e5_customer_pkey",
+      "CREATE UNIQUE INDEX e5_customer_pkey ON public.e5_customer USING btree (cust_id)"
+    ],
+    [
+      "e5_customer_tier_idx",
+      "CREATE INDEX e5_customer_tier_idx ON public.e5_customer USING btree (tier)"
+    ],
+    [
+      "e5_fact_cust_idx",
+      "CREATE INDEX e5_fact_cust_idx ON public.e5_fact USING btree (cust_id)"
+    ],
+    [
+      "e5_fact_segment_idx",
+      "CREATE INDEX e5_fact_segment_idx ON public.e5_fact USING btree (segment)"
+    ],
+    [
+      "e5_region_pkey",
+      "CREATE UNIQUE INDEX e5_region_pkey ON public.e5_region USING btree (region_id)"
+    ]
+  ],
+  "spec": {
+    "seed": 41,
+    "fact_rows": 800000,
+    "customers": 20000,
+    "gold_fraction": 0.02,
+    "regions": 16,
+    "costly_fraction": 0.05,
+    "units_global_reported_by_M1": 60,
+    "true_work_cheap": 10,
+    "true_work_costly": 1000
+  }
+}

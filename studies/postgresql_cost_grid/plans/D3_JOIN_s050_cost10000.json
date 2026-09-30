@@ -1,0 +1,91 @@
+{
+  "Plan": {
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(f.id)"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Async Capable": false,
+        "Hash Cond": "(d.id = f.dim_id)",
+        "Inner Unique": false,
+        "Join Type": "Inner",
+        "Node Type": "Hash Join",
+        "Output": [
+          "f.id"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 1670,
+        "Plan Width": 8,
+        "Plans": [
+          {
+            "Alias": "d",
+            "Async Capable": false,
+            "Filter": "opaque_pred((d.id)::bigint)",
+            "Index Cond": "(d.bucket < 500)",
+            "Index Name": "dim_bucket_idx",
+            "Node Type": "Index Scan",
+            "Output": [
+              "d.id",
+              "d.bucket"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 167,
+            "Plan Width": 4,
+            "Relation Name": "dim",
+            "Scan Direction": "Forward",
+            "Schema": "public",
+            "Startup Cost": 0.28,
+            "Total Cost": 12528.28
+          },
+          {
+            "Async Capable": false,
+            "Node Type": "Hash",
+            "Output": [
+              "f.id",
+              "f.dim_id"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Inner",
+            "Plan Rows": 10000,
+            "Plan Width": 12,
+            "Plans": [
+              {
+                "Alias": "f",
+                "Async Capable": false,
+                "Node Type": "Seq Scan",
+                "Output": [
+                  "f.id",
+                  "f.dim_id"
+                ],
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 10000,
+                "Plan Width": 12,
+                "Relation Name": "fact",
+                "Schema": "public",
+                "Startup Cost": 0.0,
+                "Total Cost": 155.0
+              }
+            ],
+            "Startup Cost": 155.0,
+            "Total Cost": 155.0
+          }
+        ],
+        "Startup Cost": 280.27,
+        "Total Cost": 12827.48
+      }
+    ],
+    "Startup Cost": 12835.83,
+    "Strategy": "Plain",
+    "Total Cost": 12835.84
+  }
+}

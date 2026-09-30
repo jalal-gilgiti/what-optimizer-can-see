@@ -1,0 +1,235 @@
+{
+  "columns": [
+    "name",
+    "language",
+    "volatility_code",
+    "parallel_code",
+    "strict",
+    "cost",
+    "rows",
+    "arguments"
+  ],
+  "rows": [
+    [
+      "aggregate_avg",
+      "internal",
+      "i",
+      "s",
+      false,
+      1.0,
+      0.0,
+      "double precision"
+    ],
+    [
+      "aggregate_count",
+      "internal",
+      "i",
+      "s",
+      false,
+      1.0,
+      0.0,
+      "text"
+    ],
+    [
+      "aggregate_count",
+      "internal",
+      "i",
+      "s",
+      false,
+      1.0,
+      0.0,
+      "value numeric"
+    ],
+    [
+      "aggregate_max",
+      "internal",
+      "i",
+      "s",
+      false,
+      1.0,
+      0.0,
+      "value text"
+    ],
+    [
+      "clean",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "val text"
+    ],
+    [
+      "cleandate",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "pubdate text"
+    ],
+    [
+      "combinations",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      1000.0,
+      "val text, numcomb integer"
+    ],
+    [
+      "converttoeuro",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "x double precision, y text"
+    ],
+    [
+      "extractday",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "arg text"
+    ],
+    [
+      "extractmonth",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "arg text"
+    ],
+    [
+      "extractyear",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "arg text"
+    ],
+    [
+      "file",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      1000.0,
+      "file_path text, file_type text"
+    ],
+    [
+      "filterstopwords",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "input text"
+    ],
+    [
+      "jgroupordered",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      1000.0,
+      "subquery text, order_by_col text, count_col text"
+    ],
+    [
+      "jsoncount",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "jval text"
+    ],
+    [
+      "jsonparse",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "json_content text, key1 text"
+    ],
+    [
+      "keywords",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "input text"
+    ],
+    [
+      "kmeans_iterative",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      1000.0,
+      "subquery text, group_by_column text, kmeans_column text, ids_column text, num_clusters integer"
+    ],
+    [
+      "log_10",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "input numeric"
+    ],
+    [
+      "lowerize",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "val text"
+    ],
+    [
+      "stem",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "input text"
+    ],
+    [
+      "strsplitv",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      1000.0,
+      "val text"
+    ]
+  ],
+  "source": "pg_proc"
+}

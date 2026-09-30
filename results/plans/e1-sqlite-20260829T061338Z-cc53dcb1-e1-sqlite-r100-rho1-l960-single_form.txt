@@ -1,0 +1,5 @@
+QUERY
+SELECT COUNT(*), SUM(fixed_loop(value)) FROM input_rows
+
+EXPLAIN QUERY PLAN
+3 | 0 | 0 | SCAN input_rows

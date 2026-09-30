@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "adapter": "systems.sqlite.adapter.SQLiteAdapter",
+  "database": ":memory:",
+  "udf_mechanism": "Python sqlite3 scalar callback",
+  "session_settings": {},
+  "limitations": ["No engine-reported scalar-UDF cost", "No per-UDF runtime profile"]
+}

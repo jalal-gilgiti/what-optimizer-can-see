@@ -1,0 +1,29 @@
+Hyperparams: {'model_config': 'ddactfonudf_liboh_gradnorm_mldupl_loopend_loopedge', 'data_keyword': 'complex_dd'}
+Model config: ddactfonudf_liboh_gradnorm_mldupl_loopend_loopedge
+No of Plans: 2977 (min runtime discards: 0)
+No of Plans: 452 (min runtime discards: 0)
+Filtered out 16 UDFs because runtime difference between pushdown and pullup plan is negligible. 87 UDFs remaining.
+Successfully loaded checkpoint from epoch 60 (60 csv rows) in 0.190 secs
+database: duckdb
+database: duckdb
+
+  0%|          | 0/1 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/usr/lib/python3.10/multiprocessing/queues.py", line 244, in _feed
+    obj = _ForkingPickler.dumps(obj)
+  File "/usr/lib/python3.10/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "<PROJECT_ROOT>/runtime/graceful/e5-graceful-20260830T064548Z/env/lib/python3.10/site-packages/torch/multiprocessing/reductions.py", line 367, in reduce_storage
+    df = multiprocessing.reduction.DupFd(fd)
+  File "/usr/lib/python3.10/multiprocessing/reduction.py", line 198, in DupFd
+    return resource_sharer.DupFd(fd)
+  File "/usr/lib/python3.10/multiprocessing/resource_sharer.py", line 53, in __init__
+    self._id = _resource_sharer.register(send, close)
+  File "/usr/lib/python3.10/multiprocessing/resource_sharer.py", line 76, in register
+    self._start()
+  File "/usr/lib/python3.10/multiprocessing/resource_sharer.py", line 126, in _start
+    self._listener = Listener(authkey=process.current_process().authkey)
+  File "/usr/lib/python3.10/multiprocessing/connection.py", line 448, in __init__
+    self._listener = SocketListener(address, family, backlog)
+  File "/usr/lib/python3.10/multiprocessing/connection.py", line 588, in __init__
+    self._socket.setsockopt(socket.SOL_SOCKET,
+PermissionError: [Errno 1] Operation not permitted

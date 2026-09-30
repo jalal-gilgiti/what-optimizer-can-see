@@ -1,0 +1,14 @@
+{
+  "Q1": {
+    "artifact_rows": 50000,
+    "non_null_dates": 48649,
+    "potential_scalar_invocations": 145947
+  },
+  "Q8": {
+    "join_rows": 318,
+    "sum_authorlist_json_counts": 2755,
+    "sum_target_json_counts": 5167
+  },
+  "classification": "DIAGNOSTIC_ONLY",
+  "planning_time_information": false
+}

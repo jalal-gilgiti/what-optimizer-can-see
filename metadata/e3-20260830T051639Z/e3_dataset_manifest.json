@@ -1,0 +1,69 @@
+{
+  "R": 10000,
+  "algorithm": "Create IDs 0..9999; assign IDs 0..4999 to LOW/count=10 and IDs 5000..9999 to HIGH/count=1000; generate deterministic values; shuffle complete rows with Random(42*100003); write once and freeze by SHA-256.",
+  "contexts": [
+    {
+      "e_i_given_query": 505.0,
+      "e_i_global": 505.0,
+      "expected_rows": 10000,
+      "m1_global_predicted_work": 5050000.0,
+      "m1_global_qerror": 1.0,
+      "m2_conditioned_predicted_work": 5050000.0,
+      "m2_conditioned_qerror": 1.0,
+      "predicate_population": null,
+      "query_id": "Q_all",
+      "selectivity": 1.0,
+      "true_work": 5050000
+    },
+    {
+      "e_i_given_query": 10.0,
+      "e_i_global": 505.0,
+      "expected_rows": 5000,
+      "m1_global_predicted_work": 2525000.0,
+      "m1_global_qerror": 50.5,
+      "m2_conditioned_predicted_work": 50000.0,
+      "m2_conditioned_qerror": 1.0,
+      "predicate_population": "LOW",
+      "query_id": "Q_low",
+      "selectivity": 0.5,
+      "true_work": 50000
+    },
+    {
+      "e_i_given_query": 1000.0,
+      "e_i_global": 505.0,
+      "expected_rows": 5000,
+      "m1_global_predicted_work": 2525000.0,
+      "m1_global_qerror": 1.9801980198019802,
+      "m2_conditioned_predicted_work": 5000000.0,
+      "m2_conditioned_qerror": 1.0,
+      "predicate_population": "HIGH",
+      "query_id": "Q_high",
+      "selectivity": 0.5,
+      "true_work": 5000000
+    }
+  ],
+  "dataset_count": 1,
+  "dataset_path": "<PROJECT_ROOT>/workloads/synthetic/generated/e3-20260830T051639Z/e3_low_high_r10000_seed42.csv",
+  "dataset_sha256": "bb8e82f203ecc59795701fe82c90a2365482c42bce6545fbe793cfebdbbb614a",
+  "generator": "<PROJECT_ROOT>/scripts/setup/generate_e3_dataset.py",
+  "generator_sha256": "47a82cfeb8c8afdd0bd5315c821a422e2c1e328c1fcb946bbc415126adf50a17",
+  "global_e_i": 505.0,
+  "loop_count_counts": {
+    "10": 5000,
+    "1000": 5000
+  },
+  "population_counts": {
+    "HIGH": 5000,
+    "LOW": 5000
+  },
+  "run_id": "e3-20260830T051639Z",
+  "schema": {
+    "id": "integer",
+    "loop_count": "integer",
+    "population": "text",
+    "value": "integer"
+  },
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "status": "FROZEN"
+}

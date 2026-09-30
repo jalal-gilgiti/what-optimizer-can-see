@@ -1,0 +1,135 @@
+{
+  "cross_system_checksum_groups": 117,
+  "cross_system_checksum_mismatches": [],
+  "dataset_count": 9,
+  "decision": "GO",
+  "errors": [],
+  "estimated_costs_matched_within_H": {
+    "duckdb": {
+      "100": true,
+      "1000": true,
+      "20": true
+    },
+    "postgresql": {
+      "100": true,
+      "1000": true,
+      "20": true
+    },
+    "sqlite": {
+      "100": true,
+      "1000": true,
+      "20": true
+    }
+  },
+  "exact_work_ratios": {
+    "100": 10.0,
+    "1000": 100.0,
+    "20": 2.0
+  },
+  "failures_or_timeouts": 0,
+  "frozen_artifact_audit": "PASS",
+  "frozen_artifact_unchanged_count": 3067,
+  "high_cv_configurations": [
+    {
+      "H": 20,
+      "correlation": "positive",
+      "cv": 0.12179697268159757,
+      "system": "sqlite"
+    },
+    {
+      "H": 20,
+      "correlation": "independent",
+      "cv": 0.18423399972451504,
+      "system": "duckdb"
+    },
+    {
+      "H": 20,
+      "correlation": "negative",
+      "cv": 0.16321175916884645,
+      "system": "duckdb"
+    },
+    {
+      "H": 20,
+      "correlation": "positive",
+      "cv": 0.13691152699868975,
+      "system": "duckdb"
+    },
+    {
+      "H": 100,
+      "correlation": "independent",
+      "cv": 0.13170268499544974,
+      "system": "duckdb"
+    },
+    {
+      "H": 100,
+      "correlation": "negative",
+      "cv": 0.1896127807644993,
+      "system": "duckdb"
+    },
+    {
+      "H": 100,
+      "correlation": "positive",
+      "cv": 0.14463219780185865,
+      "system": "duckdb"
+    },
+    {
+      "H": 1000,
+      "correlation": "independent",
+      "cv": 0.13807572046750158,
+      "system": "duckdb"
+    },
+    {
+      "H": 1000,
+      "correlation": "negative",
+      "cv": 0.18039745202956728,
+      "system": "duckdb"
+    },
+    {
+      "H": 1000,
+      "correlation": "positive",
+      "cv": 0.11461276367834197,
+      "system": "duckdb"
+    }
+  ],
+  "high_cv_count": 10,
+  "high_signal_paired_intervals_above_one": true,
+  "high_signal_runtime_direction_all_systems": true,
+  "m1_qerror_range": [
+    1.0,
+    50.5
+  ],
+  "m2_qerror_range": [
+    1.0,
+    1.0
+  ],
+  "matched_marginals": true,
+  "maximum_sqrt_kappa_T": 7.260872028039234,
+  "measurement_record_counts": {
+    "duckdb": 90,
+    "postgresql": 90,
+    "sqlite": 90
+  },
+  "plans_structurally_matched_within_H": {
+    "duckdb": {
+      "100": true,
+      "1000": true,
+      "20": true
+    },
+    "postgresql": {
+      "100": true,
+      "1000": true,
+      "20": true
+    },
+    "sqlite": {
+      "100": true,
+      "1000": true,
+      "20": true
+    }
+  },
+  "raw_record_counts": {
+    "duckdb": 117,
+    "postgresql": 117,
+    "sqlite": 117
+  },
+  "status": "PASS"
+}

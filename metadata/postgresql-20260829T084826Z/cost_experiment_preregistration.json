@@ -1,0 +1,32 @@
+{
+  "Lambda": [
+    1,
+    100,
+    960
+  ],
+  "R": 10000,
+  "baseline_cost": 100.0,
+  "configuration_hash": "fa6a2e0406036fa0a86cf57f84761e01b607933d2a0e0af805228fe8d6623c56",
+  "cost_values": [
+    10.0,
+    100.0,
+    1000.0,
+    10000.0
+  ],
+  "dataset_checksums": {
+    "0.01": "051a7552a25ed0981453d8246008505903c4f4ca9c11b6666f62a0f11edf9d54",
+    "0.1": "8a6c67bf992140d5c60ebfda3697fbe98e4bba1f87c018818fd7e523abcba1a8",
+    "0.5": "c2b43a2bea8b0b64d8bc081be2a0e20979ce3645891e1edcb9d7f76373c1f658"
+  },
+  "execution_order": "rho, Lambda, COST ascending as listed; fixed before outcomes",
+  "function_body_sha256": "2837d7ef0fc80f3e1361da487c074b900740e3cb99f2c7da156bce0a5db001db",
+  "repetitions": 10,
+  "rho": [
+    0.5,
+    0.1,
+    0.01
+  ],
+  "run_id": "postgresql-20260829T084826Z",
+  "timestamp_utc": "2026-08-29T09:06:29.142195+00:00",
+  "warmups": 3
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-09-03T02:22:53Z",
+  "title": "The Key to Effective UDF Optimization: Before Inlining, First Perform Outlining",
+  "authors": [
+    "Samuel Arch",
+    "Yuchen Liu",
+    "Todd C. Mowry",
+    "Jignesh M. Patel",
+    "Andrew Pavlo"
+  ],
+  "year": 2024,
+  "venue": "Proceedings of the VLDB Endowment 18(1):1-13",
+  "doi": "10.14778/3696435.3696436",
+  "paper_url": "https://www.vldb.org/pvldb/vol18/p1-arch.pdf",
+  "canonical_repository_url": "https://github.com/SamArch27/PRISM",
+  "pinned_prism_commit": "689902595ba2ec8f86cbd5eb952b5fde09906e50",
+  "pinned_prism_commit_date": "2025-08-13T11:44:43-05:00",
+  "required_duckdb_repository": "https://github.com/hkulyc/duckdb.git",
+  "required_duckdb_branch": "cherry_pick",
+  "pinned_duckdb_commit": "dfb68aa3e8b504c1d19555f97035a5a00a1e2df4",
+  "license": {
+    "paper": "CC BY-NC-ND 4.0",
+    "repository_file": "MIT text naming DuckDB Labs BV",
+    "repository_license_scope_note": "The checked-in prism/LICENSE does not explicitly name the PRISM authors; repository-wide licensing is therefore recorded as ambiguous rather than inferred."
+  },
+  "artifact_documentation": [
+    "repository README.md",
+    "prism/README.md",
+    "prism/Makefile",
+    "prism/test/sql/udf_transpiler.test"
+  ],
+  "artifact_evaluation_instructions_exist": true,
+  "artifact_smoke_example": "PL/pgSQL addAbs example in prism/README.md and isListDistinct SQLLogicTest in prism/test/sql/udf_transpiler.test",
+  "required_benchmark_workload": "Paper evaluates TPC-H-derived UDFs and SQL ProcBench/TPC-DS; released repository includes TPC-H UDF/query samples but no SQL ProcBench dataset.",
+  "build_dependencies": [
+    "git",
+    "GNU make",
+    "CMake >=3.24.1",
+    "C++20 compiler",
+    "Python 3 for DuckDB build scripts",
+    "bundled libpg_query",
+    "bundled fmt",
+    "bundled yaml-cpp",
+    "bundled nlohmann/json"
+  ],
+  "operating_system_assumptions": "Make/CMake workflow targets a Unix-like environment; evaluated here on Ubuntu 22.04 x86_64.",
+  "strategic_opacity_implemented_directly": true,
+  "implementation_evidence": {
+    "compiler_pipeline": "prism/src/compiler.cpp",
+    "region_outlining": "prism/src/outlining.cpp",
+    "query_motion": "prism/src/query_motion.cpp",
+    "instruction_elimination": "prism/src/instruction_elimination.cpp",
+    "predicate_analysis": "prism/src/predicate_analysis.cpp",
+    "documented_runtime_controls": "prism/src/udf_transpiler_extension.cpp"
+  },
+  "verification_sources": [
+    "https://www.vldb.org/pvldb/vol18/p1-arch.pdf",
+    "https://github.com/SamArch27/PRISM",
+    "git ls-remote https://github.com/SamArch27/PRISM",
+    "git ls-remote https://github.com/hkulyc/duckdb.git refs/heads/cherry_pick"
+  ]
+}

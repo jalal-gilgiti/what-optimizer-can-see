@@ -1,0 +1,46 @@
+{
+  "explain_wall_ms": 0.186872,
+  "plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Aggregate",
+        "Output": [
+          "count(*)",
+          "sum(fixed_loop(value, '{10}'::integer[]))"
+        ],
+        "Parallel Aware": false,
+        "Partial Mode": "Simple",
+        "Plan Rows": 1,
+        "Plan Width": 40,
+        "Plans": [
+          {
+            "Alias": "input_rows",
+            "Async Capable": false,
+            "Node Type": "Seq Scan",
+            "Output": [
+              "id",
+              "value",
+              "flag",
+              "loop_count",
+              "retained",
+              "lookup_key"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 100,
+            "Plan Width": 8,
+            "Relation Name": "input_rows",
+            "Schema": "public",
+            "Startup Cost": 0.0,
+            "Total Cost": 2.0
+          }
+        ],
+        "Startup Cost": 27.5,
+        "Strategy": "Plain",
+        "Total Cost": 27.51
+      }
+    }
+  ],
+  "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10]::integer[])) FROM input_rows"
+}

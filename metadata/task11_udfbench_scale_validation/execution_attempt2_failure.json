@@ -1,0 +1,14 @@
+{
+  "attempt": 2,
+  "phase": "SQLITE_LOAD_BEFORE_PLAN_OR_QUERY_EXECUTION",
+  "status": "FAIL_PRE_TIMING",
+  "error_type": "_csv.Error",
+  "error": "field larger than field limit (131072)",
+  "effect": "SQLite setup stopped on an official long text field. DuckDB/PostgreSQL databases, plans, semantic queries, warmups, and measured trials did not start.",
+  "preserved_artifacts": [
+    "runtime/task11_udfbench_scale_validation/sqlite_attempt2_failure/udfbench_small.sqlite",
+    "raw/task11_udfbench_scale_validation/task11-udfbench-small-20260906_attempt2_execution_events.jsonl",
+    "raw/task11_udfbench_scale_validation/task11-udfbench-small-20260906_attempt2_trials.csv"
+  ],
+  "recovery": "Raise only csv.field_size_limit in the SQLite loader and begin non-overwriting attempt 3 with the unchanged frozen data and protocol."
+}

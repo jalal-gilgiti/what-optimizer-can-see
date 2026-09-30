@@ -1,0 +1,26 @@
+{
+  "successful_run_id": "task3-r4-pg14-20260903T021000Z",
+  "attempts": [
+    {
+      "run_id": "task3-r4-pg14-20260902T065134Z",
+      "status": "FAILED_BEFORE_SMOKE",
+      "failure": "Sandbox prevented PostgreSQL from binding its private Unix-domain socket.",
+      "preserved_runtime": "runtime/task3_r4_relationalization/task3-r4-pg14-20260902T065134Z",
+      "scientific_outcomes_produced": false
+    },
+    {
+      "run_id": "task3-r4-pg14-20260903T020200Z",
+      "status": "FAILED_BEFORE_SMOKE",
+      "failure": "PostgreSQL rejected schema-qualified position(substring IN string) syntax in function DDL.",
+      "correction": "Used semantically equivalent pg_catalog.strpos(string, substring).",
+      "preserved_runtime": "runtime/task3_r4_relationalization/task3-r4-pg14-20260903T020200Z",
+      "scientific_outcomes_produced": false
+    },
+    {
+      "run_id": "task3-r4-pg14-20260903T021000Z",
+      "status": "PASS",
+      "scientific_outcomes_produced": true,
+      "server_stopped": true
+    }
+  ]
+}

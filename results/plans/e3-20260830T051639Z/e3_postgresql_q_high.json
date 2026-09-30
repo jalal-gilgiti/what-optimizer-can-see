@@ -1,0 +1,88 @@
+{
+  "estimated_total_cost": 1474.01,
+  "function_metadata": {
+    "cost": 100.0,
+    "identity_arguments": "value bigint, iterations bigint",
+    "language": "plpython3u",
+    "leakproof": false,
+    "parallel_safety": "unsafe",
+    "plpython_body_sha256": "acceb0075694c85b308d6e674c5c3267fead2e86c926e408a0184a6e9f7fd1ed",
+    "strict": true,
+    "volatility": "immutable"
+  },
+  "plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Aggregate",
+        "Output": [
+          "count(*)",
+          "sum(e3_dynamic_loop(value, loop_count))"
+        ],
+        "Parallel Aware": false,
+        "Partial Mode": "Simple",
+        "Plan Rows": 1,
+        "Plan Width": 40,
+        "Plans": [
+          {
+            "Alias": "e3_data",
+            "Async Capable": false,
+            "Filter": "(e3_data.population = 'HIGH'::text)",
+            "Node Type": "Seq Scan",
+            "Output": [
+              "id",
+              "value",
+              "population",
+              "loop_count"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 5000,
+            "Plan Width": 16,
+            "Relation Name": "e3_data",
+            "Schema": "public",
+            "Startup Cost": 0.0,
+            "Total Cost": 199.0
+          }
+        ],
+        "Startup Cost": 1474.0,
+        "Strategy": "Plain",
+        "Total Cost": 1474.01
+      }
+    }
+  ],
+  "query": "SELECT COUNT(*), SUM(e3_dynamic_loop(value, loop_count)) FROM e3_data WHERE population='HIGH'",
+  "query_id": "Q_high",
+  "run_id": "e3-20260830T051639Z",
+  "statistics_state": [
+    [
+      "id",
+      0.0,
+      -1.0,
+      null,
+      null
+    ],
+    [
+      "loop_count",
+      0.0,
+      2.0,
+      "{10,1000}",
+      "{0.5,0.5}"
+    ],
+    [
+      "population",
+      0.0,
+      2.0,
+      "{HIGH,LOW}",
+      "{0.5,0.5}"
+    ],
+    [
+      "value",
+      0.0,
+      -0.9948,
+      "{994128,5099,16678,36326,73109,122115,123529,149932,150670,159364,189598,193286,234710,243601,245112,245914,254621,257758,259804,278113,362121,364329,369307,411204,425239,446395,456569,536903,551129,559914,566256,567350,573026,597516,628268,656006,656445,674119,694633,720463,726622,729649,829120,839134,845917,882738,885914,890876,891515,906659,999181}",
+      "{0.0003,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002}"
+    ]
+  ],
+  "system": "postgresql"
+}

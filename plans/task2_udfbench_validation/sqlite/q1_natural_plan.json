@@ -1,0 +1,12 @@
+{
+  "classification_input": "natural released SQL",
+  "plan": [
+    [
+      2,
+      0,
+      0,
+      "SCAN artifacts"
+    ]
+  ],
+  "sql": "select id, extractyear(date), extractmonth(date), extractday(date) from artifacts"
+}

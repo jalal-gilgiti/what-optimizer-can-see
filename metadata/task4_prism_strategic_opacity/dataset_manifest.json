@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "run_id": "task4-prism-20260903T022253Z",
+  "benchmark": "TPC-H",
+  "generator": "TPC-H dbgen linked into pinned modified DuckDB",
+  "scale_factor": 1,
+  "generation_command": "SET threads=1; CALL dbgen(sf=1); CHECKPOINT;",
+  "random_seed": "TPC-H dbgen deterministic defaults; no user seed option used",
+  "transformations": "NONE to table data; experiment macros were catalog objects only",
+  "database_path": "experiments/runtime/prism/task4-prism-20260903T022253Z/tpch_sf1.duckdb",
+  "database_size_bytes": 260583424,
+  "database_sha256_after_final_checkpoint": "f04b8e41e3e1c0829e96b02cbb6feebd9fff39959a141dec4dc1074500972191",
+  "database_mode_after_experiment": "0444",
+  "tables": [
+    {"name":"customer","rows":150000,"bit_xor_row_hash":"12770470627210499455"},
+    {"name":"lineitem","rows":6001215,"bit_xor_row_hash":"6243727110256887205"},
+    {"name":"nation","rows":25,"bit_xor_row_hash":"1629150135449340129"},
+    {"name":"orders","rows":1500000,"bit_xor_row_hash":"5268131614637499442"},
+    {"name":"part","rows":200000,"bit_xor_row_hash":"18047207975265509061"},
+    {"name":"partsupp","rows":800000,"bit_xor_row_hash":"8269165424853328151"},
+    {"name":"region","rows":5,"bit_xor_row_hash":"783860259967727495"},
+    {"name":"supplier","rows":10000,"bit_xor_row_hash":"5517383384559531967"}
+  ],
+  "departure_from_paper": "The paper/artifact helper uses SF10. This bounded mechanism replication preregistered SF1 before primary timing and makes no absolute cross-system runtime comparison."
+}

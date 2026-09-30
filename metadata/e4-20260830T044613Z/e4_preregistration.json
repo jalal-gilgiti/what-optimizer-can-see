@@ -1,0 +1,527 @@
+{
+  "analytical_expectations": {
+    "100": {
+      "M1_q_independent": 1.0,
+      "M1_q_negative": 5.5,
+      "M1_q_positive": 1.8181818181818181,
+      "M2_q_all": 1.0,
+      "W_independent": 275000,
+      "W_negative": 50000,
+      "W_positive": 500000,
+      "positive_negative_work_ratio": 10.0
+    },
+    "1000": {
+      "M1_q_independent": 1.0,
+      "M1_q_negative": 50.5,
+      "M1_q_positive": 1.9801980198019802,
+      "M2_q_all": 1.0,
+      "W_independent": 2525000,
+      "W_negative": 50000,
+      "W_positive": 5000000,
+      "positive_negative_work_ratio": 100.0
+    },
+    "20": {
+      "M1_q_independent": 1.0,
+      "M1_q_negative": 1.5,
+      "M1_q_positive": 1.3333333333333333,
+      "M2_q_all": 1.0,
+      "W_independent": 75000,
+      "W_negative": 50000,
+      "W_positive": 100000,
+      "positive_negative_work_ratio": 2.0
+    }
+  },
+  "automatic_reruns": false,
+  "canonical_udf_source": "<PROJECT_ROOT>/workloads/synthetic/e4_kernel.py",
+  "canonical_udf_source_sha256": "ba8432dfc37fcf0e6c020eeb549e4cfebdce70ae12c3b35f9e11c78e207c9d43",
+  "dataset_manifest": "<PROJECT_ROOT>/metadata/e4-20260830T044613Z/e4_dataset_manifest.json",
+  "dataset_manifest_sha256": "63abe4edc35bb52fa073413fb2b0c58c400e411c5456c391197f6299aafaea04",
+  "dataset_sha256": {
+    "H=100,independent": "1f974ec3f0bc0823aa4af674c698b7e2c1a675302631df80c7fb8b5e5d840e33",
+    "H=100,negative": "55d8bde999d7eb74c78c582c71db6b6adb85b4224493fc18a35216cab97520e8",
+    "H=100,positive": "2a46472dd9e4b7bcbcf61a2b88ff4772e35d6021f32ac7aac834fa689429363c",
+    "H=1000,independent": "b1b7784d4740d32c7c09c7426cdd265268bd51d6e97e56cb1dc894f58673737c",
+    "H=1000,negative": "46b31036d62a6e4beebd5cf142037c77c642fbf0ec89668636ff5f2b2a50a2b8",
+    "H=1000,positive": "0c8d61c4eb47b71b919475839efac0527b20ab91f7dfc7cc210965ef13950f00",
+    "H=20,independent": "431c478edad689005b9d59ccf64c85d17ea1e62fc8d946eb87d4171b979a229e",
+    "H=20,negative": "cd0a568974376106f725eefd6c4371b5da61618052594980eabb5b08452c44b5",
+    "H=20,positive": "32f94fa8483af98913b91fc5f36531fafcc262beaa72809ce1e169062951ee78"
+  },
+  "decision": {
+    "CONDITIONAL_GO": "validation passes but variability/fixed overhead weakens timing evidence",
+    "GO": "all validation passes and runtime direction replicates at H=100,1000 on all systems",
+    "NO_GO": "marginal/work/checksum/trial/frozen-artifact validation fails"
+  },
+  "execution_order_algorithm": "For each H/phase/trial block, shuffle positive/negative/independent with Random(42*1000003 + H*101 + phase_code*17 + trial); identical schedule per system.",
+  "execution_order_seed": 42,
+  "execution_schedule": [
+    {
+      "H": 20,
+      "block_id": "h20-warmup-1",
+      "order": [
+        "independent",
+        "negative",
+        "positive"
+      ],
+      "trial_number": 1,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-warmup-2",
+      "order": [
+        "negative",
+        "positive",
+        "independent"
+      ],
+      "trial_number": 2,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-warmup-3",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 3,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-1",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 1,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-2",
+      "order": [
+        "negative",
+        "positive",
+        "independent"
+      ],
+      "trial_number": 2,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-3",
+      "order": [
+        "independent",
+        "negative",
+        "positive"
+      ],
+      "trial_number": 3,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-4",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 4,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-5",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 5,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-6",
+      "order": [
+        "negative",
+        "positive",
+        "independent"
+      ],
+      "trial_number": 6,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-7",
+      "order": [
+        "independent",
+        "positive",
+        "negative"
+      ],
+      "trial_number": 7,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-8",
+      "order": [
+        "negative",
+        "positive",
+        "independent"
+      ],
+      "trial_number": 8,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-9",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 9,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 20,
+      "block_id": "h20-measurement-10",
+      "order": [
+        "negative",
+        "positive",
+        "independent"
+      ],
+      "trial_number": 10,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-warmup-1",
+      "order": [
+        "positive",
+        "independent",
+        "negative"
+      ],
+      "trial_number": 1,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-warmup-2",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 2,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-warmup-3",
+      "order": [
+        "independent",
+        "positive",
+        "negative"
+      ],
+      "trial_number": 3,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-1",
+      "order": [
+        "positive",
+        "independent",
+        "negative"
+      ],
+      "trial_number": 1,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-2",
+      "order": [
+        "positive",
+        "negative",
+        "independent"
+      ],
+      "trial_number": 2,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-3",
+      "order": [
+        "positive",
+        "independent",
+        "negative"
+      ],
+      "trial_number": 3,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-4",
+      "order": [
+        "negative",
+        "positive",
+        "independent"
+      ],
+      "trial_number": 4,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-5",
+      "order": [
+        "independent",
+        "negative",
+        "positive"
+      ],
+      "trial_number": 5,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-6",
+      "order": [
+        "negative",
+        "positive",
+        "independent"
+      ],
+      "trial_number": 6,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-7",
+      "order": [
+        "independent",
+        "positive",
+        "negative"
+      ],
+      "trial_number": 7,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-8",
+      "order": [
+        "positive",
+        "independent",
+        "negative"
+      ],
+      "trial_number": 8,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-9",
+      "order": [
+        "positive",
+        "negative",
+        "independent"
+      ],
+      "trial_number": 9,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 100,
+      "block_id": "h100-measurement-10",
+      "order": [
+        "positive",
+        "independent",
+        "negative"
+      ],
+      "trial_number": 10,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-warmup-1",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 1,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-warmup-2",
+      "order": [
+        "independent",
+        "negative",
+        "positive"
+      ],
+      "trial_number": 2,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-warmup-3",
+      "order": [
+        "independent",
+        "positive",
+        "negative"
+      ],
+      "trial_number": 3,
+      "trial_phase": "warmup"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-1",
+      "order": [
+        "positive",
+        "negative",
+        "independent"
+      ],
+      "trial_number": 1,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-2",
+      "order": [
+        "positive",
+        "independent",
+        "negative"
+      ],
+      "trial_number": 2,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-3",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 3,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-4",
+      "order": [
+        "positive",
+        "independent",
+        "negative"
+      ],
+      "trial_number": 4,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-5",
+      "order": [
+        "independent",
+        "negative",
+        "positive"
+      ],
+      "trial_number": 5,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-6",
+      "order": [
+        "independent",
+        "negative",
+        "positive"
+      ],
+      "trial_number": 6,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-7",
+      "order": [
+        "independent",
+        "negative",
+        "positive"
+      ],
+      "trial_number": 7,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-8",
+      "order": [
+        "negative",
+        "independent",
+        "positive"
+      ],
+      "trial_number": 8,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-9",
+      "order": [
+        "positive",
+        "negative",
+        "independent"
+      ],
+      "trial_number": 9,
+      "trial_phase": "measurement"
+    },
+    {
+      "H": 1000,
+      "block_id": "h1000-measurement-10",
+      "order": [
+        "positive",
+        "negative",
+        "independent"
+      ],
+      "trial_number": 10,
+      "trial_phase": "measurement"
+    }
+  ],
+  "grid": {
+    "H": [
+      20,
+      100,
+      1000
+    ],
+    "L": 10,
+    "P_Z_1": 0.5,
+    "R": 10000,
+    "correlations": [
+      "positive",
+      "negative",
+      "independent"
+    ],
+    "measurement_repetitions": 10,
+    "seed": 42,
+    "timeout_seconds": 60,
+    "warmups": 3
+  },
+  "primary_metrics": [
+    "exact_work",
+    "observed_work",
+    "udf_invocations",
+    "median_runtime_ms",
+    "coefficient_of_variation",
+    "M1_qerror",
+    "M2_qerror",
+    "positive_negative_runtime_ratio",
+    "sqrt_kappa_T"
+  ],
+  "run_id": "e4-20260830T044613Z",
+  "schema_version": "1.0.0",
+  "scope": "E4 only: SQLite, DuckDB, PostgreSQL",
+  "system_versions": {
+    "duckdb": "1.5.5",
+    "postgresql": "postgres (PostgreSQL) 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+    "sqlite": "3.37.2"
+  }
+}

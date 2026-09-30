@@ -1,0 +1,45 @@
+{
+  "candidate_ids": [
+    "boulos1999",
+    "he2005",
+    "dyno2014",
+    "monsoon2020"
+  ],
+  "created_at_utc": "2026-09-03T03:19:08Z",
+  "extraction_rule": "Rows with profiling=YES, runtime_feedback=YES, R2 input-conditioned behavior, or R3 adaptive/profiled regime.",
+  "inputs": [
+    {
+      "path": "docs/task1_eab_novelty_coverage_audit.md",
+      "read_only_use": true,
+      "sha256": "9361085ebde2b6870e75c637499c2b200ee12806c6833471435a554420554537",
+      "size_bytes": 25005
+    },
+    {
+      "path": "results/task1_novelty_audit/literature_matrix.csv",
+      "read_only_use": true,
+      "sha256": "918bf6e7c352bafc555c0a2794638c8048f774e0d60758f5e61fe62d5a2c2c80",
+      "size_bytes": 43432
+    },
+    {
+      "path": "results/task1_novelty_audit/decision_visibility_matrix.csv",
+      "read_only_use": true,
+      "sha256": "a0d0942a26c32e48b98b92e0eb1400299b768c245356695c56f2d822cf3dec06",
+      "size_bytes": 4486
+    },
+    {
+      "path": "results/task1_novelty_audit/current_coverage_matrix.csv",
+      "read_only_use": true,
+      "sha256": "f604a11afb895b0f3fa8bfe4174de77571c871ff335f6097cc914d913079417f",
+      "size_bytes": 4643
+    },
+    {
+      "path": "results/task1_novelty_audit/experimental_gap_ranking.csv",
+      "read_only_use": true,
+      "sha256": "7a02589d0d66629e1a3d8ea791f7e6f0e5a11d0f288bba7585352d4bc4aa1251",
+      "size_bytes": 1769
+    }
+  ],
+  "purpose": "Frozen Task 1 inputs used to seed the R3 audit before any broader search.",
+  "run_id": "task5-r3-audit-20260903T031908Z",
+  "schema_version": 1
+}

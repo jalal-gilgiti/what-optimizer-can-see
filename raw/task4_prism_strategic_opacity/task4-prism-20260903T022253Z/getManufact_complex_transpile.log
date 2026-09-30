@@ -1,0 +1,239 @@
+Script started on 2026-09-03 11:45:05+09:00 [TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+{"PLpgSQL_function":{"action":{"PLpgSQL_stmt_block":{"body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"man := ''"}},"lineno":6,"varno":2}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"itm > 500"}},"else_body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"cnt1 = 101"}},"lineno":10,"varno":4}}],"lineno":7,"then_body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"cnt1 = 100"}},"lineno":8,"varno":4}}]}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"cnt1 := cnt1 + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER"}},"lineno":12,"varno":4}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"cnt2 := cnt2 + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER"}},"lineno":13,"varno":5}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"(cnt1 > 0 AND cnt2 > 0)"}},"else_body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"man := 'outdated item'"}},"lineno":17,"varno":2}}],"lineno":14,"then_body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"man := (SELECT (SELECT 'abc' FROM generate_series(1,100)))"}},"lineno":15,"varno":2}}]}},{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"man"}},"lineno":19}}],"lineno":5}},"datums":[{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#40#"}},"refname":"itm"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"UNKNOWN"}},"refname":"found"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"VARCHAR(50)"}},"lineno":3,"refname":"man"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"VARCHAR(50)"}},"lineno":3,"refname":"t"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"int"}},"lineno":4,"refname":"cnt1"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"int"}},"lineno":4,"refname":"cnt2"}}]}}
+Running: MergeRegions
+MergeRegions: 0ms
+Running: SSAConstruction
+SSAConstruction: 48ms
+Running: InstructionElimination
+InstructionElimination: 14ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+CREATE MACRO getManufact_complex_eq(t , itm) AS (((( (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) = t))) OR ((( (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) = t))) OR (((NOT (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND (('outdated item') = t))) OR (((NOT (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND (('outdated item') = t))));
+CREATE MACRO getManufact_complex_leq(t , itm) AS (((( (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) <= t))) OR ((( (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) <= t))) OR (((NOT (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND (('outdated item') <= t))) OR (((NOT (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND (('outdated item') <= t))));
+CREATE MACRO getManufact_complex_geq(t , itm) AS (((( (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) >= t))) OR ((( (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) >= t))) OR (((NOT (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND (('outdated item') >= t))) OR (((NOT (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND (('outdated item') >= t))));
+CREATE MACRO getManufact_complex_lt(t , itm) AS (((( (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) < t))) OR ((( (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) < t))) OR (((NOT (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND (('outdated item') < t))) OR (((NOT (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND (('outdated item') < t))));
+CREATE MACRO getManufact_complex_gt(t , itm) AS (((( (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) > t))) OR ((( (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND ((SELECT (SELECT 'abc' FROM generate_series(1,100))) > t))) OR (((NOT (((100) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND ( (itm > 500)) AND (('outdated item') > t))) OR (((NOT (((101) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0 AND (0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER > 0))) AND (NOT (itm > 500)) AND (('outdated item') > t))));
+Running: AggifyPass
+AggifyPass: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: QueryMotion
+QueryMotion: 6ms
+Running: InstructionElimination
+InstructionElimination: 8ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: QueryMotion
+QueryMotion: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: OutliningPass
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 9ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+============================
+Outlined UDF getManufact_complex_outlined_0 :
+
+CREATE OR REPLACE FUNCTION getManufact_complex_outlined_0(itm INTEGER, temp0 INTEGER) RETURNS INTEGER AS $$
+DECLARE
+cnt1 INTEGER;
+
+BEGIN
+    
+
+
+
+IF itm > 500 THEN
+cnt1 := ((100));
+ELSE
+cnt1 := ((101));
+END IF;
+
+RETURN (cnt1);
+
+END;$$
+LANGUAGE PLPGSQL;
+============================
+INFO: Transpiling UDF getManufact_complex_outlined_0... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:53)
+INFO: Compiling the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:59)
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+CMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+INFO: Installing and loading the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:62)
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 9ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+============================
+Outlined UDF getManufact_complex_outlined_1 :
+
+CREATE OR REPLACE FUNCTION getManufact_complex_outlined_1(cnt1 INTEGER, temp0 INTEGER, temp1 VARCHAR) RETURNS VARCHAR AS $$
+DECLARE
+man VARCHAR;
+
+BEGIN
+    
+
+
+
+IF (cnt1 > 0 AND (temp0) > 0) THEN
+man := ((temp1));
+ELSE
+man := (('outdated item'));
+END IF;
+
+RETURN (man);
+
+END;$$
+LANGUAGE PLPGSQL;
+============================
+INFO: Transpiling UDF getManufact_complex_outlined_1... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:53)
+INFO: Compiling the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:59)
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+CMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+INFO: Installing and loading the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:62)
+OutliningPass: 10447ms
+Running: AggressiveInstructionElimination
+AggressiveInstructionElimination: 6ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 7ms
+Running: AggressiveMergeRegions
+AggressiveMergeRegions: 0ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+----------- PLpgSQL code start -----------
+CREATE OR REPLACE FUNCTION getManufact_complex(itm INTEGER) RETURNS VARCHAR AS $$
+DECLARE
+cnt1 INTEGER;
+temp0 INTEGER;
+
+BEGIN
+    temp0 := ((0) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER);
+cnt1 := ((getManufact_complex_outlined_0(itm, temp0)) + (SELECT COUNT(*) FROM generate_series(1,100))::INTEGER);
+RETURN (getManufact_complex_outlined_1(cnt1, temp0, (SELECT ((SELECT (SELECT 'abc' FROM generate_series(1,100)))) WHERE ((cnt1 > 0 AND (temp0) > 0)))));
+
+END;$$
+LANGUAGE PLPGSQL;
+----------- PLpgSQL code end-----------
+Error opening counter instructions
+
+
+
+┌─────────────────────┐
+│ Transpilation Done. │
+│       varchar       │
+├─────────────────────┤
+│                     │
+└─────────────────────┘
+
+Script done on 2026-09-03 11:45:16+09:00 [COMMAND_EXIT_CODE="0"]

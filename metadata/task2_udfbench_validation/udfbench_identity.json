@@ -1,0 +1,23 @@
+{
+  "access_date": "2026-09-02",
+  "authors": [
+    "Yannis Foufoulas",
+    "Theoni Palaiologou",
+    "Alkis Simitsis"
+  ],
+  "canonical_paper_url": "https://www.vldb.org/pvldb/vol18/p2804-foufoulas.pdf",
+  "canonical_repository_url": "https://github.com/athenarc/UDFBench",
+  "correspondence_evidence": "The paper names the canonical repository; its README cites the same title/authors and exposes the described 21 queries, 42 UDFs, five engine implementations, schema, tiny data, and external files.",
+  "dataset_version": "tiny dataset at repository commit 8da987566590e2534f24cd97bcfaa9157c24962c",
+  "doi": "10.14778/3746405.3746409",
+  "paper_license": "CC BY-NC-ND 4.0",
+  "paper_sha256": "aa6896557e09d4c3b94a5e8673f9a0a415e0b29e01bb27d260d6bbf57c78b7c4",
+  "repository_commit": "8da987566590e2534f24cd97bcfaa9157c24962c",
+  "repository_corresponds_to_publication": true,
+  "repository_license": "GPL-3.0",
+  "repository_tag": "NO_TAG_PINNED_COMMIT",
+  "title": "The UDFBench Benchmark for General-purpose UDF Queries",
+  "venue": "Proceedings of the VLDB Endowment 18(9):2804-2817",
+  "workload_version": "21 released queries at repository commit 8da987566590e2534f24cd97bcfaa9157c24962c",
+  "year": 2025
+}

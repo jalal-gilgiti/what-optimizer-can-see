@@ -1,0 +1,317 @@
+{
+  "plan": {
+    "Plan": {
+      "Async Capable": false,
+      "Node Type": "Limit",
+      "Output": [
+        "c.c_custkey",
+        "c.c_name",
+        "(sum((l.l_extendedprice * ('1'::numeric - l.l_discount))))",
+        "c.c_acctbal",
+        "n.n_name",
+        "c.c_address",
+        "c.c_phone",
+        "c.c_comment"
+      ],
+      "Parallel Aware": false,
+      "Plan Rows": 20,
+      "Plan Width": 188,
+      "Plans": [
+        {
+          "Async Capable": false,
+          "Node Type": "Sort",
+          "Output": [
+            "c.c_custkey",
+            "c.c_name",
+            "(sum((l.l_extendedprice * ('1'::numeric - l.l_discount))))",
+            "c.c_acctbal",
+            "n.n_name",
+            "c.c_address",
+            "c.c_phone",
+            "c.c_comment"
+          ],
+          "Parallel Aware": false,
+          "Parent Relationship": "Outer",
+          "Plan Rows": 54555,
+          "Plan Width": 188,
+          "Plans": [
+            {
+              "Async Capable": false,
+              "Group Key": [
+                "c.c_custkey",
+                "n.n_name"
+              ],
+              "Node Type": "Aggregate",
+              "Output": [
+                "c.c_custkey",
+                "c.c_name",
+                "sum((l.l_extendedprice * ('1'::numeric - l.l_discount)))",
+                "c.c_acctbal",
+                "n.n_name",
+                "c.c_address",
+                "c.c_phone",
+                "c.c_comment"
+              ],
+              "Parallel Aware": false,
+              "Parent Relationship": "Outer",
+              "Partial Mode": "Simple",
+              "Plan Rows": 54555,
+              "Plan Width": 188,
+              "Planned Partitions": 0,
+              "Plans": [
+                {
+                  "Async Capable": false,
+                  "Inner Unique": true,
+                  "Join Type": "Inner",
+                  "Node Type": "Nested Loop",
+                  "Output": [
+                    "c.c_custkey",
+                    "n.n_name",
+                    "c.c_name",
+                    "l.l_extendedprice",
+                    "l.l_discount",
+                    "c.c_acctbal",
+                    "c.c_address",
+                    "c.c_phone",
+                    "c.c_comment"
+                  ],
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Outer",
+                  "Plan Rows": 54555,
+                  "Plan Width": 168,
+                  "Plans": [
+                    {
+                      "Async Capable": false,
+                      "Hash Cond": "(o.o_custkey = c.c_custkey)",
+                      "Inner Unique": true,
+                      "Join Type": "Inner",
+                      "Node Type": "Hash Join",
+                      "Output": [
+                        "c.c_custkey",
+                        "c.c_name",
+                        "c.c_acctbal",
+                        "c.c_address",
+                        "c.c_phone",
+                        "c.c_comment",
+                        "c.c_nationkey",
+                        "l.l_extendedprice",
+                        "l.l_discount"
+                      ],
+                      "Parallel Aware": false,
+                      "Parent Relationship": "Outer",
+                      "Plan Rows": 54555,
+                      "Plan Width": 164,
+                      "Plans": [
+                        {
+                          "Async Capable": false,
+                          "Hash Cond": "(l.l_orderkey = o.o_orderkey)",
+                          "Inner Unique": true,
+                          "Join Type": "Inner",
+                          "Node Type": "Hash Join",
+                          "Output": [
+                            "o.o_custkey",
+                            "l.l_extendedprice",
+                            "l.l_discount"
+                          ],
+                          "Parallel Aware": false,
+                          "Parent Relationship": "Outer",
+                          "Plan Rows": 54555,
+                          "Plan Width": 20,
+                          "Plans": [
+                            {
+                              "Alias": "l",
+                              "Async Capable": false,
+                              "Filter": "(l.l_returnflag = 'R'::bpchar)",
+                              "Node Type": "Seq Scan",
+                              "Output": [
+                                "l.l_orderkey",
+                                "l.l_extendedprice",
+                                "l.l_discount",
+                                "l.l_returnflag"
+                              ],
+                              "Parallel Aware": false,
+                              "Parent Relationship": "Outer",
+                              "Plan Rows": 1462689,
+                              "Plan Width": 20,
+                              "Relation Name": "lineitem",
+                              "Schema": "public",
+                              "Startup Cost": 0.0,
+                              "Total Cost": 113239.81
+                            },
+                            {
+                              "Async Capable": false,
+                              "Node Type": "Hash",
+                              "Output": [
+                                "o.o_custkey",
+                                "o.o_orderkey"
+                              ],
+                              "Parallel Aware": false,
+                              "Parent Relationship": "Inner",
+                              "Plan Rows": 55947,
+                              "Plan Width": 16,
+                              "Plans": [
+                                {
+                                  "Alias": "o",
+                                  "Async Capable": false,
+                                  "Filter": "((o.o_orderdate >= '1993-10-01'::date) AND (o.o_orderdate < '1994-01-01'::date))",
+                                  "Node Type": "Seq Scan",
+                                  "Output": [
+                                    "o.o_custkey",
+                                    "o.o_orderkey"
+                                  ],
+                                  "Parallel Aware": false,
+                                  "Parent Relationship": "Outer",
+                                  "Plan Rows": 55947,
+                                  "Plan Width": 16,
+                                  "Relation Name": "orders",
+                                  "Schema": "public",
+                                  "Startup Cost": 0.0,
+                                  "Total Cost": 32055.0
+                                }
+                              ],
+                              "Startup Cost": 32055.0,
+                              "Total Cost": 32055.0
+                            }
+                          ],
+                          "Startup Cost": 32754.34,
+                          "Total Cost": 149833.72
+                        },
+                        {
+                          "Async Capable": false,
+                          "Node Type": "Hash",
+                          "Output": [
+                            "c.c_custkey",
+                            "c.c_name",
+                            "c.c_acctbal",
+                            "c.c_address",
+                            "c.c_phone",
+                            "c.c_comment",
+                            "c.c_nationkey"
+                          ],
+                          "Parallel Aware": false,
+                          "Parent Relationship": "Inner",
+                          "Plan Rows": 150000,
+                          "Plan Width": 152,
+                          "Plans": [
+                            {
+                              "Alias": "c",
+                              "Async Capable": false,
+                              "Node Type": "Seq Scan",
+                              "Output": [
+                                "c.c_custkey",
+                                "c.c_name",
+                                "c.c_acctbal",
+                                "c.c_address",
+                                "c.c_phone",
+                                "c.c_comment",
+                                "c.c_nationkey"
+                              ],
+                              "Parallel Aware": false,
+                              "Parent Relationship": "Outer",
+                              "Plan Rows": 150000,
+                              "Plan Width": 152,
+                              "Relation Name": "customer",
+                              "Schema": "public",
+                              "Startup Cost": 0.0,
+                              "Total Cost": 4964.0
+                            }
+                          ],
+                          "Startup Cost": 4964.0,
+                          "Total Cost": 4964.0
+                        }
+                      ],
+                      "Startup Cost": 39593.34,
+                      "Total Cost": 156815.93
+                    },
+                    {
+                      "Async Capable": false,
+                      "Cache Key": "c.c_nationkey",
+                      "Cache Mode": "logical",
+                      "Node Type": "Memoize",
+                      "Output": [
+                        "n.n_name",
+                        "n.n_nationkey"
+                      ],
+                      "Parallel Aware": false,
+                      "Parent Relationship": "Inner",
+                      "Plan Rows": 1,
+                      "Plan Width": 12,
+                      "Plans": [
+                        {
+                          "Alias": "n",
+                          "Async Capable": false,
+                          "Index Cond": "(n.n_nationkey = c.c_nationkey)",
+                          "Index Name": "nation_pkey",
+                          "Node Type": "Index Scan",
+                          "Output": [
+                            "n.n_name",
+                            "n.n_nationkey"
+                          ],
+                          "Parallel Aware": false,
+                          "Parent Relationship": "Outer",
+                          "Plan Rows": 1,
+                          "Plan Width": 12,
+                          "Relation Name": "nation",
+                          "Scan Direction": "Forward",
+                          "Schema": "public",
+                          "Startup Cost": 0.14,
+                          "Total Cost": 0.16
+                        }
+                      ],
+                      "Startup Cost": 0.15,
+                      "Total Cost": 0.17
+                    }
+                  ],
+                  "Startup Cost": 39593.49,
+                  "Total Cost": 158153.6
+                }
+              ],
+              "Startup Cost": 158835.54,
+              "Strategy": "Hashed",
+              "Total Cost": 159517.48
+            }
+          ],
+          "Sort Key": [
+            "(sum((l.l_extendedprice * ('1'::numeric - l.l_discount)))) DESC"
+          ],
+          "Startup Cost": 160969.16,
+          "Total Cost": 161105.55
+        }
+      ],
+      "Startup Cost": 160969.16,
+      "Total Cost": 160969.21
+    }
+  },
+  "signature": {
+    "conditions": [
+      "Hash Cond:(o.o_custkey = c.c_custkey)",
+      "Hash Cond:(l.l_orderkey = o.o_orderkey)",
+      "Filter:(l.l_returnflag = 'R'::bpchar)",
+      "Filter:((o.o_orderdate >= '1993-10-01'::date) AND (o.o_orderdate < '1994-01-01'::date))",
+      "Index Cond:(n.n_nationkey = c.c_nationkey)"
+    ],
+    "contains_q10_probe": false,
+    "nodes_preorder": [
+      "Limit",
+      "Sort",
+      "Aggregate",
+      "Nested Loop",
+      "Hash Join",
+      "Hash Join",
+      "Seq Scan",
+      "Hash",
+      "Seq Scan",
+      "Hash",
+      "Seq Scan",
+      "Memoize",
+      "Index Scan"
+    ],
+    "relations_preorder": [
+      "lineitem",
+      "orders",
+      "customer",
+      "nation"
+    ],
+    "signature": "7a7af590d736a2061d2d35cc6390610fb2f00c36707cf1ddf2b459d2292d8c24"
+  }
+}

@@ -1,0 +1,416 @@
+Script started on 2026-09-03 11:44:38+09:00 [TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+{"PLpgSQL_function":{"action":{"PLpgSQL_stmt_block":{"body":[{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"(shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON')"}},"lineno":4,"then_body":[{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"pbrand = 'Brand#12'\n        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')\n        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5"}},"lineno":5,"then_body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"val = 1"}},"lineno":8,"varno":7}}]}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"pbrand = 'Brand#23'\n        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')\n        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10"}},"lineno":10,"then_body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"val = 1"}},"lineno":13,"varno":7}}]}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"pbrand = 'Brand#34'\n        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')\n        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15"}},"lineno":15,"then_body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"val = 1"}},"lineno":18,"varno":7}}]}}]}},{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"val"}},"lineno":21}}],"lineno":3}},"datums":[{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#41#"}},"refname":"pcontainer"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#52#"}},"refname":"lqty"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#73#"}},"refname":"psize"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#117#"}},"refname":"shipmode"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#132#"}},"refname":"shipinst"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#145#"}},"refname":"pbrand"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"UNKNOWN"}},"refname":"found"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"int "}},"default_val":{"PLpgSQL_expr":{"query":"0"}},"lineno":2,"refname":"val"}}]}}
+Running: MergeRegions
+MergeRegions: 0ms
+Running: SSAConstruction
+SSAConstruction: 60ms
+Running: InstructionElimination
+InstructionElimination: 20ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+CREATE MACRO q19conditions_eq(t , pcontainer, lqty, psize, shipmode, shipinst, pbrand) AS (((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) = t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) = t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) = t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) = t))) OR (((NOT ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) = t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) = t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) = t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) = t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) = t))));
+CREATE MACRO q19conditions_leq(t , pcontainer, lqty, psize, shipmode, shipinst, pbrand) AS (((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) <= t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) <= t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) <= t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) <= t))) OR (((NOT ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) <= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) <= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) <= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) <= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) <= t))));
+CREATE MACRO q19conditions_geq(t , pcontainer, lqty, psize, shipmode, shipinst, pbrand) AS (((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) >= t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) >= t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) >= t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) >= t))) OR (((NOT ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) >= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) >= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) >= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) >= t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) >= t))));
+CREATE MACRO q19conditions_lt(t , pcontainer, lqty, psize, shipmode, shipinst, pbrand) AS (((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) < t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) < t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) < t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) < t))) OR (((NOT ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) < t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) < t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) < t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) < t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) < t))));
+CREATE MACRO q19conditions_gt(t , pcontainer, lqty, psize, shipmode, shipinst, pbrand) AS (((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) > t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) > t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) > t))) OR ((( (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) > t))) OR (((NOT ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) > t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) > t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND ( (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) > t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND ( (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((1) > t))) OR (((NOT (pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15)) AND (NOT (pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10)) AND (NOT (pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5)) AND ( ((shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON'))) AND ((0) > t))));
+Running: AggifyPass
+AggifyPass: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: QueryMotion
+QueryMotion: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: OutliningPass
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 23ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+============================
+Outlined UDF q19conditions_outlined_0 :
+
+CREATE OR REPLACE FUNCTION q19conditions_outlined_0(lqty DECIMAL(15, 2), pbrand VARCHAR, pcontainer VARCHAR, psize INTEGER, shipinst VARCHAR, shipmode VARCHAR) RETURNS INTEGER AS $$
+DECLARE
+val INTEGER;
+
+BEGIN
+    
+
+
+
+val := ((0));
+IF (shipmode in ('AIR','AIR REG') and shipinst = 'DELIVER IN PERSON') THEN
+
+
+val := ((0));
+IF pbrand = 'Brand#12'
+        and pcontainer in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and lqty >= 1 and lqty <= 1 + 10 and psize BETWEEN 1 AND 5 THEN
+val := ((1));
+END IF;
+
+
+
+
+IF pbrand = 'Brand#23'
+        and pcontainer in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and lqty >= 10 and lqty <= 10 + 10 and psize BETWEEN 1 AND 10 THEN
+val := ((1));
+END IF;
+
+
+
+
+IF pbrand = 'Brand#34'
+        and pcontainer in ('LG CASE', 'LG BOX', 'LG PKG', 'LG PACK')
+        and lqty >= 20 and lqty <= 20 + 10 and psize BETWEEN 1 AND 15 THEN
+val := ((1));
+END IF;
+
+END IF;
+
+
+RETURN (val);
+
+END;$$
+LANGUAGE PLPGSQL;
+============================
+INFO: Transpiling UDF q19conditions_outlined_0... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:53)
+INFO: Compiling the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:59)
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+CMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+INFO: Installing and loading the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:62)
+OutliningPass: 5461ms
+Running: AggressiveInstructionElimination
+AggressiveInstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 9ms
+Running: AggressiveMergeRegions
+AggressiveMergeRegions: 0ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+----------- PLpgSQL code start -----------
+CREATE OR REPLACE FUNCTION q19conditions(pcontainer VARCHAR, lqty DECIMAL(15, 2), psize INTEGER, shipmode VARCHAR, shipinst VARCHAR, pbrand VARCHAR) RETURNS INTEGER AS $$
+DECLARE
+
+BEGIN
+    RETURN (q19conditions_outlined_0(lqty, pbrand, pcontainer, psize, shipinst, shipmode));
+
+END;$$
+LANGUAGE PLPGSQL;
+----------- PLpgSQL code end-----------
+Error opening counter instructions
+
+
+
+┌─────────────────────┐
+│ Transpilation Done. │
+│       varchar       │
+├─────────────────────┤
+│                     │
+└─────────────────────┘
+
+Script done on 2026-09-03 11:44:44+09:00 [COMMAND_EXIT_CODE="0"]

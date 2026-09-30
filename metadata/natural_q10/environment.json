@@ -1,0 +1,45 @@
+{
+  "K_B": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "blocks": 10,
+  "export": {
+    "export_seconds": 1.1599555889843032,
+    "exports": {
+      "customer.csv": {
+        "bytes": 22862996,
+        "sha256": "5ac79d370191280102739d377bd9c4be532390e13b791d1793e7d42b322e0a00"
+      },
+      "lineitem.csv": {
+        "bytes": 142145135,
+        "sha256": "95d7625e8decdfa804f354178c8718b2acfa842464c3f0d28fc7b4e6394b31fe"
+      },
+      "nation.csv": {
+        "bytes": 267,
+        "sha256": "1d989fb40027f21f04c0890e11b5a0724e61dc1b0f2243645f8befc74571552a"
+      },
+      "orders.csv": {
+        "bytes": 37612077,
+        "sha256": "9d539e6e7c67565181cc5c738763476f234bffba5e11af3bc052e2770348582c"
+      }
+    },
+    "source_database": "experiments/runtime/prism/task4-prism-20260903T022253Z/tpch_sf1.duckdb",
+    "source_sha256": "f04b8e41e3e1c0829e96b02cbb6feebd9fff39959a141dec4dc1074500972191"
+  },
+  "load_seconds": 10.117379845003597,
+  "postgresql": "14.24",
+  "scale": "SF1",
+  "seed": 20260928,
+  "table_counts": {
+    "customer": 150000,
+    "lineitem": 6001215,
+    "nation": 25,
+    "orders": 1500000
+  },
+  "warmups": 3,
+  "workload": "PRISM/TPC-H Q10"
+}

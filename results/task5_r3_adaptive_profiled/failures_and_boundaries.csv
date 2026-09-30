@@ -1,0 +1,11 @@
+candidate,category,stage,severity,evidence,disposition
+Boulos-Ono,historical artifact unavailable,B,BLOCKING_FOR_SELECTION,Publication found; no source/repository/data/build/license located.,HISTORICAL_ONLY
+He-Lee-Snapp,historical artifact unavailable,B,BLOCKING_FOR_SELECTION,Author-hosted paper found; no implementation/data/build/environment release located.,HISTORICAL_ONLY
+DYNO,historical artifact unavailable,B,BLOCKING_FOR_SELECTION,"IBM publication/PDF found; no DYNO integration source, benchmark package, or build instructions located.",HISTORICAL_ONLY
+MONSOON,source unavailable,B,BLOCKING_FOR_SELECTION,Paper-linked Bitbucket commit has exactly one Overview.pdf and no optimizer source.,BLOCKED
+MONSOON,missing dataset,B,BLOCKING_FOR_REPRODUCTION,Repository PDF describes queries but contains no data or executable query files.,BLOCKED
+ALL,cold reset impossible,C,BLOCKING_FOR_EXPERIMENT,No runnable profile mechanism exists locally or in an audited release.,TASK5_NO_GO
+ALL,profile state cannot be inspected,C,BLOCKING_FOR_EXPERIMENT,Only paper-described representations are available.,TASK5_NO_GO
+ALL,E3 incompatible,C,NOT_TESTED,Compatibility cannot be established without executable method semantics.,UNSUPPORTED_NOT_UNIVERSAL_FAILURE
+ALL,E4 incompatible,C,NOT_TESTED,Compatibility cannot be established without executable method semantics.,UNSUPPORTED_NOT_UNIVERSAL_FAILURE
+ALL,no optimizer consumer,C,EXECUTION_EVIDENCE_ABSENT,Consumers are paper-described but not exposed by a released runnable artifact.,CONSUMER_NOT_EXPOSED

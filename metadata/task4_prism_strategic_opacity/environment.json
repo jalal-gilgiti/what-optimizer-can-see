@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "run_id": "task4-prism-20260903T022253Z",
+  "runtime_root": "<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z",
+  "isolation": {
+    "new_source_tree": true,
+    "new_build_tree": true,
+    "new_duckdb_database": true,
+    "isolated_home": "<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/home",
+    "prior_duckdb_environment_reused_or_modified": false,
+    "source_patch_applied": false
+  },
+  "system": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "Linux 5.15.0-186-generic #196-Ubuntu SMP Sat Jun 20 16:09:34 UTC 2026",
+    "architecture": "x86_64",
+    "logical_cpus": 14,
+    "gcc": "11.4.0-1ubuntu1~22.04.3",
+    "gxx": "11.4.0-1ubuntu1~22.04.3",
+    "make": "GNU Make 4.3",
+    "python": "3.10.12",
+    "system_cmake": "3.22.1",
+    "isolated_cmake": "3.31.6"
+  },
+  "source": {
+    "prism_commit": "689902595ba2ec8f86cbd5eb952b5fde09906e50",
+    "duckdb_commit": "dfb68aa3e8b504c1d19555f97035a5a00a1e2df4",
+    "duckdb_branch_source": "cherry_pick"
+  },
+  "dependency_install_commands": [
+    "python3 -m venv experiments/runtime/prism/task4-prism-20260903T022253Z/tools_env",
+    "experiments/runtime/prism/task4-prism-20260903T022253Z/tools_env/bin/python -m pip install --disable-pip-version-check cmake==3.31.6",
+    "git clone --branch cherry_pick --single-branch https://github.com/hkulyc/duckdb.git experiments/runtime/prism/task4-prism-20260903T022253Z/source/prism/duckdb"
+  ],
+  "build": {
+    "command": "env PATH=<isolated-tools-env>/bin:<system-path> make release",
+    "configuration": "Release",
+    "parallel_jobs": 6,
+    "cxx_standard": 20,
+    "cxx_flags": "-O3 -Wall -pthread",
+    "prism_feature_flags": ["EXTENSION_STATIC_BUILD=1", "DUCKDB_EXTENSION_UDF_TRANSPILER_SHOULD_LINK=TRUE"],
+    "duckdb_feature_flags": ["BUILD_EXTENSIONS=tpch;tpcds", "BUILD_TPCH_EXTENSION=1", "BUILD_TPCDS_EXTENSION=1", "BUILD_PARQUET_EXTENSION=1"],
+    "status": "PASS",
+    "executable_sha256": "0c2aedb81f0124076bc9498f9aeb6791a9dc50a979f86de59c3507d4156edb12",
+    "prism_extension_sha256": "ddbc5f47d810111f8ebacbe6f9829f31f70b330b71b6336f6cc9fd8200e75787"
+  },
+  "smoke_test": {
+    "command": "HOME=<isolated-home> ./build/release/test/unittest --test-dir . \"[sql]\"",
+    "status": "ARTIFACT_SMOKE_PASS",
+    "assertions": 5,
+    "test_cases": 1,
+    "first_attempt_note": "Initial test reached outlining but could not create the extension cache under the sandboxed real HOME; rerun used the isolated HOME and passed without source changes."
+  },
+  "runtime_protocol": {
+    "threads": 1,
+    "warmups_per_cell": 3,
+    "measured_repetitions_per_cell": 10,
+    "timeout_seconds": 60,
+    "randomization_seed": 4042026,
+    "timer": "DuckDB CLI .timer real time",
+    "outlier_removal": false
+  },
+  "known_environment_messages": "The build prints 'fatal: No names found' because the DuckDB fork has no descriptive tags; runtime prints 'Error opening counter instructions' because hardware counters are unavailable. Neither changed query status or results.",
+  "logs": [
+    "experiments/raw/task4_prism_strategic_opacity/task4-prism-20260903T022253Z/build_release.log",
+    "experiments/raw/task4_prism_strategic_opacity/task4-prism-20260903T022253Z/canonical_test_isolated_home.log"
+  ]
+}

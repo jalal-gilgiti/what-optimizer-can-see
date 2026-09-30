@@ -1,0 +1,15 @@
+{
+  "duckdb_version": "1.5.5",
+  "e2_checksum_equivalence": "PASS",
+  "errors": [],
+  "failed_or_timeout_records": 0,
+  "measurement_trials": 470,
+  "query_plan_structure": "PASS",
+  "schema_version": "1.0.0",
+  "source_raw_files": [
+    "<PROJECT_ROOT>/results/raw/e1-duckdb-20260829T072150Z-f4593626.jsonl",
+    "<PROJECT_ROOT>/results/raw/e2-duckdb-20260829T072150Z-9603216b.jsonl"
+  ],
+  "warmup_trials": 141,
+  "work_count_validation": "PASS"
+}

@@ -1,0 +1,90 @@
+{
+  "Plan": {
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(f.id)"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Async Capable": false,
+        "Hash Cond": "(f.dim_id = d.id)",
+        "Inner Unique": true,
+        "Join Type": "Inner",
+        "Node Type": "Hash Join",
+        "Output": [
+          "f.id"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 1670,
+        "Plan Width": 8,
+        "Plans": [
+          {
+            "Alias": "f",
+            "Async Capable": false,
+            "Node Type": "Seq Scan",
+            "Output": [
+              "f.id",
+              "f.bucket",
+              "f.dim_id"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 10000,
+            "Plan Width": 12,
+            "Relation Name": "fact",
+            "Schema": "public",
+            "Startup Cost": 0.0,
+            "Total Cost": 155.0
+          },
+          {
+            "Async Capable": false,
+            "Node Type": "Hash",
+            "Output": [
+              "d.id"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Inner",
+            "Plan Rows": 167,
+            "Plan Width": 4,
+            "Plans": [
+              {
+                "Alias": "d",
+                "Async Capable": false,
+                "Filter": "opaque_pred((d.id)::bigint)",
+                "Index Cond": "(d.bucket < 500)",
+                "Index Name": "dim_bucket_idx",
+                "Node Type": "Index Scan",
+                "Output": [
+                  "d.id"
+                ],
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 167,
+                "Plan Width": 4,
+                "Relation Name": "dim",
+                "Scan Direction": "Forward",
+                "Schema": "public",
+                "Startup Cost": 0.28,
+                "Total Cost": 1278.27
+              }
+            ],
+            "Startup Cost": 1278.27,
+            "Total Cost": 1278.27
+          }
+        ],
+        "Startup Cost": 1280.36,
+        "Total Cost": 1461.72
+      }
+    ],
+    "Startup Cost": 1470.08,
+    "Strategy": "Plain",
+    "Total Cost": 1470.09
+  }
+}

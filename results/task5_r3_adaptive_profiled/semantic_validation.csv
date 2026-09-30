@@ -1,0 +1,2 @@
+run_id,method,workload,outputs,row_counts,checksums,null_behavior,data_types,deterministic,udf_semantics,query_semantics,status,reason
+task5-r3-audit-20260903T031908Z,NONE,NONE,NOT_CHECKED,NOT_CHECKED,NOT_CHECKED,NOT_CHECKED,NOT_CHECKED,NOT_CHECKED,NOT_CHECKED,NOT_CHECKED,NOT_RUN_PHASE_C_STOP,No executable method; no workload was loaded or run.

@@ -1,0 +1,148 @@
+Script started on 2026-09-03 11:40:22+09:00 [TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+[1;33mFilters: [sql]
+[0m
+[0/1] (0%): test/sql/udf_transpiler.test                                        {"PLpgSQL_function":{"action":{"PLpgSQL_stmt_block":{"body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"list := LTRIM(RTRIM(list)) || delim"}},"lineno":6}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"pos  := STRPOS(list, delim)::int"}},"lineno":7,"varno":4}},{"PLpgSQL_stmt_while":{"body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"part := LTRIM(RTRIM(LEFT(list,pos)))"}},"lineno":9,"varno":3}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"list := SUBSTRING(list, pos+1, LENGTH(list))"}},"lineno":10}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"STRPOS(list,part) <> 0"}},"lineno":11,"then_body":[{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"FALSE"}},"lineno":12}}]}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"pos := STRPOS(list,delim)::int"}},"lineno":15,"varno":4}}],"cond":{"PLpgSQL_expr":{"query":"pos > 0"}},"lineno":8}},{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"TRUE"}},"lineno":18}}],"lineno":5}},"datums":[{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#119#"}},"refname":"list"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#134#"}},"refname":"delim"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"UNKNOWN"}},"refname":"found"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"TEXT"}},"lineno":3,"refname":"part"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"int"}},"lineno":4,"refname":"pos"}}]}}
+Running: MergeRegions
+MergeRegions: 0ms
+Running: SSAConstruction
+SSAConstruction: 39ms
+Running: InstructionElimination
+InstructionElimination: 14ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: AggifyPass
+AggifyPass: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: QueryMotion
+QueryMotion: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: OutliningPass
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 7ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+============================
+Outlined UDF isListDistinct_outlined_0 :
+
+CREATE OR REPLACE FUNCTION isListDistinct_outlined_0(delim VARCHAR, list VARCHAR) RETURNS BOOLEAN AS $$
+DECLARE
+pos INTEGER;
+
+BEGIN
+    
+
+
+pos := ((STRPOS((LTRIM(RTRIM(list)) || delim), delim)::int));
+list := ((LTRIM(RTRIM(list)) || delim));
+LOOP
+
+
+IF pos > 0 THEN
+
+
+
+IF STRPOS((SUBSTRING(list, pos+1, LENGTH(list))),(LTRIM(RTRIM(LEFT(list,pos))))) <> 0 THEN
+RETURN (FALSE);
+END IF;
+
+
+pos := ((STRPOS((SUBSTRING(list, pos+1, LENGTH(list))),delim)::int));
+list := ((SUBSTRING(list, pos+1, LENGTH(list))));
+CONTINUE;
+END IF;
+EXIT;
+END LOOP;
+
+RETURN (TRUE);
+
+END;$$
+LANGUAGE PLPGSQL;
+============================
+INFO: Transpiling UDF isListDistinct_outlined_0... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:53)
+INFO: Compiling the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:59)
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+CMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+INFO: Installing and loading the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:62)
+OutliningPass: 5890ms
+Running: AggressiveInstructionElimination
+AggressiveInstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 2ms
+Running: AggressiveMergeRegions
+AggressiveMergeRegions: 0ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+----------- PLpgSQL code start -----------
+CREATE OR REPLACE FUNCTION isListDistinct(list VARCHAR, delim VARCHAR) RETURNS BOOLEAN AS $$
+DECLARE
+
+BEGIN
+    RETURN (isListDistinct_outlined_0(delim, list));
+
+END;$$
+LANGUAGE PLPGSQL;
+----------- PLpgSQL code end-----------
+
+[1/1] (100%): test/sql/udf_transpiler.test                                      
+[1;31m[0m[1;33m[0m[1;32m===============================================================================[0m
+[1;32mAll tests passed[0m (5 assertions in 1 test case)
+
+
+Script done on 2026-09-03 11:40:28+09:00 [COMMAND_EXIT_CODE="0"]

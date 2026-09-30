@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Canonical field template. Unknown values remain null; not-applicable values use the explicit string not_applicable.",
+  "units": {
+    "actual_runtime": "milliseconds",
+    "planning_time": "milliseconds",
+    "compilation_time": "milliseconds",
+    "memory": "bytes",
+    "timeout": "seconds"
+  },
+  "experiment_definitions": "../configs/experiments/core_experiments.json",
+  "record_template": {
+    "experiment_id": null,
+    "experiment_family": null,
+    "configuration_id": null,
+    "run_id": null,
+    "trial_id": null,
+    "research_question": null,
+    "system": null,
+    "system_version": null,
+    "language_runtime": null,
+    "workload": null,
+    "udf_id": null,
+    "udf_type": null,
+    "dataset_scale": null,
+    "seed": null,
+    "procedural_parameters": {
+      "loop_type": null,
+      "loop_depth": null,
+      "loop_bounds": null,
+      "Lambda": null,
+      "branch_structure": null,
+      "branch_selectivity": null,
+      "branch_loop_correlation": null,
+      "data_access_pattern": null,
+      "udf_chain_length": null,
+      "opaque_component": null
+    },
+    "relational_parameters": {
+      "input_cardinality": null,
+      "filter_selectivity": null,
+      "join_shape": null,
+      "join_order": null,
+      "statistics_state": null
+    },
+    "representation": {
+      "source_visible": null,
+      "static_structure_visible": null,
+      "relationalized": null,
+      "dataflow_visible": null,
+      "runtime_profile_available": null,
+      "optimizer_stage_first_available": null
+    },
+    "decisions": {
+      "costing": null,
+      "udf_placement": null,
+      "predicate_placement": null,
+      "join_enumeration": null,
+      "materialization": null,
+      "fusion": null,
+      "vectorization": null,
+      "parallelism": null
+    },
+    "measurements": {
+      "estimated_cost": null,
+      "expected_udf_invocations": null,
+      "expected_loop_iterations": null,
+      "observed_loop_iterations": null,
+      "actual_runtime_ms": null,
+      "planning_time_ms": null,
+      "compilation_time_ms": null,
+      "udf_invocations": null,
+      "effective_loop_iterations": null,
+      "rows_entering_udf": null,
+      "rows_after_filter": null,
+      "chosen_plan": null,
+      "forced_plan": null,
+      "peak_memory_bytes": null
+    },
+    "derived_metrics": {
+      "cost_qerror": null,
+      "runtime_ratio": null,
+      "plan_regret": null
+    },
+    "provenance": {
+      "procedural_parameters": null,
+      "runtime": null,
+      "optimizer_cost": null
+    },
+    "timestamp_utc": null,
+    "git_commit": null,
+    "configuration_hash": null,
+    "cache_state": null,
+    "warmup_count": null,
+    "repetition_count": null,
+    "raw_output_paths": null,
+    "status": null,
+    "error": null
+  }
+}

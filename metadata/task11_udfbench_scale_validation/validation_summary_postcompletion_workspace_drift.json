@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "all_timed_executions_pass": true,
+    "dataset_read_only": true,
+    "frozen_prior_artifacts": true,
+    "main_pdf_unchanged": true,
+    "main_tex_unchanged": false,
+    "normalized_rows": true,
+    "official_archive_checksum": true,
+    "official_small_dataset": true,
+    "plan_rows": true,
+    "postgres_stopped": true,
+    "required_files_nonempty": true,
+    "required_files_present": true,
+    "scope_preserved": true,
+    "semantic_q14_cross_system": true,
+    "semantic_q17_repeat": true,
+    "semantic_q8_cross_system": true,
+    "source_commit_clean": true,
+    "timing_record_count": true
+  },
+  "counts": {
+    "measured": 65,
+    "normalized_rows": 14,
+    "plan_rows": 14,
+    "required_files": 15,
+    "timed_executions": 84,
+    "warmups": 19
+  },
+  "created_utc": "2026-09-09T03:42:12.615078+00:00",
+  "decision": "STRONGER_EXTERNAL_VALIDITY",
+  "status": "FAIL",
+  "task": "Task 11 - larger-scale UDFBench external-validity validation"
+}

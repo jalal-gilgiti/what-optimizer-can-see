@@ -1,0 +1,10 @@
+stage,workload_or_component,failure_type,status,exact_observation,action,scientific_boundary
+smoke,artifact_test,environment_path,RESOLVED,"default HOME cache directory could not be created under sandbox",reran with isolated HOME; no source patch,artifact assumes writable HOME for extension cache
+runtime,hardware_counters,limited_environment,PRESERVED,"Error opening counter instructions printed repeatedly",ignored only as unavailable instrumentation; outputs/status checked,hardware counter metrics unavailable
+semantic,tpch_q19,semantic_mismatch,UNRESOLVED,"PRISM aggregate 1771301962.4406 vs native 3083843.0578; 48675 UDF-true rows include obvious false positives",excluded pair from performance timing and preserved examples,released compiler is not semantically reliable for this nested-branch case
+representation,getManufact_complex_boundary,residual_not_executable,UNRESOLVED,"QueryMotion and two outlines succeeded; final residual PL/pgSQL text was printed but not registered",captured representation and stopped before manual substitute,artifact capability falls short of end-to-end selective execution
+controls,opaque_unmodified,variant_unavailable,PRESERVED,no documented executable PL/pgSQL-without-PRISM mode,no invented baseline,true opaque contrast unavailable
+controls,forced_full_prism,variant_unavailable,PRESERVED,pass controls can suppress passes but resulting residual PL/pgSQL is not executable,no invented full mode,full comparison uses repository native SQL only
+benchmark,SQL_ProcBench,dataset_unavailable,PRESERVED,paper dataset/evaluation corpus absent from repository,used released TPC-H corpus at preregistered SF1,coverage differs from full paper evaluation
+scale,TPC-H,limited_scale,PRESERVED,paper/helper uses SF10; Task4 preregistered SF1,no extrapolation,bounded replication only
+build,DuckDB_version_string,artifact_metadata_warning,PRESERVED,"build reports v..1-dev and no names found because fork lacks descriptive tags",commit hash used as identity,version string alone is unusable

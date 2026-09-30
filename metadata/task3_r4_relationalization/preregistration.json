@@ -1,0 +1,98 @@
+{
+  "boundary_case": "UDFBench Q9 PL/Python combinations: procedural nested iteration unsupported by SQL-function inliner; not timed",
+  "created_at_utc": "2026-09-03T02:02:05Z",
+  "dataset": "frozen UDFBench tiny",
+  "dataset_manifest_sha256": "f09af3ab4ce8d0f76739cd3257cb7dc2bbc9520c4b2729dea788886b6397af63",
+  "failure_criteria": [
+    "mechanism absent",
+    "semantic mismatch",
+    "timeout",
+    "higher form still contains eligible function call"
+  ],
+  "hypotheses": {
+    "H1": "Eligible SQL-function exposure increases optimizer-visible expression or relational structure.",
+    "H2": "At least one case shows a natural optimizer decision difference attributable to exposure.",
+    "H3": "Runtime effects will be interpreted only through observed plan/execution evidence, not syntax alone.",
+    "H4": "PL/Python nested loops remain outside the mechanism's representation boundary."
+  },
+  "plan_metrics": [
+    "node types/count",
+    "total cost",
+    "estimated rows",
+    "predicates/index conditions",
+    "join algorithms",
+    "function-call presence",
+    "visible relational operators"
+  ],
+  "planned_comparisons": [
+    "higher vs lower within each case only"
+  ],
+  "planned_plots": [
+    "runtime ratio by case",
+    "planning-time and plan-node delta by case"
+  ],
+  "planning_metrics": [
+    "PostgreSQL EXPLAIN ANALYZE Planning Time",
+    "plan-node count",
+    "visible relational operators",
+    "expression size"
+  ],
+  "randomization": "deterministic complete-block randomization seed 20260902; all six case/variant cells once per block",
+  "repetitions": 10,
+  "representation_pair_rule": "Identical SQL bodies and attributes except lower variant has a semantically neutral SET search_path clause, a documented native inlining blocker; higher variant is eligible and must disappear from plan expressions/nodes.",
+  "run_id": "task3-r4-pg14-20260903T021000Z",
+  "runtime_metrics": [
+    "client wall time per trial",
+    "median",
+    "mean",
+    "sample standard deviation",
+    "CV",
+    "min",
+    "max",
+    "bootstrap median CI95"
+  ],
+  "selected_r4_mechanism": "PostgreSQL 14.24 native SQL scalar/table function inlining",
+  "semantic_validation": "exact row count and order-insensitive canonical SHA-256; Q14 also compared to frozen Task 2 row count/hash and per-row released PL/Python cleandate over dataset plus edge probes",
+  "status": "FROZEN_BEFORE_PRIMARY_TIMING",
+  "stop_rules": [
+    "stop on smoke-test failure",
+    "exclude a mismatched pair before timing",
+    "retain all failures/outliers"
+  ],
+  "strategic_opacity": "NOT_APPLICABLE: PostgreSQL inliner has eligibility/fallback, not a selective outlining policy",
+  "success_criteria": [
+    "native mechanism activates",
+    "all pairs exact-equivalent",
+    "natural plans captured",
+    "at least one visibility delta evidenced"
+  ],
+  "system": "isolated cloned PostgreSQL 14.24 cluster",
+  "timeout_seconds": 60,
+  "warmups": 3,
+  "workloads": [
+    {
+      "case_id": "CONTROLLED_PK",
+      "provenance": "E2-like compatible probe over frozen UDFBench artifacts primary key",
+      "variants": [
+        "lower",
+        "higher"
+      ]
+    },
+    {
+      "case_id": "UDFBENCH_Q14_CLEANDATE",
+      "provenance": "exact released UDFBench Q14 SQL and frozen tiny data; SQL-compatible port of pure cleandate only",
+      "variants": [
+        "lower",
+        "higher"
+      ]
+    },
+    {
+      "case_id": "Q14_GROUNDED_TABLE",
+      "provenance": "compatible probe grounded in Q14 projects-projects_artifacts-artifacts path and funder predicate",
+      "variants": [
+        "lower",
+        "higher"
+      ]
+    }
+  ]
+}

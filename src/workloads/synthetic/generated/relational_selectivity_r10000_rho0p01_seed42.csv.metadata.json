@@ -1,0 +1,26 @@
+{
+  "Lambda": 1,
+  "branch_loop_correlation": "independent",
+  "data_access_pattern": "none",
+  "dataset_path": "<PROJECT_ROOT>/workloads/synthetic/generated/relational_selectivity_r10000_rho0p01_seed42.csv",
+  "dataset_sha256": "051a7552a25ed0981453d8246008505903c4f4ca9c11b6666f62a0f11edf9d54",
+  "e_branch_times_i_realized": 0.5,
+  "e_i_given_branch_realized": 1.0,
+  "e_i_realized": 1.0,
+  "expected_work_after_filter_units": 100,
+  "expected_work_before_filter_units": 10000,
+  "family": "relational_selectivity",
+  "filter_selectivity_realized": 0.01,
+  "loop_bounds": [
+    1
+  ],
+  "opaque_component": null,
+  "p_branch_realized": 0.5,
+  "requested_branch_selectivity": 0.5,
+  "requested_distribution": "constant",
+  "requested_filter_selectivity": 0.01,
+  "row_count": 10000,
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "udf_chain_length": 1
+}

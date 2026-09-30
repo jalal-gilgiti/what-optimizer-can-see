@@ -1,0 +1,170 @@
+{
+  "analysis_formulas": {
+    "bootstrap_interval": "2.5th and 97.5th percentiles of 10000 seeded resamples of the median",
+    "coefficient_of_variation": "sample_standard_deviation/mean",
+    "mean": "sum(x)/n",
+    "sample_standard_deviation": "sqrt(sum((x-mean)^2)/(n-1))",
+    "within_system_ratio": "max(median_A/median_B, median_B/median_A) only for preregistered semantically equivalent alternatives"
+  },
+  "analytical_model_policy": "NO_ANALYTICAL_WORK_MODEL unless exact source/data diagnostics justify a workload-specific count",
+  "created_at": "2026-09-02T00:00:00Z",
+  "dataset": "UDFBench tiny; exact included CSV/external files; no regeneration",
+  "dataset_manifest": "metadata/task2_udfbench_validation/dataset_manifest.json",
+  "exclusions": {
+    "Q11": "Recursive counterpart to selected iterative Q10; excluded to avoid duplicating the same k-means semantics.",
+    "Q12": "Random noise plus current-time predicate prevents exact deterministic cross-system validation.",
+    "Q13": "External JSON/table pipeline overlaps selected Q7 and has less relational optimization context than Q14.",
+    "Q15": "Complex XML/anti-join case has high setup cost; Q14 supplies the bounded QC3 optimizer case.",
+    "Q16": "Very large multi-UDF pipeline is redundant with Q9/Q14/Q17 for this bounded study.",
+    "Q18": "Cartesian text-similarity pipeline risks timeout and duplicates selected Q17's text-processing phenomenon.",
+    "Q19": "Pivot/subquery table-UDF behavior overlaps Q10's internal-subquery boundary.",
+    "Q2": "Near-duplicate of Q1 date extraction; table-returning form adds less representation diversity than selected cases.",
+    "Q20": "DML update would require state restoration for every trial and is outside the selected read-only primary set.",
+    "Q21": "DML insert and external-file case is outside the read-only primary set.",
+    "Q3": "Multilingual deployment requires a C extension build and DuckDB/SQLite do not support the released case.",
+    "Q4": "Aggregate-only behavior is covered more richly by selected Q7/Q8.",
+    "Q5": "Blocking whole-table statistics overlaps Q7/Q10 without adding a distinct selected phenomenon.",
+    "Q6": "Writes an output file; side-effect validation would dominate the representation question."
+  },
+  "failure_criteria": [
+    "Semantic mismatch excludes a workload/system from comparable timing.",
+    "Timeout, dependency failure, unsupported UDF type, or runner incompatibility is retained as negative evidence.",
+    "Non-deterministic Q10 labels may be validated by invariant rather than byte-identical labels; otherwise it is excluded from cross-system comparison."
+  ],
+  "hypotheses": [
+    "Q1 will expose row-wise invocation amplification while loop/branch structure remains optimizer-opaque.",
+    "Q7 will expose external data access and JSON-dependent work unavailable to ordinary optimizer costing.",
+    "Q8 will expose join-conditioned invocation volume and input-length-dependent JSON work absent from scalar metadata.",
+    "Q9 will expose combinatorial amplification guarded by a relational predicate, qualitatively connecting E1 and E2.",
+    "Q10 will expose bounded but data-dependent iterative work and an internal relational subquery behind a table-UDF boundary.",
+    "Q14 will expose natural relational filtering/join context around opaque parsing and date-cleaning functions, qualitatively connecting E2.",
+    "Q17 will expose a deep, input-conditioned multi-UDF text pipeline and may reveal a timeout or memory boundary."
+  ],
+  "measurement_metrics": [
+    "wall_time_ms",
+    "status",
+    "row_count",
+    "output_sha256",
+    "plan",
+    "function metadata",
+    "CV",
+    "bootstrap median 95% interval"
+  ],
+  "optional_counterfactual": "NONE_PREREGISTERED",
+  "planned_comparisons": [
+    "within-system structural/visibility contrasts only",
+    "qualitative controlled-to-realistic E1-E4 mapping",
+    "no absolute cross-engine ranking"
+  ],
+  "planned_plots": [
+    "per-system median runtime with bootstrap interval if at least three successful selected workloads justify a figure",
+    "coverage counts; otherwise tables only"
+  ],
+  "primary_fidelity": "ORIGINAL_UDFBENCH source/query with SYSTEM_PORT harness and engine-specific released ports",
+  "repetitions": 10,
+  "repository_commit": "8da987566590e2534f24cd97bcfaa9157c24962c",
+  "run_id": "task2-udfbench-20260902",
+  "schema_version": "1.0.0",
+  "seed": 20260902,
+  "selected_workloads": [
+    {
+      "adaptation": "SYSTEM_PORT harness only",
+      "benchmark_provenance": "UDFBench QC1 released query and engine UDFs",
+      "controlled_relation": "E1 baseline; PostgreSQL scalar metadata",
+      "expected_observables": "plans;function metadata;rows;output checksum;runtime",
+      "reason": "Simple multi-scalar baseline with branch/error paths and broad engine support.",
+      "representation_phenomenon": "row amplification; multiple opaque scalar UDFs",
+      "selection_status": "SELECTED",
+      "systems": "SQLite;DuckDB;PostgreSQL",
+      "workload_id": "Q1"
+    },
+    {
+      "adaptation": "SYSTEM_PORT path configuration",
+      "benchmark_provenance": "UDFBench QC1 released query/UDF/file",
+      "controlled_relation": "E1 analogue;taxonomy D_U boundary",
+      "expected_observables": "plan opacity;file hash;output checksum;runtime",
+      "reason": "Covers realistic external-file access plus JSON work and aggregation.",
+      "representation_phenomenon": "data access;data-dependent JSON work;blocking table UDF",
+      "selection_status": "SELECTED",
+      "systems": "DuckDB;PostgreSQL",
+      "workload_id": "Q7"
+    },
+    {
+      "adaptation": "SYSTEM_PORT harness only",
+      "benchmark_provenance": "UDFBench QC1 released query and UDFs",
+      "controlled_relation": "E1 and partial E3 analogue",
+      "expected_observables": "join plan;joined row count;JSON work diagnostic;checksum;runtime",
+      "reason": "Combines a relational join with per-row JSON-dependent work and aggregation.",
+      "representation_phenomenon": "join-conditioned invocations;opaque JSON complexity",
+      "selection_status": "SELECTED",
+      "systems": "SQLite;DuckDB;PostgreSQL",
+      "workload_id": "Q8"
+    },
+    {
+      "adaptation": "SYSTEM_PORT harness only",
+      "benchmark_provenance": "UDFBench QC1 released query and UDFs",
+      "controlled_relation": "E1;E2;partial E4 analogue",
+      "expected_observables": "filter plan;eligible rows;pair-count diagnostic;checksum;runtime",
+      "reason": "Naturally contains guarded combinatorial amplification from author-pair generation.",
+      "representation_phenomenon": "nested/data-dependent loops;filter guarding amplified work",
+      "selection_status": "SELECTED",
+      "systems": "DuckDB;PostgreSQL",
+      "workload_id": "Q9"
+    },
+    {
+      "adaptation": "SYSTEM_PORT harness;fixed process seeds",
+      "benchmark_provenance": "UDFBench QC2 released query and UDFs",
+      "controlled_relation": "E1;E3;Graceful representation boundary",
+      "expected_observables": "plan;input groups;successful/failed semantic validation;runtime if deterministic enough",
+      "reason": "Explicit bounded convergence loop around a relational join/group subquery and opaque ML library.",
+      "representation_phenomenon": "iterative nested work;internal SQL;library opacity",
+      "selection_status": "SELECTED",
+      "systems": "DuckDB;PostgreSQL",
+      "workload_id": "Q10"
+    },
+    {
+      "adaptation": "SYSTEM_PORT harness only",
+      "benchmark_provenance": "UDFBench QC3 released query and UDFs",
+      "controlled_relation": "E2 and partial E3 analogue",
+      "expected_observables": "natural plan;filter/join placement;result checksum;runtime",
+      "reason": "Benchmark-designated optimizer workload with joins, filters, JSON parsing, date cleaning, and grouping.",
+      "representation_phenomenon": "relational selection around opaque scalar work",
+      "selection_status": "SELECTED",
+      "systems": "SQLite;DuckDB;PostgreSQL",
+      "workload_id": "Q14"
+    },
+    {
+      "adaptation": "SYSTEM_PORT harness only",
+      "benchmark_provenance": "UDFBench QC3 released query and UDFs",
+      "controlled_relation": "E1;E3;source-aware visibility",
+      "expected_observables": "plan;document/token diagnostics;timeout or runtime;output checksum",
+      "reason": "Deep multi-UDF text pipeline exposes token-dependent amplification, branches, and post-relational grouping.",
+      "representation_phenomenon": "multiple UDFs;data-dependent text loops;opaque library/IR boundary",
+      "selection_status": "SELECTED",
+      "systems": "DuckDB;PostgreSQL",
+      "workload_id": "Q17"
+    }
+  ],
+  "status": "FROZEN_BEFORE_PRIMARY_EXECUTION",
+  "stop_conditions": [
+    "Stop an individual trial after 60 seconds.",
+    "Do not add workloads after outcomes are seen.",
+    "Do not install a new DBMS or modify frozen E1-E5b/Task 1 artifacts.",
+    "Stop Task 2 after required analysis, freeze verification, and exactly one next-task recommendation."
+  ],
+  "success_criteria": [
+    "At least several semantically faithful workloads execute.",
+    "At least two procedural representation phenomena are present.",
+    "Natural plans and visibility evidence are preserved separately from timings.",
+    "Cross-system output equivalence is established where intended or the case is excluded from comparison."
+  ],
+  "systems": {
+    "DuckDB": "project-local Task 2 environment pinned to repository requirement DuckDB 1.0.0; released DuckDB ports",
+    "PostgreSQL": "new Task 2 cluster created with existing validated PostgreSQL 14.24 binaries; released PL/Python implementations",
+    "SQLite": "validated system SQLite; new Task 2 database copy; released sqlite query/UDF implementations when present"
+  },
+  "thread_policy": "one configured engine thread where controllable; no cross-system performance ranking",
+  "timeout_seconds_per_trial": 60,
+  "trial_order": "deterministic block-randomized order within each system using seed 20260902",
+  "warmups": 3
+}

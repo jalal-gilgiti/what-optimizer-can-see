@@ -1,0 +1,5 @@
+case,can_learn_expensive_work,can_represent_why,zero_shot_query_transfer,distinguishes_matched_marginals,identifies_cost_attribute,usable_before_next_decision,classification,evidence
+PROBE_A_FIXED_BEHAVIOR,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,INCONCLUSIVE,Not executed because Phase C found no faithful executable R3 method.
+PROBE_B_E3_QUERY_CONTEXT,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,INCONCLUSIVE,Not executed because Phase C found no faithful executable R3 method.
+PROBE_C_E4_JOINT_DEPENDENCE,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,INCONCLUSIVE,Not executed because Phase C found no faithful executable R3 method.
+PROBE_D_REALISTIC_TASK2,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,INCONCLUSIVE,Not executed because Phase C found no faithful executable R3 method.

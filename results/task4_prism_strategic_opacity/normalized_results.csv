@@ -1,0 +1,3 @@
+run_id,workload_id,variant,n,median_runtime_s,mean_runtime_s,stddev_runtime_s,cv,min_runtime_s,max_runtime_s,bootstrap_median_ci95_low_s,bootstrap_median_ci95_high_s,cv_gt_0_10,semantic_status,ratio_vs_full_native
+task4-prism-20260903T022253Z,tpch_q6,PRISM_SELECTIVE,10,1.2045,1.2059,0.014820781205980894,0.012290224069973377,1.191,1.237,1.192,1.2155,False,PASS,22.305555555555554
+task4-prism-20260903T022253Z,tpch_q6,FULL_NATIVE_SQL,10,0.054,0.054,0.0006666666666666673,0.01234567901234569,0.053,0.055,0.0535,0.0545,False,PASS,1.0

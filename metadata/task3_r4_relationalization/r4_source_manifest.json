@@ -1,0 +1,38 @@
+{
+  "canonical_source_unmodified": true,
+  "compatibility_shims": [],
+  "created_at_utc": "2026-09-03T02:02:01Z",
+  "files_and_sources": [
+    {
+      "path": "<PROJECT_ROOT>/runtime/postgresql/postgresql-20260829T084826Z/root/usr/lib/postgresql/14/bin/postgres",
+      "role": "selected packaged server binary",
+      "sha256": "9e298923a3ac53f34e2222fe8708a73edd41d65caf4687e02055b1257daa9b2a"
+    },
+    {
+      "role": "selected upstream source",
+      "tag_commit": "6b3806732b7c5df06bdd0ed150e8a07b4ad62315",
+      "url": "https://github.com/postgres/postgres/blob/REL_14_24/src/backend/optimizer/util/clauses.c"
+    },
+    {
+      "role": "selected official feature documentation",
+      "url": "https://www.postgresql.org/about/featurematrix/detail/inlining-of-sql-functions/"
+    },
+    {
+      "role": "selected SQL-function documentation",
+      "url": "https://www.postgresql.org/docs/14/xfunc-sql.html"
+    },
+    {
+      "path": "<PROJECT_ROOT>/scripts/run/run_task3_r4_relationalization.py",
+      "role": "Task 3 harness and embedded function DDL",
+      "sha256": "cf68317c2f09c5da2998cbbdcc7204b398c0bb20ceafeb150a3cab13d6d69402"
+    },
+    {
+      "commit": "689902595ba2ec8f86cbd5eb952b5fde09906e50",
+      "path": "<PROJECT_ROOT>/runtime/task3_r4_relationalization/prism_audit",
+      "reason": "build requires prohibited new modified DuckDB instance",
+      "role": "candidate-only PRISM audit clone",
+      "selected": false
+    }
+  ],
+  "run_id": "task3-r4-pg14-20260903T021000Z"
+}

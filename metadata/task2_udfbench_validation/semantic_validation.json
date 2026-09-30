@@ -1,0 +1,729 @@
+{
+  "comparisons": {
+    "Q1": {
+      "cross_system_equivalent": false,
+      "note": "Cross-system output mismatch does not invalidate within-system timing, but it excludes a comparable cross-system semantic claim.",
+      "passing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "primary_timing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "semantic_invariant_groups": {
+        "873a1977e937c05ead4707e12817a5688eb54ef04121182fa948ad50ea32934c": [
+          "DuckDB",
+          "PostgreSQL"
+        ],
+        "9e1716156df3db05dcd49942cb6b33faac872726a747a824d41caa46489b8985": [
+          "SQLite"
+        ]
+      }
+    },
+    "Q10": {
+      "cross_system_equivalent": false,
+      "note": "Cross-system output mismatch does not invalidate within-system timing, but it excludes a comparable cross-system semantic claim.",
+      "passing_systems": [
+        "DuckDB",
+        "PostgreSQL"
+      ],
+      "primary_timing_systems": [
+        "DuckDB",
+        "PostgreSQL"
+      ],
+      "semantic_invariant_groups": {
+        "3529a1c9a14185d3c1a40543b04ef5f619803f783595163fab9086ee1b54e46d": [
+          "DuckDB"
+        ],
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945": [
+          "PostgreSQL"
+        ]
+      }
+    },
+    "Q14": {
+      "cross_system_equivalent": true,
+      "note": "Cross-system output mismatch does not invalidate within-system timing, but it excludes a comparable cross-system semantic claim.",
+      "passing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "primary_timing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "semantic_invariant_groups": {
+        "0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2": [
+          "SQLite",
+          "DuckDB",
+          "PostgreSQL"
+        ]
+      }
+    },
+    "Q17": {
+      "cross_system_equivalent": false,
+      "note": "Cross-system output mismatch does not invalidate within-system timing, but it excludes a comparable cross-system semantic claim.",
+      "passing_systems": [
+        "DuckDB"
+      ],
+      "primary_timing_systems": [
+        "DuckDB"
+      ],
+      "semantic_invariant_groups": {
+        "44bca863d41c857ab111e97dae00edb6aa2d0dbcdd420f14396449610c7a210d": [
+          "DuckDB"
+        ]
+      }
+    },
+    "Q7": {
+      "cross_system_equivalent": true,
+      "note": "Cross-system output mismatch does not invalidate within-system timing, but it excludes a comparable cross-system semantic claim.",
+      "passing_systems": [
+        "DuckDB",
+        "PostgreSQL"
+      ],
+      "primary_timing_systems": [
+        "DuckDB",
+        "PostgreSQL"
+      ],
+      "semantic_invariant_groups": {
+        "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb": [
+          "DuckDB",
+          "PostgreSQL"
+        ]
+      }
+    },
+    "Q8": {
+      "cross_system_equivalent": true,
+      "note": "Cross-system output mismatch does not invalidate within-system timing, but it excludes a comparable cross-system semantic claim.",
+      "passing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "primary_timing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "semantic_invariant_groups": {
+        "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb": [
+          "SQLite",
+          "DuckDB",
+          "PostgreSQL"
+        ]
+      }
+    },
+    "Q9": {
+      "cross_system_equivalent": false,
+      "note": "Cross-system output mismatch does not invalidate within-system timing, but it excludes a comparable cross-system semantic claim.",
+      "passing_systems": [
+        "DuckDB"
+      ],
+      "primary_timing_systems": [
+        "DuckDB"
+      ],
+      "semantic_invariant_groups": {
+        "15f35bee28fe2ba69a545779051ccb0cd5eab82a181d24e381b95ba5a97272ac": [
+          "DuckDB"
+        ]
+      }
+    }
+  },
+  "outcomes": {
+    "Q1": {
+      "DuckDB": {
+        "output_sha256": "873a1977e937c05ead4707e12817a5688eb54ef04121182fa948ad50ea32934c",
+        "row_count": 50000,
+        "sample": [
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            2017,
+            1,
+            1
+          ],
+          [
+            "355e65625b88::f7049d491ba1d9c5377e1149f98550e2",
+            2019,
+            2,
+            1
+          ],
+          [
+            "355e65625b88::fc71811e620027d430a3eeef55dd4910",
+            2019,
+            6,
+            1
+          ],
+          [
+            "57a035e5b1ae::014e95a17986af76d4375f5918fe9b90",
+            2011,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::072a8ab9f3a0782fe756664c9d399f81",
+            2011,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::09f59663fa419fc4ddba2cde36434ae2",
+            2008,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::1111a6d49b18a4dce98a089c6bf2bad5",
+            2008,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::1533627c790ac204ab5cd56c1dc258aa",
+            2009,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::187ff0ea7169ecb27b90eebf95401c00",
+            2013,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::19316a7aeca7f3b1d1aa04cd188c97a1",
+            2007,
+            1,
+            1
+          ]
+        ],
+        "semantic_invariant_sha256": "873a1977e937c05ead4707e12817a5688eb54ef04121182fa948ad50ea32934c",
+        "status": "PASS"
+      },
+      "PostgreSQL": {
+        "output_sha256": "873a1977e937c05ead4707e12817a5688eb54ef04121182fa948ad50ea32934c",
+        "row_count": 50000,
+        "sample": [
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            2017,
+            1,
+            1
+          ],
+          [
+            "355e65625b88::f7049d491ba1d9c5377e1149f98550e2",
+            2019,
+            2,
+            1
+          ],
+          [
+            "355e65625b88::fc71811e620027d430a3eeef55dd4910",
+            2019,
+            6,
+            1
+          ],
+          [
+            "57a035e5b1ae::014e95a17986af76d4375f5918fe9b90",
+            2011,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::072a8ab9f3a0782fe756664c9d399f81",
+            2011,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::09f59663fa419fc4ddba2cde36434ae2",
+            2008,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::1111a6d49b18a4dce98a089c6bf2bad5",
+            2008,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::1533627c790ac204ab5cd56c1dc258aa",
+            2009,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::187ff0ea7169ecb27b90eebf95401c00",
+            2013,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::19316a7aeca7f3b1d1aa04cd188c97a1",
+            2007,
+            1,
+            1
+          ]
+        ],
+        "semantic_invariant_sha256": "873a1977e937c05ead4707e12817a5688eb54ef04121182fa948ad50ea32934c",
+        "status": "PASS"
+      },
+      "SQLite": {
+        "output_sha256": "9e1716156df3db05dcd49942cb6b33faac872726a747a824d41caa46489b8985",
+        "row_count": 50000,
+        "sample": [
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            2017,
+            1,
+            1
+          ],
+          [
+            "355e65625b88::f7049d491ba1d9c5377e1149f98550e2",
+            2019,
+            2,
+            1
+          ],
+          [
+            "355e65625b88::fc71811e620027d430a3eeef55dd4910",
+            2019,
+            6,
+            1
+          ],
+          [
+            "57a035e5b1ae::014e95a17986af76d4375f5918fe9b90",
+            2011,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::072a8ab9f3a0782fe756664c9d399f81",
+            2011,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::09f59663fa419fc4ddba2cde36434ae2",
+            2008,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::1111a6d49b18a4dce98a089c6bf2bad5",
+            2008,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::1533627c790ac204ab5cd56c1dc258aa",
+            2009,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::187ff0ea7169ecb27b90eebf95401c00",
+            2013,
+            1,
+            1
+          ],
+          [
+            "57a035e5b1ae::19316a7aeca7f3b1d1aa04cd188c97a1",
+            2007,
+            1,
+            1
+          ]
+        ],
+        "semantic_invariant_sha256": "9e1716156df3db05dcd49942cb6b33faac872726a747a824d41caa46489b8985",
+        "status": "PASS"
+      }
+    },
+    "Q10": {
+      "DuckDB": {
+        "output_sha256": "82433823e393ffbcf26f6ddac1bdd91a9317ab8c6baa1b76930204251a59c88e",
+        "row_count": 24691,
+        "sample": [
+          [
+            0,
+            0.9174311927,
+            "doi_________::c50ded244f9634ac5d02c78988523a03",
+            "publication"
+          ],
+          [
+            0,
+            0.9174311927,
+            "doi_dedup___::0ab576e7b3baa205a5cf8510f39194cc",
+            "publication"
+          ],
+          [
+            0,
+            0.9174311927,
+            "doi_dedup___::343b3a1e8f9050ee6bfe7dd95b550f51",
+            "publication"
+          ],
+          [
+            0,
+            0.9174311927,
+            "doi_dedup___::4f6b646aa1eca17fff5e4e7536e634da",
+            "publication"
+          ],
+          [
+            0,
+            0.9174311927,
+            "doi_dedup___::79cb459751cc9435224decaeb1b9a06c",
+            "publication"
+          ],
+          [
+            0,
+            0.9174311927,
+            "doi_dedup___::9cdcf29ff6f31dc2ee785995bb8e7347",
+            "publication"
+          ],
+          [
+            0,
+            0.9174311927,
+            "doi_dedup___::fa4840237be76d35d6241d75587af642",
+            "publication"
+          ],
+          [
+            0,
+            100000.0,
+            "doi_dedup___::30056d91bc406db10fb3f692ff875b74",
+            "publication"
+          ],
+          [
+            0,
+            100000.0,
+            "doi_dedup___::b08521468b766b151870416cde5e18c2",
+            "publication"
+          ],
+          [
+            0,
+            100000.0,
+            "doi_dedup___::b3725a7747986497ec29a0ca6fca5258",
+            "publication"
+          ]
+        ],
+        "semantic_invariant_sha256": "3529a1c9a14185d3c1a40543b04ef5f619803f783595163fab9086ee1b54e46d",
+        "status": "PASS"
+      },
+      "PostgreSQL": {
+        "output_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "row_count": 0,
+        "sample": [],
+        "semantic_invariant_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "status": "PASS"
+      },
+      "SQLite": {
+        "reason": "Selected workload is absent from the released direct SQLite adapter; the separate APSW virtual-table path was not introduced.",
+        "status": "UNSUPPORTED_BY_SYSTEM"
+      }
+    },
+    "Q14": {
+      "DuckDB": {
+        "output_sha256": "0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2",
+        "row_count": 6631,
+        "sample": [
+          [
+            "0000-0001-5029-704x",
+            "CNRS-LAPP"
+          ],
+          [
+            "0000-0001-5107-3531",
+            "DIFFER"
+          ],
+          [
+            "0000-0001-5195-6668",
+            "PLUX Wireless Biosignals"
+          ],
+          [
+            "0000-0001-5221-1377",
+            "Norwegian Meteorological Institute"
+          ],
+          [
+            "0000-0001-5306-0355",
+            "KU Leuven"
+          ],
+          [
+            "0000-0001-5328-6274",
+            "Emory University"
+          ],
+          [
+            "0000-0001-5398-8217",
+            "Deutsches Zentrum f\u00fcr Luft- und Raumfahrt"
+          ],
+          [
+            "0000-0001-5495-4502",
+            "I-BioStat, Data Science Institute, Hasselt University, 3500 Hasselt, Belgium."
+          ],
+          [
+            "0000-0001-5495-4502",
+            "I-BioStat, Data Science Institute, Hasselt University, 3500 Hasselt, Belgium."
+          ],
+          [
+            "0000-0001-5573-4261",
+            "FAU University Erlangen Nuremberg"
+          ]
+        ],
+        "semantic_invariant_sha256": "0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2",
+        "status": "PASS"
+      },
+      "PostgreSQL": {
+        "output_sha256": "0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2",
+        "row_count": 6631,
+        "sample": [
+          [
+            "0000-0001-5029-704x",
+            "CNRS-LAPP"
+          ],
+          [
+            "0000-0001-5107-3531",
+            "DIFFER"
+          ],
+          [
+            "0000-0001-5195-6668",
+            "PLUX Wireless Biosignals"
+          ],
+          [
+            "0000-0001-5221-1377",
+            "Norwegian Meteorological Institute"
+          ],
+          [
+            "0000-0001-5306-0355",
+            "KU Leuven"
+          ],
+          [
+            "0000-0001-5328-6274",
+            "Emory University"
+          ],
+          [
+            "0000-0001-5398-8217",
+            "Deutsches Zentrum f\u00fcr Luft- und Raumfahrt"
+          ],
+          [
+            "0000-0001-5495-4502",
+            "I-BioStat, Data Science Institute, Hasselt University, 3500 Hasselt, Belgium."
+          ],
+          [
+            "0000-0001-5495-4502",
+            "I-BioStat, Data Science Institute, Hasselt University, 3500 Hasselt, Belgium."
+          ],
+          [
+            "0000-0001-5573-4261",
+            "FAU University Erlangen Nuremberg"
+          ]
+        ],
+        "semantic_invariant_sha256": "0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2",
+        "status": "PASS"
+      },
+      "SQLite": {
+        "output_sha256": "0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2",
+        "row_count": 6631,
+        "sample": [
+          [
+            "0000-0001-5029-704x",
+            "CNRS-LAPP"
+          ],
+          [
+            "0000-0001-5107-3531",
+            "DIFFER"
+          ],
+          [
+            "0000-0001-5195-6668",
+            "PLUX Wireless Biosignals"
+          ],
+          [
+            "0000-0001-5221-1377",
+            "Norwegian Meteorological Institute"
+          ],
+          [
+            "0000-0001-5306-0355",
+            "KU Leuven"
+          ],
+          [
+            "0000-0001-5328-6274",
+            "Emory University"
+          ],
+          [
+            "0000-0001-5398-8217",
+            "Deutsches Zentrum f\u00fcr Luft- und Raumfahrt"
+          ],
+          [
+            "0000-0001-5495-4502",
+            "I-BioStat, Data Science Institute, Hasselt University, 3500 Hasselt, Belgium."
+          ],
+          [
+            "0000-0001-5495-4502",
+            "I-BioStat, Data Science Institute, Hasselt University, 3500 Hasselt, Belgium."
+          ],
+          [
+            "0000-0001-5573-4261",
+            "FAU University Erlangen Nuremberg"
+          ]
+        ],
+        "semantic_invariant_sha256": "0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2",
+        "status": "PASS"
+      }
+    },
+    "Q17": {
+      "DuckDB": {
+        "output_sha256": "44bca863d41c857ab111e97dae00edb6aa2d0dbcdd420f14396449610c7a210d",
+        "row_count": 837254,
+        "sample": [
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "100",
+            0.0181940114
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "act",
+            0.0190137706
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "activ",
+            0.0138548409
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "ald",
+            0.1083767732
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "anneal",
+            0.0239757537
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "appli",
+            0.0150724091
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "approach",
+            0.0268058158
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "area",
+            0.0311823965
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "atom",
+            0.018645848
+          ],
+          [
+            "355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54",
+            "automot",
+            0.0265048036
+          ]
+        ],
+        "semantic_invariant_sha256": "44bca863d41c857ab111e97dae00edb6aa2d0dbcdd420f14396449610c7a210d",
+        "status": "PASS"
+      },
+      "PostgreSQL": {
+        "error": "InternalError_: error fetching next item from iterator\nDETAIL:  plpy.Error: Error processing ordered group: subquery in FROM must have an alias\nCONTEXT:  Traceback (most recent call last):\nPL/Python function \"jgroupordered\"\n",
+        "status": "FAIL"
+      },
+      "SQLite": {
+        "reason": "Selected workload is absent from the released direct SQLite adapter; the separate APSW virtual-table path was not introduced.",
+        "status": "UNSUPPORTED_BY_SYSTEM"
+      }
+    },
+    "Q7": {
+      "DuckDB": {
+        "output_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "row_count": 1,
+        "sample": [
+          [
+            16.775974026,
+            8.6635220126
+          ]
+        ],
+        "semantic_invariant_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "status": "PASS"
+      },
+      "PostgreSQL": {
+        "output_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "row_count": 1,
+        "sample": [
+          [
+            16.775974026,
+            8.6635220126
+          ]
+        ],
+        "semantic_invariant_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "status": "PASS"
+      },
+      "SQLite": {
+        "reason": "Selected workload is absent from the released direct SQLite adapter; the separate APSW virtual-table path was not introduced.",
+        "status": "UNSUPPORTED_BY_SYSTEM"
+      }
+    },
+    "Q8": {
+      "DuckDB": {
+        "output_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "row_count": 1,
+        "sample": [
+          [
+            16.775974026,
+            8.6635220126
+          ]
+        ],
+        "semantic_invariant_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "status": "PASS"
+      },
+      "PostgreSQL": {
+        "output_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "row_count": 1,
+        "sample": [
+          [
+            16.775974026,
+            8.6635220126
+          ]
+        ],
+        "semantic_invariant_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "status": "PASS"
+      },
+      "SQLite": {
+        "output_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "row_count": 1,
+        "sample": [
+          [
+            16.775974026,
+            8.6635220126
+          ]
+        ],
+        "semantic_invariant_sha256": "6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb",
+        "status": "PASS"
+      }
+    },
+    "Q9": {
+      "DuckDB": {
+        "output_sha256": "15f35bee28fe2ba69a545779051ccb0cd5eab82a181d24e381b95ba5a97272ac",
+        "row_count": 1,
+        "sample": [
+          [
+            385507
+          ]
+        ],
+        "semantic_invariant_sha256": "15f35bee28fe2ba69a545779051ccb0cd5eab82a181d24e381b95ba5a97272ac",
+        "status": "PASS"
+      },
+      "PostgreSQL": {
+        "error": "SyntaxError: subquery in FROM must have an alias\nLINE 2: from (Select combinations(clean(authorlist), 2) as pairs fro...\n             ^\nHINT:  For example, FROM (SELECT ...) [AS] foo.\n",
+        "status": "FAIL"
+      },
+      "SQLite": {
+        "reason": "Selected workload is absent from the released direct SQLite adapter; the separate APSW virtual-table path was not introduced.",
+        "status": "UNSUPPORTED_BY_SYSTEM"
+      }
+    }
+  }
+}

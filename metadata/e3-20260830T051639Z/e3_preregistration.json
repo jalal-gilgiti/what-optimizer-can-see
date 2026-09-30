@@ -1,0 +1,223 @@
+{
+  "analytical_expectations": {
+    "Q_all": {
+      "e_i_given_query": 505.0,
+      "e_i_global": 505.0,
+      "expected_rows": 10000,
+      "m1_global_predicted_work": 5050000.0,
+      "m1_global_qerror": 1.0,
+      "m2_conditioned_predicted_work": 5050000.0,
+      "m2_conditioned_qerror": 1.0,
+      "predicate_population": null,
+      "query_id": "Q_all",
+      "selectivity": 1.0,
+      "true_work": 5050000
+    },
+    "Q_high": {
+      "e_i_given_query": 1000.0,
+      "e_i_global": 505.0,
+      "expected_rows": 5000,
+      "m1_global_predicted_work": 2525000.0,
+      "m1_global_qerror": 1.9801980198019802,
+      "m2_conditioned_predicted_work": 5000000.0,
+      "m2_conditioned_qerror": 1.0,
+      "predicate_population": "HIGH",
+      "query_id": "Q_high",
+      "selectivity": 0.5,
+      "true_work": 5000000
+    },
+    "Q_low": {
+      "e_i_given_query": 10.0,
+      "e_i_global": 505.0,
+      "expected_rows": 5000,
+      "m1_global_predicted_work": 2525000.0,
+      "m1_global_qerror": 50.5,
+      "m2_conditioned_predicted_work": 50000.0,
+      "m2_conditioned_qerror": 1.0,
+      "predicate_population": "LOW",
+      "query_id": "Q_low",
+      "selectivity": 0.5,
+      "true_work": 50000
+    }
+  },
+  "automatic_reruns": false,
+  "canonical_udf_source": "<PROJECT_ROOT>/workloads/synthetic/e3_kernel.py",
+  "canonical_udf_source_sha256": "4a6d7d388986831d71f5233494c0032e8b9dbcab3b106a35839d371f99658b4d",
+  "dataset_manifest": "<PROJECT_ROOT>/metadata/e3-20260830T051639Z/e3_dataset_manifest.json",
+  "dataset_manifest_sha256": "d33583e25f3af8b3ef6c6460fc57b5a720d56bf43e0b5904b8dc605e384d5f4a",
+  "dataset_path": "<PROJECT_ROOT>/workloads/synthetic/generated/e3-20260830T051639Z/e3_low_high_r10000_seed42.csv",
+  "dataset_sha256": "bb8e82f203ecc59795701fe82c90a2365482c42bce6545fbe793cfebdbbb614a",
+  "decision": {
+    "CONDITIONAL_GO": "validation passes but variability or fixed overhead weakens runtime separation",
+    "GO": "all semantic/freeze validation passes and Q_high is slower than Q_low on every system",
+    "NO_GO": "dataset/work/checksum/trial/frozen-artifact validation fails"
+  },
+  "execution_order_algorithm": "For each phase/trial block shuffle Q_all/Q_low/Q_high with Random(42*1000003 + phase_code*101 + trial); use the identical schedule per system.",
+  "execution_order_seed": 42,
+  "execution_schedule": [
+    {
+      "block_id": "warmup-1",
+      "order": [
+        "Q_all",
+        "Q_high",
+        "Q_low"
+      ],
+      "trial_number": 1,
+      "trial_phase": "warmup"
+    },
+    {
+      "block_id": "warmup-2",
+      "order": [
+        "Q_high",
+        "Q_low",
+        "Q_all"
+      ],
+      "trial_number": 2,
+      "trial_phase": "warmup"
+    },
+    {
+      "block_id": "warmup-3",
+      "order": [
+        "Q_low",
+        "Q_high",
+        "Q_all"
+      ],
+      "trial_number": 3,
+      "trial_phase": "warmup"
+    },
+    {
+      "block_id": "measurement-1",
+      "order": [
+        "Q_all",
+        "Q_high",
+        "Q_low"
+      ],
+      "trial_number": 1,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-2",
+      "order": [
+        "Q_high",
+        "Q_all",
+        "Q_low"
+      ],
+      "trial_number": 2,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-3",
+      "order": [
+        "Q_low",
+        "Q_all",
+        "Q_high"
+      ],
+      "trial_number": 3,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-4",
+      "order": [
+        "Q_low",
+        "Q_all",
+        "Q_high"
+      ],
+      "trial_number": 4,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-5",
+      "order": [
+        "Q_low",
+        "Q_high",
+        "Q_all"
+      ],
+      "trial_number": 5,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-6",
+      "order": [
+        "Q_low",
+        "Q_all",
+        "Q_high"
+      ],
+      "trial_number": 6,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-7",
+      "order": [
+        "Q_all",
+        "Q_high",
+        "Q_low"
+      ],
+      "trial_number": 7,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-8",
+      "order": [
+        "Q_low",
+        "Q_high",
+        "Q_all"
+      ],
+      "trial_number": 8,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-9",
+      "order": [
+        "Q_all",
+        "Q_high",
+        "Q_low"
+      ],
+      "trial_number": 9,
+      "trial_phase": "measurement"
+    },
+    {
+      "block_id": "measurement-10",
+      "order": [
+        "Q_low",
+        "Q_high",
+        "Q_all"
+      ],
+      "trial_number": 10,
+      "trial_phase": "measurement"
+    }
+  ],
+  "grid": {
+    "HIGH": 1000,
+    "LOW": 10,
+    "R": 10000,
+    "global_e_i": 505,
+    "measurement_repetitions": 10,
+    "queries": [
+      "Q_all",
+      "Q_low",
+      "Q_high"
+    ],
+    "seed": 42,
+    "timeout_seconds": 60,
+    "warmups": 3
+  },
+  "primary_metrics": [
+    "selected_rows",
+    "udf_invocations",
+    "effective_loop_iterations",
+    "median_runtime_ms",
+    "coefficient_of_variation",
+    "M1_global_qerror",
+    "M2_conditioned_qerror",
+    "Q_high/Q_low_runtime_ratio"
+  ],
+  "run_id": "e3-20260830T051639Z",
+  "schema_version": "1.0.0",
+  "scope": "E3 only: SQLite, DuckDB, PostgreSQL",
+  "system_versions": {
+    "duckdb": "1.5.5",
+    "postgresql": "postgres (PostgreSQL) 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+    "python": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+    "sqlite": "3.37.2"
+  }
+}

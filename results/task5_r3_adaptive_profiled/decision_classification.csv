@@ -1,0 +1,2 @@
+run_id,method,workload,information_state,cost_changed,cardinality_changed,plan_changed,placement_changed,reoptimization_triggered,classification,plan_evidence,status
+task5-r3-audit-20260903T031908Z,NONE,NONE,NOT_APPLICABLE,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,CONSUMER_NOT_EXPOSED,NO_PLANS_CAPTURED,NOT_RUN_PHASE_C_STOP

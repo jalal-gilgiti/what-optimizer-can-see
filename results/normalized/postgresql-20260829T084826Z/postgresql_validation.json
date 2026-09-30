@@ -1,0 +1,53 @@
+{
+  "e1_full_monotonicity": {
+    "100": true,
+    "1000": true,
+    "10000": true
+  },
+  "e1_high_lambda_monotonicity": {
+    "100": true,
+    "1000": true,
+    "10000": true
+  },
+  "errors": [],
+  "failures_or_timeouts": 0,
+  "high_cv_configurations": [
+    {
+      "Lambda": 100,
+      "R": 1000,
+      "cv": 0.11278589592184778,
+      "form": null,
+      "rho": null,
+      "study": "E1"
+    },
+    {
+      "Lambda": 1,
+      "R": 10000,
+      "cv": 0.10246910747282717,
+      "form": "COST=100",
+      "rho": 0.01,
+      "study": "COST"
+    }
+  ],
+  "high_cv_count": 2,
+  "measurement_counts": {
+    "E1": 150,
+    "E2": 320,
+    "scalar_cost": 360
+  },
+  "natural_plan_class_counts": {
+    "PHYSICALLY_EQUIVALENT": 16
+  },
+  "natural_selective_filter_first": true,
+  "psycopg2_libpq_compile_version": 170006,
+  "psycopg2_libpq_runtime_version": 140024,
+  "raw_counts": {
+    "E1": 195,
+    "E2": 416,
+    "scalar_cost": 468
+  },
+  "scalar_cost_changed_estimated_plan_cost": true,
+  "scalar_cost_changed_placement": false,
+  "scalar_cost_changed_plan_signature": false,
+  "status": "PASS"
+}

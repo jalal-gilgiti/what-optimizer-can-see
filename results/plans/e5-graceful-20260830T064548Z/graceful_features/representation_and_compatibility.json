@@ -1,0 +1,327 @@
+{
+  "controlled_cases": [
+    {
+      "Lambda": 1,
+      "bounds": [
+        1
+      ],
+      "case": "e5_fixed_l1",
+      "dataset": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r10000_rho1p0_seed42.csv",
+      "dataset_sha256": "ecb6cb46ef9a6ba6ccbd041c4f2dddd25a64a3c24cb06e73dedd3661b5c815c5",
+      "graceful_graph_build": {
+        "edge_count": 9,
+        "graph_path": "experiments/results/plans/e5-graceful-20260830T064548Z/graceful_features/e5_fixed_l1.loopend.gpickle",
+        "node_count": 8,
+        "node_types": {
+          "COMP": 3,
+          "INVOCATION": 1,
+          "LOOP_END": 1,
+          "LOOP_HEAD": 1,
+          "RETURN": 1,
+          "VAR": 1
+        },
+        "status": "PASS"
+      },
+      "semantic_equivalence": {
+        "integer_input_cast_elided": true,
+        "mismatches": [],
+        "rows_checked": 10000,
+        "status": "PASS"
+      },
+      "source": "def e5_fixed_l1(value: int) -> int:\n    state = value & 2147483647\n    for index0 in range(1):\n        state = (state + index0 + 0) & 2147483647\n        state = (state * 1103515245 + 12345) & 2147483647\n    return state\n"
+    },
+    {
+      "Lambda": 960,
+      "bounds": [
+        8,
+        10,
+        12
+      ],
+      "case": "e5_fixed_l960",
+      "dataset": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r10000_rho1p0_seed42.csv",
+      "dataset_sha256": "ecb6cb46ef9a6ba6ccbd041c4f2dddd25a64a3c24cb06e73dedd3661b5c815c5",
+      "graceful_graph_build": {
+        "exception_type": "AssertionError",
+        "graph_path": null,
+        "message": "a third while loop is not supported in the featurization",
+        "status": "FAIL",
+        "traceback": [
+          "Traceback (most recent call last):",
+          "  File \"<PROJECT_ROOT>/scripts/run/run_e5_graceful_probe.py\", line 105, in build_graph",
+          "    graph, _ = getUDFgraph(cfg, source, is_duckdb=True, add_loop_end_node=True)",
+          "  File \"<PROJECT_ROOT>/runtime/graceful/e5-graceful-20260830T064548Z/source/udf_graph/create_graph.py\", line 127, in getUDFgraph",
+          "    assert not nested_loop, \"a third while loop is not supported in the featurization\"",
+          "AssertionError: a third while loop is not supported in the featurization"
+        ]
+      },
+      "semantic_equivalence": {
+        "integer_input_cast_elided": true,
+        "mismatches": [],
+        "rows_checked": 10000,
+        "status": "PASS"
+      },
+      "source": "def e5_fixed_l960(value: int) -> int:\n    state = value & 2147483647\n    for index0 in range(8):\n        state = (state + index0 + 0) & 2147483647\n        for index1 in range(10):\n            state = (state + index1 + 1) & 2147483647\n            for index2 in range(12):\n                state = (state + index2 + 2) & 2147483647\n                state = (state * 1103515245 + 12345) & 2147483647\n    return state\n"
+    },
+    {
+      "Lambda": 960,
+      "bounds": [
+        8,
+        10,
+        12
+      ],
+      "case": "e5_e2_l960",
+      "dataset": "<PROJECT_ROOT>/workloads/synthetic/generated/relational_selectivity_r10000_rho0p1_seed42.csv",
+      "dataset_sha256": "8a6c67bf992140d5c60ebfda3697fbe98e4bba1f87c018818fd7e523abcba1a8",
+      "graceful_graph_build": {
+        "exception_type": "AssertionError",
+        "graph_path": null,
+        "message": "a third while loop is not supported in the featurization",
+        "status": "FAIL",
+        "traceback": [
+          "Traceback (most recent call last):",
+          "  File \"<PROJECT_ROOT>/scripts/run/run_e5_graceful_probe.py\", line 105, in build_graph",
+          "    graph, _ = getUDFgraph(cfg, source, is_duckdb=True, add_loop_end_node=True)",
+          "  File \"<PROJECT_ROOT>/runtime/graceful/e5-graceful-20260830T064548Z/source/udf_graph/create_graph.py\", line 127, in getUDFgraph",
+          "    assert not nested_loop, \"a third while loop is not supported in the featurization\"",
+          "AssertionError: a third while loop is not supported in the featurization"
+        ]
+      },
+      "semantic_equivalence": {
+        "integer_input_cast_elided": true,
+        "mismatches": [],
+        "rows_checked": 10000,
+        "status": "PASS"
+      },
+      "source": "def e5_e2_l960(value: int) -> int:\n    state = value & 2147483647\n    for index0 in range(8):\n        state = (state + index0 + 0) & 2147483647\n        for index1 in range(10):\n            state = (state + index1 + 1) & 2147483647\n            for index2 in range(12):\n                state = (state + index2 + 2) & 2147483647\n                state = (state * 1103515245 + 12345) & 2147483647\n    return state\n"
+    }
+  ],
+  "controlled_workload_status": "INCOMPATIBLE_WITH_RELEASED_CHECKPOINT",
+  "released_representation": {
+    "edge_types": {
+      "BRANCH->COMP": 4,
+      "COMP->COMP": 40,
+      "COMP->LOOP_END": 2,
+      "COMP->RETURN": 2,
+      "INVOCATION->LOOP_HEAD": 1,
+      "LOOP_END->BRANCH": 1,
+      "LOOP_HEAD->BRANCH": 1,
+      "LOOP_HEAD->LOOP_END": 1,
+      "VAR->COMP": 27,
+      "VAR->INVOCATION": 2
+    },
+    "estimator_stages": [
+      {
+        "code": "python_graphs.control_flow.get_control_flow_graph",
+        "stage": "Python source to CFG"
+      },
+      {
+        "code": "udf_graph.create_graph.getUDFgraph",
+        "stage": "CFG to typed UDF graph"
+      },
+      {
+        "code": "enhanceUDFgraph_query / enhanceUDFgraph_card",
+        "stage": "datatype and cardinality annotation"
+      },
+      {
+        "code": "dd_plan_batching.udf_to_graph / duckdb_plan_collator",
+        "stage": "feature encoding and SQL/UDF graph joining"
+      },
+      {
+        "code": "zero-shot GNN forward pass and label inverse transform",
+        "stage": "runtime estimation"
+      }
+    ],
+    "feature_keys_by_node_type": {
+      "BRANCH": [
+        "block_hash",
+        "card_list_act",
+        "card_list_deepdb",
+        "card_list_est",
+        "card_list_wj",
+        "cmops",
+        "in_rows_act",
+        "in_rows_deepdb",
+        "in_rows_est",
+        "in_rows_wj",
+        "lineno",
+        "loop_part"
+      ],
+      "COMP": [
+        "block_hash",
+        "branch_cond",
+        "card_list_act",
+        "card_list_deepdb",
+        "card_list_est",
+        "card_list_wj",
+        "in_rows_act",
+        "in_rows_deepdb",
+        "in_rows_est",
+        "in_rows_wj",
+        "lib_embedding",
+        "lib_onehot",
+        "lineno",
+        "loop_part",
+        "ops"
+      ],
+      "INVOCATION": [
+        "block_hash",
+        "card_list_act",
+        "card_list_deepdb",
+        "card_list_est",
+        "card_list_wj",
+        "in_dts",
+        "in_rows_act",
+        "in_rows_deepdb",
+        "in_rows_est",
+        "in_rows_wj",
+        "no_params"
+      ],
+      "LOOP_END": [
+        "block_hash",
+        "card_list_act",
+        "card_list_deepdb",
+        "card_list_est",
+        "card_list_wj",
+        "fixed_iter",
+        "in_rows_act",
+        "in_rows_deepdb",
+        "in_rows_est",
+        "in_rows_wj",
+        "loop_part",
+        "loop_type",
+        "no_iter"
+      ],
+      "LOOP_HEAD": [
+        "block_hash",
+        "card_list_act",
+        "card_list_deepdb",
+        "card_list_est",
+        "card_list_wj",
+        "fixed_iter",
+        "in_rows_act",
+        "in_rows_deepdb",
+        "in_rows_est",
+        "in_rows_wj",
+        "lineno",
+        "loop_part",
+        "loop_type",
+        "no_iter",
+        "ops"
+      ],
+      "RETURN": [
+        "block_hash",
+        "card_list_act",
+        "card_list_deepdb",
+        "card_list_est",
+        "card_list_wj",
+        "in_rows_act",
+        "in_rows_deepdb",
+        "in_rows_est",
+        "in_rows_wj",
+        "out_dts"
+      ],
+      "VAR": [
+        "var_id"
+      ]
+    },
+    "graph_edge_count": 81,
+    "graph_node_count": 52,
+    "graph_path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/workload_runs/duckdb_pushdown/dbs/genome/created_graphs/func_14397.loopend.gpickle",
+    "graph_sha256": "2ad62de1393b882ffe92612ef2beafb7e40a68fdcf902c5330061d65e8ebb9fe",
+    "node_types": {
+      "BRANCH": 2,
+      "COMP": 44,
+      "INVOCATION": 1,
+      "LOOP_END": 1,
+      "LOOP_HEAD": 1,
+      "RETURN": 1,
+      "VAR": 2
+    },
+    "plan_runtime_ms": 774.134,
+    "query": "SELECT SUM(func_14397(\"IMG_OBJ\".\"X\",\"IMG_OBJ\".\"IMG_ID\")) as agg_0 FROM \"IMG_OBJ\" JOIN \"OBJ_CLASSES\" ON \"IMG_OBJ\".\"OBJ_CLASS_ID\" = \"OBJ_CLASSES\".\"OBJ_CLASS_ID\" JOIN \"IMG_OBJ_ATT\" ON \"IMG_OBJ\".\"IMG_ID\" = \"IMG_OBJ_ATT\".\"IMG_ID\"  WHERE \"IMG_OBJ\".\"W\" >= 330 AND \"IMG_OBJ\".\"OBJ_SAMPLE_ID\" >= 406 AND \"IMG_OBJ_ATT\".\"IMG_ID\" <= 12035998 AND \"OBJ_CLASSES\".\"OBJ_CLASS_ID\" >= 1334 AND \"OBJ_CLASSES\".\"OBJ_CLASS\" = 'hole';",
+    "relational_cardinality_fields": [
+      {
+        "above_udf_filter": false,
+        "act_card": 1,
+        "dd_est_card": 1,
+        "est_card": 1,
+        "is_udf_filter": false,
+        "op_name": "UNGROUPED_AGGREGATE",
+        "wj_est_card": 1
+      },
+      {
+        "above_udf_filter": false,
+        "act_card": 8016,
+        "dd_est_card": 26919.45789284097,
+        "est_card": 7255263,
+        "is_udf_filter": false,
+        "op_name": "HASH_JOIN",
+        "wj_est_card": 8491.437911809428
+      },
+      {
+        "above_udf_filter": false,
+        "act_card": 4770059,
+        "dd_est_card": 4770058.999999957,
+        "est_card": 1289611,
+        "is_udf_filter": false,
+        "op_name": "SEQ_SCAN",
+        "wj_est_card": 1289611
+      },
+      {
+        "above_udf_filter": false,
+        "act_card": 1061,
+        "dd_est_card": 50.53675432146282,
+        "est_card": 422023,
+        "is_udf_filter": false,
+        "op_name": "HASH_JOIN",
+        "wj_est_card": 1037.277445514445
+      },
+      {
+        "above_udf_filter": false,
+        "act_card": 100321,
+        "dd_est_card": 95941.23619152303,
+        "est_card": 2100740,
+        "is_udf_filter": false,
+        "op_name": "FILTER",
+        "wj_est_card": 100321.0
+      },
+      {
+        "above_udf_filter": false,
+        "act_card": 100321,
+        "dd_est_card": 95941.23619152303,
+        "est_card": 2100740,
+        "is_udf_filter": false,
+        "op_name": "SEQ_SCAN",
+        "wj_est_card": 100321.0
+      },
+      {
+        "above_udf_filter": false,
+        "act_card": 2,
+        "dd_est_card": 360,
+        "est_card": 360,
+        "is_udf_filter": false,
+        "op_name": "FILTER",
+        "wj_est_card": 360
+      },
+      {
+        "above_udf_filter": false,
+        "act_card": 466,
+        "dd_est_card": 1800,
+        "est_card": 360,
+        "is_udf_filter": false,
+        "op_name": "INDEX_SCAN",
+        "wj_est_card": 360
+      }
+    ],
+    "relational_operator_counts": {
+      "FILTER": 2,
+      "HASH_JOIN": 2,
+      "INDEX_SCAN": 1,
+      "SEQ_SCAN": 2,
+      "UNGROUPED_AGGREGATE": 1
+    },
+    "udf": "func_14397"
+  },
+  "schema_version": "1.0.0",
+  "stop_reason": "The released graph builder cannot featurize the exact three-level Lambda=960 loop; flattening it would change the source representation."
+}

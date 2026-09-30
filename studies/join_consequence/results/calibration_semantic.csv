@@ -1,0 +1,21 @@
+phase,K,segment,representation,result,udf_calls,udf_work_units
+calibration,100,COSTLY,M1,"[[797, ""411586""]]",40951,40951000
+calibration,100,COSTLY,M2,"[[797, ""411586""]]",1594,1594000
+calibration,100,CHEAP,M1,"[[15307, ""7724411""]]",30614,306140
+calibration,100,CHEAP,M2,"[[15307, ""7724411""]]",30614,306140
+calibration,200,COSTLY,M1,"[[797, ""411586""]]",40951,40951000
+calibration,200,COSTLY,M2,"[[797, ""411586""]]",1594,1594000
+calibration,200,CHEAP,M1,"[[15307, ""7724411""]]",30614,306140
+calibration,200,CHEAP,M2,"[[15307, ""7724411""]]",30614,306140
+calibration,400,COSTLY,M1,"[[797, ""411586""]]",40951,40951000
+calibration,400,COSTLY,M2,"[[797, ""411586""]]",1594,1594000
+calibration,400,CHEAP,M1,"[[15307, ""7724411""]]",30614,306140
+calibration,400,CHEAP,M2,"[[15307, ""7724411""]]",30614,306140
+calibration,800,COSTLY,M1,"[[797, ""411586""]]",40951,40951000
+calibration,800,COSTLY,M2,"[[797, ""411586""]]",1594,1594000
+calibration,800,CHEAP,M1,"[[15307, ""7724411""]]",30614,306140
+calibration,800,CHEAP,M2,"[[15307, ""7724411""]]",30614,306140
+calibration,1600,COSTLY,M1,"[[797, ""411586""]]",40951,40951000
+calibration,1600,COSTLY,M2,"[[797, ""411586""]]",40951,40951000
+calibration,1600,CHEAP,M1,"[[15307, ""7724411""]]",30614,306140
+calibration,1600,CHEAP,M2,"[[15307, ""7724411""]]",775153,7751530

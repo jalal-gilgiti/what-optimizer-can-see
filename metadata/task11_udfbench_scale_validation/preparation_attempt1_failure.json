@@ -1,0 +1,9 @@
+{
+  "attempt": 1,
+  "phase": "POST_EXTRACTION_LOGICAL_ROW_COUNT",
+  "status": "FAIL_PRE_TIMING",
+  "error_type": "_csv.Error",
+  "error": "field larger than field limit (131072)",
+  "effect": "No query, semantic validation, plan capture, or timing ran. All ten official-small files had already been extracted; no source or dataset manifest was finalized.",
+  "recovery": "Preserve and verify the ten extracted files against archive member sizes; raise only csv.field_size_limit for logical-record counting; do not overwrite extracted bytes."
+}

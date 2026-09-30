@@ -1,0 +1,335 @@
+{
+  "case_id": "UDFBENCH_Q14_CLEANDATE",
+  "classification_input": "natural SQL, EXPLAIN without ANALYZE",
+  "plan": {
+    "Plan": {
+      "Async Capable": false,
+      "Inner Unique": true,
+      "Join Type": "Inner",
+      "Node Type": "Nested Loop",
+      "Output": [
+        "jsonparse(artifact_authors.authorid, 'value'::text)",
+        "jsonparse(artifact_authors.affiliation, 'value'::text)"
+      ],
+      "Parallel Aware": false,
+      "Plan Rows": 2,
+      "Plan Width": 64,
+      "Plans": [
+        {
+          "Async Capable": false,
+          "Inner Unique": true,
+          "Join Filter": "((artifact_authors.artifactid = a.id) AND ((aggregate_max(CASE WHEN ((a_1.date IS NULL) OR (a_1.date = ''::text)) THEN NULL::text WHEN (strpos(a_1.date, '-'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '-'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/'::text) || split_part(a_1.date, '-'::text, 3)) ELSE NULL::text END WHEN (strpos(a_1.date, '/'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '/'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '/'::text, 1) || '/'::text) || split_part(a_1.date, '/'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '/'::text, 1) || '-'::text) || split_part(a_1.date, '/'::text, 2)) || '-'::text) || split_part(a_1.date, '/'::text, 3)) ELSE NULL::text END ELSE NULL::text END)) = CASE WHEN ((a.date IS NULL) OR (a.date = ''::text)) THEN NULL::text WHEN (strpos(a.date, '-'::text) > 0) THEN CASE (length(a.date) - length(replace(a.date, '-'::text, ''::text))) WHEN 1 THEN (((split_part(a.date, '-'::text, 1) || '/'::text) || split_part(a.date, '-'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a.date, '-'::text, 1) || '/'::text) || split_part(a.date, '-'::text, 2)) || '/'::text) || split_part(a.date, '-'::text, 3)) ELSE NULL::text END WHEN (strpos(a.date, '/'::text) > 0) THEN CASE (length(a.date) - length(replace(a.date, '/'::text, ''::text))) WHEN 1 THEN (((split_part(a.date, '/'::text, 1) || '/'::text) || split_part(a.date, '/'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a.date, '/'::text, 1) || '-'::text) || split_part(a.date, '/'::text, 2)) || '-'::text) || split_part(a.date, '/'::text, 3)) ELSE NULL::text END ELSE NULL::text END))",
+          "Join Type": "Inner",
+          "Node Type": "Nested Loop",
+          "Output": [
+            "artifact_authors.authorid",
+            "artifact_authors.affiliation",
+            "pr.projectid"
+          ],
+          "Parallel Aware": false,
+          "Parent Relationship": "Outer",
+          "Plan Rows": 8,
+          "Plan Width": 271,
+          "Plans": [
+            {
+              "Async Capable": false,
+              "Hash Cond": "(artifact_authors.artifactid = pr.artifactid)",
+              "Inner Unique": false,
+              "Join Type": "Inner",
+              "Node Type": "Hash Join",
+              "Output": [
+                "artifact_authors.authorid",
+                "artifact_authors.affiliation",
+                "artifact_authors.artifactid",
+                "pr.projectid",
+                "pr.artifactid",
+                "(aggregate_max(CASE WHEN ((a_1.date IS NULL) OR (a_1.date = ''::text)) THEN NULL::text WHEN (strpos(a_1.date, '-'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '-'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/'::text) || split_part(a_1.date, '-'::text, 3)) ELSE NULL::text END WHEN (strpos(a_1.date, '/'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '/'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '/'::text, 1) || '/'::text) || split_part(a_1.date, '/'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '/'::text, 1) || '-'::text) || split_part(a_1.date, '/'::text, 2)) || '-'::text) || split_part(a_1.date, '/'::text, 3)) ELSE NULL::text END ELSE NULL::text END))"
+              ],
+              "Parallel Aware": false,
+              "Parent Relationship": "Outer",
+              "Plan Rows": 1652,
+              "Plan Width": 397,
+              "Plans": [
+                {
+                  "Async Capable": false,
+                  "Hash Cond": "(artifact_authors.authorid = aa.authorid)",
+                  "Inner Unique": true,
+                  "Join Type": "Inner",
+                  "Node Type": "Hash Join",
+                  "Output": [
+                    "artifact_authors.authorid",
+                    "artifact_authors.affiliation",
+                    "artifact_authors.artifactid",
+                    "(aggregate_max(CASE WHEN ((a_1.date IS NULL) OR (a_1.date = ''::text)) THEN NULL::text WHEN (strpos(a_1.date, '-'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '-'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/'::text) || split_part(a_1.date, '-'::text, 3)) ELSE NULL::text END WHEN (strpos(a_1.date, '/'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '/'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '/'::text, 1) || '/'::text) || split_part(a_1.date, '/'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '/'::text, 1) || '-'::text) || split_part(a_1.date, '/'::text, 2)) || '-'::text) || split_part(a_1.date, '/'::text, 3)) ELSE NULL::text END ELSE NULL::text END))"
+                  ],
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Outer",
+                  "Plan Rows": 706,
+                  "Plan Width": 303,
+                  "Plans": [
+                    {
+                      "Alias": "artifact_authors",
+                      "Async Capable": false,
+                      "Filter": "((artifact_authors.affiliation IS NOT NULL) AND (artifact_authors.authorid IS NOT NULL) AND (artifact_authors.affiliation <> '[]'::text) AND (artifact_authors.authorid <> '[]'::text) AND (artifact_authors.rank = 1))",
+                      "Node Type": "Seq Scan",
+                      "Output": [
+                        "artifact_authors.artifactid",
+                        "artifact_authors.affiliation",
+                        "artifact_authors.fullname",
+                        "artifact_authors.name",
+                        "artifact_authors.surname",
+                        "artifact_authors.rank",
+                        "artifact_authors.authorid"
+                      ],
+                      "Parallel Aware": false,
+                      "Parent Relationship": "Outer",
+                      "Plan Rows": 1100,
+                      "Plan Width": 271,
+                      "Relation Name": "artifact_authors",
+                      "Schema": "public",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 7734.83
+                    },
+                    {
+                      "Async Capable": false,
+                      "Node Type": "Hash",
+                      "Output": [
+                        "aa.authorid",
+                        "(aggregate_max(CASE WHEN ((a_1.date IS NULL) OR (a_1.date = ''::text)) THEN NULL::text WHEN (strpos(a_1.date, '-'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '-'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/'::text) || split_part(a_1.date, '-'::text, 3)) ELSE NULL::text END WHEN (strpos(a_1.date, '/'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '/'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '/'::text, 1) || '/'::text) || split_part(a_1.date, '/'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '/'::text, 1) || '-'::text) || split_part(a_1.date, '/'::text, 2)) || '-'::text) || split_part(a_1.date, '/'::text, 3)) ELSE NULL::text END ELSE NULL::text END))"
+                      ],
+                      "Parallel Aware": false,
+                      "Parent Relationship": "Inner",
+                      "Plan Rows": 12018,
+                      "Plan Width": 188,
+                      "Plans": [
+                        {
+                          "Async Capable": false,
+                          "Group Key": [
+                            "aa.authorid"
+                          ],
+                          "Node Type": "Aggregate",
+                          "Output": [
+                            "aa.authorid",
+                            "aggregate_max(CASE WHEN ((a_1.date IS NULL) OR (a_1.date = ''::text)) THEN NULL::text WHEN (strpos(a_1.date, '-'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '-'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '-'::text, 1) || '/'::text) || split_part(a_1.date, '-'::text, 2)) || '/'::text) || split_part(a_1.date, '-'::text, 3)) ELSE NULL::text END WHEN (strpos(a_1.date, '/'::text) > 0) THEN CASE (length(a_1.date) - length(replace(a_1.date, '/'::text, ''::text))) WHEN 1 THEN (((split_part(a_1.date, '/'::text, 1) || '/'::text) || split_part(a_1.date, '/'::text, 2)) || '/01'::text) WHEN 2 THEN ((((split_part(a_1.date, '/'::text, 1) || '-'::text) || split_part(a_1.date, '/'::text, 2)) || '-'::text) || split_part(a_1.date, '/'::text, 3)) ELSE NULL::text END ELSE NULL::text END)"
+                          ],
+                          "Parallel Aware": false,
+                          "Parent Relationship": "Outer",
+                          "Partial Mode": "Simple",
+                          "Plan Rows": 12018,
+                          "Plan Width": 188,
+                          "Planned Partitions": 0,
+                          "Plans": [
+                            {
+                              "Async Capable": false,
+                              "Hash Cond": "(aa.artifactid = a_1.id)",
+                              "Inner Unique": true,
+                              "Join Type": "Inner",
+                              "Node Type": "Hash Join",
+                              "Output": [
+                                "aa.authorid",
+                                "a_1.date"
+                              ],
+                              "Parallel Aware": false,
+                              "Parent Relationship": "Outer",
+                              "Plan Rows": 18005,
+                              "Plan Width": 167,
+                              "Plans": [
+                                {
+                                  "Alias": "aa",
+                                  "Async Capable": false,
+                                  "Filter": "(aa.rank = 1)",
+                                  "Node Type": "Seq Scan",
+                                  "Output": [
+                                    "aa.artifactid",
+                                    "aa.affiliation",
+                                    "aa.fullname",
+                                    "aa.name",
+                                    "aa.surname",
+                                    "aa.rank",
+                                    "aa.authorid"
+                                  ],
+                                  "Parallel Aware": false,
+                                  "Parent Relationship": "Outer",
+                                  "Plan Rows": 18005,
+                                  "Plan Width": 203,
+                                  "Relation Name": "artifact_authors",
+                                  "Schema": "public",
+                                  "Startup Cost": 0.0,
+                                  "Total Cost": 7012.88
+                                },
+                                {
+                                  "Async Capable": false,
+                                  "Node Type": "Hash",
+                                  "Output": [
+                                    "a_1.date",
+                                    "a_1.id"
+                                  ],
+                                  "Parallel Aware": false,
+                                  "Parent Relationship": "Inner",
+                                  "Plan Rows": 50000,
+                                  "Plan Width": 58,
+                                  "Plans": [
+                                    {
+                                      "Alias": "a_1",
+                                      "Async Capable": false,
+                                      "Node Type": "Seq Scan",
+                                      "Output": [
+                                        "a_1.date",
+                                        "a_1.id"
+                                      ],
+                                      "Parallel Aware": false,
+                                      "Parent Relationship": "Outer",
+                                      "Plan Rows": 50000,
+                                      "Plan Width": 58,
+                                      "Relation Name": "artifacts",
+                                      "Schema": "public",
+                                      "Startup Cost": 0.0,
+                                      "Total Cost": 2487.0
+                                    }
+                                  ],
+                                  "Startup Cost": 2487.0,
+                                  "Total Cost": 2487.0
+                                }
+                              ],
+                              "Startup Cost": 3112.0,
+                              "Total Cost": 10172.14
+                            }
+                          ],
+                          "Startup Cost": 12107.68,
+                          "Strategy": "Hashed",
+                          "Total Cost": 15232.36
+                        }
+                      ],
+                      "Startup Cost": 15352.54,
+                      "Total Cost": 15352.54
+                    }
+                  ],
+                  "Startup Cost": 15502.76,
+                  "Total Cost": 23240.47
+                },
+                {
+                  "Async Capable": false,
+                  "Node Type": "Hash",
+                  "Output": [
+                    "pr.projectid",
+                    "pr.artifactid"
+                  ],
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Inner",
+                  "Plan Rows": 83467,
+                  "Plan Width": 94,
+                  "Plans": [
+                    {
+                      "Alias": "pr",
+                      "Async Capable": false,
+                      "Node Type": "Seq Scan",
+                      "Output": [
+                        "pr.projectid",
+                        "pr.artifactid"
+                      ],
+                      "Parallel Aware": false,
+                      "Parent Relationship": "Outer",
+                      "Plan Rows": 83467,
+                      "Plan Width": 94,
+                      "Relation Name": "projects_artifacts",
+                      "Schema": "public",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 2270.67
+                    }
+                  ],
+                  "Startup Cost": 2270.67,
+                  "Total Cost": 2270.67
+                }
+              ],
+              "Startup Cost": 18816.77,
+              "Total Cost": 26638.94
+            },
+            {
+              "Alias": "a",
+              "Async Capable": false,
+              "Index Cond": "(a.id = pr.artifactid)",
+              "Index Name": "artifacts_pkey",
+              "Node Type": "Index Scan",
+              "Output": [
+                "a.id",
+                "a.title",
+                "a.publisher",
+                "a.journal",
+                "a.date",
+                "a.year",
+                "a.access_mode",
+                "a.embargo_end_date",
+                "a.delayed",
+                "a.authors",
+                "a.source",
+                "a.abstract",
+                "a.type",
+                "a.peer_reviewed",
+                "a.green",
+                "a.gold"
+              ],
+              "Parallel Aware": false,
+              "Parent Relationship": "Inner",
+              "Plan Rows": 1,
+              "Plan Width": 58,
+              "Relation Name": "artifacts",
+              "Scan Direction": "Forward",
+              "Schema": "public",
+              "Startup Cost": 0.41,
+              "Total Cost": 0.55
+            }
+          ],
+          "Startup Cost": 18817.18,
+          "Total Cost": 27748.32
+        },
+        {
+          "Alias": "p",
+          "Async Capable": false,
+          "Filter": "(p.funder = 'European Commission'::text)",
+          "Index Cond": "(p.id = pr.projectid)",
+          "Index Name": "projects_pkey",
+          "Node Type": "Index Scan",
+          "Output": [
+            "p.id",
+            "p.acronym",
+            "p.title",
+            "p.funder",
+            "p.fundingstring",
+            "p.funding_lvl0",
+            "p.funding_lvl1",
+            "p.funding_lvl2",
+            "p.ec39",
+            "p.type",
+            "p.startdate",
+            "p.enddate",
+            "p.start_year",
+            "p.end_year",
+            "p.duration",
+            "p.haspubs",
+            "p.numpubs",
+            "p.daysforlastpub",
+            "p.delayedpubs",
+            "p.callidentifier",
+            "p.code",
+            "p.totalcost",
+            "p.fundedamount",
+            "p.currency"
+          ],
+          "Parallel Aware": false,
+          "Parent Relationship": "Inner",
+          "Plan Rows": 1,
+          "Plan Width": 47,
+          "Relation Name": "projects",
+          "Scan Direction": "Forward",
+          "Schema": "public",
+          "Startup Cost": 0.41,
+          "Total Cost": 0.54
+        }
+      ],
+      "Startup Cost": 18817.6,
+      "Total Cost": 27753.61
+    }
+  },
+  "submitted_sql": "with aa (artifactid, authorid, affiliation, rank, authoridvalue, affiliationvalue ) as       \n( select artifactid, authorid, affiliation, rank,                   \n         jsonparse(authorid, 'value') as authoridvalue,                  \n         jsonparse(affiliation, 'value') as affiliationvalue from artifact_authors        \nwhere affiliation is not null \n      and affiliation <> '[]' \n      and authorid is not null \n      and authorid <> '[]' ) \nselect aa.authoridvalue, aa.affiliationvalue \nfrom aa, artifacts a, projects_artifacts pr, projects p \nwhere aa.rank = 1 and \n      aa.artifactid = a.id and \n      p.id = pr.projectid and \n      pr.artifactid = a.id and \n      p.funder = 'European Commission' and \n      (aa.authorid, task3_r4.cleandate_visible(a.date)) in \n          (select authorid, aggregate_max(task3_r4.cleandate_visible(a.date)) as max_date \n          from artifact_authors as aa, artifacts as a            \n              where aa.rank = 1 and aa.artifactid = a.id            \n          group by authorid)",
+  "variant": "higher"
+}

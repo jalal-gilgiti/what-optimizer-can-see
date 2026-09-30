@@ -1,0 +1,41 @@
+{
+  "Plan": {
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(id)"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Alias": "fact",
+        "Async Capable": false,
+        "Filter": "opaque_pred(fact.id)",
+        "Index Cond": "(fact.bucket < 1000)",
+        "Index Name": "fact_bucket_idx",
+        "Node Type": "Index Scan",
+        "Output": [
+          "id",
+          "bucket",
+          "dim_id"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 333,
+        "Plan Width": 8,
+        "Relation Name": "fact",
+        "Scan Direction": "Forward",
+        "Schema": "public",
+        "Startup Cost": 0.29,
+        "Total Cost": 288.79
+      }
+    ],
+    "Startup Cost": 290.45,
+    "Strategy": "Plain",
+    "Total Cost": 290.46
+  }
+}

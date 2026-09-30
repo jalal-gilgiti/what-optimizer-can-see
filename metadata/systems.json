@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at": "2026-08-29T15:25:14+09:00",
+  "status_definitions": {
+    "AVAILABLE": "Executable or importable and passed the stated probe; feature support may still be limited.",
+    "INSTALLABLE": "A plausible installation route is identified but was not executed.",
+    "ARTIFACT_ONLY": "Some package, source, or entry point exists, but the system cannot currently run.",
+    "NOT_AVAILABLE": "Explicit local executable/module checks found no runnable candidate.",
+    "NOT_YET_VERIFIED": "Evidence or an exact artifact identity is insufficient for a conclusion."
+  },
+  "next_stage_status_definitions": {
+    "READY": "Runnable now for the stated next-stage mechanism.",
+    "EASY_LOCAL_SETUP": "A project-local setup path exists and does not require changing the system installation; exact versions must still be pinned and tested.",
+    "CONTAINER_SETUP": "A verified local container runtime makes a pinned container setup practical.",
+    "REQUIRES_ARTIFACT_WORK": "A canonical artifact exists, but it must be fetched, pinned, inspected, and adapted before execution.",
+    "BLOCKED": "No currently usable runtime or approved setup mechanism exists."
+  },
+  "systems": [
+    {
+      "system": "DuckDB",
+      "status": "AVAILABLE",
+      "next_stage_status": "READY",
+      "version": "1.5.5 project-local; 0.6.1 user-site",
+      "interface": "Pinned project-local Python module",
+      "evidence": "DuckDB 1.5.5 in .venv-duckdb passed scalar-UDF feasibility and the full E1/E2 replication with zero non-OK records.",
+      "limitations": ["The separate user-site DuckDB 0.6.1 remains installed and lacks create_function", "DuckDB E1/E2 showed substantial low-/mid-amplification variability", "Controlled E2 Form A requires an OFFSET 0 streaming barrier because a plain subquery is rewritten"],
+      "next_stage_evidence": "Pinned environment, raw trials, validation, and report are present under this workspace.",
+      "source": "https://duckdb.org/docs/lts/clients/python/function"
+    },
+    {
+      "system": "SQLite",
+      "status": "AVAILABLE",
+      "next_stage_status": "READY",
+      "version": "3.37.2",
+      "interface": "Python 3 sqlite3 module",
+      "evidence": "Successful import and in-memory scalar callback registration.",
+      "limitations": ["sqlite3 CLI absent"]
+    },
+    {
+      "system": "PostgreSQL",
+      "status": "NOT_AVAILABLE",
+      "next_stage_status": "BLOCKED",
+      "version": null,
+      "interface": null,
+      "evidence": "psql, postgres, pg_config, pg_ctl, and initdb are absent; psycopg2 import fails because libpq.so.5 is absent. No PL/Python files were found.",
+      "limitations": ["Docker and Podman are also absent, so a local container setup is not currently practical."]
+    },
+    {
+      "system": "Spark",
+      "status": "ARTIFACT_ONLY",
+      "next_stage_status": "BLOCKED",
+      "version": "PySpark 3.3.1",
+      "interface": "Python package and spark-submit entry point",
+      "evidence": "PySpark imports, but spark-submit reports JAVA_HOME is not set and Java is absent.",
+      "limitations": ["Not runnable without a Java runtime"]
+    },
+    {
+      "system": "MonetDB",
+      "status": "NOT_AVAILABLE",
+      "next_stage_status": "BLOCKED",
+      "version": null,
+      "interface": null,
+      "evidence": "monetdb, mclient, and pymonetdb absent."
+    },
+    {
+      "system": "SQL Server",
+      "status": "NOT_AVAILABLE",
+      "next_stage_status": "BLOCKED",
+      "version": null,
+      "interface": null,
+      "evidence": "sqlcmd and pyodbc absent; no server process observed."
+    },
+    {
+      "system": "QFusor",
+      "status": "NOT_YET_VERIFIED",
+      "next_stage_status": "REQUIRES_ARTIFACT_WORK",
+      "version": null,
+      "interface": null,
+      "evidence": "No runnable local artifact was found. A public canonical repository was identified after E1/E2; its README states that the repository currently contains experimental queries and UDFs.",
+      "source": "https://github.com/athenarc/QFusor"
+    }
+  ],
+  "external_artifacts": [
+    {
+      "artifact": "UDFBench",
+      "next_stage_status": "REQUIRES_ARTIFACT_WORK",
+      "local_status": "not_fetched",
+      "evidence": "The PVLDB 2025 paper identifies the canonical public code repository. It was not cloned during this phase.",
+      "repository": "https://github.com/athenarc/UDFBench",
+      "paper": "https://www.vldb.org/pvldb/vol18/p2804-foufoulas.pdf"
+    }
+  ]
+}

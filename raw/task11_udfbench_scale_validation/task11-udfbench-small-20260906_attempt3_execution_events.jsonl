@@ -1,0 +1,95 @@
+{"phase": "SETUP", "row_counts": {"artifact_abstracts": 137454, "artifact_authorlists": 127269, "artifact_authors": 1022184, "artifact_charges": 17057, "artifact_citations": 15218, "artifacts": 376152, "project_artifactcount": 469604, "projects": 469604, "projects_artifacts": 628274, "views_stats": 9686539}, "status": "PASS", "system": "SQLite", "timestamp_ns": 1788668857568348528}
+{"phase": "SETUP", "row_counts": {"artifact_abstracts": 137454, "artifact_authorlists": 127269, "artifact_authors": 1022184, "artifact_charges": 17057, "artifact_citations": 15218, "artifacts": 376152, "project_artifactcount": 469604, "projects": 469604, "projects_artifacts": 628274, "views_stats": 9686539}, "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788668885215126823}
+{"phase": "SETUP", "row_counts": {"artifact_abstracts": 137454, "artifact_authorlists": 127269, "artifact_authors": 1022184, "artifact_charges": 17057, "artifact_citations": 15218, "artifacts": 376152, "project_artifactcount": 469604, "projects": 469604, "projects_artifacts": 628274, "views_stats": 9686539}, "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788668932239171998}
+{"error": "", "phase": "SEMANTIC_VALIDATION", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669252085038242, "workload": "Q8"}
+{"error": "", "phase": "SEMANTIC_VALIDATION", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669269211683151, "workload": "Q14"}
+{"error": "", "phase": "SEMANTIC_VALIDATION", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788669269471212962, "workload": "Q8"}
+{"error": "", "phase": "SEMANTIC_VALIDATION", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788669274418353554, "workload": "Q14"}
+{"error": "", "phase": "SEMANTIC_VALIDATION", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788669580501303594, "workload": "Q17"}
+{"error": "", "phase": "SEMANTIC_VALIDATION", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788669580600684182, "workload": "Q8"}
+{"error": "", "phase": "SEMANTIC_VALIDATION", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788669584041982227, "workload": "Q14"}
+{"error": "", "phase": "SEMANTIC_REPEAT", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788669890425664475, "workload": "Q17"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669893263057452, "trial": 1, "wall_time_ms": "2806.312849", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669893564258386, "trial": 1, "wall_time_ms": "276.405267", "workload": "Q8"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669910155099844, "trial": 2, "wall_time_ms": "16567.576636", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669912078407133, "trial": 2, "wall_time_ms": "1878.530202", "workload": "Q8"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669928861948121, "trial": 3, "wall_time_ms": "16678.902983", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669929198523266, "trial": 3, "wall_time_ms": "316.091632", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669930216905894, "trial": 1, "wall_time_ms": "1000.565182", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669945845743918, "trial": 1, "wall_time_ms": "15611.871300", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669963192212453, "trial": 2, "wall_time_ms": "17327.706905", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669964421254867, "trial": 2, "wall_time_ms": "1211.905690", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669964719012590, "trial": 3, "wall_time_ms": "277.521929", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669981924589463, "trial": 3, "wall_time_ms": "17186.282263", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669997620475542, "trial": 4, "wall_time_ms": "15634.788617", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788669997929200142, "trial": 4, "wall_time_ms": "282.693615", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670015505210044, "trial": 5, "wall_time_ms": "17556.677972", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670015885705551, "trial": 5, "wall_time_ms": "356.458711", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670016203593349, "trial": 6, "wall_time_ms": "300.028122", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670033895757883, "trial": 6, "wall_time_ms": "17670.753125", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670034274534812, "trial": 7, "wall_time_ms": "319.176410", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670050969687142, "trial": 7, "wall_time_ms": "16672.563948", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670051313369426, "trial": 8, "wall_time_ms": "325.288738", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670068111043734, "trial": 8, "wall_time_ms": "16779.136791", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670068400650022, "trial": 9, "wall_time_ms": "270.140350", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670085045857886, "trial": 9, "wall_time_ms": "16623.438202", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670101343344116, "trial": 10, "wall_time_ms": "16161.854823", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "SQLite", "timestamp_ns": 1788670102420324157, "trial": 10, "wall_time_ms": "1028.560804", "workload": "Q8"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670106971756562, "trial": 1, "wall_time_ms": "4480.570900", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670107157511350, "trial": 1, "wall_time_ms": "145.455505", "workload": "Q8"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670365919366541, "trial": 1, "wall_time_ms": "258695.091931", "workload": "Q17"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670366142363086, "trial": 2, "wall_time_ms": "142.854094", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670623394138879, "trial": 1, "wall_time_ms": "257194.845219", "workload": "Q17"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670628094116492, "trial": 2, "wall_time_ms": "4560.203774", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670628305351084, "trial": 3, "wall_time_ms": "158.287083", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670886818967322, "trial": 2, "wall_time_ms": "258437.182214", "workload": "Q17"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788670891323071136, "trial": 3, "wall_time_ms": "4429.060540", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671149975946814, "trial": 3, "wall_time_ms": "258554.015060", "workload": "Q17"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671150275195182, "trial": 1, "wall_time_ms": "197.201952", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671155032035736, "trial": 1, "wall_time_ms": "4668.366815", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671155239735443, "trial": 2, "wall_time_ms": "147.132204", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671159835640834, "trial": 2, "wall_time_ms": "4487.992619", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671418792253440, "trial": 4, "wall_time_ms": "258895.324141", "workload": "Q17"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671677565780396, "trial": 5, "wall_time_ms": "258679.165922", "workload": "Q17"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671677750528784, "trial": 3, "wall_time_ms": "142.279230", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671682306590332, "trial": 3, "wall_time_ms": "4492.276169", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671687036004638, "trial": 4, "wall_time_ms": "4600.705535", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671687243397338, "trial": 4, "wall_time_ms": "147.959360", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671691745101705, "trial": 5, "wall_time_ms": "4420.248626", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671691962039827, "trial": 5, "wall_time_ms": "149.667633", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671696803191305, "trial": 6, "wall_time_ms": "4770.680719", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671696949075701, "trial": 6, "wall_time_ms": "93.570680", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671701550377527, "trial": 7, "wall_time_ms": "4495.253073", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671701748360772, "trial": 7, "wall_time_ms": "151.551212", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671701897702570, "trial": 8, "wall_time_ms": "97.657693", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671706569392801, "trial": 8, "wall_time_ms": "4579.643191", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671711323136727, "trial": 9, "wall_time_ms": "4662.414150", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671711516458191, "trial": 9, "wall_time_ms": "143.596736", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671711663554733, "trial": 10, "wall_time_ms": "89.788399", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "DuckDB", "timestamp_ns": 1788671716139634496, "trial": 10, "wall_time_ms": "4397.780103", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671719066274910, "trial": 1, "wall_time_ms": "2921.753515", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671719186624863, "trial": 1, "wall_time_ms": "115.626429", "workload": "Q8"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671722141116556, "trial": 2, "wall_time_ms": "2950.747015", "workload": "Q14"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671722229274493, "trial": 2, "wall_time_ms": "84.542217", "workload": "Q8"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671722319037858, "trial": 3, "wall_time_ms": "86.258043", "workload": "Q8"}
+{"error": "", "phase": "TIMING_WARMUP", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671725241929712, "trial": 3, "wall_time_ms": "2918.776729", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671725333561586, "trial": 1, "wall_time_ms": "87.821623", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671728200822021, "trial": 1, "wall_time_ms": "2862.890171", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671728309372209, "trial": 2, "wall_time_ms": "104.589902", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671731267558704, "trial": 2, "wall_time_ms": "2953.202220", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671731405333369, "trial": 3, "wall_time_ms": "123.336124", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671734273766771, "trial": 3, "wall_time_ms": "2862.514004", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671734364455521, "trial": 4, "wall_time_ms": "86.369661", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671737363295740, "trial": 4, "wall_time_ms": "2994.864361", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671740268381964, "trial": 5, "wall_time_ms": "2899.908760", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671740356035057, "trial": 5, "wall_time_ms": "83.432803", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671740443408265, "trial": 6, "wall_time_ms": "83.924057", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671743374700319, "trial": 6, "wall_time_ms": "2927.016627", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671746407651655, "trial": 7, "wall_time_ms": "3028.605001", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671746503000046, "trial": 7, "wall_time_ms": "87.185936", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671746601997940, "trial": 8, "wall_time_ms": "94.861037", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671749521458716, "trial": 8, "wall_time_ms": "2915.316011", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671749610654820, "trial": 9, "wall_time_ms": "84.467100", "workload": "Q8"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671752577015039, "trial": 9, "wall_time_ms": "2962.487719", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671755453270128, "trial": 10, "wall_time_ms": "2871.887850", "workload": "Q14"}
+{"error": "", "phase": "TIMING_MEASURED", "status": "PASS", "system": "PostgreSQL", "timestamp_ns": 1788671755560718467, "trial": 10, "wall_time_ms": "103.248743", "workload": "Q8"}

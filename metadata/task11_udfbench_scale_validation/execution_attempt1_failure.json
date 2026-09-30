@@ -1,0 +1,9 @@
+{
+  "attempt": 1,
+  "phase": "ENVIRONMENT_MANIFEST_BEFORE_DATABASE_SETUP",
+  "status": "FAIL_PRE_EXECUTION",
+  "error_type": "FileNotFoundError",
+  "error": "sqlite3 CLI was not installed",
+  "effect": "No database was created; no plan, semantic query, warmup, or measured trial ran.",
+  "recovery": "Record sqlite3.sqlite_version from the validated Python standard-library binding; do not install a new package and do not change the experimental protocol."
+}

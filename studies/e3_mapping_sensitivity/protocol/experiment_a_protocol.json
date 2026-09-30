@@ -1,0 +1,34 @@
+{
+  "experiment": "A: native E3 work-unit-to-cost mapping sensitivity",
+  "status": "FROZEN_BEFORE_NEW_PLAN_OBSERVATION",
+  "created_date": "2026-09-21",
+  "dataset": {
+    "path": "experiments/workloads/synthetic/generated/e3-20260830T051639Z/e3_low_high_r10000_seed42.csv",
+    "sha256": "bb8e82f203ecc59795701fe82c90a2365482c42bce6545fbe793cfebdbbb614a",
+    "rows": 10000
+  },
+  "scales_work_units_per_pg_cost_unit": [25, 50, 100, 200, 400, 800, 1600, 3200, 6400],
+  "cells_per_scale": ["Q_low+M1_GLOBAL", "Q_low+M2_CONDITIONED", "Q_high+M1_GLOBAL", "Q_high+M2_CONDITIONED"],
+  "timing": {
+    "warmups": 3,
+    "measured_trials": 10,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 3601,
+    "execution_order": "deterministic randomized complete blocks",
+    "high_variance_cv_threshold": 0.10,
+    "diagnostic_trials_if_high_variance": 30
+  },
+  "controls": {
+    "postgresql": "14.24 project-local payload",
+    "same_data_sql_statistics_index_and_gucs": true,
+    "enable_seqscan": true,
+    "enable_indexscan": true,
+    "enable_bitmapscan": true,
+    "jit": false,
+    "max_parallel_workers_per_gather": 0,
+    "planner_hints_or_path_disabling": false
+  },
+  "boundary_refinement": "After the complete initial grid, bisect each adjacent scale pair whose selected plan differs; stop when adjacent integer scales or after 12 bisections. Refinement never replaces the initial grid.",
+  "semantic_gate": ["exact tuple equality", "aggregate row count equality", "deterministic output hash equality"],
+  "integrity": "Report every grid cell, null result, failure, and high-variance block. Do not tune the grid after observing plans."
+}

@@ -1,0 +1,5 @@
+{"details": {"manifest_sha256": "3601906440d1e0f811a904e1015d8db351900ca3a40e4623ec7d9da6d82aceb2", "protected_files": 28313}, "event": "PRE_FREEZE_COMPLETE", "run_id": "task5-r3-audit-20260903T031908Z", "status": "PASS", "timestamp_utc": "2026-09-03T03:03:00Z"}
+{"details": {"candidate_ids": ["boulos1999", "he2005", "dyno2014", "monsoon2020"]}, "event": "TASK1_CANDIDATES_EXTRACTED", "run_id": "task5-r3-audit-20260903T031908Z", "status": "PASS", "timestamp_utc": "2026-09-03T03:08:00Z"}
+{"details": {"head": "685f446790707fcbb0ce0e5b4b073e116a498eda"}, "event": "MONSOON_REMOTE_VERIFIED", "run_id": "task5-r3-audit-20260903T031908Z", "status": "PASS", "timestamp_utc": "2026-09-03T03:13:00Z"}
+{"details": {"optimizer_source_present": false, "tracked_files": ["UDFBenchmark/Overview.pdf"]}, "event": "MONSOON_TREE_INSPECTED", "run_id": "task5-r3-audit-20260903T031908Z", "status": "NONEXECUTABLE", "timestamp_utc": "2026-09-03T03:15:00Z"}
+{"details": {"selected_method": null, "stop_phase": "C", "surrogate_created": false}, "event": "PHASE_C_SELECTION_GATE", "run_id": "task5-r3-audit-20260903T031908Z", "status": "NO_GO", "timestamp_utc": "2026-09-03T03:19:08Z"}

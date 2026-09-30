@@ -1,0 +1,24 @@
+{
+  "classification_input": "unmodified released natural SQL; released PostgreSQL EXPLAIN wrapper removed",
+  "plan": [
+    [
+      5,
+      0,
+      0,
+      "SCAN artifact_citations"
+    ],
+    [
+      7,
+      0,
+      0,
+      "SEARCH artifact_authorlists USING INDEX sqlite_autoindex_artifact_authorlists_1 (artifactid=?)"
+    ]
+  ],
+  "plan_capture_wall_ms": 1.510712,
+  "run_id": "task11-udfbench-small-20260906",
+  "scale": "small",
+  "sql": "Select aggregate_avg(jsoncount(target)), aggregate_avg(jsoncount(authorlist)) from artifact_citations,artifact_authorlists where artifact_citations.artifactid=artifact_authorlists.artifactid",
+  "status": "CAPTURED",
+  "system": "SQLite",
+  "workload": "Q8"
+}

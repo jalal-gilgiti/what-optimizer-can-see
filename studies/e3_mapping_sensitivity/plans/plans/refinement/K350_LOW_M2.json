@@ -1,0 +1,53 @@
+{
+  "Plan": {
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(e3_dynamic_loop(value, loop_count))"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Alias": "e3_data",
+        "Async Capable": false,
+        "Node Type": "Bitmap Heap Scan",
+        "Output": [
+          "id",
+          "value",
+          "population",
+          "loop_count"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 5000,
+        "Plan Width": 16,
+        "Plans": [
+          {
+            "Async Capable": false,
+            "Index Cond": "((e3_data.population = 'LOW'::text) AND (e3_dynamic_loop(e3_data.value, e3_data.loop_count) >= 0))",
+            "Index Name": "e3_population_expression_idx",
+            "Node Type": "Bitmap Index Scan",
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 5000,
+            "Plan Width": 0,
+            "Startup Cost": 0.0,
+            "Total Cost": 134.28
+          }
+        ],
+        "Recheck Cond": "((e3_data.population = 'LOW'::text) AND (e3_dynamic_loop(e3_data.value, e3_data.loop_count) >= 0))",
+        "Relation Name": "e3_data",
+        "Schema": "public",
+        "Startup Cost": 135.53,
+        "Total Cost": 427.39
+      }
+    ],
+    "Startup Cost": 595.25,
+    "Strategy": "Plain",
+    "Total Cost": 595.26
+  }
+}

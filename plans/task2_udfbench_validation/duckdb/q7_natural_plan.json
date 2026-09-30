@@ -1,0 +1,10 @@
+{
+  "classification_input": "natural released SQL",
+  "plan": [
+    [
+      "physical_plan",
+      "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502   \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500   \u2502\n\u2502     16.775974025974026    \u2502\n\u2502     8.663522012578616     \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518                             \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         DUMMY_SCAN        \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518                             \n"
+    ]
+  ],
+  "sql": "select aggregate_avg('select jsoncount(t.citations) as citations from(\n    select unnest(file_q7(''pubmed_q7.txt'',''json'')) as t)','citations') as avg_cit,\n     aggregate_avg('select jsoncount(t.authors) as authors from(\n    select unnest(file_q7(''pubmed_q7.txt'',''json'')) as t)','authors') as avg_auth"
+}

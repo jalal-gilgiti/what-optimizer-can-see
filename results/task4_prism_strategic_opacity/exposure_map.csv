@@ -1,0 +1,6 @@
+workload_id,procedural_region,prism_exposure_decision,relational_representation,optimizer_consumer,still_opaque,evidence
+tpch_q6,"whole branch/return CFG",outline,"q6conditions_outlined_0 scalar call; five predicate macros printed as analysis output but not registered",DuckDB scalar-function binder,all internal comparisons and branches,q6_transpile_unsigned.log
+tpch_q19,"whole nested branch CFG",outline,"q19conditions_outlined_0 scalar call; five predicate macros printed as analysis output but not registered",DuckDB scalar-function binder,all internal comparisons and branches,q19_transpile.log
+getManufact_complex_boundary,"itm > 500 branch",outline,getManufact_complex_outlined_0 scalar call,unconsumed because residual function is not registered,branch internals,getManufact_complex_transpile.log
+getManufact_complex_boundary,"three SELECT expressions",retain_after_query_motion,"SELECT COUNT and nested SELECT expressions in emitted residual PL/pgSQL",would require DuckDB relational optimizer after residual registration,none in emitted text,getManufact_complex_transpile.log
+getManufact_complex_boundary,"cnt1/cnt2 result branch",outline,getManufact_complex_outlined_1 scalar call,unconsumed because residual function is not registered,branch internals,getManufact_complex_transpile.log

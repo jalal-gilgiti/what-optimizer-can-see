@@ -1,0 +1,23 @@
+workload,system,scale,status,raw_status,row_count,output_hash,hash_method,null_cell_count,cross_system_equivalent,timing_eligible,exception_or_boundary,dialect_difference
+Q8,SQLite,tiny,VALID,PASS,1,6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb,Task2 sorted canonical SHA-256,NOT_RECORDED,True,True,,NONE_OBSERVED
+Q8,DuckDB,tiny,VALID,PASS,1,6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb,Task2 sorted canonical SHA-256,NOT_RECORDED,True,True,,NONE_OBSERVED
+Q8,PostgreSQL,tiny,VALID,PASS,1,6e681accbd79efd44c5e9e06d3aff6bd8fb4c415430fd327fbba466f0d01aebb,Task2 sorted canonical SHA-256,NOT_RECORDED,True,True,,NONE_OBSERVED
+Q14,SQLite,tiny,VALID,PASS,6631,0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2,Task2 sorted canonical SHA-256,NOT_RECORDED,True,True,,NONE_OBSERVED
+Q14,DuckDB,tiny,VALID,PASS,6631,0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2,Task2 sorted canonical SHA-256,NOT_RECORDED,True,True,,NONE_OBSERVED
+Q14,PostgreSQL,tiny,VALID,PASS,6631,0eae7c555b19b73e6181af9ce8b9f1e123ba16ec1f7fa6e7cb0caf5d69d6a5c2,Task2 sorted canonical SHA-256,NOT_RECORDED,True,True,,NONE_OBSERVED
+Q17,SQLite,tiny,ENGINE_UNSUPPORTED,UNSUPPORTED_BY_SYSTEM,,,Task2 sorted canonical SHA-256,NOT_RECORDED,False,False,Selected workload is absent from the released direct SQLite adapter; the separate APSW virtual-table path was not introduced.,NONE_OBSERVED
+Q17,DuckDB,tiny,VALID,PASS,837254,44bca863d41c857ab111e97dae00edb6aa2d0dbcdd420f14396449610c7a210d,Task2 sorted canonical SHA-256,NOT_RECORDED,False,True,,NONE_OBSERVED
+Q17,PostgreSQL,tiny,DIALECT_FAILURE,FAIL,,,Task2 sorted canonical SHA-256,NOT_RECORDED,False,False,"InternalError_: error fetching next item from iterator
+DETAIL:  plpy.Error: Error processing ordered group: subquery in FROM must have an alias
+CONTEXT:  Traceback (most recent call last):
+PL/Python function ""jgroupordered""
+",released PostgreSQL Q17 nested derived-table syntax
+Q8,SQLite,small,VALID,PASS,1,6c7d5939111fcd60f59b16954f41e7f1cae1f56b6a83f6f8df6abf3df3096027,order-independent SHA-256 row digest sum+xor; normalized values,0,True,True,,NONE_OBSERVED
+Q8,DuckDB,small,VALID,PASS,1,6c7d5939111fcd60f59b16954f41e7f1cae1f56b6a83f6f8df6abf3df3096027,order-independent SHA-256 row digest sum+xor; normalized values,0,True,True,,NONE_OBSERVED
+Q8,PostgreSQL,small,VALID,PASS,1,6c7d5939111fcd60f59b16954f41e7f1cae1f56b6a83f6f8df6abf3df3096027,order-independent SHA-256 row digest sum+xor; normalized values,0,True,True,,NONE_OBSERVED
+Q14,SQLite,small,VALID,PASS,47146,d124f8749c99e23b4978cdfe1331022c3429c2ceb5a6e56eeaf32376191f27f5,order-independent SHA-256 row digest sum+xor; normalized values,0,True,True,,NONE_OBSERVED
+Q14,DuckDB,small,VALID,PASS,47146,d124f8749c99e23b4978cdfe1331022c3429c2ceb5a6e56eeaf32376191f27f5,order-independent SHA-256 row digest sum+xor; normalized values,0,True,True,,NONE_OBSERVED
+Q14,PostgreSQL,small,VALID,PASS,47146,d124f8749c99e23b4978cdfe1331022c3429c2ceb5a6e56eeaf32376191f27f5,order-independent SHA-256 row digest sum+xor; normalized values,0,True,True,,NONE_OBSERVED
+Q17,SQLite,small,ENGINE_UNSUPPORTED,ENGINE_UNSUPPORTED,,,,NOT_RECORDED,False,False,no released direct SQLite adapter for Q17,NONE_OBSERVED
+Q17,DuckDB,small,VALID,PASS,6310817,43ac4fc9b2afec9204ef6fa66fe4d5156ab34f742413b3d11f27f01e7f061e30,order-independent SHA-256 row digest sum+xor; normalized values,0,False,True,,NONE_OBSERVED
+Q17,PostgreSQL,small,DIALECT_FAILURE,DIALECT_FAILURE_FROZEN_TASK2,,,,NOT_RECORDED,False,False,released PostgreSQL Q17 fails on unnest(record); not repaired,released PostgreSQL Q17 nested derived-table syntax

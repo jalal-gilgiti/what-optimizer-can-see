@@ -1,0 +1,84 @@
+{
+  "captured_at_utc": "2026-08-29T08:56:52.190790+00:00",
+  "classification": "ISOLATED_LOCAL_SETUP",
+  "database": "survey_experiments",
+  "datasets": [
+    {
+      "path": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r100_rho1p0_seed42.csv",
+      "sha256": "11367cc2662a9ae7027e59825c9ba4e8aecc7026a87c9be5ce0bd9c1a9b909d9"
+    },
+    {
+      "path": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r1000_rho1p0_seed42.csv",
+      "sha256": "c5ca24281419c3f81b721919826266e7fe2cc38c795e85d101814ef2f3ca233a"
+    },
+    {
+      "path": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r10000_rho1p0_seed42.csv",
+      "sha256": "ecb6cb46ef9a6ba6ccbd041c4f2dddd25a64a3c24cb06e73dedd3661b5c815c5"
+    },
+    {
+      "path": "<PROJECT_ROOT>/workloads/synthetic/generated/relational_selectivity_r10000_rho1p0_seed42.csv",
+      "sha256": "ecb6cb46ef9a6ba6ccbd041c4f2dddd25a64a3c24cb06e73dedd3661b5c815c5"
+    },
+    {
+      "path": "<PROJECT_ROOT>/workloads/synthetic/generated/relational_selectivity_r10000_rho0p5_seed42.csv",
+      "sha256": "c2b43a2bea8b0b64d8bc081be2a0e20979ce3645891e1edcb9d7f76373c1f658"
+    },
+    {
+      "path": "<PROJECT_ROOT>/workloads/synthetic/generated/relational_selectivity_r10000_rho0p1_seed42.csv",
+      "sha256": "8a6c67bf992140d5c60ebfda3697fbe98e4bba1f87c018818fd7e523abcba1a8"
+    },
+    {
+      "path": "<PROJECT_ROOT>/workloads/synthetic/generated/relational_selectivity_r10000_rho0p01_seed42.csv",
+      "sha256": "051a7552a25ed0981453d8246008505903c4f4ca9c11b6666f62a0f11edf9d54"
+    }
+  ],
+  "encoding": "UTF8",
+  "libpq_version": 170006,
+  "locale_collate": "C.UTF-8",
+  "locale_ctype": "C.UTF-8",
+  "package_deployment": "Ubuntu .deb payloads extracted project-locally; maintainer scripts not executed",
+  "package_files": [
+    {
+      "filename": "libpq5_14.24-0ubuntu0.22.04.1_amd64.deb",
+      "sha256": "79f9af127350c5bbf4c1722ebc4aa7d31ae4fd71b0404e501f7a76ed65709e0d"
+    },
+    {
+      "filename": "postgresql-14_14.24-0ubuntu0.22.04.1_amd64.deb",
+      "sha256": "d3f5c254fac89a46d9c92c3f098a1c8635b3445f5d9fd609a05041cda6ed4aef"
+    },
+    {
+      "filename": "postgresql-client-14_14.24-0ubuntu0.22.04.1_amd64.deb",
+      "sha256": "d63f6b9020c137fe6c47f9f68cababdd2f09f57ff26df79768daa0f3d3a35e8a"
+    },
+    {
+      "filename": "postgresql-plpython3-14_14.24-0ubuntu0.22.04.1_amd64.deb",
+      "sha256": "c4cea16bba7321e91a73c811db1c4e6289c2a002e116a4c606316a788b2a6fe7"
+    }
+  ],
+  "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+  "plpython_extension_version": "1.0",
+  "plpython_python_version": "3.10.12 (main, Jul 15 2026, 23:40:17) [GCC 11.4.0]",
+  "port": 55432,
+  "postgresql_version": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, 64-bit",
+  "psycopg2_version": "2.9.11 (dt dec pq3 ext lo64)",
+  "python": "3.10.12",
+  "run_id": "postgresql-20260829T084826Z",
+  "settings": {
+    "TimeZone": "UTC",
+    "cpu_operator_cost": "0.0025",
+    "cpu_tuple_cost": "0.01",
+    "effective_cache_size": "512MB",
+    "jit": "off",
+    "listen_addresses": "",
+    "max_parallel_workers": "0",
+    "max_parallel_workers_per_gather": "0",
+    "port": "55432",
+    "random_page_cost": "4",
+    "shared_buffers": "128MB",
+    "unix_socket_directories": "/tmp/pg-survey-084826",
+    "work_mem": "4MB"
+  },
+  "socket_directory": "/tmp/pg-survey-084826",
+  "tcp_disabled": true,
+  "user": "<REDACTED_USER>"
+}

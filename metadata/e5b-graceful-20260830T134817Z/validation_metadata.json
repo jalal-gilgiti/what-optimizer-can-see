@@ -1,0 +1,57 @@
+{
+  "artifacts": {
+    "normalized_predictions": "experiments/results/normalized/e5b-graceful-20260830T134817Z/predictions.csv",
+    "normalized_predictions_sha256": "9e016b344045af5cda2ef9edc31545fcde0b598c1801f7f9b07eb40110526d6d",
+    "raw_e1": "experiments/results/raw/e5b-graceful-20260830T134817Z/e1_predictions.json",
+    "raw_e1_sha256": "604d92b5b3c0af1cd59a025d815306177d644232c53edb9678908ca36578d0cc",
+    "raw_e2": "experiments/results/raw/e5b-graceful-20260830T134817Z/e2_predictions.json",
+    "raw_e2_sha256": "dfa20d1362d688457f6fcb7a5e537f53eeb2a4bd01aaee5446fbe7ec8d5bcb48",
+    "report": "experiments/docs/e5b_graceful_compatible_e5b-graceful-20260830T134817Z.md",
+    "report_sha256": "ade8c6f4f69f42c4edd90d5a5c675b89c81b1441b9c35ad0436f8017ead1dcb0",
+    "representation_inspection": "experiments/results/plans/e5b-graceful-20260830T134817Z/representation_inspection.json",
+    "representation_inspection_sha256": "24b51402b4dd6f44f2b044d1ca00c58bf4c94c940c878b2afe7c920253c1b27a"
+  },
+  "checkpoint": {
+    "epoch": 60,
+    "path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/graceful_artifacts/leave_out_genome/act_minrt50ms_complex_dd_wpullupdata_wnoUDFdata_ddactfonudf_liboh_gradnorm_mldupl_loopend_loopedge_genome_stratDBs_ep60_maxr30_20240503_115437_074.pt",
+    "sha256": "105f756a80111c281de207f69d03bc4913574e1fa6bee8b01aea5906d0f70969"
+  },
+  "compatibility": {
+    "e2_pair": "SUPPORTED",
+    "lambda_1": "PASS",
+    "lambda_100": "PASS"
+  },
+  "decision": "CONDITIONAL GO",
+  "decision_reason": "All requested representations and predictions succeeded, but Lambda=1 Q-error is 16.4378 and Lambda=100 E1 Q-error is 2.2113; predictive use should remain conditional despite compatibility.",
+  "feature_statistics": {
+    "path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/workload_runs/duckdb_pushdown/parsed_plans/statistics_workload_combined.json",
+    "sha256": "d9ac1ee473e836a21a57588594c1f529a3989a896929353a7da40f5ecbc84375"
+  },
+  "freeze_audit": {
+    "after": "experiments/metadata/e5b-graceful-20260830T134817Z/frozen_artifacts_after.json",
+    "before": "experiments/metadata/e5b-graceful-20260830T134817Z/frozen_artifacts_before.json",
+    "status": "PASS",
+    "unchanged_count": 5683
+  },
+  "frozen_datasets_regenerated": false,
+  "graceful_featurization_modified": false,
+  "lambda_960_tested": false,
+  "new_system_started": false,
+  "reused_environment": "experiments/runtime/graceful/e5-graceful-20260830T064548Z/env",
+  "run_id": "e5b-graceful-20260830T134817Z",
+  "schema_version": "1.0.0",
+  "scope": "E5b Graceful-compatible controlled probe only",
+  "semantic_equivalence": {
+    "rows_per_case": 10000,
+    "status": "PASS"
+  },
+  "source_ablation": {
+    "reason": "The source documents training configurations for general ablations, but the pinned released artifact set contains no matched clean source-structure ablation checkpoint. Applying mp_ignore_udf at inference to the full checkpoint would not be a clean released ablation and was not run.",
+    "status": "UNSUPPORTED"
+  },
+  "source_clean_after_execution": true,
+  "source_commit": "df053f641722102f9f9a07162e58665a9ecfb40b",
+  "status": "PASS",
+  "third_loop_tested": false,
+  "training_or_finetuning": false
+}

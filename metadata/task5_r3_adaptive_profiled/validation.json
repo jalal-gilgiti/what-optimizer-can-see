@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "all_task1_r3_profile_candidates_audited": "PASS",
+    "custom_surrogate_created": "NO",
+    "earlier_experiments_rerun": "NO",
+    "exactly_one_method_selected": "NOT_APPLICABLE_NONE_EXECUTABLE",
+    "existing_environments_modified": "NO",
+    "frozen_datasets_regenerated": "NO",
+    "historical_implementation_invented": "NO",
+    "submission_source_modified": "NO",
+    "phase_c_stop_obeyed": "PASS",
+    "post_freeze": "PASS",
+    "task1_inputs_hashed": "PASS",
+    "workloads_executed": "NO"
+  },
+  "created_at_utc": "2026-09-03T03:27:44.917244Z",
+  "required_output_placeholders": "Files for phases barred by the stop rule contain explicit NOT_RUN/UNSUPPORTED rows and must not be interpreted as experimental results.",
+  "run_id": "task5-r3-audit-20260903T031908Z",
+  "schema_version": 1,
+  "task5_decision": "NO_GO",
+  "task5_verification": "PASS"
+}

@@ -1,0 +1,139 @@
+{
+  "case_id": "Q14_GROUNDED_TABLE",
+  "classification_input": "natural SQL, EXPLAIN without ANALYZE",
+  "plan": {
+    "Plan": {
+      "Async Capable": false,
+      "Node Type": "Aggregate",
+      "Output": [
+        "count(*)"
+      ],
+      "Parallel Aware": false,
+      "Partial Mode": "Simple",
+      "Plan Rows": 1,
+      "Plan Width": 8,
+      "Plans": [
+        {
+          "Async Capable": false,
+          "Hash Cond": "(pa.artifactid = a.id)",
+          "Inner Unique": true,
+          "Join Type": "Inner",
+          "Node Type": "Hash Join",
+          "Parallel Aware": false,
+          "Parent Relationship": "Outer",
+          "Plan Rows": 4523,
+          "Plan Width": 0,
+          "Plans": [
+            {
+              "Async Capable": false,
+              "Hash Cond": "(pa.projectid = p.id)",
+              "Inner Unique": true,
+              "Join Type": "Inner",
+              "Node Type": "Hash Join",
+              "Output": [
+                "pa.artifactid"
+              ],
+              "Parallel Aware": false,
+              "Parent Relationship": "Outer",
+              "Plan Rows": 18669,
+              "Plan Width": 47,
+              "Plans": [
+                {
+                  "Alias": "pa",
+                  "Async Capable": false,
+                  "Node Type": "Seq Scan",
+                  "Output": [
+                    "pa.projectid",
+                    "pa.artifactid",
+                    "pa.provenance"
+                  ],
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Outer",
+                  "Plan Rows": 83467,
+                  "Plan Width": 94,
+                  "Relation Name": "projects_artifacts",
+                  "Schema": "public",
+                  "Startup Cost": 0.0,
+                  "Total Cost": 2270.67
+                },
+                {
+                  "Async Capable": false,
+                  "Node Type": "Hash",
+                  "Output": [
+                    "p.id"
+                  ],
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Inner",
+                  "Plan Rows": 8763,
+                  "Plan Width": 47,
+                  "Plans": [
+                    {
+                      "Alias": "p",
+                      "Async Capable": false,
+                      "Filter": "(p.funder = 'European Commission'::text)",
+                      "Node Type": "Seq Scan",
+                      "Output": [
+                        "p.id"
+                      ],
+                      "Parallel Aware": false,
+                      "Parent Relationship": "Outer",
+                      "Plan Rows": 8763,
+                      "Plan Width": 47,
+                      "Relation Name": "projects",
+                      "Schema": "public",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 2181.78
+                    }
+                  ],
+                  "Startup Cost": 2181.78,
+                  "Total Cost": 2181.78
+                }
+              ],
+              "Startup Cost": 2291.31,
+              "Total Cost": 4781.11
+            },
+            {
+              "Async Capable": false,
+              "Node Type": "Hash",
+              "Output": [
+                "a.id"
+              ],
+              "Parallel Aware": false,
+              "Parent Relationship": "Inner",
+              "Plan Rows": 12115,
+              "Plan Width": 47,
+              "Plans": [
+                {
+                  "Alias": "a",
+                  "Async Capable": false,
+                  "Filter": "(a.year >= 2020)",
+                  "Node Type": "Seq Scan",
+                  "Output": [
+                    "a.id"
+                  ],
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Outer",
+                  "Plan Rows": 12115,
+                  "Plan Width": 47,
+                  "Relation Name": "artifacts",
+                  "Schema": "public",
+                  "Startup Cost": 0.0,
+                  "Total Cost": 2612.0
+                }
+              ],
+              "Startup Cost": 2612.0,
+              "Total Cost": 2612.0
+            }
+          ],
+          "Startup Cost": 5054.75,
+          "Total Cost": 7593.55
+        }
+      ],
+      "Startup Cost": 7604.86,
+      "Strategy": "Plain",
+      "Total Cost": 7604.87
+    }
+  },
+  "submitted_sql": "SELECT count(*) FROM task3_r4.ec_artifacts_visible('European Commission') AS e WHERE e.publication_year >= 2020",
+  "variant": "higher"
+}

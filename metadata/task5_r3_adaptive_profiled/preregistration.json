@@ -1,0 +1,12 @@
+{
+  "created_at_utc": "2026-09-03T03:19:08Z",
+  "leakage_risk": "NONE_NO_MODEL_OR_WORKLOAD_EXECUTION",
+  "outcomes_examined": false,
+  "planned_hypotheses_evaluated": [],
+  "reason": "The protocol requires stopping in Phase C when no faithful executable method exists; creating a post hoc experimental preregistration would be misleading.",
+  "run_id": "task5-r3-audit-20260903T031908Z",
+  "schema_version": 1,
+  "selected_method": null,
+  "status": "NOT_PREREGISTERED_PHASE_C_STOP",
+  "workload_execution_authorized": false
+}

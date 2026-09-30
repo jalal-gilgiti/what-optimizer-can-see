@@ -1,0 +1,30 @@
+QUERY
+SELECT COUNT(*), SUM(fixed_loop(value)) FROM input_rows
+
+EXPLAIN
+┌───────────────────────────┐
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│        Aggregates:        │
+│        count_star()       │
+│          sum(#0)          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│     fixed_loop(value)     │
+│                           │
+│         ~100 rows         │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│          SEQ_SCAN         │
+│    ────────────────────   │
+│           Table:          │
+│   memory.main.input_rows  │
+│                           │
+│   Type: Sequential Scan   │
+│     Projections: value    │
+│                           │
+│         ~100 rows         │
+└───────────────────────────┘
+

@@ -1,0 +1,80 @@
+{
+  "classification_input": "natural released SQL without EXPLAIN ANALYZE wrapper",
+  "plan": [
+    {
+      "Plan": {
+        "Alias": "jgroupordered",
+        "Async Capable": false,
+        "Function Call": "jgroupordered('select  term,docid,(1.0*count(*))/(1.0* sum(count(*)) OVER (PARTITION BY docid)) AS tf \nfrom(\n    \n        select docid, Strsplitv(abstract) as term from(\n            select  artifactid as docid, stem(filterstopwords(keywords(lowerize(abstract)))) as abstract from artifact_abstracts\n        )\n     )\n    group by term,docid'::text, 'term'::text, 'docid'::text)",
+        "Function Name": "jgroupordered",
+        "Node Type": "Function Scan",
+        "Output": [
+          "jgroupordered.docid",
+          "jgroupordered.term",
+          "(jgroupordered.tf * (log_10(((($0)::numeric * 1.0) / (1.0 + (jgroupordered.jcount)::numeric))) + '1'::double precision))"
+        ],
+        "Parallel Aware": false,
+        "Plan Rows": 1000,
+        "Plan Width": 72,
+        "Plans": [
+          {
+            "Async Capable": false,
+            "Node Type": "Aggregate",
+            "Output": [
+              "max((count(DISTINCT artifact_abstracts.artifactid)))"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "InitPlan",
+            "Partial Mode": "Simple",
+            "Plan Rows": 1,
+            "Plan Width": 8,
+            "Plans": [
+              {
+                "Async Capable": false,
+                "Node Type": "Aggregate",
+                "Output": [
+                  "count(DISTINCT artifact_abstracts.artifactid)"
+                ],
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Partial Mode": "Simple",
+                "Plan Rows": 1,
+                "Plan Width": 8,
+                "Plans": [
+                  {
+                    "Alias": "artifact_abstracts",
+                    "Async Capable": false,
+                    "Node Type": "Seq Scan",
+                    "Output": [
+                      "artifact_abstracts.artifactid",
+                      "artifact_abstracts.abstract"
+                    ],
+                    "Parallel Aware": false,
+                    "Parent Relationship": "Outer",
+                    "Plan Rows": 18170,
+                    "Plan Width": 47,
+                    "Relation Name": "artifact_abstracts",
+                    "Schema": "public",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1741.7
+                  }
+                ],
+                "Startup Cost": 1787.12,
+                "Strategy": "Plain",
+                "Total Cost": 1787.13
+              }
+            ],
+            "Startup Cost": 1787.15,
+            "Strategy": "Plain",
+            "Subplan Name": "InitPlan 1 (returns $0)",
+            "Total Cost": 1787.16
+          }
+        ],
+        "Schema": "public",
+        "Startup Cost": 1787.41,
+        "Total Cost": 2064.91
+      }
+    }
+  ],
+  "sql": "WITH total_docid AS (\n    SELECT COUNT(DISTINCT artifactid)  as doc_count FROM artifact_abstracts\n    \n)  \nselect docid,term,(tf*(log_10(((SELECT max(doc_count) FROM total_docid)*1.0)/(1.0+jcount))+1.0)) as tfidf \nfrom  JGROUPORDERED('select  term,docid,(1.0*count(*))/(1.0* sum(count(*)) OVER (PARTITION BY docid)) AS tf \nfrom(\n    \n        select docid, Strsplitv(abstract) as term from(\n            select  artifactid as docid, stem(filterstopwords(keywords(lowerize(abstract)))) as abstract from artifact_abstracts\n        )\n     )\n    group by term,docid','term','docid') \n"
+}

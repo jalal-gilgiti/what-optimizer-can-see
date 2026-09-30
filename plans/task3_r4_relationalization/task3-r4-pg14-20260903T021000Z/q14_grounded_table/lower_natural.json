@@ -1,0 +1,43 @@
+{
+  "case_id": "Q14_GROUNDED_TABLE",
+  "classification_input": "natural SQL, EXPLAIN without ANALYZE",
+  "plan": {
+    "Plan": {
+      "Async Capable": false,
+      "Node Type": "Aggregate",
+      "Output": [
+        "count(*)"
+      ],
+      "Parallel Aware": false,
+      "Partial Mode": "Simple",
+      "Plan Rows": 1,
+      "Plan Width": 8,
+      "Plans": [
+        {
+          "Alias": "e",
+          "Async Capable": false,
+          "Filter": "(e.publication_year >= 2020)",
+          "Function Call": "task3_r4.ec_artifacts_lower('European Commission'::text)",
+          "Function Name": "ec_artifacts_lower",
+          "Node Type": "Function Scan",
+          "Output": [
+            "artifact_id",
+            "publication_year"
+          ],
+          "Parallel Aware": false,
+          "Parent Relationship": "Outer",
+          "Plan Rows": 333,
+          "Plan Width": 0,
+          "Schema": "task3_r4",
+          "Startup Cost": 0.25,
+          "Total Cost": 12.75
+        }
+      ],
+      "Startup Cost": 13.58,
+      "Strategy": "Plain",
+      "Total Cost": 13.59
+    }
+  },
+  "submitted_sql": "SELECT count(*) FROM task3_r4.ec_artifacts_lower('European Commission') AS e WHERE e.publication_year >= 2020",
+  "variant": "lower"
+}

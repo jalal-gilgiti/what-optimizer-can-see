@@ -1,0 +1,147 @@
+{
+  "Plan": {
+    "Node Type": "Aggregate",
+    "Strategy": "Plain",
+    "Partial Mode": "Simple",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Startup Cost": 32122.92,
+    "Total Cost": 32122.93,
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Output": [
+      "count(*)",
+      "sum(e5_work(f.value, f.loop_count))"
+    ],
+    "Plans": [
+      {
+        "Node Type": "Hash Join",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Join Type": "Inner",
+        "Startup Cost": 58.28,
+        "Total Cost": 32109.0,
+        "Plan Rows": 23,
+        "Plan Width": 16,
+        "Output": [
+          "f.value",
+          "f.loop_count"
+        ],
+        "Inner Unique": true,
+        "Hash Cond": "(f.cust_id = c.cust_id)",
+        "Plans": [
+          {
+            "Node Type": "Hash Join",
+            "Parent Relationship": "Outer",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Join Type": "Inner",
+            "Startup Cost": 1.78,
+            "Total Cost": 32049.53,
+            "Plan Rows": 1134,
+            "Plan Width": 24,
+            "Output": [
+              "f.value",
+              "f.loop_count",
+              "f.cust_id"
+            ],
+            "Inner Unique": true,
+            "Hash Cond": "((f.id % '16'::bigint) = r.region_id)",
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "e5_fact_segment_idx",
+                "Relation Name": "e5_fact",
+                "Schema": "public",
+                "Alias": "f",
+                "Startup Cost": 0.42,
+                "Total Cost": 32008.31,
+                "Plan Rows": 14178,
+                "Plan Width": 32,
+                "Output": [
+                  "f.id",
+                  "f.cust_id",
+                  "f.segment",
+                  "f.value",
+                  "f.loop_count"
+                ],
+                "Index Cond": "(f.segment = 'COSTLY'::text)",
+                "Filter": "(e5_work(f.value, f.loop_count) >= 0)"
+              },
+              {
+                "Node Type": "Hash",
+                "Parent Relationship": "Inner",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 1.16,
+                "Total Cost": 1.16,
+                "Plan Rows": 16,
+                "Plan Width": 8,
+                "Output": [
+                  "r.region_id"
+                ],
+                "Plans": [
+                  {
+                    "Node Type": "Seq Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "e5_region",
+                    "Schema": "public",
+                    "Alias": "r",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1.16,
+                    "Plan Rows": 16,
+                    "Plan Width": 8,
+                    "Output": [
+                      "r.region_id"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Node Type": "Hash",
+            "Parent Relationship": "Inner",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 51.5,
+            "Total Cost": 51.5,
+            "Plan Rows": 400,
+            "Plan Width": 8,
+            "Output": [
+              "c.cust_id"
+            ],
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "e5_customer_tier_idx",
+                "Relation Name": "e5_customer",
+                "Schema": "public",
+                "Alias": "c",
+                "Startup Cost": 0.29,
+                "Total Cost": 51.5,
+                "Plan Rows": 400,
+                "Plan Width": 8,
+                "Output": [
+                  "c.cust_id"
+                ],
+                "Index Cond": "(c.tier = 'GOLD'::text)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

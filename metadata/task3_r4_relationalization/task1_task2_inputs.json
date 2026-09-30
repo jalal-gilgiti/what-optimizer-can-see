@@ -1,0 +1,42 @@
+{
+  "created_at_utc": "2026-09-03T02:02:01Z",
+  "inputs": [
+    {
+      "path": "docs/task1_eab_novelty_coverage_audit.md",
+      "role": "Task 1 primary audit report",
+      "sha256": "9361085ebde2b6870e75c637499c2b200ee12806c6833471435a554420554537",
+      "size_bytes": 25005
+    },
+    {
+      "path": "results/task1_novelty_audit/literature_matrix.csv",
+      "role": "Task 1 literature/candidate evidence",
+      "sha256": "918bf6e7c352bafc555c0a2794638c8048f774e0d60758f5e61fe62d5a2c2c80",
+      "size_bytes": 43432
+    },
+    {
+      "path": "docs/task2_udfbench_realistic_validation.md",
+      "role": "Task 2 realistic validation report",
+      "sha256": "45600ab77a5f0206060594e8fd97df68c4f5533e83351bcbf4c16ba0e2c2555f",
+      "size_bytes": 12734
+    },
+    {
+      "path": "results/task2_udfbench_validation/normalized_results.csv",
+      "role": "Task 2 frozen normalized outcomes",
+      "sha256": "b806734f0250d880c39561ed3fd96afff1ad028146601e4862066e31f1ccfc4c",
+      "size_bytes": 6680
+    },
+    {
+      "path": "metadata/task2_udfbench_validation/dataset_manifest.json",
+      "role": "Task 2 frozen dataset identity",
+      "sha256": "c3f7c168fbfdeb623320143028bf509012c079df60ce66fd9a003258b1e9c785",
+      "size_bytes": 3538
+    },
+    {
+      "path": "metadata/task2_udfbench_validation/environment.json",
+      "role": "Task 2 environment and PostgreSQL provenance",
+      "sha256": "c7f5fb20161c47bc1aab07e476691747b43a46546f1f389e6b0b6501754b389a",
+      "size_bytes": 859
+    }
+  ],
+  "run_id": "task3-r4-pg14-20260903T021000Z"
+}

@@ -1,0 +1,83 @@
+{
+  "canonical_scale": true,
+  "created_utc": "2026-09-06T04:23:26.909298+00:00",
+  "csv_roots": [
+    "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small"
+  ],
+  "files": [
+    {
+      "archive_member": "dataset/csvs/small/artifact_abstracts.csv",
+      "bytes": 102534154,
+      "logical_csv_rows": 137454,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/artifact_abstracts.csv",
+      "sha256": "8935e5a2f0521bf96ee6960d2f6cbbcf01248932730fcb5e9171003616ed5a54"
+    },
+    {
+      "archive_member": "dataset/csvs/small/artifact_authorlists.csv",
+      "bytes": 25876827,
+      "logical_csv_rows": 127269,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/artifact_authorlists.csv",
+      "sha256": "46ccdaca3ff47b3011802b59da6d5062316632bd6ef111061dc9f12ea896a5b6"
+    },
+    {
+      "archive_member": "dataset/csvs/small/artifact_authors.csv",
+      "bytes": 312606127,
+      "logical_csv_rows": 1022184,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/artifact_authors.csv",
+      "sha256": "ef0693adbf91e65a7a28e2308591ab6cb8c4244e6c12403d71d3568a551d52ea"
+    },
+    {
+      "archive_member": "dataset/csvs/small/artifact_charges.csv",
+      "bytes": 999572,
+      "logical_csv_rows": 17057,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/artifact_charges.csv",
+      "sha256": "32b5374b1764aeccf86d55926c75a4042453975549a4e45c456f5115df696a4d"
+    },
+    {
+      "archive_member": "dataset/csvs/small/artifact_citations.csv",
+      "bytes": 6622962,
+      "logical_csv_rows": 15218,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/artifact_citations.csv",
+      "sha256": "1f839b4d3133ba6f67b2ed382e5190cc9286a9d471474ac3187d2d51cfa2146d"
+    },
+    {
+      "archive_member": "dataset/csvs/small/artifacts.csv",
+      "bytes": 114382094,
+      "logical_csv_rows": 376152,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/artifacts.csv",
+      "sha256": "489d99879e4d04983c02da19b1b85156a3a433d067d6c5ec7afb4929df91c7b5"
+    },
+    {
+      "archive_member": "dataset/csvs/small/project_artifactcount.csv",
+      "bytes": 25910697,
+      "logical_csv_rows": 469604,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/project_artifactcount.csv",
+      "sha256": "1df895416e4adc7ec1629b59371f2ad64494caf28a967f1f23eb1d6eba2a5341"
+    },
+    {
+      "archive_member": "dataset/csvs/small/projects.csv",
+      "bytes": 157028155,
+      "logical_csv_rows": 469604,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/projects.csv",
+      "sha256": "8d1899dfb923294e7624ff1951db9ff6329444e7dc4f0da476556362243fc98a"
+    },
+    {
+      "archive_member": "dataset/csvs/small/projects_artifacts.csv",
+      "bytes": 68529881,
+      "logical_csv_rows": 628274,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/projects_artifacts.csv",
+      "sha256": "9e577ffb423ef925e6e01ccd55a61d4c4d1a35544ca7578a09ada9ab2441536e"
+    },
+    {
+      "archive_member": "dataset/csvs/small/views_stats.csv",
+      "bytes": 1094045952,
+      "logical_csv_rows": 9686539,
+      "relative_path": "runtime/task11_udfbench_scale_validation/official_data/dataset/csvs/small/views_stats.csv",
+      "sha256": "995cfe0f752d7e8c399b05ea56deeca70b105179b719e2daedb3717fcc1a2531"
+    }
+  ],
+  "read_only_during_experiments": true,
+  "scale": "small",
+  "total_bytes": 1908536421,
+  "total_logical_csv_rows": 12949355
+}

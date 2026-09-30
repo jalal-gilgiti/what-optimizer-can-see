@@ -1,0 +1,336 @@
+{
+  "audit_date": "2026-09-02",
+  "download_policy": "No papers were downloaded locally; official/public web copies were inspected through the web reader.",
+  "sources": [
+    {
+      "paper_id": "hellerstein1993",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/170035.170078"
+      ],
+      "DOI": "10.1145/170035.170078",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Models nonzero predicate cost and selectivity; plan placement changes produced orders-of-magnitude gains in POSTGRES.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "chaudhuri1993",
+      "URL": [
+        "https://www.vldb.org/conf/1993/P529.PDF"
+      ],
+      "DOI": "NOT_ASSIGNED",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Uses declarative semantic rules and cost extensions to enrich the equivalent-query search space.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "kemper1994",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/191839.191906"
+      ],
+      "DOI": "10.1145/191839.191906",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Bypass plans skip costly disjunctive terms when cheaper terms determine the result.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "hellerstein1998",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/292481.277627"
+      ],
+      "DOI": "10.1145/292481.277627",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER",
+      "evidence_used": "Defines a cost framework incorporating selection cost and selectivity and evaluates plan placement in Illustra.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "chaudhuri1999",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/320248.320249"
+      ],
+      "DOI": "10.1145/320248.320249",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER",
+      "evidence_used": "Extends optimization search to place user-defined predicates using cost and selectivity.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "boulos1999",
+      "URL": [
+        "https://citeseerx.ist.psu.edu/document?doi=930a15f8818a015073e8b16e4ac2da40b98adb8e&repid=rep1&type=pdf"
+      ],
+      "DOI": "10.1145/333607",
+      "access_date": "2026-09-02",
+      "source_type": "B_AUTHOR_ARCHIVE_COPY_PLUS_CITATION_METADATA",
+      "evidence_used": "Builds multidimensional histograms from sampled method executions to predict cost from inputs; DOI is issue-level.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "he2005",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/1093382.1093387"
+      ],
+      "DOI": "10.1145/1093382.1093387",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER",
+      "evidence_used": "Incrementally maintains UDF cost models from recent executions instead of requiring static pretraining.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "joglekar2015",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/2723372.2723715"
+      ],
+      "DOI": "10.1145/2723372.2723715",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER",
+      "evidence_used": "Uses available, noisy, or absent selection probabilities to save UDF evaluations under accuracy constraints.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "dyno2014",
+      "URL": [
+        "https://www.microsoft.com/en-us/research/wp-content/uploads/2014/06/dyno-sigmod2014.pdf"
+      ],
+      "DOI": "10.1145/2588555.2610531",
+      "access_date": "2026-09-02",
+      "source_type": "A_AUTHOR_OR_INSTITUTIONAL_COPY",
+      "evidence_used": "Pilot runs collect selectivity; execution statistics feed repeated cost-based join-order decisions.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "monsoon2020",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/3318464.3389728"
+      ],
+      "DOI": "10.1145/3318464.3389728",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER",
+      "evidence_used": "An MDP interleaves statistics collection, partial execution, and reoptimization when UDFs obscure statistics.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "hueske2012",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol5/p1256_fabianhueske_vldb2012.pdf"
+      ],
+      "DOI": "10.14778/2350229.2350244",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Static code analysis extracts a handful of UDF properties sufficient for safe operator and join reordering.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "sofa2014",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/2588555.2594517",
+        "https://arxiv.org/abs/1311.6335"
+      ],
+      "DOI": "10.1145/2588555.2594517",
+      "access_date": "2026-09-02",
+      "source_type": "A_PROCEEDINGS_PLUS_AUTHOR_PREPRINT",
+      "evidence_used": "Uses a concise semantic property hierarchy and rewrite rules to optimize UDF-heavy dataflows.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "rheinlander2017",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/3078752"
+      ],
+      "DOI": "10.1145/3078752",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER",
+      "evidence_used": "Surveys syntactic modification, semantic inference/annotations/code analysis, and UDF dataflow transformations.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "kougka2018",
+      "URL": [
+        "https://doi.org/10.1007/s41060-018-0107-0",
+        "https://arxiv.org/abs/1701.07723"
+      ],
+      "DOI": "10.1007/s41060-018-0107-0",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER_PLUS_AUTHOR_PREPRINT",
+      "evidence_used": "Organizes data-centric workflow optimization dimensions and pre-execution techniques across arbitrary tasks.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "foufoulas2023",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol16/p3874-simitsis.pdf"
+      ],
+      "DOI": "10.14778/3611540.3611574",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Classifies translation to SQL/IR/in-engine integration and compares optimization, execution-model, and usability dimensions.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "froid2017",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol11/p432-ramachandra.pdf",
+        "https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining"
+      ],
+      "DOI": "10.1145/3164135.3164140",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS_AND_PRODUCT_DOCS",
+      "evidence_used": "Transforms eligible imperative statements into relational expressions consumed by the ordinary SQL optimizer.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "blackmagic2019",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol12/p1810-ramachandra.pdf"
+      ],
+      "DOI": "10.14778/3352063.3352072",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Demonstrates Froid and identifies it as SQL Server 2019 Scalar UDF Inlining.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "prism2024",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol18/p1-arch.pdf",
+        "https://github.com/SamArch27/PRISM"
+      ],
+      "DOI": "10.14778/3696435.3696436",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS_AND_CANONICAL_REPOSITORY",
+      "evidence_used": "Deliberately partitions visible and opaque UDF regions; evaluates plan consequences on DuckDB and SQL Server.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "franz2024",
+      "URL": [
+        "https://vldb.org/cidrdb/papers/2024/p13-franz.pdf"
+      ],
+      "DOI": "NOT_ASSIGNED",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Finds batching can beat inlining on complex UDFs and proposes a hybrid strategy.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "tupleware2015",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol8/p1466-crotty.pdf"
+      ],
+      "DOI": "10.14778/2824032.2824045",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "LLVM analysis extracts vectorizability and cost features; optimizer combines algebra, metadata, and UDF statistics for generated execution code.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "raasveldt2016",
+      "URL": [
+        "https://ir.cwi.nl/pub/25206"
+      ],
+      "DOI": "10.1145/2949689.2949703",
+      "access_date": "2026-09-02",
+      "source_type": "A_INSTITUTIONAL_REPOSITORY",
+      "evidence_used": "Exposes column batches to Python/NumPy UDFs to reduce invocation and conversion overhead.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "yesql2022",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol15/p2270-foufoulas.pdf",
+        "https://github.com/athenarc/yesql"
+      ],
+      "DOI": "10.14778/3547305.3547328",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS_AND_CANONICAL_REPOSITORY",
+      "evidence_used": "Combines tracing JIT, fusion, vectorization/parallelism, stateful UDFs, and relational-engine integration.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "qfusor2026",
+      "URL": [
+        "https://www.openproceedings.org/2026/conf/edbt/paper-124.pdf",
+        "https://github.com/athenarc/QFusor"
+      ],
+      "DOI": "10.48786/edbt.2026.21",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS_AND_CANONICAL_REPOSITORY",
+      "evidence_used": "Builds a DFG from a database plan, uses plan statistics in fusion optimization, and rewrites fused UDF/relational operators; repository lacks optimizer source.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "udfbench2025",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol18/p2804-foufoulas.pdf",
+        "https://github.com/athenarc/UDFBench"
+      ],
+      "DOI": "10.14778/3746405.3746409",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS_AND_CANONICAL_REPOSITORY",
+      "evidence_used": "Provides a real-world schema, 42 UDFs, 21 queries, five-engine implementation, datasets, scripts, and documented dimensions.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "udfbench_tool2025",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/3722212.3725139",
+        "https://github.com/athenarc/UDFBench"
+      ],
+      "DOI": "10.1145/3722212.3725139",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER_AND_CANONICAL_REPOSITORY",
+      "evidence_used": "Four-page tool demonstration for the same open UDFBench implementation.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "gupta2021",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol14/p1378-gupta.pdf",
+        "https://github.com/microsoft/SQL-ProcBench"
+      ],
+      "DOI": "10.14778/3457390.3457402",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS_AND_CANONICAL_REPOSITORY",
+      "evidence_used": "Derives an open, multi-dialect procedural benchmark from real production workload analysis.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "graceful2025",
+      "URL": [
+        "https://doi.org/10.1109/ICDE65448.2025.00185",
+        "https://github.com/DataManagementLab/Graceful"
+      ],
+      "DOI": "10.1109/ICDE65448.2025.00185",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_METADATA_CANONICAL_REPOSITORY_AND_VALIDATED_LOCAL_RUN",
+      "evidence_used": "Joint UDF CFG/query-plan GNN predicts runtime and advises UDF/filter placement; local evidence verifies two-level support and third-level rejection.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "zeroshot2022",
+      "URL": [
+        "https://www.vldb.org/pvldb/vol15/p2361-hilprecht.pdf"
+      ],
+      "DOI": "10.14778/3551793.3551799",
+      "access_date": "2026-09-02",
+      "source_type": "A_OFFICIAL_PROCEEDINGS",
+      "evidence_used": "Separates transferable plan structure from database-specific data characteristics for unseen-database cost prediction.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    },
+    {
+      "paper_id": "qure2025",
+      "URL": [
+        "https://dl.acm.org/doi/10.1145/3709716",
+        "https://www.microsoft.com/en-us/research/publication/qure/"
+      ],
+      "DOI": "10.1145/3709716",
+      "access_date": "2026-09-02",
+      "source_type": "A_PUBLISHER_AND_AUTHOR_PROJECT_PAGE",
+      "evidence_used": "LLMs propose SQL translations; a formal verifier establishes UDF/SQL equivalence and reports coverage and speedups.",
+      "checksum_of_locally_downloaded_paper": "NOT_DOWNLOADED"
+    }
+  ]
+}

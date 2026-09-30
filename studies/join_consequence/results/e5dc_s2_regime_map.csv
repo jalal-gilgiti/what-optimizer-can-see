@@ -1,0 +1,21 @@
+costly_fraction,gold_fraction,K,m1_reported_units,true_costly_units,understatement_factor,m1_join_methods,m2_join_methods,plans_differ,m1_udf_calls,m2_udf_calls,udf_call_ratio,m1_median_ms,m2_median_ms,runtime_ratio,m1_cv,m2_cv,ci_disjoint,semantically_identical
+0.01,0.005,400,20,1000,50.0,Nested Loop|Hash Join,Nested Loop|Nested Loop,True,4100,32,128.125,20.584,21.298,1.035,0.0904,0.0015,False,True
+0.01,0.02,400,20,1000,50.0,Nested Loop|Hash Join,Nested Loop|Hash Join,True,4166,4166,1.0,17.992,23.943,1.331,0.0066,0.0041,True,True
+0.01,0.05,400,20,1000,50.0,Nested Loop|Hash Join,Nested Loop|Hash Join,False,4284,4284,1.0,24.678,24.59,1.004,0.0138,0.0065,False,True
+0.01,0.2,400,20,1000,50.0,Nested Loop|Hash Join,Nested Loop|Hash Join,False,4904,4904,1.0,27.345,27.679,1.012,0.011,0.005,False,True
+0.05,0.005,400,60,1000,16.67,Nested Loop|Hash Join,Nested Loop|Nested Loop,True,19973,214,93.332,84.169,2.968,28.356,0.0009,0.1768,True,True
+0.05,0.02,400,60,1000,16.67,Nested Loop|Hash Join,Nested Loop|Nested Loop,True,20268,796,25.462,83.418,7.221,11.552,0.0004,0.0063,True,True
+0.05,0.05,400,60,1000,16.67,Hash Join|Hash Join,Nested Loop|Hash Join,True,20891,20891,1.0,90.175,111.273,1.234,0.0498,0.0012,True,True
+0.05,0.2,400,60,1000,16.67,Nested Loop|Hash Join,Nested Loop|Hash Join,False,23792,23792,1.0,125.691,125.7,1.0,0.003,0.0043,False,True
+0.1,0.005,400,109,1000,9.17,Nested Loop|Nested Loop,Nested Loop|Nested Loop,True,408,408,1.0,3.664,5.775,1.576,0.0146,0.2681,True,True
+0.1,0.02,400,109,1000,9.17,Hash Join|Hash Join,Nested Loop|Nested Loop,True,40791,1616,25.242,168.608,12.52,13.467,0.0022,0.0091,True,True
+0.1,0.05,400,109,1000,9.17,Hash Join|Hash Join,Nested Loop|Nested Loop,True,42006,4046,10.382,174.694,28.665,6.094,0.0088,0.0506,True,True
+0.1,0.2,400,109,1000,9.17,Nested Loop|Hash Join,Nested Loop|Hash Join,False,47927,47927,1.0,250.234,248.665,1.006,0.0902,0.0071,True,True
+0.25,0.005,400,258,1000,3.88,Nested Loop|Nested Loop,Nested Loop|Nested Loop,True,1022,1022,1.0,6.143,5.528,1.111,0.5098,0.0091,True,True
+0.25,0.02,400,258,1000,3.88,Nested Loop|Nested Loop,Nested Loop|Nested Loop,False,4086,4086,1.0,21.963,22.075,1.005,0.0338,0.0102,False,True
+0.25,0.05,400,258,1000,3.88,Hash Join|Nested Loop,Nested Loop|Nested Loop,True,10084,10084,1.0,52.202,54.526,1.045,0.0015,0.0027,True,True
+0.25,0.2,400,258,1000,3.88,Hash Join|Nested Loop,Nested Loop|Nested Loop,True,39856,39856,1.0,210.334,211.395,1.005,0.0232,0.0561,False,True
+0.5,0.005,400,505,1000,1.98,Hash Join|Nested Loop,Nested Loop|Nested Loop,True,1928,1928,1.0,9.022,9.116,1.01,0.0238,0.0071,False,True
+0.5,0.02,400,505,1000,1.98,Hash Join|Nested Loop,Hash Join|Nested Loop,False,8018,8018,1.0,36.15,40.637,1.124,0.0097,0.1226,False,True
+0.5,0.05,400,505,1000,1.98,Hash Join|Nested Loop,Hash Join|Nested Loop,False,20028,20028,1.0,88.943,89.6,1.007,0.0137,0.0865,False,True
+0.5,0.2,400,505,1000,1.98,Hash Join|Nested Loop,Hash Join|Nested Loop,False,79704,79704,1.0,353.049,357.379,1.012,0.0378,0.0152,False,True

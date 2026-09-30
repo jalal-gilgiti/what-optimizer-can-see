@@ -1,0 +1,31 @@
+{
+  "Q14": {
+    "ec_project_rows": 43297,
+    "eligible_author_rows": 353176,
+    "rank1_author_rows": 131350,
+    "relationally_qualified_rows_before_latest_date_test": 50375
+  },
+  "Q17": {
+    "abstract_rows": 137454,
+    "non_null_abstract_rows": 129641
+  },
+  "Q8": {
+    "join_rows": 2498,
+    "sum_authorlist_json_counts": 27068,
+    "sum_target_json_counts": 49164
+  },
+  "classification": "DIAGNOSTIC_ONLY_NOT_OPTIMIZER_VISIBLE",
+  "loaded_row_counts": {
+    "artifact_abstracts": 137454,
+    "artifact_authorlists": 127269,
+    "artifact_authors": 1022184,
+    "artifact_charges": 17057,
+    "artifact_citations": 15218,
+    "artifacts": 376152,
+    "project_artifactcount": 469604,
+    "projects": 469604,
+    "projects_artifacts": 628274,
+    "views_stats": 9686539
+  },
+  "scale": "small"
+}

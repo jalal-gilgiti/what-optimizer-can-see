@@ -1,0 +1,14 @@
+{
+  "catalog_definition_sha256": "123c5fae7987f55dc68a09d9ecd487bc07cd49ed1becc7ffedd47fec5400a3ea",
+  "cost": 100.0,
+  "identity_arguments": "value bigint, bounds integer[]",
+  "language": "plpython3u",
+  "leakproof": false,
+  "logical_body_sha256": "2837d7ef0fc80f3e1361da487c074b900740e3cb99f2c7da156bce0a5db001db",
+  "oid": "16393",
+  "parallel_safety": "unsafe",
+  "rows": 0.0,
+  "security_definer": false,
+  "strict": true,
+  "volatility": "immutable"
+}

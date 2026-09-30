@@ -1,0 +1,5 @@
+workload,system,scale,phase,status,description,scientific_consequence,included_in_primary_analysis
+Q17,SQLite,small,FEASIBILITY,ENGINE_UNSUPPORTED,No released direct SQLite adapter for Q17.,Q17 is single-engine boundary evidence.,NO
+Q17,PostgreSQL,small,FEASIBILITY,DIALECT_FAILURE,Frozen Task 2 established a released nested-derived-table syntax failure; it was not repaired.,No PostgreSQL Q17 scale claim.,NO
+ALL,ALL,medium/large,SCOPE,NOT_RUN,Official scales exist but were outside the minimal external-validity scope; published Q17 large-scale OOM risk is retained.,"This is larger official scale, not full- or production-scale validation.",NO
+ALL,ALL,small,PLANNING,NOT_EXPOSED,Cross-engine internal planning time was not exposed comparably; wall time to capture EXPLAIN is not treated as planning time.,No planning-overhead comparison.,NO

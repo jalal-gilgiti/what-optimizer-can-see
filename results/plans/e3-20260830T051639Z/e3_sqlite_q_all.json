@@ -1,0 +1,28 @@
+{
+  "estimated_total_cost": null,
+  "function_metadata": {
+    "deterministic": true,
+    "language": "Python sqlite3 scalar callback",
+    "optimizer_cost": null,
+    "side_effects": false
+  },
+  "plan": [
+    [
+      3,
+      0,
+      0,
+      "SCAN e3_data"
+    ]
+  ],
+  "query": "SELECT COUNT(*), SUM(e3_dynamic_loop(value, loop_count)) FROM e3_data",
+  "query_id": "Q_all",
+  "run_id": "e3-20260830T051639Z",
+  "statistics_state": [
+    [
+      "e3_data",
+      "e3_population_idx",
+      "10000 5000"
+    ]
+  ],
+  "system": "sqlite"
+}
