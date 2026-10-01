@@ -4,9 +4,7 @@
 
 This archive contains the code, frozen inputs, raw measurements, normalized
 results, query plans, protocols, and environment records needed to inspect and
-reproduce the experiments. It contains no submission source, development
-notes, conversation transcripts, local virtual environments, or
-author-identifying paths.
+reproduce the experiments.
 
 ## Hardware and software requirements
 
