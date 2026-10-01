@@ -1,4 +1,4 @@
-# Representation adequacy and decision reach: artifact
+# Representation adequacy and decision reach
 
 ## Overview
 
