@@ -1,0 +1,90 @@
+{
+  "Plan": {
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(f.id)"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Async Capable": false,
+        "Inner Unique": false,
+        "Join Type": "Inner",
+        "Node Type": "Nested Loop",
+        "Output": [
+          "f.id"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 30,
+        "Plan Width": 8,
+        "Plans": [
+          {
+            "Alias": "d",
+            "Async Capable": false,
+            "Filter": "opaque_pred((d.id)::bigint)",
+            "Index Cond": "(d.bucket < 10)",
+            "Index Name": "dim_bucket_idx",
+            "Node Type": "Index Scan",
+            "Output": [
+              "d.id",
+              "d.bucket"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 3,
+            "Plan Width": 4,
+            "Relation Name": "dim",
+            "Scan Direction": "Forward",
+            "Schema": "public",
+            "Startup Cost": 0.28,
+            "Total Cost": 10.97
+          },
+          {
+            "Alias": "f",
+            "Async Capable": false,
+            "Node Type": "Bitmap Heap Scan",
+            "Output": [
+              "f.id",
+              "f.bucket",
+              "f.dim_id"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Inner",
+            "Plan Rows": 10,
+            "Plan Width": 12,
+            "Plans": [
+              {
+                "Async Capable": false,
+                "Index Cond": "(f.dim_id = d.id)",
+                "Index Name": "fact_dim_idx",
+                "Node Type": "Bitmap Index Scan",
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 10,
+                "Plan Width": 0,
+                "Startup Cost": 0.0,
+                "Total Cost": 4.36
+              }
+            ],
+            "Recheck Cond": "(f.dim_id = d.id)",
+            "Relation Name": "fact",
+            "Schema": "public",
+            "Startup Cost": 4.36,
+            "Total Cost": 27.33
+          }
+        ],
+        "Startup Cost": 4.64,
+        "Total Cost": 93.28
+      }
+    ],
+    "Startup Cost": 93.43,
+    "Strategy": "Plain",
+    "Total Cost": 93.44
+  }
+}

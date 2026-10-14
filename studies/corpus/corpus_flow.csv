@@ -1,0 +1,5 @@
+stage,candidates,excluded,retained,note
+initial_coding,29,0,29,Frozen literature matrix
+consolidation,1,0,30,Added the eligible Lambda framework during corpus consolidation
+final_candidate_audit,6,1,35,Six full texts screened; five eligible additions and one superseded duplicate
+final_corpus,35,0,35,Peer-reviewed works in the ten-dimension matrix

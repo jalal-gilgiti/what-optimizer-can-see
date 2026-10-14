@@ -1,0 +1,2 @@
+run_id,method,shift,stage,observation_count,prediction,target,q_error,profile_state,uncertainty,freshness,decision,status,reason
+task5-r3-audit-20260903T031908Z,NONE,NONE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NOT_APPLICABLE,NONE,UNKNOWN,UNKNOWN,NONE,NOT_RUN_PHASE_C_STOP,No executable method.

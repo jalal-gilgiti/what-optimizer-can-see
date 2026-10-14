@@ -1,0 +1,3 @@
+boundary,last_bad,first_good,iterations,plan_below,plan_above
+lower,399,400,8,Nested Loop|Nested Loop||Index Scan:e5_customer|Bitmap Heap Scan:e5_fact|Bitmap Index Scan:e5_fact_cust_idx|Seq Scan:e5_region,Nested Loop|Nested Loop||Index Scan:e5_customer|Bitmap Heap Scan:e5_fact|Bitmap Index Scan:e5_fact_cust_idx|Seq Scan:e5_region
+upper,4000,3999,11,Nested Loop|Nested Loop||Index Scan:e5_customer|Index Scan:e5_fact|Seq Scan:e5_region,Nested Loop|Nested Loop||Index Scan:e5_customer|Index Scan:e5_fact|Seq Scan:e5_region

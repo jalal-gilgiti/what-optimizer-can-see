@@ -1,0 +1,387 @@
+{
+  "comparisons": {
+    "Q14": {
+      "cross_system_equivalent": true,
+      "hash_groups": {
+        "d124f8749c99e23b4978cdfe1331022c3429c2ceb5a6e56eeaf32376191f27f5": [
+          "SQLite",
+          "DuckDB",
+          "PostgreSQL"
+        ]
+      },
+      "passing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "timing_gate_pass": true
+    },
+    "Q17": {
+      "cross_system_equivalent": false,
+      "hash_groups": {
+        "43ac4fc9b2afec9204ef6fa66fe4d5156ab34f742413b3d11f27f01e7f061e30": [
+          "DuckDB"
+        ]
+      },
+      "passing_systems": [
+        "DuckDB"
+      ],
+      "repeat_stable": true,
+      "timing_gate_pass": true
+    },
+    "Q8": {
+      "cross_system_equivalent": true,
+      "hash_groups": {
+        "6c7d5939111fcd60f59b16954f41e7f1cae1f56b6a83f6f8df6abf3df3096027": [
+          "SQLite",
+          "DuckDB",
+          "PostgreSQL"
+        ]
+      },
+      "passing_systems": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "timing_gate_pass": true
+    }
+  },
+  "outcomes": {
+    "Q14": {
+      "DuckDB": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "d124f8749c99e23b4978cdfe1331022c3429c2ceb5a6e56eeaf32376191f27f5",
+        "null_cell_count": 0,
+        "row_count": 47146,
+        "sample_in_return_order": [
+          [
+            "https://academic.microsoft.com/#/detail/2339437771",
+            "University of Southampton"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/3047414519",
+            "University College Dublin"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2068774357",
+            "University of Paris"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2083344503",
+            "University of Cagliari"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/1945696894",
+            "University of Essex"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/3040772062",
+            "German Center for Neurodegenerative Diseases"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/3190420229",
+            "Universit\u00e9 Paris-Saclay"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2289133649",
+            "University of Valencia"
+          ],
+          [
+            "0000-0003-0389-193x",
+            "RMIT Europe"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/1947683834",
+            "Helmholtz Centre for Environmental Research - UFZ"
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "bf85f6b5cf79bdec046ed4ab88e43679505cac6ea2dcdf06cade26bffdaa4bd3",
+        "xor256": "8bd9919f48e911023d13474b5b03911462bed85c5a5ad088cf23f853ee11c757"
+      },
+      "PostgreSQL": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "d124f8749c99e23b4978cdfe1331022c3429c2ceb5a6e56eeaf32376191f27f5",
+        "null_cell_count": 0,
+        "row_count": 47146,
+        "sample_in_return_order": [
+          [
+            "0000-0003-2331-6561",
+            "Building Technologies, Tecnalia"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Edinburgh"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Edinburgh"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Kassel"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Kassel"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/226242240",
+            "Link\u00f6ping University"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/3003343290",
+            "Tokyo Institute of Technology"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/1972451378",
+            "ETH Zurich"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/1972451378",
+            "Max Planck Society"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2880547600",
+            "Barcelona Supercomputing Center"
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "bf85f6b5cf79bdec046ed4ab88e43679505cac6ea2dcdf06cade26bffdaa4bd3",
+        "xor256": "8bd9919f48e911023d13474b5b03911462bed85c5a5ad088cf23f853ee11c757"
+      },
+      "SQLite": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "d124f8749c99e23b4978cdfe1331022c3429c2ceb5a6e56eeaf32376191f27f5",
+        "null_cell_count": 0,
+        "row_count": 47146,
+        "sample_in_return_order": [
+          [
+            "0000-0003-2331-6561",
+            "Building Technologies, Tecnalia"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Edinburgh"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Edinburgh"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Kassel"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2559080473",
+            "University of Kassel"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/226242240",
+            "Link\u00f6ping University"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/3003343290",
+            "Tokyo Institute of Technology"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/1972451378",
+            "ETH Zurich"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/1972451378",
+            "Max Planck Society"
+          ],
+          [
+            "https://academic.microsoft.com/#/detail/2880547600",
+            "Barcelona Supercomputing Center"
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "bf85f6b5cf79bdec046ed4ab88e43679505cac6ea2dcdf06cade26bffdaa4bd3",
+        "xor256": "8bd9919f48e911023d13474b5b03911462bed85c5a5ad088cf23f853ee11c757"
+      }
+    },
+    "Q17": {
+      "DuckDB": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "43ac4fc9b2afec9204ef6fa66fe4d5156ab34f742413b3d11f27f01e7f061e30",
+        "null_cell_count": 0,
+        "row_count": 6310817,
+        "sample_in_return_order": [
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "methodolog",
+            0.0174333729
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "collect",
+            0.0160476509
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "data",
+            0.0122638647
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "agre",
+            0.0221515982
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "testabl",
+            0.0290716425
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "set",
+            0.0144341961
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "core",
+            0.0175549726
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "establish",
+            0.0166021785
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "requir",
+            0.0142267244
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "forward",
+            0.0206385588
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "717547bb6508ee6a3f83ad0a7e84f9f4018776a76f8ab6eb9faaf9d464f834f7",
+        "xor256": "eebdd8bf1f29ff0b7908a2f7e05a44689012659d182eaf9241ee9eeef0d96c9d"
+      },
+      "DuckDB_repeat": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "43ac4fc9b2afec9204ef6fa66fe4d5156ab34f742413b3d11f27f01e7f061e30",
+        "null_cell_count": 0,
+        "row_count": 6310817,
+        "sample_in_return_order": [
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "methodolog",
+            0.0174333729
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "collect",
+            0.0160476509
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "data",
+            0.0122638647
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "agre",
+            0.0221515982
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "testabl",
+            0.0290716425
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "set",
+            0.0144341961
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "core",
+            0.0175549726
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "establish",
+            0.0166021785
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "requir",
+            0.0142267244
+          ],
+          [
+            "RECOLECTA___::a9c422dc7318351f047f4b7ed6eb4912",
+            "forward",
+            0.0206385588
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "717547bb6508ee6a3f83ad0a7e84f9f4018776a76f8ab6eb9faaf9d464f834f7",
+        "xor256": "eebdd8bf1f29ff0b7908a2f7e05a44689012659d182eaf9241ee9eeef0d96c9d"
+      },
+      "PostgreSQL": {
+        "reason": "released PostgreSQL Q17 fails on unnest(record); not repaired",
+        "status": "DIALECT_FAILURE_FROZEN_TASK2"
+      },
+      "SQLite": {
+        "reason": "no released direct SQLite adapter for Q17",
+        "status": "ENGINE_UNSUPPORTED"
+      }
+    },
+    "Q8": {
+      "DuckDB": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "6c7d5939111fcd60f59b16954f41e7f1cae1f56b6a83f6f8df6abf3df3096027",
+        "null_cell_count": 0,
+        "row_count": 1,
+        "sample_in_return_order": [
+          [
+            20.9208510638,
+            10.835868695
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "34b7cc7ee7f68d7fa3fad860ec6435650a08886f08cee10a2b6167ee30d944f3",
+        "xor256": "34b7cc7ee7f68d7fa3fad860ec6435650a08886f08cee10a2b6167ee30d944f3"
+      },
+      "PostgreSQL": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "6c7d5939111fcd60f59b16954f41e7f1cae1f56b6a83f6f8df6abf3df3096027",
+        "null_cell_count": 0,
+        "row_count": 1,
+        "sample_in_return_order": [
+          [
+            20.9208510638,
+            10.835868695
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "34b7cc7ee7f68d7fa3fad860ec6435650a08886f08cee10a2b6167ee30d944f3",
+        "xor256": "34b7cc7ee7f68d7fa3fad860ec6435650a08886f08cee10a2b6167ee30d944f3"
+      },
+      "SQLite": {
+        "hash_method": "order-independent SHA-256 row digest sum+xor; normalized values",
+        "multiset_sha256": "6c7d5939111fcd60f59b16954f41e7f1cae1f56b6a83f6f8df6abf3df3096027",
+        "null_cell_count": 0,
+        "row_count": 1,
+        "sample_in_return_order": [
+          [
+            20.9208510638,
+            10.835868695
+          ]
+        ],
+        "status": "PASS",
+        "sum256": "34b7cc7ee7f68d7fa3fad860ec6435650a08886f08cee10a2b6167ee30d944f3",
+        "xor256": "34b7cc7ee7f68d7fa3fad860ec6435650a08886f08cee10a2b6167ee30d944f3"
+      }
+    }
+  },
+  "run_id": "task11-udfbench-small-20260906",
+  "scale": "small"
+}

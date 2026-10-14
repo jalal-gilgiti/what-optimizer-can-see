@@ -1,0 +1,33 @@
+{
+  "access_date": "2026-09-02",
+  "sources": [
+    {
+      "doi": "10.14778/3746405.3746409",
+      "evidence": "identity, benchmark motivation, design, workload classes, compatibility, methodology, reported boundaries",
+      "local_path": "runtime/task2_udfbench_validation/udfbench_paper_p2804-foufoulas.pdf",
+      "sha256": "aa6896557e09d4c3b94a5e8673f9a0a415e0b29e01bb27d260d6bbf57c78b7c4",
+      "source_id": "udfbench_paper",
+      "type": "OFFICIAL_PVLDB_PDF",
+      "url": "https://www.vldb.org/pvldb/vol18/p2804-foufoulas.pdf"
+    },
+    {
+      "doi": "NOT_APPLICABLE",
+      "evidence": "README, license, 21 query sources, UDF implementations, tiny data, scripts, dependencies",
+      "git_commit": "8da987566590e2534f24cd97bcfaa9157c24962c",
+      "local_path": "runtime/task2_udfbench_validation/UDFBench",
+      "sha256": "GIT_COMMIT_PIN",
+      "source_id": "udfbench_repository",
+      "type": "CANONICAL_GIT_REPOSITORY",
+      "url": "https://github.com/athenarc/UDFBench"
+    },
+    {
+      "doi": "10.5281/zenodo.14260428",
+      "evidence": "larger-scale dataset availability and external-file provenance; no larger dataset downloaded",
+      "local_path": "repository-included tiny dataset only",
+      "sha256": "PER_FILE_IN_DATASET_MANIFEST",
+      "source_id": "udfbench_dataset_record",
+      "type": "CANONICAL_DATASET_RECORD",
+      "url": "https://zenodo.org/records/14260428"
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "phase": "e1",
+  "representations": [
+    {
+      "Lambda": 1,
+      "bounds": [
+        1
+      ],
+      "dataset": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r10000_rho1p0_seed42.csv",
+      "dataset_sha256": "ecb6cb46ef9a6ba6ccbd041c4f2dddd25a64a3c24cb06e73dedd3661b5c815c5",
+      "edge_count": 9,
+      "edges": [
+        {
+          "source": 0,
+          "target": 1
+        },
+        {
+          "source": 1,
+          "target": 4
+        },
+        {
+          "source": 4,
+          "target": 5
+        },
+        {
+          "source": 4,
+          "target": 9
+        },
+        {
+          "source": 5,
+          "target": 6
+        },
+        {
+          "source": 6,
+          "target": 7
+        },
+        {
+          "source": 7,
+          "target": 8
+        },
+        {
+          "source": 8,
+          "target": 9
+        },
+        {
+          "source": 9,
+          "target": 10
+        }
+      ],
+      "graph_path": "<PROJECT_ROOT>/runtime/graceful/e5b-graceful-20260830T134817Z/workload/dbs/e5b_e1/created_graphs/e5b_e1_l1.loopend.gpickle",
+      "graph_sha256": "fb9d937317596e5d088d6cbb846248ef74b6018844b9cf733a446cb0b3ea2c98",
+      "input_cardinality": 10000,
+      "node_count": 9,
+      "node_types": {
+        "COMP": 4,
+        "INVOCATION": 1,
+        "LOOP_END": 1,
+        "LOOP_HEAD": 1,
+        "RETURN": 1,
+        "VAR": 1
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "type": "VAR",
+          "var_id": "value"
+        },
+        {
+          "block_hash": -706513733455428978,
+          "id": 1,
+          "in_dts": [
+            "INT"
+          ],
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "no_params": 1,
+          "type": "INVOCATION"
+        },
+        {
+          "block_hash": -3091668327589006353,
+          "fixed_iter": "True",
+          "id": 4,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lineno": 4,
+          "loop_part": "False",
+          "loop_type": "for",
+          "no_iter": 1,
+          "ops": [],
+          "type": "LOOP_HEAD"
+        },
+        {
+          "block_hash": 2899003649718043391,
+          "id": 5,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 0,
+          "lib_onehot": "null",
+          "lineno": 5,
+          "loop_part": "True",
+          "ops": [
+            "Add",
+            "Add"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 2899003649718043391,
+          "id": 6,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 3072,
+          "lib_onehot": "math.floor",
+          "lineno": 6,
+          "loop_part": "True",
+          "ops": [
+            "Sub",
+            "Mult"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 2899003649718043391,
+          "id": 7,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 0,
+          "lib_onehot": "null",
+          "lineno": 7,
+          "loop_part": "True",
+          "ops": [
+            "Add",
+            "Mult"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 2899003649718043391,
+          "id": 8,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 3072,
+          "lib_onehot": "math.floor",
+          "lineno": 8,
+          "loop_part": "True",
+          "ops": [
+            "Sub",
+            "Mult"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 6248009210872311856,
+          "fixed_iter": "True",
+          "id": 9,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "loop_part": "False",
+          "loop_type": "for",
+          "no_iter": 1,
+          "type": "LOOP_END"
+        },
+        {
+          "block_hash": -286797833935850043,
+          "id": 10,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "out_dts": "INT:",
+          "type": "RETURN"
+        }
+      ],
+      "semantic_equivalence": {
+        "equivalence_scope": "all rows of the exact frozen input",
+        "mismatches": [],
+        "rows_checked": 10000,
+        "status": "PASS"
+      },
+      "source": "def e5b_e1_l1(value: int) -> int:\n    import math\n    state = value\n    for index0 in range(1):\n        state = state + index0 + 0\n        state = state - math.floor(state / 2147483648) * 2147483648\n        state = state * 1103515245 + 12345\n        state = state - math.floor(state / 2147483648) * 2147483648\n    return state\n",
+      "source_sha256": "46140d343f19ffb374588deb2ba2b212b9060ad1be9793b94d8b50e02c66d020",
+      "udf_name": "e5b_e1_l1"
+    },
+    {
+      "Lambda": 100,
+      "bounds": [
+        10,
+        10
+      ],
+      "dataset": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r10000_rho1p0_seed42.csv",
+      "dataset_sha256": "ecb6cb46ef9a6ba6ccbd041c4f2dddd25a64a3c24cb06e73dedd3661b5c815c5",
+      "edge_count": 14,
+      "edges": [
+        {
+          "source": 0,
+          "target": 1
+        },
+        {
+          "source": 1,
+          "target": 4
+        },
+        {
+          "source": 4,
+          "target": 5
+        },
+        {
+          "source": 4,
+          "target": 14
+        },
+        {
+          "source": 5,
+          "target": 6
+        },
+        {
+          "source": 6,
+          "target": 8
+        },
+        {
+          "source": 8,
+          "target": 9
+        },
+        {
+          "source": 8,
+          "target": 13
+        },
+        {
+          "source": 9,
+          "target": 10
+        },
+        {
+          "source": 10,
+          "target": 11
+        },
+        {
+          "source": 11,
+          "target": 12
+        },
+        {
+          "source": 12,
+          "target": 13
+        },
+        {
+          "source": 13,
+          "target": 14
+        },
+        {
+          "source": 14,
+          "target": 15
+        }
+      ],
+      "graph_path": "<PROJECT_ROOT>/runtime/graceful/e5b-graceful-20260830T134817Z/workload/dbs/e5b_e1/created_graphs/e5b_e1_l100.loopend.gpickle",
+      "graph_sha256": "4a13d0f2da023f259a9c4203111e509527a2430cfa1a83813eb086cd48a12ea6",
+      "input_cardinality": 10000,
+      "node_count": 13,
+      "node_types": {
+        "COMP": 6,
+        "INVOCATION": 1,
+        "LOOP_END": 2,
+        "LOOP_HEAD": 2,
+        "RETURN": 1,
+        "VAR": 1
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "type": "VAR",
+          "var_id": "value"
+        },
+        {
+          "block_hash": 8349683606107764895,
+          "id": 1,
+          "in_dts": [
+            "INT"
+          ],
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "no_params": 1,
+          "type": "INVOCATION"
+        },
+        {
+          "block_hash": -8392696104960704341,
+          "fixed_iter": "True",
+          "id": 4,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lineno": 4,
+          "loop_part": "False",
+          "loop_type": "for",
+          "no_iter": 10,
+          "ops": [],
+          "type": "LOOP_HEAD"
+        },
+        {
+          "block_hash": 4163930708180949112,
+          "id": 5,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 0,
+          "lib_onehot": "null",
+          "lineno": 5,
+          "loop_part": "True",
+          "ops": [
+            "Add",
+            "Add"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 4163930708180949112,
+          "id": 6,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 3072,
+          "lib_onehot": "math.floor",
+          "lineno": 6,
+          "loop_part": "True",
+          "ops": [
+            "Sub",
+            "Mult"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 2838325424685997277,
+          "fixed_iter": "True",
+          "id": 8,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lineno": 7,
+          "loop_part": "True",
+          "loop_type": "for",
+          "no_iter": 10,
+          "ops": [],
+          "type": "LOOP_HEAD"
+        },
+        {
+          "block_hash": 7584167623271502001,
+          "id": 9,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 0,
+          "lib_onehot": "null",
+          "lineno": 8,
+          "loop_part": "True",
+          "ops": [
+            "Add",
+            "Add"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 7584167623271502001,
+          "id": 10,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 3072,
+          "lib_onehot": "math.floor",
+          "lineno": 9,
+          "loop_part": "True",
+          "ops": [
+            "Sub",
+            "Mult"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 7584167623271502001,
+          "id": 11,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 0,
+          "lib_onehot": "null",
+          "lineno": 10,
+          "loop_part": "True",
+          "ops": [
+            "Add",
+            "Mult"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": 7584167623271502001,
+          "id": 12,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "lib_embedding_dimension": 3072,
+          "lib_embedding_nonzero": 3072,
+          "lib_onehot": "math.floor",
+          "lineno": 11,
+          "loop_part": "True",
+          "ops": [
+            "Sub",
+            "Mult"
+          ],
+          "type": "COMP"
+        },
+        {
+          "block_hash": -991697273008139604,
+          "fixed_iter": "True",
+          "id": 13,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "loop_part": "True",
+          "loop_type": "for",
+          "no_iter": 10,
+          "type": "LOOP_END"
+        },
+        {
+          "block_hash": -1256682863683469451,
+          "fixed_iter": "True",
+          "id": 14,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "loop_part": "False",
+          "loop_type": "for",
+          "no_iter": 10,
+          "type": "LOOP_END"
+        },
+        {
+          "block_hash": 8196607067204663727,
+          "id": 15,
+          "in_rows_act": 10000,
+          "in_rows_deepdb": 10000,
+          "in_rows_est": 10000,
+          "in_rows_wj": 10000,
+          "out_dts": "INT:",
+          "type": "RETURN"
+        }
+      ],
+      "semantic_equivalence": {
+        "equivalence_scope": "all rows of the exact frozen input",
+        "mismatches": [],
+        "rows_checked": 10000,
+        "status": "PASS"
+      },
+      "source": "def e5b_e1_l100(value: int) -> int:\n    import math\n    state = value\n    for index0 in range(10):\n        state = state + index0 + 0\n        state = state - math.floor(state / 2147483648) * 2147483648\n        for index1 in range(10):\n            state = state + index1 + 1\n            state = state - math.floor(state / 2147483648) * 2147483648\n            state = state * 1103515245 + 12345\n            state = state - math.floor(state / 2147483648) * 2147483648\n    return state\n",
+      "source_sha256": "a9ee5c97dc7048a716500b1df8807c1443ce6ed27e93f2b35e008eb50b699886",
+      "udf_name": "e5b_e1_l100"
+    }
+  ],
+  "run_id": "e5b-graceful-20260830T134817Z",
+  "schema_version": "1.0.0",
+  "workload_path": "<PROJECT_ROOT>/runtime/graceful/e5b-graceful-20260830T134817Z/workload/parsed_plans/e5b_e1/workload.json",
+  "workload_sha256": "db6f7e7a55bdff528152215132fea81a62c54f64c5b952f099ac425e140d7c7e"
+}

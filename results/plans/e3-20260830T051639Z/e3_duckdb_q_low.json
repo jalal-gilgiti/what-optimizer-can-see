@@ -1,0 +1,48 @@
+{
+  "estimated_total_cost": null,
+  "function_metadata": {
+    "deterministic": true,
+    "language": "DuckDB native Python scalar callback",
+    "optimizer_cost": null,
+    "side_effects": false
+  },
+  "plan": "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502    UNGROUPED_AGGREGATE    \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502        Aggregates:        \u2502\n\u2502        count_star()       \u2502\n\u2502          sum(#0)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502   e3_dynamic_loop(value,  \u2502\n\u2502         loop_count)       \u2502\n\u2502                           \u2502\n\u2502        ~5,000 rows        \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502          SEQ_SCAN         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           Table:          \u2502\n\u2502    memory.main.e3_data    \u2502\n\u2502                           \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502        Projections:       \u2502\n\u2502           value           \u2502\n\u2502         loop_count        \u2502\n\u2502                           \u2502\n\u2502          Filters:         \u2502\n\u2502      population='LOW'     \u2502\n\u2502                           \u2502\n\u2502        ~5,000 rows        \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n",
+  "query": "SELECT COUNT(*), SUM(e3_dynamic_loop(value, loop_count)) FROM e3_data WHERE population='LOW'",
+  "query_id": "Q_low",
+  "run_id": "e3-20260830T051639Z",
+  "statistics_state": [
+    [
+      0,
+      "id",
+      "BIGINT",
+      false,
+      null,
+      false
+    ],
+    [
+      1,
+      "value",
+      "BIGINT",
+      false,
+      null,
+      false
+    ],
+    [
+      2,
+      "population",
+      "VARCHAR",
+      false,
+      null,
+      false
+    ],
+    [
+      3,
+      "loop_count",
+      "BIGINT",
+      false,
+      null,
+      false
+    ]
+  ],
+  "system": "duckdb"
+}

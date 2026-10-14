@@ -1,0 +1,6 @@
+evidence_layer,works_or_artifacts,executed_here,common_workload,strongest_evidence
+Literature classification,35,0,No,Audited ten-dimension row-level coding
+Canonical artifact inspection,8 unique artifact families,0,No,Build/data/checkpoint/interface boundaries inspected
+Released artifact execution,3 artifact families,3,Partly,PRISM UDFBench and GRACEFUL execution or coverage evidence
+Native mechanism execution,PostgreSQL COST support metadata and SQL inlining,Yes,Yes within each matched query,Natural plans exact calls semantics and paired runtimes
+Controlled cross-engine execution,SQLite DuckDB PostgreSQL,Yes,Yes E1--E4 kernels,Matched work counts semantic hashes and within-engine runtimes

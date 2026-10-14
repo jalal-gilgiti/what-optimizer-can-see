@@ -1,0 +1,39 @@
+{
+  "Plan": {
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(e3_dynamic_loop(value, loop_count))"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Alias": "e3_data",
+        "Async Capable": false,
+        "Filter": "((e3_data.population = 'LOW'::text) AND (e3_dynamic_loop(e3_data.value, e3_data.loop_count) >= 0))",
+        "Node Type": "Seq Scan",
+        "Output": [
+          "id",
+          "value",
+          "population",
+          "loop_count"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 5000,
+        "Plan Width": 16,
+        "Relation Name": "e3_data",
+        "Schema": "public",
+        "Startup Cost": 0.0,
+        "Total Cost": 352.04
+      }
+    ],
+    "Startup Cost": 441.06,
+    "Strategy": "Plain",
+    "Total Cost": 441.07
+  }
+}

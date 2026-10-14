@@ -1,0 +1,43 @@
+{
+  "run_id": "task4-prism-20260903T022253Z",
+  "returncode": 0,
+  "trial_count": 26,
+  "preregistration_sha256": "62208d6abea36c193b32230ec92dc42ab83a899648638269299742a56dcccbc8",
+  "schedule_seed": 4042026,
+  "normalized": [
+    {
+      "run_id": "task4-prism-20260903T022253Z",
+      "workload_id": "tpch_q6",
+      "variant": "PRISM_SELECTIVE",
+      "n": 10,
+      "median_runtime_s": 1.2045,
+      "mean_runtime_s": 1.2059,
+      "stddev_runtime_s": 0.014820781205980894,
+      "cv": 0.012290224069973377,
+      "min_runtime_s": 1.191,
+      "max_runtime_s": 1.237,
+      "bootstrap_median_ci95_low_s": 1.192,
+      "bootstrap_median_ci95_high_s": 1.2155,
+      "cv_gt_0_10": false,
+      "semantic_status": "PASS",
+      "ratio_vs_full_native": 22.305555555555554
+    },
+    {
+      "run_id": "task4-prism-20260903T022253Z",
+      "workload_id": "tpch_q6",
+      "variant": "FULL_NATIVE_SQL",
+      "n": 10,
+      "median_runtime_s": 0.054,
+      "mean_runtime_s": 0.054,
+      "stddev_runtime_s": 0.0006666666666666673,
+      "cv": 0.01234567901234569,
+      "min_runtime_s": 0.053,
+      "max_runtime_s": 0.055,
+      "bootstrap_median_ci95_low_s": 0.0535,
+      "bootstrap_median_ci95_high_s": 0.0545,
+      "cv_gt_0_10": false,
+      "semantic_status": "PASS",
+      "ratio_vs_full_native": 1.0
+    }
+  ]
+}

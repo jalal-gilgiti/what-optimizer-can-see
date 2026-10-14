@@ -1,0 +1,18 @@
+{
+  "plan": {
+    "Plan": {
+      "Alias": "*VALUES*",
+      "Async Capable": false,
+      "Node Type": "Values Scan",
+      "Output": [
+        "task3_r4.smoke_lower(\"*VALUES*\".column1)"
+      ],
+      "Parallel Aware": false,
+      "Plan Rows": 3,
+      "Plan Width": 4,
+      "Startup Cost": 0.0,
+      "Total Cost": 0.79
+    }
+  },
+  "sql": "SELECT task3_r4.smoke_lower(x) FROM (VALUES (1),(2),(NULL)) AS v(x)"
+}

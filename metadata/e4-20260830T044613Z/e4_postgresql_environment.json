@@ -1,0 +1,21 @@
+{
+  "cache_state": "database_warm_os_uncontrolled",
+  "canonical_udf_source_sha256": "ba8432dfc37fcf0e6c020eeb549e4cfebdce70ae12c3b35f9e11c78e207c9d43",
+  "captured_at_utc": "2026-08-30T04:55:38.211279+00:00",
+  "function_metadata": {
+    "cost": 100.0,
+    "identity_arguments": "value bigint, flag bigint, iterations bigint",
+    "language": "plpython3u",
+    "leakproof": false,
+    "oid": "16390",
+    "parallel_safety": "unsafe",
+    "plpython_body_sha256": "d71cbfae934a0c44c48598ea975a95ef0da521a53f53d6deb20e317522521b70",
+    "strict": true,
+    "volatility": "immutable"
+  },
+  "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12",
+  "run_id": "e4-20260830T044613Z",
+  "system": "postgresql",
+  "version": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, 64-bit"
+}

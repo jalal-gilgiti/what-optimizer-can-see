@@ -1,0 +1,101 @@
+{
+  "R0": {
+    "ci_high_ms": 2118.819171,
+    "ci_low_ms": 2017.3262665,
+    "cv": 0.025830195267142385,
+    "high_variance": false,
+    "iqr_ms": 80.70414649999998,
+    "median_ms": 2061.3913469999998,
+    "trials": 10
+  },
+  "R4A": {
+    "ci_high_ms": 1076.4441445,
+    "ci_low_ms": 1028.5776740000001,
+    "cv": 0.034896135551141697,
+    "high_variance": false,
+    "iqr_ms": 25.466331000000082,
+    "median_ms": 1038.4867395,
+    "trials": 10
+  },
+  "gate_calls": {
+    "R0": 6001215,
+    "R4A": 0
+  },
+  "paired_ratio": {
+    "ci_high": 2.0369847225399034,
+    "ci_low": 1.9223607229605741,
+    "ratio": 1.9849953481278897
+  },
+  "r0_plan": {
+    "conditions": [
+      "Index Cond:(n.n_nationkey = c.c_nationkey)",
+      "Join Filter:q10_probe(o.o_orderdate, l.l_returnflag)",
+      "Hash Cond:(l.l_orderkey = o.o_orderkey)"
+    ],
+    "contains_q10_probe": true,
+    "nodes_preorder": [
+      "Limit",
+      "Sort",
+      "Aggregate",
+      "Incremental Sort",
+      "Merge Join",
+      "Nested Loop",
+      "Index Scan",
+      "Memoize",
+      "Index Scan",
+      "Sort",
+      "Hash Join",
+      "Seq Scan",
+      "Hash",
+      "Seq Scan"
+    ],
+    "relations_preorder": [
+      "customer",
+      "nation",
+      "lineitem",
+      "orders"
+    ],
+    "signature": "166e40545af19bce263f17bd4ee221def4b6666ee1527fd680b33c265f8c1e7d"
+  },
+  "r4a_inlined": true,
+  "r4a_plan": {
+    "conditions": [
+      "Hash Cond:(o.o_custkey = c.c_custkey)",
+      "Hash Cond:(l.l_orderkey = o.o_orderkey)",
+      "Filter:(l.l_returnflag = 'R'::bpchar)",
+      "Filter:((o.o_orderdate >= '1993-10-01'::date) AND (o.o_orderdate < '1994-01-01'::date))",
+      "Index Cond:(n.n_nationkey = c.c_nationkey)"
+    ],
+    "contains_q10_probe": false,
+    "nodes_preorder": [
+      "Limit",
+      "Sort",
+      "Aggregate",
+      "Nested Loop",
+      "Hash Join",
+      "Hash Join",
+      "Seq Scan",
+      "Hash",
+      "Seq Scan",
+      "Hash",
+      "Seq Scan",
+      "Memoize",
+      "Index Scan"
+    ],
+    "relations_preorder": [
+      "lineitem",
+      "orders",
+      "customer",
+      "nation"
+    ],
+    "signature": "7a7af590d736a2061d2d35cc6390610fb2f00c36707cf1ddf2b459d2292d8c24"
+  },
+  "semantic_hash": "87064913aebd4d6537017223f3108b6d17b3800e6b5350f3aca3abf7432f24f4",
+  "source_sha256": "f04b8e41e3e1c0829e96b02cbb6feebd9fff39959a141dec4dc1074500972191",
+  "table_counts": {
+    "customer": 150000,
+    "lineitem": 6001215,
+    "nation": 25,
+    "orders": 1500000
+  }
+}

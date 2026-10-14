@@ -1,0 +1,55 @@
+{
+  "rows": [
+    [
+      "aggregate_avg",
+      "internal",
+      "i",
+      "s",
+      false,
+      1.0,
+      0.0,
+      "double precision"
+    ],
+    [
+      "aggregate_max",
+      "internal",
+      "i",
+      "s",
+      false,
+      1.0,
+      0.0,
+      "value text"
+    ],
+    [
+      "cleandate",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "pubdate text"
+    ],
+    [
+      "jsoncount",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "jval text"
+    ],
+    [
+      "jsonparse",
+      "plpython3u",
+      "i",
+      "s",
+      true,
+      100.0,
+      0.0,
+      "json_content text, key1 text"
+    ]
+  ],
+  "source": "pg_proc"
+}

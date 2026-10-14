@@ -1,0 +1,78 @@
+{
+  "Plan": {
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(f.id)"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Async Capable": false,
+        "Inner Unique": false,
+        "Join Type": "Inner",
+        "Node Type": "Nested Loop",
+        "Output": [
+          "f.id"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 330,
+        "Plan Width": 8,
+        "Plans": [
+          {
+            "Alias": "d",
+            "Async Capable": false,
+            "Filter": "opaque_pred((d.id)::bigint)",
+            "Index Cond": "(d.bucket < 100)",
+            "Index Name": "dim_bucket_idx",
+            "Node Type": "Index Scan",
+            "Output": [
+              "d.id",
+              "d.bucket"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 33,
+            "Plan Width": 4,
+            "Relation Name": "dim",
+            "Scan Direction": "Forward",
+            "Schema": "public",
+            "Startup Cost": 0.28,
+            "Total Cost": 25010.28
+          },
+          {
+            "Alias": "f",
+            "Async Capable": false,
+            "Index Cond": "(f.dim_id = d.id)",
+            "Index Name": "fact_dim_idx",
+            "Node Type": "Index Scan",
+            "Output": [
+              "f.id",
+              "f.bucket",
+              "f.dim_id"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Inner",
+            "Plan Rows": 10,
+            "Plan Width": 12,
+            "Relation Name": "fact",
+            "Scan Direction": "Forward",
+            "Schema": "public",
+            "Startup Cost": 0.29,
+            "Total Cost": 8.79
+          }
+        ],
+        "Startup Cost": 0.56,
+        "Total Cost": 25303.57
+      }
+    ],
+    "Startup Cost": 25305.22,
+    "Strategy": "Plain",
+    "Total Cost": 25305.23
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "method": "paired complete-block bootstrap of the median runtime ratio",
+  "resamples": 10000,
+  "seed": 20260928,
+  "source": "original frozen E5 per-trial records",
+  "arm_order": "fixed within block",
+  "confirmation": {
+    "blocks": 10,
+    "ratio": 8.70917,
+    "ci_low": 8.59007,
+    "ci_high": 8.78188
+  },
+  "heldout_2x": {
+    "blocks": 10,
+    "ratio": 8.94644,
+    "ci_low": 8.81172,
+    "ci_high": 9.10553
+  }
+}

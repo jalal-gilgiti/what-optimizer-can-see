@@ -1,0 +1,970 @@
+Script started on 2026-09-03 11:38:45+09:00 [TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+make udfs
+make[1]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism'
+mkdir -p build/udfs
+mkdir -p udf1
+cp -r -n udf_template/* udf1
+cmake   -DBUILD_MAIN_DUCKDB_LIBRARY=0 -DDISABLE_BUILTIN_EXTENSIONS=1 -DDUCKDB_EXTENSION_NAMES="udf1" -DDUCKDB_EXTENSION_UDF1_PATH="<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1" -DDUCKDB_EXTENSION_UDF1_INCLUDE_PATH="<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/src/include"  -DEXTENSION_STATIC_BUILD=0 -DCMAKE_BUILD_TYPE=Release -S ./duckdb/ -B build/udfs
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+-- git hash dfb68aa3e8, version v..1-dev
+-- Load extension 'udf1' from '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1'
+-- Load extension 'jemalloc' from '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/duckdb/extensions'
+[0mCMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+-- Extensions built but not linked: [udf1, jemalloc]
+[0mCMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+-- Configuring done (0.1s)
+-- Generating done (0.5s)
+-- Build files have been written to: <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs
+cmake --build build/udfs --config Release -j6
+gmake[2]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+[  2%] Built target duckdb_fmt
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+[ 10%] Built target duckdb_miniz
+[ 12%] Built target duckdb_pg_query
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+[ 16%] Built target udf1_loadable_extension
+[ 16%] Built target udf1_extension
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+[ 19%] Built target duckdb_hyperloglog
+[ 19%] Built target duckdb_fastpforlib
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+[ 33%] Built target duckdb_utf8proc
+[ 40%] Built target duckdb_re2
+[ 40%] Built target duckdb_fsst
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+[ 52%] Built target duckdb_mbedtls
+[ 99%] Built target jemalloc
+gmake[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+[100%] Built target jemalloc_extension
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+gmake[2]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/udfs'
+make[1]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism'
+mkdir -p build/release
+cmake   -DDUCKDB_EXTENSION_NAMES="udf_transpiler" -DDUCKDB_EXTENSION_UDF_TRANSPILER_PATH="<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/" -DDUCKDB_EXTENSION_UDF_TRANSPILER_SHOULD_LINK="TRUE" -DDUCKDB_EXTENSION_UDF_TRANSPILER_INCLUDE_PATH="<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/include"  -DEXTENSION_STATIC_BUILD=1 -DCMAKE_BUILD_TYPE=Release -DEXTENSION_STATIC_BUILD=1 -DBUILD_TPCH_EXTENSION=1 -DBUILD_TPCDS_EXTENSION=1 -DBUILD_PARQUET_EXTENSION=1 -DBUILD_EXTENSIONS='tpch;tpcds'   -S ./duckdb/ -B build/release && \
+cmake --build build/release --config Release -j6
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+-- git hash dfb68aa3e8, version v..1-dev
+-- Load extension 'udf_transpiler' from '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/'
+-- Load extension 'tpch' from '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/duckdb/extensions'
+-- Load extension 'tpcds' from '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/duckdb/extensions'
+-- Load extension 'jemalloc' from '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/duckdb/extensions'
+-- Version: 10.0.0
+-- Build type: Release
+[0mCMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/dependencies/yaml-cpp/CMakeLists.txt:2 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at extension/tpch/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at extension/tpcds/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+-- Extensions linked into DuckDB: [udf_transpiler, tpch, tpcds, jemalloc]
+[0mCMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at third_party/imdb/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+-- Configuring done (2.7s)
+-- Generating done (7.6s)
+-- Build files have been written to: <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release
+gmake[1]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[2]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  1%] Built target duckdb_optimizer_pullup
+[  1%] Built target duckdb_optimizer_compressed_materialization
+[  2%] Built target duckdb_optimizer_matcher
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  2%] Built target duckdb_fsst
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  2%] Built target duckdb_optimizer
+[  2%] Built target duckdb_optimizer_join_order
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  2%] Built target duckdb_optimizer_pushdown
+[  2%] Built target duckdb_optimizer_statistics_expr
+[  2%] Built target duckdb_optimizer_rules
+[  2%] Built target duckdb_optimizer_statistics_op
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  2%] Built target duckdb_planner_expression
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  3%] Built target duckdb_planner
+[  3%] Built target duckdb_bind_expression
+[  3%] Built target duckdb_bind_query_node
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  3%] Built target duckdb_bind_statement
+[  3%] Built target duckdb_bind_tableref
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  3%] Built target duckdb_expression_binders
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  3%] Built target duckdb_planner_filter
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  4%] Built target duckdb_planner_subquery
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  4%] Built target duckdb_planner_operator
+[  4%] Built target duckdb_constraints
+[  4%] Built target duckdb_parser
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  4%] Built target duckdb_expression
+[  4%] Built target duckdb_query_node
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  4%] Built target duckdb_parsed_data
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  4%] Built target duckdb_statement
+[  4%] Built target duckdb_transformer_constraint
+[  4%] Built target duckdb_parser_tableref
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  5%] Built target duckdb_transformer_expression
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  5%] Built target duckdb_transformer_helpers
+[  5%] Built target duckdb_transformer_tableref
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  5%] Built target duckdb_aggr_algebraic
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  5%] Built target duckdb_transformer_statement
+[  5%] Built target duckdb_core_functions
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  6%] Built target duckdb_aggr_distributive
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  6%] Built target duckdb_aggr_regr
+[  6%] Built target duckdb_aggr_nested
+[  6%] Built target duckdb_aggr_holistic
+[  6%] Built target duckdb_func_bit
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  6%] Built target duckdb_func_blob
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  6%] Built target duckdb_func_date
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  7%] Built target duckdb_func_enum
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  7%] Built target duckdb_func_generic
+[  7%] Built target duckdb_func_list
+[  7%] Built target duckdb_func_math
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  8%] Built target duckdb_func_map_nested
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  8%] Built target duckdb_func_ops
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  9%] Built target duckdb_func_random
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  9%] Built target duckdb_func_struct
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  9%] Built target duckdb_func_string
+[  9%] Built target duckdb_func_union
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  9%] Built target duckdb_function
+[  9%] Built target duckdb_func_debug
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  9%] Built target duckdb_aggr_distr
+[  9%] Built target duckdb_func_aggr
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[  9%] Built target duckdb_union_cast
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 10%] Built target duckdb_func_cast
+[ 10%] Built target duckdb_func_scalar
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 10%] Built target duckdb_func_pragma
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 10%] Built target duckdb_func_compressed_materialization
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 10%] Built target duckdb_func_generic_main
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 10%] Built target duckdb_func_list_nested
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 10%] Built target duckdb_func_ops_main
+[ 10%] Built target duckdb_func_seq
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 10%] Built target duckdb_func_string_main
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 11%] Built target duckdb_func_struct_main
+[ 11%] Built target duckdb_func_string_regexp
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 11%] Built target duckdb_func_system
+[ 11%] Built target duckdb_table_func_system
+[ 12%] Built target duckdb_func_table_version
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 12%] Built target duckdb_arrow_conversion
+[ 12%] Built target duckdb_func_table
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 12%] Built target duckdb_catalog
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 13%] Built target duckdb_catalog_default_entries
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 13%] Built target duckdb_catalog_entries
+[ 13%] Built target duckdb_adbc_nanoarrow
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 13%] Built target duckdb_adbc
+[ 13%] Built target duckdb_common
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 13%] Built target duckdb_common_arrow
+[ 14%] Built target duckdb_common_crypto
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 14%] Built target duckdb_common_enums
+[ 14%] Built target duckdb_common_arrow_appender
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 14%] Built target duckdb_progress_bar
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 14%] Built target duckdb_common_operators
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 14%] Built target duckdb_common_serializer
+[ 14%] Built target duckdb_row_operations
+[ 14%] Built target duckdb_sort
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 14%] Built target duckdb_common_types
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 15%] Built target duckdb_common_types_column
+[ 15%] Built target duckdb_common_types_row
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 15%] Built target duckdb_value_operations
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 15%] Built target duckdb_expression_executor
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 15%] Built target duckdb_execution
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 15%] Built target duckdb_nested_loop_join
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 16%] Built target duckdb_operator_aggregate
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 16%] Built target duckdb_vector_operations
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 18%] Built target duckdb_operator_filter
+[ 18%] Built target duckdb_operator_csv_sniffer
+[ 18%] Built target duckdb_operator_csv_scanner
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 18%] Built target duckdb_operator_helper
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 19%] Built target duckdb_operator_projection
+[ 19%] Built target duckdb_operator_order
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 19%] Built target duckdb_operator_join
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 19%] Built target duckdb_operator_persistent
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 19%] Built target duckdb_operator_scan
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 19%] Built target duckdb_operator_schema
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 20%] Built target duckdb_operator_set
+[ 22%] Built target duckdb_execution_index_art
+[ 22%] Built target duckdb_physical_plan
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 22%] Built target duckdb_execution_index
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 22%] Built target duckdb_main_capi
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 22%] Built target duckdb_main
+[ 22%] Built target duckdb_main_capi_cast
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 22%] [32mBuilding CXX object src/main/extension/CMakeFiles/duckdb_generated_extension_loader.dir/__/__/__/codegen/src/generated_extension_loader.cpp.o[0m
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 22%] [32mBuilding CXX object src/main/extension/CMakeFiles/duckdb_main_extension.dir/ub_duckdb_main_extension.cpp.o[0m
+[ 22%] Built target duckdb_main_relation
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 22%] Built target duckdb_main_settings
+[ 23%] Built target duckdb_main_chunk_scan_state
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 24%] Built target duckdb_parallel
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 24%] Built target duckdb_storage_buffer
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 25%] Built target duckdb_storage_checkpoint
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 25%] Built target duckdb_storage
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 25%] Built target duckdb_storage_compression
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 25%] Built target duckdb_storage_compression_chimp
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 25%] Built target duckdb_storage_metadata
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 25%] Built target duckdb_storage_serialization
+[ 26%] Built target duckdb_storage_statistics
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 26%] Built target duckdb_storage_table
+[ 26%] Built target duckdb_transaction
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+make[4]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/dependencies/libpg_query'
+make[4]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+Warning: protoc-gen-c not found, skipping protocol buffer regeneration
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+Warning: protoc-gen-c not found, skipping protocol buffer regeneration
+make[4]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/dependencies/libpg_query'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 27%] Built target fmt
+[ 27%] Built target pg_parser
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 29%] Built target duckdb_verification
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 31%] Built target dsdgen
+[ 31%] Built target dbgen
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 37%] Built target yaml-cpp
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 37%] Built target duckdb_fmt
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 39%] Built target duckdb_pg_query
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 44%] Built target duckdb_miniz
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 53%] Built target dsdgen_c
+[ 55%] Built target duckdb_re2
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 56%] Built target duckdb_utf8proc
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 58%] Built target duckdb_hyperloglog
+[ 58%] Built target duckdb_fastpforlib
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 58%] Built target sqlite3_api_wrapper_sqlite3
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 58%] Built target sqlite3_udf_api
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 61%] Built target duckdb_mbedtls
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 62%] Built target yaml-cpp-sandbox
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 63%] Built target yaml-cpp-parse
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 63%] Built target yaml-cpp-read
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 63%] Built target test_sql_adbc
+[ 63%] Built target test_sql_capi
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 63%] Built target test_api
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 71%] Built target test_api_udf_function
+[ 72%] Built target test_appender
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 72%] Built target test_arrow_roundtrip
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 77%] Built target jemalloc
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 77%] Built target test_common
+[ 77%] Built target test_extensions
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 77%] Built target test_memory_leak
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 77%] Built target test_parallel_csv
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 78%] Built target test_serialization
+[ 78%] Built target test_filter
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 78%] Built target test_index
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 78%] Built target test_table_function
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 78%] Built target test_sql_interquery_parallelism
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 79%] Built target test_sql_storage
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 79%] Built target test_sql_storage_catalog
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 79%] [32mBuilding CXX object test/sqlite/CMakeFiles/test_sqlite.dir/ub_test_sqlite.cpp.o[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 79%] Built target test_ossfuzz
+[ 80%] Built target test_mbedtls
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 80%] Built target test_persistence
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 81%] Built target imdb
+[ 81%] Built target duckdb_sqlite3
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target udf_transpiler_extension
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target duckdb_generated_extension_loader
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target test_sqlite
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target duckdb_main_extension
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target jemalloc_extension
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target tpcds_extension
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target tpch_extension
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] [32m[1mLinking CXX static library libduckdb_static.a[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 87%] Built target duckdb_static
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 88%] Built target sqlite3_api_wrapper_static
+[ 89%] [32m[1mLinking CXX shared library loadable_extension_demo.duckdb_extension[0m
+[ 89%] [32m[1mLinking CXX shared library tpch.duckdb_extension[0m
+[ 89%] [32m[1mLinking CXX shared library tpcds.duckdb_extension[0m
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 89%] [32m[1mLinking CXX shared library libduckdb.so[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 89%] [32m[1mLinking CXX shared library loadable_extension_optimizer_demo.duckdb_extension[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 89%] [32m[1mLinking CXX shared library udf_transpiler.duckdb_extension[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 89%] Built target duckdb
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 89%] [32m[1mLinking CXX shared library libsqlite3_api_wrapper.so[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 91%] Built target sqlite3_api_wrapper
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 91%] [32m[1mLinking CXX executable ../../duckdb[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 91%] Built target tpcds_loadable_extension
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 91%] Built target tpch_loadable_extension
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 92%] Built target test_helpers
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 93%] [32m[1mLinking CXX executable test_sqlite3_api_wrapper[0m
+gmake[3]: Entering directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 93%] [32m[1mLinking CXX executable unittest[0m
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 93%] Built target loadable_extension_demo_loadable_extension
+[ 94%] Built target loadable_extension_optimizer_demo_loadable_extension
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 99%] Built target udf_transpiler_loadable_extension
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[ 99%] Built target test_sqlite3_api_wrapper
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[100%] Built target unittest
+gmake[3]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+[100%] Built target shell
+gmake[2]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+gmake[1]: Leaving directory '<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/build/release'
+./build/release/test/unittest --test-dir . "[sql]"
+[1;33mFilters: [sql]
+[0m
+[0/1] (0%): test/sql/udf_transpiler.test                                        {"PLpgSQL_function":{"action":{"PLpgSQL_stmt_block":{"body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"list := LTRIM(RTRIM(list)) || delim"}},"lineno":6}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"pos  := STRPOS(list, delim)::int"}},"lineno":7,"varno":4}},{"PLpgSQL_stmt_while":{"body":[{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"part := LTRIM(RTRIM(LEFT(list,pos)))"}},"lineno":9,"varno":3}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"list := SUBSTRING(list, pos+1, LENGTH(list))"}},"lineno":10}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"STRPOS(list,part) <> 0"}},"lineno":11,"then_body":[{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"FALSE"}},"lineno":12}}]}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"pos := STRPOS(list,delim)::int"}},"lineno":15,"varno":4}}],"cond":{"PLpgSQL_expr":{"query":"pos > 0"}},"lineno":8}},{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"TRUE"}},"lineno":18}}],"lineno":5}},"datums":[{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#119#"}},"refname":"list"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#134#"}},"refname":"delim"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"UNKNOWN"}},"refname":"found"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"TEXT"}},"lineno":3,"refname":"part"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"int"}},"lineno":4,"refname":"pos"}}]}}
+Running: MergeRegions
+MergeRegions: 0ms
+Running: SSAConstruction
+SSAConstruction: 33ms
+Running: InstructionElimination
+InstructionElimination: 14ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: AggifyPass
+AggifyPass: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: QueryMotion
+QueryMotion: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: OutliningPass
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 7ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+============================
+Outlined UDF isListDistinct_outlined_0 :
+
+CREATE OR REPLACE FUNCTION isListDistinct_outlined_0(delim VARCHAR, list VARCHAR) RETURNS BOOLEAN AS $$
+DECLARE
+pos INTEGER;
+
+BEGIN
+    
+
+
+pos := ((STRPOS((LTRIM(RTRIM(list)) || delim), delim)::int));
+list := ((LTRIM(RTRIM(list)) || delim));
+LOOP
+
+
+IF pos > 0 THEN
+
+
+
+IF STRPOS((SUBSTRING(list, pos+1, LENGTH(list))),(LTRIM(RTRIM(LEFT(list,pos))))) <> 0 THEN
+RETURN (FALSE);
+END IF;
+
+
+pos := ((STRPOS((SUBSTRING(list, pos+1, LENGTH(list))),delim)::int));
+list := ((SUBSTRING(list, pos+1, LENGTH(list))));
+CONTINUE;
+END IF;
+EXIT;
+END LOOP;
+
+RETURN (TRUE);
+
+END;$$
+LANGUAGE PLPGSQL;
+============================
+INFO: Transpiling UDF isListDistinct_outlined_0... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:53)
+INFO: Compiling the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:59)
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+[0mCMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+[0mCMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+[0m
+INFO: Installing and loading the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:62)
+Exception: IO Error: Failed to create directory "<USER_HOME>/.duckdb/extensions/dfb68aa3e8"! (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/file.cpp:164)
+[38;2;128;128;128m================================================================================[00m
+Query unexpectedly failed (test/sql/udf_transpiler.test:14)
+[38;2;128;128;128m================================================================================[00m
+pragma transpile_file('samples/sudf_10_isListDistinct.sql');
+[38;2;128;128;128m================================================================================[00m
+[1mActual result:[00m
+Parser Error: See the above message.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0;37munittest is a Catch v2.13.7 host application.
+Run with -? for options
+
+[0m-------------------------------------------------------------------------------
+[0mtest/sql/udf_transpiler.test
+[0m-------------------------------------------------------------------------------
+[0;37m<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/duckdb/test/sqlite/test_sqllogictest.cpp:204
+...............................................................................
+
+[0m[0;37mtest/sql/udf_transpiler.test:14: [0m[1;31mFAILED:
+[0mexplicitly with message:
+  0
+
+
+[1/1] (100%): test/sql/udf_transpiler.test                                      
+[1;31m===============================================================================[0m[1;33m[0m[0;32m[0m
+test cases: 1[0;37m | [0m[1;31m1 failed[0m
+assertions: 3[0;37m | [0m[0;32m2 passed[0m[0;37m | [0m[1;31m1 failed[0m
+
+make: *** [Makefile:99: test_release] Error 1
+
+Script done on 2026-09-03 11:40:05+09:00 [COMMAND_EXIT_CODE="2"]

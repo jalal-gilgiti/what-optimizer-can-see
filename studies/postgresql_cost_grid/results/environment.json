@@ -1,0 +1,29 @@
+{
+  "postgresql": "postgres (PostgreSQL) 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "costs": [
+    1,
+    10,
+    100,
+    1000,
+    10000,
+    100000
+  ],
+  "selectivities": [
+    [
+      "s001",
+      100
+    ],
+    [
+      "s010",
+      1000
+    ],
+    [
+      "s050",
+      5000
+    ]
+  ],
+  "rows": 10000,
+  "seed": 3604
+}

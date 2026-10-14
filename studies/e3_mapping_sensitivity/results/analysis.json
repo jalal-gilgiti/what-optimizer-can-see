@@ -1,0 +1,39 @@
+{
+  "boundary_refinement": [
+    {
+      "iterations": 8,
+      "lower_K": 320,
+      "lower_plan": "Index Scan:e3_population_expression_idx",
+      "query": "LOW",
+      "representation": "M2",
+      "transition_interval_width": 1,
+      "upper_K": 321,
+      "upper_plan": "Bitmap Heap Scan:e3_population_expression_idx"
+    },
+    {
+      "iterations": 9,
+      "lower_K": 780,
+      "lower_plan": "Bitmap Heap Scan:e3_population_expression_idx",
+      "query": "LOW",
+      "representation": "M2",
+      "transition_interval_width": 1,
+      "upper_K": 781,
+      "upper_plan": "Seq Scan"
+    }
+  ],
+  "classification": "ROBUSTLY SUPPORTED",
+  "high_divergent_primary_K": [],
+  "high_variance_cells": 6,
+  "historical_K400": "near boundary",
+  "low_divergent_primary_K": [
+    400,
+    800,
+    1600,
+    3200,
+    6400
+  ],
+  "nearest_low_boundary_factor_from_K400": 1.2480514407482945,
+  "primary_cells": 36,
+  "semantic_cells": 36,
+  "timing_trials": 468
+}

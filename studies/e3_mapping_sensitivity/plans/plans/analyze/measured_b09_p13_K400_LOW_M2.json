@@ -1,0 +1,65 @@
+{
+  "Execution Time": 19.697,
+  "Plan": {
+    "Actual Loops": 1,
+    "Actual Rows": 1,
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(e3_dynamic_loop(value, loop_count))"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Actual Loops": 1,
+        "Actual Rows": 5000,
+        "Alias": "e3_data",
+        "Async Capable": false,
+        "Exact Heap Blocks": 74,
+        "Lossy Heap Blocks": 0,
+        "Node Type": "Bitmap Heap Scan",
+        "Output": [
+          "id",
+          "value",
+          "population",
+          "loop_count"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 4999,
+        "Plan Width": 16,
+        "Plans": [
+          {
+            "Actual Loops": 1,
+            "Actual Rows": 5000,
+            "Async Capable": false,
+            "Index Cond": "((e3_data.population = 'LOW'::text) AND (e3_dynamic_loop(e3_data.value, e3_data.loop_count) >= 0))",
+            "Index Name": "e3_population_expression_idx",
+            "Node Type": "Bitmap Index Scan",
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 4999,
+            "Plan Width": 0,
+            "Startup Cost": 0.0,
+            "Total Cost": 134.28
+          }
+        ],
+        "Recheck Cond": "((e3_data.population = 'LOW'::text) AND (e3_dynamic_loop(e3_data.value, e3_data.loop_count) >= 0))",
+        "Relation Name": "e3_data",
+        "Rows Removed by Index Recheck": 0,
+        "Schema": "public",
+        "Startup Cost": 135.52,
+        "Total Cost": 409.48
+      }
+    ],
+    "Startup Cost": 559.46,
+    "Strategy": "Plain",
+    "Total Cost": 559.47
+  },
+  "Planning Time": 0.101,
+  "Triggers": []
+}

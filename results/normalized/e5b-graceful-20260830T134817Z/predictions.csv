@@ -1,0 +1,5 @@
+run_id,experiment,case_id,R,rho,Lambda,loop_bounds,form,compatibility,predicted_runtime_ms,frozen_measured_runtime_ms,q_error,source_graph_nodes,source_graph_edges,joint_graph_nodes,joint_graph_edges,udf_input_cardinality,loop_head_nodes,loop_end_nodes,branch_nodes,checkpoint_sha256
+e5b-graceful-20260830T134817Z,E1,e1_l1,10000,,1,[1],single_form,PASS,125.743046403,2066.939201000,16.437801215,9,9,14,15,10000,1,1,0,105f756a80111c281de207f69d03bc4913574e1fa6bee8b01aea5906d0f70969
+e5b-graceful-20260830T134817Z,E1,e1_l100,10000,,100,"[10,10]",single_form,PASS,867.882013321,1919.112701500,2.211259909,13,14,16,20,10000,2,2,0,105f756a80111c281de207f69d03bc4913574e1fa6bee8b01aea5906d0f70969
+e5b-graceful-20260830T134817Z,E2,e2_filter_before_udf,10000,0.1,100,"[10,10]",filter_before_udf,PASS,159.094706178,192.541966000,1.210234901,13,14,21,23,1000,2,2,0,105f756a80111c281de207f69d03bc4913574e1fa6bee8b01aea5906d0f70969
+e5b-graceful-20260830T134817Z,E2,e2_udf_before_filter,10000,0.1,100,"[10,10]",udf_before_filter,PASS,800.861477852,2244.051998000,2.802047620,13,14,19,23,10000,2,2,0,105f756a80111c281de207f69d03bc4913574e1fa6bee8b01aea5906d0f70969

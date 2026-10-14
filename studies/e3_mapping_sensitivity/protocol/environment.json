@@ -1,0 +1,99 @@
+{
+  "cluster_stopped_and_temporary_data_removed": true,
+  "compiler_flags": [
+    "-shared",
+    "-fPIC",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wno-unused-parameter",
+    "-I",
+    "/usr/include/postgresql/14/server",
+    "-o",
+    "studies/e3_mapping_sensitivity/raw/extension/task36_mapping_support.so",
+    "studies/e3_mapping_sensitivity/code/task36_mapping_support.c"
+  ],
+  "container_base": "ubuntu:22.04",
+  "container_image_digest": "sha256:b8b6ee6aa931ecd9d0d952abc34dc0e5f7c6a30c6bb71b079fe399fde0329c02",
+  "cpu": "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz",
+  "database_snapshot": {
+    "cpu_operator_cost": "0.0025",
+    "data_summary": [
+      10000,
+      5000,
+      5000,
+      10,
+      1000
+    ],
+    "gucs": {
+      "enable_bitmapscan": "on",
+      "enable_indexscan": "on",
+      "enable_seqscan": "on",
+      "jit": "off",
+      "max_parallel_workers_per_gather": "0"
+    },
+    "indexes": [
+      [
+        "e3_population_expression_idx",
+        "CREATE INDEX e3_population_expression_idx ON public.e3_data USING btree (population, e3_dynamic_loop(value, loop_count))"
+      ]
+    ],
+    "statistics": [
+      [
+        "id",
+        0.0,
+        -1.0,
+        null,
+        null
+      ],
+      [
+        "loop_count",
+        0.0,
+        2.0,
+        "{10,1000}",
+        "{0.5,0.5}"
+      ],
+      [
+        "population",
+        0.0,
+        2.0,
+        "{HIGH,LOW}",
+        "{0.5,0.5}"
+      ],
+      [
+        "value",
+        0.0,
+        -0.9948,
+        "{994128,5099,16678,36326,73109,122115,123529,149932,150670,159364,189598,193286,234710,243601,245112,245914,254621,257758,259804,278113,362121,364329,369307,411204,425239,446395,456569,536903,551129,559914,566256,567350,573026,597516,628268,656006,656445,674119,694633,720463,726622,729649,829120,839134,845917,882738,885914,890876,891515,906659,999181}",
+        "{0.0003,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002}"
+      ]
+    ],
+    "udf": [
+      100.0,
+      "task15b_cost_support",
+      "\nresult = int(value) & 0x7FFFFFFF\nobserved = 0\nfor index in range(int(iterations)):\n    result = (result * 1103515245 + 12345 + index) & 0x7FFFFFFF\n    observed += 1\nGD[\"e3_calls\"] = GD.get(\"e3_calls\", 0) + 1\nGD[\"e3_work\"] = GD.get(\"e3_work\", 0) + observed\nreturn result\n",
+      "plpython3u",
+      "i",
+      "u",
+      true
+    ],
+    "version": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, 64-bit"
+  },
+  "dataset_sha256": "bb8e82f203ecc59795701fe82c90a2365482c42bce6545fbe793cfebdbbb614a",
+  "extension_binary_sha256": "04a65cbc464b4e4f17fe008f65378dcf6c0c6f94dcc1ed9a03a89ddcf8902669",
+  "extension_source_sha256": "a11521162ef9e65d77d179c1acbb4fe35fdeff7a05b342c3c40cebed9f5ea9c7",
+  "finished_at_utc": "2026-09-22T15:53:36.603282+00:00",
+  "gcc": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "git_commit": "NOT_AVAILABLE_EXPORTED_ARTIFACT",
+  "kernel": "Linux b989142879a0 7.0.0-31-generic #31-Ubuntu SMP PREEMPT_DYNAMIC Sat Aug  1 04:26:38 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux",
+  "logical_cpus_visible": 64,
+  "make": "GNU Make 4.3",
+  "original_extension_source_sha256": "cf09ca5ce20118dde731cdc1a244fbaebb480e3d494a1bfbc8cbe15a8972c16c",
+  "original_runner_sha256": "8ffc592bf034909202f744fd8ae9fb32df53d9b7c757ae59879ffebc62c7dc4a",
+  "os_release": "PRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.5 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy\n",
+  "pg_config": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+  "postgresql": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, 64-bit",
+  "protocol_sha256": "5c11f4486dc2e2ffef852d0c0f64d5fcef0071176865e2dc855cc23313f2e490",
+  "ram_visible": "786697492 kB",
+  "started_at_utc": "2026-09-22T15:49:03.063913+00:00"
+}

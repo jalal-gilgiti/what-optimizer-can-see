@@ -1,0 +1,60 @@
+{
+  "explain_wall_ms": 0.262385,
+  "plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Aggregate",
+        "Output": [
+          "count(*)",
+          "sum(projected.udf_value)"
+        ],
+        "Parallel Aware": false,
+        "Partial Mode": "Simple",
+        "Plan Rows": 1,
+        "Plan Width": 40,
+        "Plans": [
+          {
+            "Alias": "input_rows",
+            "Async Capable": false,
+            "Node Type": "Seq Scan",
+            "Output": [
+              "input_rows.retained",
+              "fixed_loop(input_rows.value, '{10}'::integer[])"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "InitPlan",
+            "Plan Rows": 10000,
+            "Plan Width": 16,
+            "Relation Name": "input_rows",
+            "Schema": "public",
+            "Startup Cost": 0.0,
+            "Subplan Name": "CTE projected",
+            "Total Cost": 2694.0
+          },
+          {
+            "Alias": "projected",
+            "Async Capable": false,
+            "CTE Name": "projected",
+            "Filter": "(projected.retained = 1)",
+            "Node Type": "CTE Scan",
+            "Output": [
+              "projected.retained",
+              "projected.udf_value"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 50,
+            "Plan Width": 8,
+            "Startup Cost": 0.0,
+            "Total Cost": 225.0
+          }
+        ],
+        "Startup Cost": 2919.25,
+        "Strategy": "Plain",
+        "Total Cost": 2919.26
+      }
+    }
+  ],
+  "query": "WITH projected AS MATERIALIZED (SELECT retained, fixed_loop(value, ARRAY[10]::integer[]) AS udf_value FROM input_rows) SELECT COUNT(*), SUM(udf_value) FROM projected WHERE retained = 1"
+}

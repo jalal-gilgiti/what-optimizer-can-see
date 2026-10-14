@@ -1,0 +1,16 @@
+{
+  "cache_state": "database_warm_os_uncontrolled",
+  "canonical_udf_source_sha256": "ba8432dfc37fcf0e6c020eeb549e4cfebdce70ae12c3b35f9e11c78e207c9d43",
+  "captured_at_utc": "2026-08-30T04:51:11.662559+00:00",
+  "function_metadata": {
+    "deterministic": true,
+    "language": "DuckDB native Python scalar callback",
+    "optimizer_cost": null,
+    "side_effects": false
+  },
+  "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12",
+  "run_id": "e4-20260830T044613Z",
+  "system": "duckdb",
+  "version": "1.5.5"
+}

@@ -1,0 +1,7 @@
+{
+  "bootstrap_resamples": 10000,
+  "duckdb": "1.0.0",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "seed": 3605
+}

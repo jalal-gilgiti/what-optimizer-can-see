@@ -1,0 +1,164 @@
+Script started on 2026-09-03 11:43:49+09:00 [TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+┌──────────────────────────────────┬──────────┐
+│               Pass               │ Enabled? │
+│             varchar              │ boolean  │
+├──────────────────────────────────┼──────────┤
+│ AggifyPass                       │ true     │
+│ AggressiveInstructionElimination │ true     │
+│ AggressiveMergeRegions           │ true     │
+│ DeadCodeElimination              │ true     │
+│ InstructionElimination           │ true     │
+│ MergeRegions                     │ true     │
+│ OutliningPass                    │ true     │
+│ PrintOutlinedUDF                 │ true     │
+│ QueryMotion                      │ true     │
+│ RemoveUnusedVariable             │ true     │
+│ SSAConstruction                  │ true     │
+│ SSADestruction                   │ true     │
+├──────────────────────────────────┴──────────┤
+│ 12 rows                           2 columns │
+└─────────────────────────────────────────────┘
+{"PLpgSQL_function":{"action":{"PLpgSQL_stmt_block":{"body":[{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"(shipdate < stdateChar)"}},"lineno":10,"then_body":[{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"0"}},"lineno":11}}]}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"(shipdate >= newdate)"}},"lineno":13,"then_body":[{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"0"}},"lineno":14}}]}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"(qty >= 24)"}},"lineno":16,"then_body":[{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"0"}},"lineno":17}}]}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"lowerbound = val - epsilon"}},"lineno":19,"varno":9}},{"PLpgSQL_stmt_assign":{"expr":{"PLpgSQL_expr":{"query":"upperbound = val + epsilon"}},"lineno":20,"varno":10}},{"PLpgSQL_stmt_if":{"cond":{"PLpgSQL_expr":{"query":"(discount >= lowerbound AND discount <= upperbound)"}},"lineno":21,"then_body":[{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"1"}},"lineno":22}}]}},{"PLpgSQL_stmt_return":{"expr":{"PLpgSQL_expr":{"query":"0"}},"lineno":24}}],"lineno":9}},"datums":[{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#38#"}},"refname":"shipdate"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#82#"}},"refname":"discount"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"#130#"}},"refname":"qty"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"UNKNOWN"}},"refname":"found"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"varchar "}},"default_val":{"PLpgSQL_expr":{"query":"'1994-01-01'"}},"lineno":2,"refname":"stdatechar"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"date "}},"default_val":{"PLpgSQL_expr":{"query":"cast(stdateChar as date)"}},"lineno":3,"refname":"stdate"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"date "}},"default_val":{"PLpgSQL_expr":{"query":"stdate + (INTERVAL '1 YEAR')"}},"lineno":4,"refname":"newdate"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"decimal(12,2) "}},"default_val":{"PLpgSQL_expr":{"query":"0.06"}},"lineno":5,"refname":"val"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"decimal(12,2) "}},"default_val":{"PLpgSQL_expr":{"query":"0.01"}},"lineno":6,"refname":"epsilon"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"decimal(12,2)"}},"lineno":7,"refname":"lowerbound"}},{"PLpgSQL_var":{"datatype":{"PLpgSQL_type":{"typname":"decimal(12,2)"}},"lineno":8,"refname":"upperbound"}}]}}
+Running: MergeRegions
+MergeRegions: 0ms
+Running: SSAConstruction
+SSAConstruction: 43ms
+Running: InstructionElimination
+InstructionElimination: 23ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+CREATE MACRO q6conditions_eq(t , shipdate, discount, qty) AS ((((NOT ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 = t))) OR ((( ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (1 = t))) OR ((( ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 = t))) OR ((( ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 = t))) OR ((( ((shipdate < ('1994-01-01')))) AND (0 = t))));
+CREATE MACRO q6conditions_leq(t , shipdate, discount, qty) AS ((((NOT ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 <= t))) OR ((( ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (1 <= t))) OR ((( ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 <= t))) OR ((( ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 <= t))) OR ((( ((shipdate < ('1994-01-01')))) AND (0 <= t))));
+CREATE MACRO q6conditions_geq(t , shipdate, discount, qty) AS ((((NOT ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 >= t))) OR ((( ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (1 >= t))) OR ((( ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 >= t))) OR ((( ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 >= t))) OR ((( ((shipdate < ('1994-01-01')))) AND (0 >= t))));
+CREATE MACRO q6conditions_lt(t , shipdate, discount, qty) AS ((((NOT ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 < t))) OR ((( ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (1 < t))) OR ((( ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 < t))) OR ((( ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 < t))) OR ((( ((shipdate < ('1994-01-01')))) AND (0 < t))));
+CREATE MACRO q6conditions_gt(t , shipdate, discount, qty) AS ((((NOT ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 > t))) OR ((( ((discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))))) AND (NOT ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (1 > t))) OR ((( ((qty >= 24))) AND (NOT ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 > t))) OR ((( ((shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))))) AND (NOT ((shipdate < ('1994-01-01')))) AND (0 > t))) OR ((( ((shipdate < ('1994-01-01')))) AND (0 > t))));
+Running: AggifyPass
+AggifyPass: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: QueryMotion
+QueryMotion: 0ms
+Running: InstructionElimination
+InstructionElimination: 0ms
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: OutliningPass
+Running: DeadCodeElimination
+DeadCodeElimination: 0ms
+Running: SSADestruction
+SSADestruction: 16ms
+Running: RemoveUnusedVariable
+RemoveUnusedVariable: 0ms
+============================
+Outlined UDF q6conditions_outlined_0 :
+
+CREATE OR REPLACE FUNCTION q6conditions_outlined_0(discount DECIMAL(12, 2), qty INTEGER, shipdate DATE) RETURNS INTEGER AS $$
+DECLARE
+
+BEGIN
+    
+
+
+
+
+IF (shipdate < ('1994-01-01')) THEN
+RETURN (0);
+END IF;
+
+
+
+
+IF (shipdate >= ((cast(('1994-01-01') as date)) + (INTERVAL '1 YEAR'))) THEN
+RETURN (0);
+END IF;
+
+
+
+
+IF (qty >= 24) THEN
+RETURN (0);
+END IF;
+
+
+
+
+IF (discount >= ((((0.06)::DECIMAL(12, 2)) - ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2)) AND discount <= ((((0.06)::DECIMAL(12, 2)) + ((0.01)::DECIMAL(12, 2)))::DECIMAL(12, 2))) THEN
+RETURN (1);
+END IF;
+
+RETURN (0);
+
+END;$$
+LANGUAGE PLPGSQL;
+============================
+INFO: Transpiling UDF q6conditions_outlined_0... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:53)
+INFO: Compiling the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:59)
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+fatal: No names found, cannot describe anything.
+fatal: No names found, cannot describe anything.
+CMake Deprecation Warning at <PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/udf1/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at extension/jemalloc/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/libpg_query/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Deprecation Warning at third_party/re2/CMakeLists.txt:5 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+INFO: Installing and loading the UDF... (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/outlining.cpp:62)
+Exception: IO Error: Extension "<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/../build/udfs/extension/udf1/udf1.duckdb_extension" could not be loaded because its signature is either missing or invalid and unsigned extensions are disabled by configuration.
+Start the shell with the -unsigned parameter to allow this (e.g. duckdb -unsigned). (<PROJECT_ROOT>/runtime/prism/task4-prism-20260903T022253Z/source/prism/src/file.cpp:168)
+Error: Parser Error: See the above message.
+
+Script done on 2026-09-03 11:43:55+09:00 [COMMAND_EXIT_CODE="1"]

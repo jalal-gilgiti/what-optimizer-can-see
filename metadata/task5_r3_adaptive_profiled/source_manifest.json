@@ -1,0 +1,53 @@
+{
+  "created_at_utc": "2026-09-03T03:19:08Z",
+  "note": "Publication pages/PDFs were inspected through read-only web access. No paper PDF was copied into protected prior-artifact paths.",
+  "publication_sources": [
+    {
+      "candidate_id": "boulos1999",
+      "local_copy": null,
+      "url": "https://citeseerx.ist.psu.edu/document?doi=930a15f8818a015073e8b16e4ac2da40b98adb8e&repid=rep1&type=pdf"
+    },
+    {
+      "candidate_id": "he2005",
+      "local_copy": null,
+      "url": "https://bslee.w3.uvm.edu/papers/STM_costUDF_TODS_2005.pdf"
+    },
+    {
+      "candidate_id": "dyno2014",
+      "local_copy": null,
+      "url": "https://research.ibm.com/publications/dynamically-optimizing-queries-over-large-scale-data-platforms"
+    },
+    {
+      "candidate_id": "monsoon2020",
+      "local_copy": null,
+      "url": "https://par.nsf.gov/servlets/purl/10176630"
+    }
+  ],
+  "run_id": "task5-r3-audit-20260903T031908Z",
+  "schema_version": 1,
+  "sources": [
+    {
+      "build_manifest_present": false,
+      "canonical_url": "https://bitbucket.org/sikdarsourav/monsoonqueries.git",
+      "commit": "685f446790707fcbb0ce0e5b4b073e116a498eda",
+      "dataset_present": false,
+      "files": [
+        {
+          "git_blob": "5d917c086d06c4e82190d82e9ad212b2461ca814",
+          "path": "UDFBenchmark/Overview.pdf",
+          "sha256": "d13f511d608b06cb4ae136ed5025e16b58500a5c81e9ad366babd05ca0261db1",
+          "size_bytes": 96443
+        }
+      ],
+      "interpretation": "Artifact confirms only a benchmark-description PDF; it does not confirm the MONSOON optimizer implementation.",
+      "kind": "paper_linked_repository",
+      "license_present": false,
+      "local_path": "runtime/task5_r3_adaptive_profiled/monsoonqueries",
+      "optimizer_source_present": false,
+      "readme_present": false,
+      "system": "MONSOON",
+      "tracked_files": 1,
+      "tree": "59318cd655c8e3ee2a34468d87b97be5f14af295"
+    }
+  ]
+}

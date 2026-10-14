@@ -1,0 +1,85 @@
+{
+  "cross_system_checksum_groups": 39,
+  "cross_system_checksum_mismatches": [],
+  "dataset_count": 1,
+  "dataset_query_validation": "PASS",
+  "dataset_sha256": "bb8e82f203ecc59795701fe82c90a2365482c42bce6545fbe793cfebdbbb614a",
+  "decision": "GO",
+  "errors": [],
+  "failures_or_timeouts": 0,
+  "frozen_artifact_audit": "PASS",
+  "frozen_artifact_unchanged_count": 4378,
+  "high_cv_configurations": [
+    {
+      "cv": 0.17498306446397383,
+      "query_id": "Q_low",
+      "system": "sqlite"
+    },
+    {
+      "cv": 0.11218072957891331,
+      "query_id": "Q_all",
+      "system": "duckdb"
+    },
+    {
+      "cv": 0.16678361087860705,
+      "query_id": "Q_low",
+      "system": "duckdb"
+    },
+    {
+      "cv": 0.18893028445380244,
+      "query_id": "Q_low",
+      "system": "postgresql"
+    }
+  ],
+  "high_cv_count": 4,
+  "logical_query_shape_agreement": true,
+  "m1_global_qerror_range": [
+    1.0,
+    50.5
+  ],
+  "m2_conditioned_qerror_range": [
+    1.0,
+    1.0
+  ],
+  "measurement_record_counts": {
+    "duckdb": 30,
+    "postgresql": 30,
+    "sqlite": 30
+  },
+  "paired_intervals_above_one_all_systems": true,
+  "plan_and_metadata_evidence": {
+    "duckdb": {
+      "filtered_predicate_visible_below_udf_aggregate": true,
+      "function_metadata_equal_across_contexts": true,
+      "q_high_estimated_total_cost": null,
+      "q_low_estimated_total_cost": null,
+      "q_low_q_high_estimated_cost_equal": true
+    },
+    "postgresql": {
+      "filtered_predicate_visible_below_udf_aggregate": true,
+      "function_metadata_equal_across_contexts": true,
+      "q_high_estimated_total_cost": 1474.01,
+      "q_low_estimated_total_cost": 1474.01,
+      "q_low_q_high_estimated_cost_equal": true
+    },
+    "sqlite": {
+      "filtered_predicate_visible_below_udf_aggregate": true,
+      "function_metadata_equal_across_contexts": true,
+      "q_high_estimated_total_cost": null,
+      "q_low_estimated_total_cost": null,
+      "q_low_q_high_estimated_cost_equal": true
+    }
+  },
+  "raw_record_counts": {
+    "duckdb": 39,
+    "postgresql": 39,
+    "sqlite": 39
+  },
+  "runtime_direction_all_systems": true,
+  "status": "PASS",
+  "true_work": {
+    "Q_all": 5050000,
+    "Q_high": 5000000,
+    "Q_low": 50000
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "e2_checksum_equivalence": "PASS",
+  "errors": [],
+  "failed_or_timeout_measurement_trials": 0,
+  "measurement_trials": 470,
+  "query_plan_structure": "PASS",
+  "schema_version": "1.0.0",
+  "source_raw_files": [
+    "<PROJECT_ROOT>/results/raw/e1-sqlite-20260829T061338Z-cc53dcb1.jsonl",
+    "<PROJECT_ROOT>/results/raw/e2-sqlite-20260829T061338Z-0b112e54.jsonl"
+  ],
+  "warmup_trials": 141,
+  "work_count_validation": "PASS"
+}

@@ -1,0 +1,4 @@
+run_id,method,workload,information_state,metric,value,unit,measurement_origin,comparable_execution_cost,status,source_evidence
+task5-r3-audit-20260903T031908Z,He-Lee-Snapp MLKNN/MLQ,publication real UDFs,PAPER_REPORTED,modeling overhead,0.1-8,percent_of_real_UDF_execution_cost,PAPER_DESCRIBED_NOT_REPRODUCED,publication-specific,HISTORICAL_ONLY,He et al. 2005 §8.1
+task5-r3-audit-20260903T031908Z,MONSOON,publication UDF benchmark,PAPER_REPORTED,average MCTS/statistics/execution time,3.41/4.43/38.53,seconds,PAPER_DESCRIBED_NOT_REPRODUCED,publication UDF benchmark only,BLOCKED,Sikdar & Jermaine 2020 Table 8
+task5-r3-audit-20260903T031908Z,NONE,Task5,NOT_APPLICABLE,our information acquisition cost,NOT_MEASURED,NOT_APPLICABLE,NO_EXECUTION,NONE,NOT_RUN_PHASE_C_STOP,selected_r3_method.json

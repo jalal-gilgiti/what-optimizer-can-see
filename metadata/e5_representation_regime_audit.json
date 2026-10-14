@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "audit_id": "e5-audit-20260830T061725Z",
+  "audit_date": "2026-08-30",
+  "scope": "E5 feasibility audit only; read-only local and authoritative-source inspection",
+  "actions_not_performed": [
+    "clone",
+    "download",
+    "install",
+    "build",
+    "candidate_execution",
+    "service_start"
+  ],
+  "classification_rubric": {
+    "READY": "locally runnable with pinned artifacts and no setup",
+    "EASY_SETUP": "small unprivileged isolated environment only; no source adaptation or service",
+    "MODERATE_SETUP": "reproducible source/artifacts but isolated dependencies and adapter/preprocessing required",
+    "HARD_SETUP": "new DBMS/system service, privileged packages, or substantial port required",
+    "BLOCKED": "indispensable implementation, artifact, license permission, platform, or authority unavailable"
+  },
+  "server": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "architecture": "x86_64",
+    "cpu_count": 14,
+    "memory_gib": 157,
+    "workspace_free_gib": 122,
+    "available": ["gcc", "g++", "cmake", "make", "git", "conda", "python3.10"],
+    "absent_or_unusable": ["sqlservr", "sqlcmd", "docker", "podman", "java", "dotnet", "graphviz", "dgl", "wandb", "working_nvidia_driver"]
+  },
+  "candidates": {
+    "froid_sql_server": {
+      "status": "HARD_SETUP",
+      "local_artifact": false,
+      "source_available": "Product implementation proprietary; public research description and official feature documentation available",
+      "required_runtime": "SQL Server 2019+ with compatibility level 150; SQL Server 2022 CU10+ for supported Ubuntu 22.04 deployment",
+      "install_build": "Microsoft repository, privileged mssql-server and mssql-tools installation, edition/password configuration, system service",
+      "dataset_workload": "Port controlled tables and inlineable UDF subset to T-SQL; compare inlining enabled/disabled and validate plan XML",
+      "license": "Developer edition free for non-production development/test; proprietary engine",
+      "controlled_workload_compatibility": "partial",
+      "compatibility_notes": "IF/ELSE and straight-line constructs supported; documented inlineable list excludes procedural WHILE loops, so exact loop experiments cannot be presumed inlineable",
+      "visible_representation": "supported imperative T-SQL transformed into relational scalar expressions",
+      "visibility_stage": "query compilation/algebraization before relational optimization",
+      "decision_consumer": "SQL Server relational cost optimizer and plan generator",
+      "evidence": [
+        {"type": "official_docs", "url": "https://learn.microsoft.com/en-us/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver17"},
+        {"type": "official_docs", "url": "https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16"},
+        {"type": "research_project", "url": "https://www.microsoft.com/en-us/research/project/froid/"}
+      ],
+      "confidence": "high"
+    },
+    "qfusor": {
+      "status": "BLOCKED",
+      "local_artifact": false,
+      "local_notes": "Survey integration directory empty; paper present elsewhere, optimizer implementation absent",
+      "source_available": "Public repository exposes experimental queries/UDFs and GPL-3.0 license, not optimizer implementation",
+      "required_runtime": "DBMS with plan generation, C UDF registration, Python/PyPy, CFFI/compiler, and engine adapter",
+      "install_build": "Not determinable reproducibly without unreleased implementation/build instructions",
+      "dataset_workload": "Repository workloads derive from UDFBench",
+      "license": "GPL-3.0 for released repository contents; implementation licensing unavailable because implementation is absent",
+      "controlled_workload_compatibility": "conceptual_only",
+      "visible_representation": "DBMS plan plus UDF/relational data dependencies and fusible operator groups",
+      "visibility_stage": "post-native-plan fusion optimizer, followed by code generation and query/plan rewrite",
+      "decision_consumer": "QFusor rule- and cost-based fusion optimizer",
+      "blocking_condition": "essential optimizer/plugin source and pinned build procedure not released",
+      "evidence": [
+        {"type": "repository", "url": "https://github.com/athenarc/QFusor"},
+        {"type": "paper", "url": "https://www.openproceedings.org/2026/conf/edbt/paper-124.pdf"}
+      ],
+      "confidence": "high"
+    },
+    "graceful": {
+      "status": "MODERATE_SETUP",
+      "local_artifact": true,
+      "local_source_path": "external/Graceful",
+      "local_source_size_gib": 8.7,
+      "local_source_head": "f57278d3efc143eb20985b5728d6b2a7cf02068e",
+      "local_source_clean": false,
+      "local_data": [
+        {"path": "<USER_HOME>/Graceful_data", "size_gib": 15, "checkpoint_count": 66},
+        {"path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data", "size_gib": 156, "checkpoint_count": 30}
+      ],
+      "source_available": "Canonical DataManagementLab/Graceful repository under Apache-2.0",
+      "required_runtime": "Python environment pinned around DuckDB 0.10.1, PyTorch 1.13.1 CUDA 11.6, DGL 0.9.1 CUDA 11.6, NumPy 1.23.5, Graphviz, and supporting ML/data packages",
+      "install_build": "Isolated Conda environment; CPU-only feasibility variant recommended because NVIDIA driver is unavailable; controlled adapter required",
+      "dataset_workload": "Canonical OSF query traces, UDF benchmark, DuckDB databases, feature statistics, and pretrained checkpoints; local candidate copies require provenance/hash validation",
+      "license": "Apache-2.0 source; paper CC BY 4.0; artifact provenance must be checked",
+      "controlled_workload_compatibility": "strong_after_adapter",
+      "visible_representation": "Python UDF CFG transformed to annotated acyclic single-statement graph with INV/COMP/BRANCH/LOOP/LOOP_END/RET nodes, joined to query-plan graph",
+      "visibility_stage": "offline graph extraction/annotation and learned-model inference",
+      "decision_consumer": "Graceful runtime estimator and external pull-up/push-down advisor; not the native DBMS optimizer by default",
+      "evidence": [
+        {"type": "repository", "url": "https://github.com/DataManagementLab/Graceful"},
+        {"type": "paper", "url": "https://arxiv.org/html/2503.23863v1"},
+        {"type": "artifact", "url": "https://osf.io/z6v95/?view_only=46f1fbb4da7d4bc986c838e394865e56"},
+        {"type": "local_probe", "path": "external/Graceful"}
+      ],
+      "confidence": "high_for_availability_moderate_for_execution"
+    }
+  },
+  "recommendation": {
+    "regime": "Graceful source-aware learned UDF costing",
+    "status": "MODERATE_SETUP",
+    "reason": "Only candidate with public implementation, extensive local artifacts, strong semantic alignment with controlled Python loop/branch/predicate workloads, and no prerequisite new DBMS",
+    "scores": {
+      "froid_sql_server": {"scientific_distinctiveness": 5, "reproducibility": 4, "controlled_compatibility": 2, "section_6_value": 5, "setup_affordability": 1, "total": 17},
+      "qfusor": {"scientific_distinctiveness": 5, "reproducibility": 1, "controlled_compatibility": 2, "section_6_value": 5, "setup_affordability": 0, "total": 13},
+      "graceful": {"scientific_distinctiveness": 5, "reproducibility": 4, "controlled_compatibility": 5, "section_6_value": 5, "setup_affordability": 3, "total": 22}
+    },
+    "next_probe": "Pinned CPU-only inference smoke on one canonical local artifact, then an adapter-only representation check for copied E1-E4 UDFs and one preregistered E2 placement decision",
+    "approval_required": true
+  },
+  "security_note": "A credential-bearing remote URL exists in the derivative Graceful checkout. Its value is intentionally redacted; do not copy that remote configuration and rotate the credential separately.",
+  "freeze_audit": {
+    "before": "metadata/e5-audit-20260830T061725Z/frozen_artifacts_before.json",
+    "after": "metadata/e5-audit-20260830T061725Z/frozen_artifacts_after.json",
+    "status": "PASS",
+    "unchanged_count": 5664
+  }
+}

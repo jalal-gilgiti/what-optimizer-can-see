@@ -1,0 +1,26 @@
+{
+  "classification_input": "natural released SQL without EXPLAIN ANALYZE wrapper",
+  "plan": [
+    {
+      "Plan": {
+        "Alias": "artifacts",
+        "Async Capable": false,
+        "Node Type": "Seq Scan",
+        "Output": [
+          "id",
+          "extractyear(date)",
+          "extractmonth(date)",
+          "extractday(date)"
+        ],
+        "Parallel Aware": false,
+        "Plan Rows": 50000,
+        "Plan Width": 59,
+        "Relation Name": "artifacts",
+        "Schema": "public",
+        "Startup Cost": 0.0,
+        "Total Cost": 39987.0
+      }
+    }
+  ],
+  "sql": "select id, extractyear(date), extractmonth(date), extractday(date) from artifacts"
+}

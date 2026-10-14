@@ -1,0 +1,642 @@
+{
+  "rho=0.01,Lambda=1": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 107169090252,
+        "error": null,
+        "loop_iterations": 100,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 1.274489
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l1-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[1]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 107169090252,
+        "error": null,
+        "loop_iterations": 100,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 1.30648
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l1-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[1]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.01,Lambda=10": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 107223111556,
+        "error": null,
+        "loop_iterations": 1000,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 1.485857
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l10-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 107223111556,
+        "error": null,
+        "loop_iterations": 1000,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 1.61227
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l10-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.01,Lambda=100": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 116152576068,
+        "error": null,
+        "loop_iterations": 10000,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 5.639092
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l100-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10,10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 116152576068,
+        "error": null,
+        "loop_iterations": 10000,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 5.610521
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l100-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10,10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.01,Lambda=960": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 110278546424,
+        "error": null,
+        "loop_iterations": 96000,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 45.066315
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l960-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[8,10,12]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 110278546424,
+        "error": null,
+        "loop_iterations": 96000,
+        "row_count": 100,
+        "status": "ok",
+        "udf_invocations": 100,
+        "wall_time_ms": 47.940342
+      },
+      "estimated_total_cost": 244.51,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.01-l960-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[8,10,12]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.1,Lambda=1": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 1072693098041,
+        "error": null,
+        "loop_iterations": 1000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 4.513074
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l1-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[1]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 1072693098041,
+        "error": null,
+        "loop_iterations": 1000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 4.471155
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l1-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[1]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.1,Lambda=10": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 1093225938805,
+        "error": null,
+        "loop_iterations": 10000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 8.265657
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l10-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 1093225938805,
+        "error": null,
+        "loop_iterations": 10000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 8.293182
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l10-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.1,Lambda=100": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 1087300364829,
+        "error": null,
+        "loop_iterations": 100000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 52.351826
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l100-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10,10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 1087300364829,
+        "error": null,
+        "loop_iterations": 100000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 48.729874
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l100-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10,10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.1,Lambda=960": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 1072911147349,
+        "error": null,
+        "loop_iterations": 960000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 443.785698
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l960-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[8,10,12]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 1072911147349,
+        "error": null,
+        "loop_iterations": 960000,
+        "row_count": 1000,
+        "status": "ok",
+        "udf_invocations": 1000,
+        "wall_time_ms": 440.549763
+      },
+      "estimated_total_cost": 474.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.1-l960-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[8,10,12]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.5,Lambda=1": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 5417953555976,
+        "error": null,
+        "loop_iterations": 5000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 18.706276
+      },
+      "estimated_total_cost": 1494.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l1-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[1]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 5417953555976,
+        "error": null,
+        "loop_iterations": 5000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 18.999233
+      },
+      "estimated_total_cost": 1494.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l1-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[1]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.5,Lambda=10": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 5379486547000,
+        "error": null,
+        "loop_iterations": 50000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 36.770574
+      },
+      "estimated_total_cost": 1494.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l10-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 5379486547000,
+        "error": null,
+        "loop_iterations": 50000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 36.903369
+      },
+      "estimated_total_cost": 1494.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l10-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.5,Lambda=100": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 5364225345848,
+        "error": null,
+        "loop_iterations": 500000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 242.21717
+      },
+      "estimated_total_cost": 1494.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l100-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10,10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 5364225345848,
+        "error": null,
+        "loop_iterations": 500000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 241.312283
+      },
+      "estimated_total_cost": 1494.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l100-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10,10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=0.5,Lambda=960": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 5359661161312,
+        "error": null,
+        "loop_iterations": 4800000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 2249.856561
+      },
+      "estimated_total_cost": 1494.0,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l960-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[8,10,12]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": true,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 5359661161312,
+        "error": null,
+        "loop_iterations": 4800000,
+        "row_count": 5000,
+        "status": "ok",
+        "udf_invocations": 5000,
+        "wall_time_ms": 2176.456881
+      },
+      "estimated_total_cost": 1494.0,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho0.5-l960-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[8,10,12]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=1,Lambda=1": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 10836469055302,
+        "error": null,
+        "loop_iterations": 10000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 37.409827
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l1-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[1]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": false,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 10836469055302,
+        "error": null,
+        "loop_iterations": 10000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 36.753831
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l1-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[1]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=1,Lambda=10": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 10733384277038,
+        "error": null,
+        "loop_iterations": 100000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 72.374808
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l10-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": false,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 10733384277038,
+        "error": null,
+        "loop_iterations": 100000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 73.80313
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l10-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=1,Lambda=100": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 10755038436510,
+        "error": null,
+        "loop_iterations": 1000000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 483.695251
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l100-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[10,10]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": false,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 10755038436510,
+        "error": null,
+        "loop_iterations": 1000000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 484.498083
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l100-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[10,10]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  },
+  "rho=1,Lambda=960": {
+    "classification": "PHYSICALLY_EQUIVALENT",
+    "filter_before_udf": {
+      "diagnostic_result": {
+        "checksum": 10686088789774,
+        "error": null,
+        "loop_iterations": 9600000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 4361.511547
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l960-filter_before_udf.json",
+      "query": "SELECT COUNT(*), SUM(fixed_loop(value, ARRAY[8,10,12]::integer[])) FROM input_rows WHERE retained = 1"
+    },
+    "natural_udf_before_rewritten_to_filter_first": false,
+    "udf_before_filter": {
+      "diagnostic_result": {
+        "checksum": 10686088789774,
+        "error": null,
+        "loop_iterations": 9600000,
+        "row_count": 10000,
+        "status": "ok",
+        "udf_invocations": 10000,
+        "wall_time_ms": 4360.496886
+      },
+      "estimated_total_cost": 2769.01,
+      "plan_node_types": [
+        "Aggregate",
+        "Seq Scan"
+      ],
+      "plan_path": "<PROJECT_ROOT>/results/plans/postgresql-20260829T084826Z/natural-rho1-l960-udf_before_filter.json",
+      "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[8,10,12]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+    }
+  }
+}

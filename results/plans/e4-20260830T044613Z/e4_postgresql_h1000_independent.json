@@ -1,0 +1,50 @@
+{
+  "H": 1000,
+  "correlation": "independent",
+  "estimated_total_cost": 2744.01,
+  "plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Aggregate",
+        "Output": [
+          "count(*)",
+          "sum(e4_branch_loop(value, flag, loop_count))"
+        ],
+        "Parallel Aware": false,
+        "Partial Mode": "Simple",
+        "Plan Rows": 1,
+        "Plan Width": 40,
+        "Plans": [
+          {
+            "Alias": "e4_independent",
+            "Async Capable": false,
+            "Node Type": "Seq Scan",
+            "Output": [
+              "id",
+              "value",
+              "flag",
+              "loop_count",
+              "retained",
+              "lookup_key"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 10000,
+            "Plan Width": 24,
+            "Relation Name": "e4_independent",
+            "Schema": "public",
+            "Startup Cost": 0.0,
+            "Total Cost": 194.0
+          }
+        ],
+        "Startup Cost": 2744.0,
+        "Strategy": "Plain",
+        "Total Cost": 2744.01
+      }
+    }
+  ],
+  "query": "SELECT COUNT(*), SUM(e4_branch_loop(value, flag, loop_count)) FROM e4_independent",
+  "run_id": "e4-20260830T044613Z",
+  "system": "postgresql"
+}

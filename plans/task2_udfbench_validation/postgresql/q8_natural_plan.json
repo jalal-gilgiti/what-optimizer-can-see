@@ -1,0 +1,94 @@
+{
+  "classification_input": "natural released SQL without EXPLAIN ANALYZE wrapper",
+  "plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Aggregate",
+        "Output": [
+          "aggregate_avg((jsoncount(artifact_citations.target))::double precision)",
+          "aggregate_avg((jsoncount(artifact_authorlists.authorlist))::double precision)"
+        ],
+        "Parallel Aware": false,
+        "Partial Mode": "Simple",
+        "Plan Rows": 1,
+        "Plan Width": 16,
+        "Plans": [
+          {
+            "Async Capable": false,
+            "Hash Cond": "(artifact_authorlists.artifactid = artifact_citations.artifactid)",
+            "Inner Unique": true,
+            "Join Type": "Inner",
+            "Node Type": "Hash Join",
+            "Output": [
+              "artifact_citations.target",
+              "artifact_authorlists.authorlist"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 357,
+            "Plan Width": 519,
+            "Plans": [
+              {
+                "Alias": "artifact_authorlists",
+                "Async Capable": false,
+                "Node Type": "Seq Scan",
+                "Output": [
+                  "artifact_authorlists.artifactid",
+                  "artifact_authorlists.authorlist"
+                ],
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 16826,
+                "Plan Width": 135,
+                "Relation Name": "artifact_authorlists",
+                "Schema": "public",
+                "Startup Cost": 0.0,
+                "Total Cost": 516.26
+              },
+              {
+                "Async Capable": false,
+                "Node Type": "Hash",
+                "Output": [
+                  "artifact_citations.target",
+                  "artifact_citations.artifactid"
+                ],
+                "Parallel Aware": false,
+                "Parent Relationship": "Inner",
+                "Plan Rows": 357,
+                "Plan Width": 478,
+                "Plans": [
+                  {
+                    "Alias": "artifact_citations",
+                    "Async Capable": false,
+                    "Node Type": "Seq Scan",
+                    "Output": [
+                      "artifact_citations.target",
+                      "artifact_citations.artifactid"
+                    ],
+                    "Parallel Aware": false,
+                    "Parent Relationship": "Outer",
+                    "Plan Rows": 357,
+                    "Plan Width": 478,
+                    "Relation Name": "artifact_citations",
+                    "Schema": "public",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 25.57
+                  }
+                ],
+                "Startup Cost": 25.57,
+                "Total Cost": 25.57
+              }
+            ],
+            "Startup Cost": 30.03,
+            "Total Cost": 590.47
+          }
+        ],
+        "Startup Cost": 772.55,
+        "Strategy": "Plain",
+        "Total Cost": 772.56
+      }
+    }
+  ],
+  "sql": "select aggregate_avg(jsoncount(target)), aggregate_avg(jsoncount(authorlist))\nfrom artifact_citations,artifact_authorlists where artifact_citations.artifactid=artifact_authorlists.artifactid"
+}

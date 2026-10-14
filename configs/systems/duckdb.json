@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "adapter": "systems.duckdb.experimental_adapter.DuckDBExperimentalAdapter",
+  "observed_version": "1.5.5",
+  "environment": ".venv-duckdb",
+  "requirements": "configs/systems/duckdb-requirements.txt",
+  "status": "AVAILABLE",
+  "limitations": [
+    "The user-site 0.6.1 module remains incompatible; use the pinned venv interpreter",
+    "Plain E2 subqueries are rewritten to filter first; controlled Form A uses OFFSET 0",
+    "Low-/mid-amplification CV is high in the completed replication"
+  ]
+}

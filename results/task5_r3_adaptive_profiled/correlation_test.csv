@@ -1,0 +1,2 @@
+run_id,method,variant,H,prediction,target,q_error,profile_features,pos_neg_distinguished,classification,status,reason
+task5-r3-audit-20260903T031908Z,NONE,E4 POS/NEG/IND,NOT_APPLICABLE,NOT_APPLICABLE,FROZEN_NOT_READ_AS_OUTCOME,NOT_APPLICABLE,NONE,UNKNOWN,INCONCLUSIVE,UNSUPPORTED,No executable R3 artifact; Phase C stop.

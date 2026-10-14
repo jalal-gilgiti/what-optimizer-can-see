@@ -1,0 +1,27 @@
+{
+  "Lambda": 6,
+  "branch_loop_correlation": "independent",
+  "data_access_pattern": "none",
+  "dataset_path": "<PROJECT_ROOT>/workloads/synthetic/generated/smoke_fixed_loop.csv",
+  "dataset_sha256": "93f6921fb25952bfd12517f18774ea904376bc7c8dd1cbfe5a7d1e01f1a4524a",
+  "e_branch_times_i_realized": 3.0,
+  "e_i_given_branch_realized": 6.0,
+  "e_i_realized": 6.0,
+  "expected_work_after_filter_units": 30,
+  "expected_work_before_filter_units": 60,
+  "family": "fixed_loop",
+  "filter_selectivity_realized": 0.5,
+  "loop_bounds": [
+    2,
+    3
+  ],
+  "opaque_component": null,
+  "p_branch_realized": 0.5,
+  "requested_branch_selectivity": 0.5,
+  "requested_distribution": "constant",
+  "requested_filter_selectivity": 0.5,
+  "row_count": 10,
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "udf_chain_length": 1
+}

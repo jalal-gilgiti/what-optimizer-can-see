@@ -1,0 +1,21 @@
+phase,K,segment,representation,result,udf_calls,udf_work_units
+confirmation,100,COSTLY,M1,"[[792, ""407743""]]",40713,40713000
+confirmation,100,COSTLY,M2,"[[792, ""407743""]]",1584,1584000
+confirmation,100,CHEAP,M1,"[[15143, ""7554292""]]",30286,302860
+confirmation,100,CHEAP,M2,"[[15143, ""7554292""]]",30286,302860
+confirmation,200,COSTLY,M1,"[[792, ""407743""]]",40713,40713000
+confirmation,200,COSTLY,M2,"[[792, ""407743""]]",1584,1584000
+confirmation,200,CHEAP,M1,"[[15143, ""7554292""]]",30286,302860
+confirmation,200,CHEAP,M2,"[[15143, ""7554292""]]",30286,302860
+confirmation,400,COSTLY,M1,"[[792, ""407743""]]",40713,40713000
+confirmation,400,COSTLY,M2,"[[792, ""407743""]]",1584,1584000
+confirmation,400,CHEAP,M1,"[[15143, ""7554292""]]",30286,302860
+confirmation,400,CHEAP,M2,"[[15143, ""7554292""]]",30286,302860
+confirmation,800,COSTLY,M1,"[[792, ""407743""]]",40713,40713000
+confirmation,800,COSTLY,M2,"[[792, ""407743""]]",1584,1584000
+confirmation,800,CHEAP,M1,"[[15143, ""7554292""]]",30286,302860
+confirmation,800,CHEAP,M2,"[[15143, ""7554292""]]",30286,302860
+confirmation,1600,COSTLY,M1,"[[792, ""407743""]]",40713,40713000
+confirmation,1600,COSTLY,M2,"[[792, ""407743""]]",40713,40713000
+confirmation,1600,CHEAP,M1,"[[15143, ""7554292""]]",30286,302860
+confirmation,1600,CHEAP,M2,"[[15143, ""7554292""]]",775222,7752220

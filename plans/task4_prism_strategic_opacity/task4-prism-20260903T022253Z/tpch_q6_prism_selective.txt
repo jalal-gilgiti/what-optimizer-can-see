@@ -1,0 +1,58 @@
+Script started on 2026-09-03 11:47:53+09:00 [TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+
+┌─────────────────────────────┐
+│┌───────────────────────────┐│
+││       Physical Plan       ││
+│└───────────────────────────┘│
+└─────────────────────────────┘
+┌───────────────────────────┐
+│    UNGROUPED_AGGREGATE    │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│    sum_no_overflow(#0)    │
+└─────────────┬─────────────┘                             
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│     (l_extendedprice *    │
+│         l_discount)       │
+└─────────────┬─────────────┘                             
+┌─────────────┴─────────────┐
+│           FILTER          │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  (q6conditions_outlined_0 │
+│(CAST(l_discount AS DE...  │
+│  ,2)), CAST(l_quantity AS │
+│ INTEGER), l_shipdate) = 1)│
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│        EC: 6001215        │
+└─────────────┬─────────────┘                             
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│          lineitem         │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│         l_discount        │
+│         l_quantity        │
+│         l_shipdate        │
+│      l_extendedprice      │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│        EC: 6001215        │
+└───────────────────────────┘                             
+
+Script done on 2026-09-03 11:47:53+09:00 [COMMAND_EXIT_CODE="0"]

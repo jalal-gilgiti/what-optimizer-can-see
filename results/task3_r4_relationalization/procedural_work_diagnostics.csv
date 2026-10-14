@@ -1,0 +1,7 @@
+case_id,variant,udf_invocation_count,effective_work,rows_reaching_expensive_computation,branch_path_counts,repeated_lookup_count,evidence
+CONTROLLED_PK,lower,50000,"50,000 equality calls after sequential scan",50000,NOT_APPLICABLE,NOT_APPLICABLE,frozen table cardinality plus Seq Scan filter plan
+CONTROLLED_PK,higher,NOT_APPLICABLE,primary-key index condition,1,NOT_APPLICABLE,NOT_APPLICABLE,Index Only Scan condition in natural plan
+UDFBENCH_Q14_CLEANDATE,lower,PLAN_DEPENDENT_NOT_DIRECTLY_OBSERVABLE,non-inlined SQL cleandate calls,NOT_AVAILABLE,NOT_AVAILABLE,NOT_APPLICABLE,function retained in plan expressions
+UDFBENCH_Q14_CLEANDATE,higher,NOT_APPLICABLE,inlined CASE/string expression evaluations,PLAN_DEPENDENT,NOT_AVAILABLE,NOT_APPLICABLE,function absent; CASE expression visible in natural plan
+Q14_GROUNDED_TABLE,lower,1,opaque Function Scan materializes function result before outer year filter,FUNCTION_RESULT_NOT_INSTRUMENTED,NOT_APPLICABLE,NOT_APPLICABLE,Function Scan natural plan
+Q14_GROUNDED_TABLE,higher,NOT_APPLICABLE,native relational joins with year predicate on artifacts,SEE_EXPLAIN_DIAGNOSTICS,NOT_APPLICABLE,NOT_APPLICABLE,inlined join natural plan

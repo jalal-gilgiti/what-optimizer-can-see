@@ -1,0 +1,354 @@
+{
+  "classification_input": "unmodified released natural SQL; released PostgreSQL EXPLAIN wrapper removed",
+  "plan": [
+    [
+      [
+        {
+          "Plan": {
+            "Async Capable": false,
+            "Inner Unique": true,
+            "Join Filter": "((artifact_authors.artifactid = a.id) AND ((aggregate_max(cleandate(a_1.date))) = cleandate(a.date)))",
+            "Join Type": "Inner",
+            "Node Type": "Nested Loop",
+            "Output": [
+              "jsonparse(artifact_authors.authorid, 'value'::text)",
+              "jsonparse(artifact_authors.affiliation, 'value'::text)"
+            ],
+            "Parallel Aware": false,
+            "Plan Rows": 16,
+            "Plan Width": 64,
+            "Plans": [
+              {
+                "Async Capable": false,
+                "Hash Cond": "(artifact_authors.artifactid = pr.artifactid)",
+                "Inner Unique": false,
+                "Join Type": "Inner",
+                "Node Type": "Hash Join",
+                "Output": [
+                  "artifact_authors.authorid",
+                  "artifact_authors.affiliation",
+                  "artifact_authors.artifactid",
+                  "pr.artifactid",
+                  "(aggregate_max(cleandate(a_1.date)))"
+                ],
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 3225,
+                "Plan Width": 361,
+                "Plans": [
+                  {
+                    "Async Capable": false,
+                    "Hash Cond": "(artifact_authors.authorid = aa.authorid)",
+                    "Inner Unique": true,
+                    "Join Type": "Inner",
+                    "Node Type": "Hash Join",
+                    "Output": [
+                      "artifact_authors.authorid",
+                      "artifact_authors.affiliation",
+                      "artifact_authors.artifactid",
+                      "(aggregate_max(cleandate(a_1.date)))"
+                    ],
+                    "Parallel Aware": false,
+                    "Parent Relationship": "Outer",
+                    "Plan Rows": 11738,
+                    "Plan Width": 314,
+                    "Plans": [
+                      {
+                        "Alias": "artifact_authors",
+                        "Async Capable": false,
+                        "Filter": "((artifact_authors.affiliation IS NOT NULL) AND (artifact_authors.authorid IS NOT NULL) AND (artifact_authors.affiliation <> '[]'::text) AND (artifact_authors.authorid <> '[]'::text) AND (artifact_authors.rank = 1))",
+                        "Node Type": "Seq Scan",
+                        "Output": [
+                          "artifact_authors.artifactid",
+                          "artifact_authors.affiliation",
+                          "artifact_authors.fullname",
+                          "artifact_authors.name",
+                          "artifact_authors.surname",
+                          "artifact_authors.rank",
+                          "artifact_authors.authorid"
+                        ],
+                        "Parallel Aware": false,
+                        "Parent Relationship": "Outer",
+                        "Plan Rows": 11792,
+                        "Plan Width": 282,
+                        "Relation Name": "artifact_authors",
+                        "Schema": "public",
+                        "Startup Cost": 0.0,
+                        "Total Cost": 57035.22
+                      },
+                      {
+                        "Async Capable": false,
+                        "Node Type": "Hash",
+                        "Output": [
+                          "aa.authorid",
+                          "(aggregate_max(cleandate(a_1.date)))"
+                        ],
+                        "Parallel Aware": false,
+                        "Parent Relationship": "Inner",
+                        "Plan Rows": 25431,
+                        "Plan Width": 206,
+                        "Plans": [
+                          {
+                            "Async Capable": false,
+                            "Group Key": [
+                              "aa.authorid"
+                            ],
+                            "Node Type": "Aggregate",
+                            "Output": [
+                              "aa.authorid",
+                              "aggregate_max(cleandate(a_1.date))"
+                            ],
+                            "Parallel Aware": false,
+                            "Parent Relationship": "Outer",
+                            "Partial Mode": "Simple",
+                            "Plan Rows": 25431,
+                            "Plan Width": 206,
+                            "Plans": [
+                              {
+                                "Async Capable": false,
+                                "Node Type": "Sort",
+                                "Output": [
+                                  "aa.authorid",
+                                  "a_1.date"
+                                ],
+                                "Parallel Aware": false,
+                                "Parent Relationship": "Outer",
+                                "Plan Rows": 128761,
+                                "Plan Width": 185,
+                                "Plans": [
+                                  {
+                                    "Async Capable": false,
+                                    "Inner Unique": true,
+                                    "Join Type": "Inner",
+                                    "Node Type": "Nested Loop",
+                                    "Output": [
+                                      "aa.authorid",
+                                      "a_1.date"
+                                    ],
+                                    "Parallel Aware": false,
+                                    "Parent Relationship": "Outer",
+                                    "Plan Rows": 128761,
+                                    "Plan Width": 185,
+                                    "Plans": [
+                                      {
+                                        "Alias": "aa",
+                                        "Async Capable": false,
+                                        "Filter": "(aa.rank = 1)",
+                                        "Node Type": "Seq Scan",
+                                        "Output": [
+                                          "aa.artifactid",
+                                          "aa.affiliation",
+                                          "aa.fullname",
+                                          "aa.name",
+                                          "aa.surname",
+                                          "aa.rank",
+                                          "aa.authorid"
+                                        ],
+                                        "Parallel Aware": false,
+                                        "Parent Relationship": "Outer",
+                                        "Plan Rows": 128761,
+                                        "Plan Width": 221,
+                                        "Relation Name": "artifact_authors",
+                                        "Schema": "public",
+                                        "Startup Cost": 0.0,
+                                        "Total Cost": 51924.3
+                                      },
+                                      {
+                                        "Async Capable": false,
+                                        "Cache Key": "aa.artifactid",
+                                        "Cache Mode": "logical",
+                                        "Node Type": "Memoize",
+                                        "Output": [
+                                          "a_1.date",
+                                          "a_1.id"
+                                        ],
+                                        "Parallel Aware": false,
+                                        "Parent Relationship": "Inner",
+                                        "Plan Rows": 1,
+                                        "Plan Width": 58,
+                                        "Plans": [
+                                          {
+                                            "Alias": "a_1",
+                                            "Async Capable": false,
+                                            "Index Cond": "(a_1.id = aa.artifactid)",
+                                            "Index Name": "artifacts_pkey",
+                                            "Node Type": "Index Scan",
+                                            "Output": [
+                                              "a_1.date",
+                                              "a_1.id"
+                                            ],
+                                            "Parallel Aware": false,
+                                            "Parent Relationship": "Outer",
+                                            "Plan Rows": 1,
+                                            "Plan Width": 58,
+                                            "Relation Name": "artifacts",
+                                            "Scan Direction": "Forward",
+                                            "Schema": "public",
+                                            "Startup Cost": 0.42,
+                                            "Total Cost": 1.03
+                                          }
+                                        ],
+                                        "Startup Cost": 0.43,
+                                        "Total Cost": 1.04
+                                      }
+                                    ],
+                                    "Startup Cost": 0.43,
+                                    "Total Cost": 81030.26
+                                  }
+                                ],
+                                "Sort Key": [
+                                  "aa.authorid"
+                                ],
+                                "Startup Cost": 91958.42,
+                                "Total Cost": 92280.32
+                              }
+                            ],
+                            "Startup Cost": 91958.42,
+                            "Strategy": "Sorted",
+                            "Total Cost": 131726.44
+                          }
+                        ],
+                        "Startup Cost": 131980.75,
+                        "Total Cost": 131980.75
+                      }
+                    ],
+                    "Startup Cost": 132298.64,
+                    "Total Cost": 189364.81
+                  },
+                  {
+                    "Async Capable": false,
+                    "Node Type": "Hash",
+                    "Output": [
+                      "pr.artifactid"
+                    ],
+                    "Parallel Aware": false,
+                    "Parent Relationship": "Inner",
+                    "Plan Rows": 56839,
+                    "Plan Width": 47,
+                    "Plans": [
+                      {
+                        "Async Capable": false,
+                        "Hash Cond": "(pr.projectid = p.id)",
+                        "Inner Unique": true,
+                        "Join Type": "Inner",
+                        "Node Type": "Hash Join",
+                        "Output": [
+                          "pr.artifactid"
+                        ],
+                        "Parallel Aware": false,
+                        "Parent Relationship": "Outer",
+                        "Plan Rows": 56839,
+                        "Plan Width": 47,
+                        "Plans": [
+                          {
+                            "Alias": "pr",
+                            "Async Capable": false,
+                            "Node Type": "Seq Scan",
+                            "Output": [
+                              "pr.projectid",
+                              "pr.artifactid",
+                              "pr.provenance"
+                            ],
+                            "Parallel Aware": false,
+                            "Parent Relationship": "Outer",
+                            "Plan Rows": 628274,
+                            "Plan Width": 94,
+                            "Relation Name": "projects_artifacts",
+                            "Schema": "public",
+                            "Startup Cost": 0.0,
+                            "Total Cost": 17085.74
+                          },
+                          {
+                            "Async Capable": false,
+                            "Node Type": "Hash",
+                            "Output": [
+                              "p.id"
+                            ],
+                            "Parallel Aware": false,
+                            "Parent Relationship": "Inner",
+                            "Plan Rows": 42484,
+                            "Plan Width": 47,
+                            "Plans": [
+                              {
+                                "Alias": "p",
+                                "Async Capable": false,
+                                "Filter": "(p.funder = 'European Commission'::text)",
+                                "Node Type": "Seq Scan",
+                                "Output": [
+                                  "p.id"
+                                ],
+                                "Parallel Aware": false,
+                                "Parent Relationship": "Outer",
+                                "Plan Rows": 42484,
+                                "Plan Width": 47,
+                                "Relation Name": "projects",
+                                "Schema": "public",
+                                "Startup Cost": 0.0,
+                                "Total Cost": 28800.05
+                              }
+                            ],
+                            "Startup Cost": 28800.05,
+                            "Total Cost": 28800.05
+                          }
+                        ],
+                        "Startup Cost": 29331.1,
+                        "Total Cost": 48066.07
+                      }
+                    ],
+                    "Startup Cost": 48066.07,
+                    "Total Cost": 48066.07
+                  }
+                ],
+                "Startup Cost": 181075.19,
+                "Total Cost": 238613.79
+              },
+              {
+                "Alias": "a",
+                "Async Capable": false,
+                "Index Cond": "(a.id = pr.artifactid)",
+                "Index Name": "artifacts_pkey",
+                "Node Type": "Index Scan",
+                "Output": [
+                  "a.id",
+                  "a.title",
+                  "a.publisher",
+                  "a.journal",
+                  "a.date",
+                  "a.year",
+                  "a.access_mode",
+                  "a.embargo_end_date",
+                  "a.delayed",
+                  "a.authors",
+                  "a.source",
+                  "a.abstract",
+                  "a.type",
+                  "a.peer_reviewed",
+                  "a.green",
+                  "a.gold"
+                ],
+                "Parallel Aware": false,
+                "Parent Relationship": "Inner",
+                "Plan Rows": 1,
+                "Plan Width": 58,
+                "Relation Name": "artifacts",
+                "Scan Direction": "Forward",
+                "Schema": "public",
+                "Startup Cost": 0.42,
+                "Total Cost": 0.56
+              }
+            ],
+            "Startup Cost": 181075.62,
+            "Total Cost": 241286.36
+          }
+        }
+      ]
+    ]
+  ],
+  "plan_capture_wall_ms": 3.805567,
+  "run_id": "task11-udfbench-small-20260906",
+  "scale": "small",
+  "sql": "with aa (artifactid, authorid, affiliation, rank, authoridvalue, affiliationvalue ) as       \n( select artifactid, authorid, affiliation, rank,                   \n         jsonparse(authorid, 'value') as authoridvalue,                  \n         jsonparse(affiliation, 'value') as affiliationvalue from artifact_authors        \nwhere affiliation is not null \n      and affiliation <> '[]' \n      and authorid is not null \n      and authorid <> '[]' ) \nselect aa.authoridvalue, aa.affiliationvalue \nfrom aa, artifacts a, projects_artifacts pr, projects p \nwhere aa.rank = 1 and \n      aa.artifactid = a.id and \n      p.id = pr.projectid and \n      pr.artifactid = a.id and \n      p.funder = 'European Commission' and \n      (aa.authorid, cleandate(a.date)) in \n          (select authorid, aggregate_max(cleandate(a.date)) as max_date \n          from artifact_authors as aa, artifacts as a            \n              where aa.rank = 1 and aa.artifactid = a.id            \n          group by authorid)",
+  "status": "CAPTURED",
+  "system": "PostgreSQL",
+  "workload": "Q14"
+}

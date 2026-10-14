@@ -1,0 +1,7 @@
+QUERY
+SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value) AS udf_value FROM input_rows LIMIT -1 OFFSET 0) WHERE retained = 1
+
+EXPLAIN QUERY PLAN
+2 | 0 | 0 | CO-ROUTINE SUBQUERY 1
+8 | 2 | 0 | SCAN input_rows
+19 | 0 | 0 | SCAN SUBQUERY 1

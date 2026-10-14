@@ -1,0 +1,16 @@
+{
+  "H": 1000,
+  "correlation": "negative",
+  "estimated_total_cost": null,
+  "plan": [
+    [
+      3,
+      0,
+      0,
+      "SCAN e4_negative"
+    ]
+  ],
+  "query": "SELECT COUNT(*), SUM(e4_branch_loop(value, flag, loop_count)) FROM e4_negative",
+  "run_id": "e4-20260830T044613Z",
+  "system": "sqlite"
+}

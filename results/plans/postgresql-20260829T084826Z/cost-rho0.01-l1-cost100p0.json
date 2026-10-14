@@ -1,0 +1,47 @@
+{
+  "explain_wall_ms": 2.17051,
+  "plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Aggregate",
+        "Output": [
+          "count(*)",
+          "sum(fixed_loop(input_rows.value, '{1}'::integer[]))"
+        ],
+        "Parallel Aware": false,
+        "Partial Mode": "Simple",
+        "Plan Rows": 1,
+        "Plan Width": 40,
+        "Plans": [
+          {
+            "Alias": "input_rows",
+            "Async Capable": false,
+            "Filter": "(input_rows.retained = 1)",
+            "Node Type": "Seq Scan",
+            "Output": [
+              "input_rows.id",
+              "input_rows.value",
+              "input_rows.flag",
+              "input_rows.loop_count",
+              "input_rows.retained",
+              "input_rows.lookup_key"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 100,
+            "Plan Width": 8,
+            "Relation Name": "input_rows",
+            "Schema": "public",
+            "Startup Cost": 0.0,
+            "Total Cost": 219.0
+          }
+        ],
+        "Startup Cost": 244.5,
+        "Strategy": "Plain",
+        "Total Cost": 244.51
+      }
+    }
+  ],
+  "query": "SELECT COUNT(*), SUM(udf_value) FROM (SELECT retained, fixed_loop(value, ARRAY[1]::integer[]) AS udf_value FROM input_rows) AS projected WHERE retained = 1"
+}

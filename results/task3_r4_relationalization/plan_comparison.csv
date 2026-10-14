@@ -1,0 +1,45 @@
+case_id,variant,submitted_sql,transformed_representation,logical_plan,physical_plan,estimated_cardinality,estimated_total_cost,relevant_operator_costs,predicate_placement,join_order,materialization,parallelism,udf_or_expression_location,visible_relational_operators,plan_node_count,planning_time,plan_path
+CONTROLLED_PK,lower,"SELECT count(*) FROM public.artifacts AS a WHERE task3_r4.id_match_lower(a.id, '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54')",FUNCTION_CALL_RETAINED,NOT_EXPOSED_SEPARATELY,Aggregate;Seq Scan,1,15028.68,"[{""cost"":15028.68,""node"":""Aggregate"",""rows"":1},{""cost"":14987.0,""node"":""Seq Scan"",""rows"":16667}]","task3_r4.id_match_lower(a.id, '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54'::text)",,NO,NO,function call in plan expression/node,2,2,MEASURED_SEPARATELY,plans/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/controlled_pk/lower_natural.json
+CONTROLLED_PK,higher,"SELECT count(*) FROM public.artifacts AS a WHERE task3_r4.id_match_visible(a.id, '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54')",FUNCTION_BODY_SUBSTITUTED_IN_PLAN,NOT_EXPOSED_SEPARATELY,Aggregate;Index Only Scan,1,4.45,"[{""cost"":4.45,""node"":""Aggregate"",""rows"":1},{""cost"":4.43,""node"":""Index Only Scan"",""rows"":1}]",(a.id = '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54'::text),,NO,NO,inlined caller expression/base relational plan,2,2,MEASURED_SEPARATELY,plans/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/controlled_pk/higher_natural.json
+UDFBENCH_Q14_CLEANDATE,lower,"with aa (artifactid, authorid, affiliation, rank, authoridvalue, affiliationvalue ) as       
+( select artifactid, authorid, affiliation, rank,                   
+         jsonparse(authorid, 'value') as authoridvalue,                  
+         jsonparse(affiliation, 'value') as affiliationvalue from artifact_authors        
+where affiliation is not null 
+      and affiliation <> '[]' 
+      and authorid is not null 
+      and authorid <> '[]' ) 
+select aa.authoridvalue, aa.affiliationvalue 
+from aa, artifacts a, projects_artifacts pr, projects p 
+where aa.rank = 1 and 
+      aa.artifactid = a.id and 
+      p.id = pr.projectid and 
+      pr.artifactid = a.id and 
+      p.funder = 'European Commission' and 
+      (aa.authorid, task3_r4.cleandate_lower(a.date)) in 
+          (select authorid, aggregate_max(task3_r4.cleandate_lower(a.date)) as max_date 
+          from artifact_authors as aa, artifacts as a            
+              where aa.rank = 1 and aa.artifactid = a.id            
+          group by authorid)",FUNCTION_CALL_RETAINED,NOT_EXPOSED_SEPARATELY,Nested Loop;Nested Loop;Hash Join;Hash Join;Seq Scan;Hash;Aggregate;Hash Join;Seq Scan;Hash;Seq Scan;Hash;Seq Scan;Index Scan;Index Scan,2,30484.68,"[{""cost"":30484.68,""node"":""Nested Loop"",""rows"":2},{""cost"":30181.46,""node"":""Nested Loop"",""rows"":369},{""cost"":29294.68,""node"":""Hash Join"",""rows"":1652},{""cost"":25896.21,""node"":""Hash Join"",""rows"":706},{""cost"":7734.83,""node"":""Seq Scan"",""rows"":1100},{""cost"":18008.27,""node"":""Hash"",""rows"":12018},{""cost"":17888.09,""node"":""Aggregate"",""rows"":12018},{""cost"":10172.14,""node"":""Hash Join"",""rows"":18005},{""cost"":7012.88,""node"":""Seq Scan"",""rows"":18005},{""cost"":2487.0,""node"":""Hash"",""rows"":50000},{""cost"":2487.0,""node"":""Seq Scan"",""rows"":50000},{""cost"":2270.67,""node"":""Hash"",""rows"":83467},{""cost"":2270.67,""node"":""Seq Scan"",""rows"":83467},{""cost"":0.54,""node"":""Index Scan"",""rows"":1},{""cost"":0.55,""node"":""Index Scan"",""rows"":1}]",((artifact_authors.affiliation IS NOT NULL) AND (artifact_authors.authorid IS NOT NULL) AND (artifact_authors.affiliation <> '[]'::text) AND (artifact_authors.authorid <> '[]'::text) AND (artifact_authors.rank = 1));(aa.rank = 1);(p.id = pr.projectid);(a.id = pr.artifactid),Hash Join:Inner;Hash Join:Inner;Hash Join:Inner,NO,NO,function call in plan expression/node,15,15,MEASURED_SEPARATELY,plans/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/udfbench_q14_cleandate/lower_natural.json
+UDFBENCH_Q14_CLEANDATE,higher,"with aa (artifactid, authorid, affiliation, rank, authoridvalue, affiliationvalue ) as       
+( select artifactid, authorid, affiliation, rank,                   
+         jsonparse(authorid, 'value') as authoridvalue,                  
+         jsonparse(affiliation, 'value') as affiliationvalue from artifact_authors        
+where affiliation is not null 
+      and affiliation <> '[]' 
+      and authorid is not null 
+      and authorid <> '[]' ) 
+select aa.authoridvalue, aa.affiliationvalue 
+from aa, artifacts a, projects_artifacts pr, projects p 
+where aa.rank = 1 and 
+      aa.artifactid = a.id and 
+      p.id = pr.projectid and 
+      pr.artifactid = a.id and 
+      p.funder = 'European Commission' and 
+      (aa.authorid, task3_r4.cleandate_visible(a.date)) in 
+          (select authorid, aggregate_max(task3_r4.cleandate_visible(a.date)) as max_date 
+          from artifact_authors as aa, artifacts as a            
+              where aa.rank = 1 and aa.artifactid = a.id            
+          group by authorid)",FUNCTION_BODY_SUBSTITUTED_IN_PLAN,NOT_EXPOSED_SEPARATELY,Nested Loop;Nested Loop;Hash Join;Hash Join;Seq Scan;Hash;Aggregate;Hash Join;Seq Scan;Hash;Seq Scan;Hash;Seq Scan;Index Scan;Index Scan,2,27753.61,"[{""cost"":27753.61,""node"":""Nested Loop"",""rows"":2},{""cost"":27748.32,""node"":""Nested Loop"",""rows"":8},{""cost"":26638.94,""node"":""Hash Join"",""rows"":1652},{""cost"":23240.47,""node"":""Hash Join"",""rows"":706},{""cost"":7734.83,""node"":""Seq Scan"",""rows"":1100},{""cost"":15352.54,""node"":""Hash"",""rows"":12018},{""cost"":15232.36,""node"":""Aggregate"",""rows"":12018},{""cost"":10172.14,""node"":""Hash Join"",""rows"":18005},{""cost"":7012.88,""node"":""Seq Scan"",""rows"":18005},{""cost"":2487.0,""node"":""Hash"",""rows"":50000},{""cost"":2487.0,""node"":""Seq Scan"",""rows"":50000},{""cost"":2270.67,""node"":""Hash"",""rows"":83467},{""cost"":2270.67,""node"":""Seq Scan"",""rows"":83467},{""cost"":0.55,""node"":""Index Scan"",""rows"":1},{""cost"":0.54,""node"":""Index Scan"",""rows"":1}]",((artifact_authors.affiliation IS NOT NULL) AND (artifact_authors.authorid IS NOT NULL) AND (artifact_authors.affiliation <> '[]'::text) AND (artifact_authors.authorid <> '[]'::text) AND (artifact_authors.rank = 1));(aa.rank = 1);(a.id = pr.artifactid);(p.id = pr.projectid),Hash Join:Inner;Hash Join:Inner;Hash Join:Inner,NO,NO,inlined caller expression/base relational plan,15,15,MEASURED_SEPARATELY,plans/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/udfbench_q14_cleandate/higher_natural.json
+Q14_GROUNDED_TABLE,lower,SELECT count(*) FROM task3_r4.ec_artifacts_lower('European Commission') AS e WHERE e.publication_year >= 2020,FUNCTION_CALL_RETAINED,NOT_EXPOSED_SEPARATELY,Aggregate;Function Scan,1,13.59,"[{""cost"":13.59,""node"":""Aggregate"",""rows"":1},{""cost"":12.75,""node"":""Function Scan"",""rows"":333}]",(e.publication_year >= 2020),,NO,NO,function call in plan expression/node,2,2,MEASURED_SEPARATELY,plans/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/q14_grounded_table/lower_natural.json
+Q14_GROUNDED_TABLE,higher,SELECT count(*) FROM task3_r4.ec_artifacts_visible('European Commission') AS e WHERE e.publication_year >= 2020,FUNCTION_BODY_SUBSTITUTED_IN_PLAN,NOT_EXPOSED_SEPARATELY,Aggregate;Hash Join;Hash Join;Seq Scan;Hash;Seq Scan;Hash;Seq Scan,1,7604.87,"[{""cost"":7604.87,""node"":""Aggregate"",""rows"":1},{""cost"":7593.55,""node"":""Hash Join"",""rows"":4523},{""cost"":4781.11,""node"":""Hash Join"",""rows"":18669},{""cost"":2270.67,""node"":""Seq Scan"",""rows"":83467},{""cost"":2181.78,""node"":""Hash"",""rows"":8763},{""cost"":2181.78,""node"":""Seq Scan"",""rows"":8763},{""cost"":2612.0,""node"":""Hash"",""rows"":12115},{""cost"":2612.0,""node"":""Seq Scan"",""rows"":12115}]",(p.funder = 'European Commission'::text);(a.year >= 2020),Hash Join:Inner;Hash Join:Inner,NO,NO,inlined caller expression/base relational plan,8,8,MEASURED_SEPARATELY,plans/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/q14_grounded_table/higher_natural.json

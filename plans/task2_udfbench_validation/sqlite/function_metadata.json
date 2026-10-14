@@ -1,0 +1,5 @@
+{
+  "optimizer_visible_procedural_structure": false,
+  "registered_from": "canonical UDFBench engines/sqlite/udfs source",
+  "source": "application registration; SQLite catalog has no scalar-UDF cost/structure metadata"
+}

@@ -1,0 +1,27 @@
+{
+  "created_at_utc": "2026-09-03T03:19:08Z",
+  "database_instances_started": [],
+  "existing_environments_modified": [],
+  "host": {
+    "architecture": "x86_64",
+    "cpu": "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz",
+    "kernel": "5.15.0-186-generic",
+    "memory_gib": 157,
+    "node": "node4",
+    "os": "Ubuntu 22.04.5 LTS",
+    "visible_cpus": 14
+  },
+  "isolated_runtime": "runtime/task5_r3_adaptive_profiled",
+  "profiling_performed": false,
+  "purpose": "Read-only feasibility and artifact audit environment; no R3 runtime was configured.",
+  "python_packages_installed": [],
+  "queries_executed": false,
+  "run_id": "task5-r3-audit-20260903T031908Z",
+  "schema_version": 1,
+  "system_packages_installed": [],
+  "tools": {
+    "git": "2.34.1",
+    "python": "3.10.12"
+  },
+  "training_performed": false
+}

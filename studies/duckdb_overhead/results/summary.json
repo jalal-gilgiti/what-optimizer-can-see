@@ -1,0 +1,12 @@
+{
+  "classification": "SUPPORTED",
+  "fixed_callback_over_native_ms": 5.4686505,
+  "fixed_share_of_one_unit_runtime": 0.7868047018286474,
+  "incremental_ms_per_work_unit": 1.0713463299800827,
+  "interpretation": "An intercept/no-op comparison supports only a measured fixed Python-callback component; it does not identify undocumented DuckDB internals.",
+  "invocations": 10000,
+  "native_median_ms": 0.87575,
+  "noop_callback_median_ms": 6.3444005,
+  "ols_intercept_ms": 6.354319223032064,
+  "r_squared": 0.9999970460682801
+}

@@ -1,0 +1,44 @@
+{
+  "classification_input": "natural released SQL without EXPLAIN ANALYZE wrapper",
+  "plan": [
+    {
+      "Plan": {
+        "Async Capable": false,
+        "Node Type": "Aggregate",
+        "Output": [
+          "aggregate_avg((jsoncount(citations))::double precision)",
+          "aggregate_avg((jsoncount(authors))::double precision)"
+        ],
+        "Parallel Aware": false,
+        "Partial Mode": "Simple",
+        "Plan Rows": 1,
+        "Plan Width": 16,
+        "Plans": [
+          {
+            "Alias": "f",
+            "Async Capable": false,
+            "Function Call": "file('<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/pubmed_q7.txt'::text, 'json'::text)",
+            "Function Name": "file",
+            "Node Type": "Function Scan",
+            "Output": [
+              "id",
+              "citations",
+              "authors"
+            ],
+            "Parallel Aware": false,
+            "Parent Relationship": "Outer",
+            "Plan Rows": 1000,
+            "Plan Width": 64,
+            "Schema": "public",
+            "Startup Cost": 0.25,
+            "Total Cost": 10.25
+          }
+        ],
+        "Startup Cost": 520.25,
+        "Strategy": "Plain",
+        "Total Cost": 520.26
+      }
+    }
+  ],
+  "sql": "select aggregate_avg(jsoncount(citations)),aggregate_avg(jsoncount(authors)) \n from file('<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/pubmed_q7.txt','json') f(id text, citations text,authors text) "
+}

@@ -1,0 +1,19 @@
+{
+  "candidate_id": "postgresql_sql_function_inlining",
+  "justification": "This is a genuine existing engine-native R4 mechanism in the already-installed PostgreSQL 14.24 engine. PRISM is scientifically stronger for strategic opacity but its required modified DuckDB fork would be a new DBMS build expressly disallowed without separate approval. Froid/BlackMagic require SQL Server and QURE has no verified released implementation.",
+  "run_id": "task3-r4-pg14-20260903T021000Z",
+  "scope_limit": "PostgreSQL does not translate PL/Python or PL/pgSQL into relational form. The primary pairs therefore use identical SQL bodies across an eligibility-blocked function and an eligible function; only the eligible call is actually substituted by the native planner.",
+  "selection": {
+    "ability_to_change_real_plan_decision": "HIGH",
+    "artifact_fidelity": "HIGH",
+    "decision_time_visibility": "HIGH",
+    "reproducibility": "HIGH",
+    "risk": "LOW",
+    "scientific_distinctiveness": "MEDIUM",
+    "setup_cost": "LOW",
+    "workload_compatibility": "HIGH"
+  },
+  "status": "SELECTED",
+  "strategic_opacity_test": "NOT_APPLICABLE",
+  "system_mechanism": "PostgreSQL 14.24 native scalar and table SQL-function inlining"
+}

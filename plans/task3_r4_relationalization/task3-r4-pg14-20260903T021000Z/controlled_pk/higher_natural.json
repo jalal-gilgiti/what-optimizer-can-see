@@ -1,0 +1,43 @@
+{
+  "case_id": "CONTROLLED_PK",
+  "classification_input": "natural SQL, EXPLAIN without ANALYZE",
+  "plan": {
+    "Plan": {
+      "Async Capable": false,
+      "Node Type": "Aggregate",
+      "Output": [
+        "count(*)"
+      ],
+      "Parallel Aware": false,
+      "Partial Mode": "Simple",
+      "Plan Rows": 1,
+      "Plan Width": 8,
+      "Plans": [
+        {
+          "Alias": "a",
+          "Async Capable": false,
+          "Index Cond": "(a.id = '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54'::text)",
+          "Index Name": "artifacts_pkey",
+          "Node Type": "Index Only Scan",
+          "Output": [
+            "id"
+          ],
+          "Parallel Aware": false,
+          "Parent Relationship": "Outer",
+          "Plan Rows": 1,
+          "Plan Width": 0,
+          "Relation Name": "artifacts",
+          "Scan Direction": "Forward",
+          "Schema": "public",
+          "Startup Cost": 0.41,
+          "Total Cost": 4.43
+        }
+      ],
+      "Startup Cost": 4.44,
+      "Strategy": "Plain",
+      "Total Cost": 4.45
+    }
+  },
+  "submitted_sql": "SELECT count(*) FROM public.artifacts AS a WHERE task3_r4.id_match_visible(a.id, '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54')",
+  "variant": "higher"
+}

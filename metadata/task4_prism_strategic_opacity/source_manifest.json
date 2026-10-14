@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "run_id": "task4-prism-20260903T022253Z",
+  "prism": {
+    "repository": "https://github.com/SamArch27/PRISM",
+    "commit": "689902595ba2ec8f86cbd5eb952b5fde09906e50",
+    "commit_date": "2025-08-13T11:44:43-05:00",
+    "tracked_source_clean_after_checkout": true,
+    "task4_source_patch": "NONE",
+    "license_file_sha256": "758ee9dac5d6338291836f0a1c9d233f601b22427e5afa89dbe817040fb13f60"
+  },
+  "duckdb": {
+    "repository": "https://github.com/hkulyc/duckdb.git",
+    "branch": "cherry_pick",
+    "commit": "dfb68aa3e8b504c1d19555f97035a5a00a1e2df4",
+    "tracked_source_clean": true,
+    "task4_source_patch": "NONE"
+  },
+  "workload_sources": [
+    {
+      "path": "experiments/workloads/task4_prism_strategic_opacity/q6conditions.sql",
+      "sha256": "a14d11a970805fcce77407fc7d615d84b1f64498e95bbf551a304c93cdd1378b",
+      "provenance": "exact function from pinned prism/samples/tpch_udfs.sql with only the source comment removed"
+    },
+    {
+      "path": "experiments/workloads/task4_prism_strategic_opacity/q19conditions.sql",
+      "sha256": "e76ec04e15088038f21c30c03e13e8aff230e40400f2f4bae072700ced223fd7",
+      "provenance": "function from pinned prism/samples/tpch_udfs.sql; whitespace normalized, semantics unchanged"
+    },
+    {
+      "path": "experiments/workloads/task4_prism_strategic_opacity/getManufact_complex.sql",
+      "sha256": "9e8576adc0d3deafda22d5c236bf09d5f54b59ca453264676f5c7254257be96c",
+      "provenance": "pinned prism/samples/sudf_20b_getManufactComplex.sql; comments removed, semantics unchanged"
+    }
+  ],
+  "generated_binaries": [
+    {
+      "path": "experiments/runtime/prism/task4-prism-20260903T022253Z/generated_extensions/q6/udf1.duckdb_extension",
+      "sha256": "a33f2ff7b2168f46dd1939720dd49ad0411773462f971c0321c11dd4e871b303"
+    },
+    {
+      "path": "experiments/runtime/prism/task4-prism-20260903T022253Z/generated_extensions/q19/udf1.duckdb_extension",
+      "sha256": "2adc8559c921e2f512eeaddc50637f9a6cf498d706c2ae5564cccebe677fe182"
+    }
+  ],
+  "build_log_sha256": "a970c1ca818baff69907bcc8928dd07f2425bcea5c0537369754da614f86c85a",
+  "canonical_test_log_sha256": "d7bd21d11e398dc798b06ad36cffba5883634ed9c709c8315266851ed3540812",
+  "preregistration_sha256": "62208d6abea36c193b32230ec92dc42ab83a899648638269299742a56dcccbc8"
+}

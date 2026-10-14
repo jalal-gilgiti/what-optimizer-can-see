@@ -1,0 +1,23 @@
+{
+  "run_id": "e3-20260830T051639Z",
+  "status": "stopped_after_e3",
+  "postgresql_version": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+  "package_source": "runtime/postgresql/postgresql-20260829T084826Z/root",
+  "package_installation_performed": false,
+  "cluster": "runtime/postgresql/e3-20260830T051639Z/data",
+  "log": "runtime/postgresql/e3-20260830T051639Z/logs/server.log",
+  "socket": "/tmp/pg-e3-051639",
+  "port": 55434,
+  "listen_addresses": "",
+  "database": "survey_e3_20260830t051639z",
+  "database_user": "<REDACTED_USER>",
+  "plpython_scope": "survey_e3_20260830t051639z only",
+  "prior_cluster_started_or_modified": false,
+  "commands": [
+    "initdb -D runtime/postgresql/e3-20260830T051639Z/data -L runtime/postgresql/postgresql-20260829T084826Z/root/usr/share/postgresql/14 --encoding=UTF8 --locale=C.UTF-8 --auth-local=trust --auth-host=reject --username=<REDACTED_USER>",
+    "pg_ctl -D runtime/postgresql/e3-20260830T051639Z/data -l runtime/postgresql/e3-20260830T051639Z/logs/server.log -o \"-p 55434 -k /tmp/pg-e3-051639 -c listen_addresses='' -c unix_socket_permissions=0700\" -w start",
+    "createdb -h /tmp/pg-e3-051639 -p 55434 -U <REDACTED_USER> survey_e3_20260830t051639z",
+    "psql -h /tmp/pg-e3-051639 -p 55434 -U <REDACTED_USER> -d survey_e3_20260830t051639z -c \"CREATE EXTENSION plpython3u;\"",
+    "pg_ctl -D runtime/postgresql/e3-20260830T051639Z/data -m fast -w stop"
+  ]
+}

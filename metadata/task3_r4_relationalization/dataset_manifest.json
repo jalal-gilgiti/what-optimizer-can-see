@@ -1,0 +1,156 @@
+{
+  "dataset": "UDFBench tiny",
+  "file_count": 18,
+  "files": [
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/artifact_abstracts.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/artifact_abstracts.csv",
+      "sha256": "1fd37f748acae069fe4a090aec7862dd0c185138d7e5c54ad17c3dedcb8100cf",
+      "size_bytes": 13586676
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/artifact_authorlists.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/artifact_authorlists.csv",
+      "sha256": "91ee70edb3ecf7e4bf8de974571ba631b6b26b7c5386a9a8eb2428b4872323b5",
+      "size_bytes": 3560796
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/artifact_authors.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/artifact_authors.csv",
+      "sha256": "dbbf70109579c318568bbec22d6212f6a2b97423f7ce048d366fd30ef1322f51",
+      "size_bytes": 41096945
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/artifact_charges.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/artifact_charges.csv",
+      "sha256": "56bb5dca8a5e2e0c2ab01ac703a36adb6d73ddcea4eff3e98a63f5270cf8a397",
+      "size_bytes": 26286
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/artifact_citations.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/artifact_citations.csv",
+      "sha256": "550c3f940cc985bb59219f9686f3e64f2af1b71f243d7fac44dd8b0d6d5344fd",
+      "size_bytes": 296954
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/artifacts.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/artifacts.csv",
+      "sha256": "fe25a0d35721b9b304fab66270d322a50ebf319e7efd42fac01287e2bfa722cb",
+      "size_bytes": 15211749
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/project_artifactcount.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/project_artifactcount.csv",
+      "sha256": "86f2910a71f6fc6f68e646cc65638375335f5fc281bd6a20108e24f27a490c09",
+      "size_bytes": 2038129
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/projects.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/projects.csv",
+      "sha256": "9bd395c8f8fb61e54c029156f028f2b87935a41612810fa7e9131eea86fd58b2",
+      "size_bytes": 11767580
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/projects_artifacts.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/projects_artifacts.csv",
+      "sha256": "f9e04a6f866f5b46df903e60acb94e94a1ef3d5af0c553cda5969cf805fbd5f5",
+      "size_bytes": 9104355
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/csvs/tiny/views_stats.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/csvs/tiny/views_stats.csv",
+      "sha256": "70c33d4120d237d09c2bb36586f0b8d40b5d78260accc016f0e2205d37513dac",
+      "size_bytes": 13106432
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/arxiv.csv",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/arxiv.csv",
+      "sha256": "3a300545423dd73bfa597479f1f6781fc9e11b91ef9ba5ad8e23643b224b10ca",
+      "size_bytes": 24150
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/arxiv.xml",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/arxiv.xml",
+      "sha256": "2bf44fe13e145652ef7ad70e64a8bc040c00ad2a683f480d4c0d3ab3c0d34637",
+      "size_bytes": 5108183
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/crossref.txt",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/crossref.txt",
+      "sha256": "b4f1786fdfe2897cae959f05759650bc8d4f5cf81f2f4116b3c7489b9e17d339",
+      "size_bytes": 34678
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/crossref.xml",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/crossref.xml",
+      "sha256": "d02766f447a2ab0e3812c3f3e16428dc38d7a802aedfa6e0e94a76f62f93d194",
+      "size_bytes": 48783
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/data.txt",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/data.txt",
+      "sha256": "caf136443673276b10efeeee5605204d67e9addd863f91e71e72c83434baecf1",
+      "size_bytes": 35111
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/pubmed.txt",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/pubmed.txt",
+      "sha256": "425f8f5ba929c8651979cad08382a13ce70b424a240829c2a83b257be8acfb91",
+      "size_bytes": 26389
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/pubmed_q7.txt",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/pubmed_q7.txt",
+      "sha256": "4381c4e3f5579cbadc3da01b574fce9c095704323c778275da41df76b26aff91",
+      "size_bytes": 354828
+    },
+    {
+      "absolute_path": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/UDFBench/dataset/files/tiny/query2json.txt",
+      "hash_verified": true,
+      "mode_after": "0o555",
+      "path": "dataset/files/tiny/query2json.txt",
+      "sha256": "aaa5214849cf8a1aae9433b48ecce980710eabaa6079203d5be19f849a3593ba",
+      "size_bytes": 3668222
+    }
+  ],
+  "provenance": "Included in canonical UDFBench repository; curated OpenAIRE-derived deployment-testing scale.",
+  "read_only_source": "runtime/task2_udfbench_validation/UDFBench/dataset",
+  "repository_commit": "8da987566590e2534f24cd97bcfaa9157c24962c",
+  "task3_policy": "exact Task 2 frozen UDFBench files; hashes verified; source files made read-only; no regeneration",
+  "task3_verified_at_utc": "2026-09-03T02:02:01Z",
+  "total_size_bytes": 119096246
+}

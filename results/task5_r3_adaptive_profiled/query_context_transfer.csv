@@ -1,0 +1,2 @@
+run_id,method,profile_context,evaluation_context,transfer_state,prediction,target,q_error,profile_update_allowed,query_conditioning,status,reason
+task5-r3-audit-20260903T031908Z,NONE,NONE,E3 Q_all/Q_low/Q_high,NOT_APPLICABLE,NOT_APPLICABLE,FROZEN_NOT_READ_AS_OUTCOME,NOT_APPLICABLE,NO,UNKNOWN,UNSUPPORTED,No executable R3 artifact; Phase C stop.

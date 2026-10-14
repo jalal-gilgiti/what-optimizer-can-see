@@ -1,0 +1,5 @@
+workload_id,classification,execution_evidence,optimization_evidence,decision_evidence,coverage_evidence,confidence
+tpch_q6,FULL_DOMINATES,"FULL 0.054 s vs PRISM 1.2045 s median; PRISM/FULL=22.3056","EXPLAIN medians both 0.001 s; PRISM transformation about 6 s including 5.548 s outlining compile/load","full visibility pushes predicates into scan and changes EC",both executable and exactly equivalent,HIGH for tested SF1 case
+tpch_q19,COVERAGE_BOUNDARY,performance pair excluded,"PRISM transformation includes 5.461 s outlining compile/load",plan differs but semantic mismatch invalidates causal runtime analysis,compiled function returns false positives, HIGH
+getManufact_complex_boundary,COVERAGE_BOUNDARY,not executable,"QueryMotion=6 ms; OutliningPass=10447 ms for two compiled fragments",no residual physical plan,partial transformed residual emitted but not registered,HIGH
+OVERALL,FULL_DOMINATES,"only valid execution pair favors full native exposure","no observable planning disadvantage for full at 1 ms timer resolution; PRISM adds compile latency",one valid natural predicate-placement decision,limited to one valid pair,MODERATE

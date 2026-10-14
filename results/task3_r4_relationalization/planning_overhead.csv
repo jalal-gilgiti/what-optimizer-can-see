@@ -1,0 +1,7 @@
+run_id,case_id,variant,planning_trials,median_planning_ms,mean_planning_ms,stddev_planning_ms,plan_node_count,visible_relational_operators,transformed_expression_size_bytes,parse_bind_time,compilation_time,optimizer_memory,raw_trials
+task3-r4-pg14-20260903T021000Z,CONTROLLED_PK,lower,10,0.043000,0.039100,0.011939,2,2,295,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,raw/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/planning_trials.csv
+task3-r4-pg14-20260903T021000Z,CONTROLLED_PK,higher,10,0.063500,0.061200,0.011535,2,2,122,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,raw/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/planning_trials.csv
+task3-r4-pg14-20260903T021000Z,UDFBENCH_Q14_CLEANDATE,lower,10,1.452000,1.484600,0.107725,15,15,2557,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,raw/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/planning_trials.csv
+task3-r4-pg14-20260903T021000Z,UDFBENCH_Q14_CLEANDATE,higher,10,1.694500,1.737600,0.128102,15,15,7736,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,raw/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/planning_trials.csv
+task3-r4-pg14-20260903T021000Z,Q14_GROUNDED_TABLE,lower,10,0.031000,0.031300,0.011026,2,2,111,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,raw/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/planning_trials.csv
+task3-r4-pg14-20260903T021000Z,Q14_GROUNDED_TABLE,higher,10,0.504000,0.497800,0.020504,8,8,349,NOT_AVAILABLE,NOT_AVAILABLE,NOT_AVAILABLE,raw/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/planning_trials.csv

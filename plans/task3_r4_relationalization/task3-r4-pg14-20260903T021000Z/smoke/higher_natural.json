@@ -1,0 +1,18 @@
+{
+  "plan": {
+    "Plan": {
+      "Alias": "*VALUES*",
+      "Async Capable": false,
+      "Node Type": "Values Scan",
+      "Output": [
+        "(\"*VALUES*\".column1 + 1)"
+      ],
+      "Parallel Aware": false,
+      "Plan Rows": 3,
+      "Plan Width": 4,
+      "Startup Cost": 0.0,
+      "Total Cost": 0.05
+    }
+  },
+  "sql": "SELECT task3_r4.smoke_visible(x) FROM (VALUES (1),(2),(NULL)) AS v(x)"
+}

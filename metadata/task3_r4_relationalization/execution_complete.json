@@ -1,0 +1,13 @@
+{
+  "cluster_stopped_after_run": true,
+  "completed_at_utc": "2026-09-03T02:02:43Z",
+  "decision": "GO",
+  "primary_cases": [
+    "CONTROLLED_PK",
+    "UDFBENCH_Q14_CLEANDATE",
+    "Q14_GROUNDED_TABLE"
+  ],
+  "run_id": "task3-r4-pg14-20260903T021000Z",
+  "status": "PASS",
+  "strategic_opacity_test": "NOT_APPLICABLE"
+}

@@ -1,0 +1,86 @@
+Script started on 2026-09-03 11:48:09+09:00 [TERM="dumb" TTY="/dev/console" COLUMNS="80" LINES="24"]
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+Error opening counter instructions
+
+
+
+
+┌─────────────────────────────┐
+│┌───────────────────────────┐│
+││       Physical Plan       ││
+│└───────────────────────────┘│
+└─────────────────────────────┘
+┌───────────────────────────┐                             
+│    UNGROUPED_AGGREGATE    │                             
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │                             
+│          sum(#0)          │                             
+└─────────────┬─────────────┘                                                          
+┌─────────────┴─────────────┐                             
+│         PROJECTION        │                             
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │                             
+│ (l_extendedprice * (1.00 -│                             
+│        l_discount))       │                             
+└─────────────┬─────────────┘                                                          
+┌─────────────┴─────────────┐                             
+│         PROJECTION        │                             
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │                             
+│             #3            │                             
+│             #4            │                             
+└─────────────┬─────────────┘                                                          
+┌─────────────┴─────────────┐                             
+│         PROJECTION        │                             
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │                             
+│             #1            │                             
+│             #2            │                             
+│             #3            │                             
+│             #4            │                             
+│             #5            │                             
+│             #7            │                             
+│             #8            │                             
+│             #9            │                             
+└─────────────┬─────────────┘                                                          
+┌─────────────┴─────────────┐                             
+│           FILTER          │                             
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │                             
+│ (q19conditions_outlined_0 │                             
+│   (l_quantity, p_brand,   │                             
+│    p_container, p_size,   │                             
+│ l_shipinstruct, l_shi...  │                             
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │                             
+│        EC: 3207036        │                             
+└─────────────┬─────────────┘                                                          
+┌─────────────┴─────────────┐                             
+│         HASH_JOIN         │                             
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │                             
+│           INNER           │                             
+│   l_partkey = p_partkey   ├──────────────┐              
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │              │              
+│        EC: 3207036        │              │              
+└─────────────┬─────────────┘              │                                           
+┌─────────────┴─────────────┐┌─────────────┴─────────────┐
+│         SEQ_SCAN          ││         SEQ_SCAN          │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   ││   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│          lineitem         ││            part           │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   ││   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│         l_partkey         ││         p_partkey         │
+│         l_quantity        ││          p_brand          │
+│       l_shipinstruct      ││        p_container        │
+│         l_shipmode        ││           p_size          │
+│      l_extendedprice      ││   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│         l_discount        ││         EC: 200000        │
+│   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   ││                           │
+│        EC: 6001215        ││                           │
+└───────────────────────────┘└───────────────────────────┘                             
+
+Script done on 2026-09-03 11:48:09+09:00 [COMMAND_EXIT_CODE="0"]

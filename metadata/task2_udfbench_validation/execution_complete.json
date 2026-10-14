@@ -1,0 +1,8 @@
+{
+  "plans": "plans/task2_udfbench_validation",
+  "postgres_stopped": true,
+  "raw_trials": "raw/task2_udfbench_validation/task2-udfbench-20260902_attempt5_trials.csv",
+  "run_id": "task2-udfbench-20260902",
+  "status": "COMPLETE",
+  "udfbench_commit": "8da987566590e2534f24cd97bcfaa9157c24962c"
+}

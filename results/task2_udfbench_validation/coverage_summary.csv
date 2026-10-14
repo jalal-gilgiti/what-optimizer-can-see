@@ -1,0 +1,26 @@
+scope,metric,count,denominator,evidence
+FULL_INSPECTED_CORPUS,workloads_inspected_or_selected,21,21,source-derived workload taxonomy
+FULL_INSPECTED_CORPUS,containing_loops,16,21,released UDF source analysis
+FULL_INSPECTED_CORPUS,containing_branches,19,21,released UDF/query source analysis
+FULL_INSPECTED_CORPUS,containing_data_dependent_work,16,21,released UDF source analysis
+FULL_INSPECTED_CORPUS,containing_relational_selection,7,21,released SQL source
+FULL_INSPECTED_CORPUS,containing_multiple_udfs,17,21,released SQL source
+FULL_INSPECTED_CORPUS,containing_data_access_inside_udf,11,21,released UDF source
+FULL_INSPECTED_CORPUS,containing_opaque_or_library_calls,15,21,released UDF source
+FULL_INSPECTED_CORPUS,fully_observable_structurally_to_tested_optimizers,0,21,visibility matrix: no tested optimizer exposes loop/branch bodies structurally
+FULL_INSPECTED_CORPUS,opaque_to_optimizer,21,21,visibility matrix
+SELECTED_SUBSET,workloads_inspected_or_selected,7,7,source-derived workload taxonomy
+SELECTED_SUBSET,containing_loops,6,7,released UDF source analysis
+SELECTED_SUBSET,containing_branches,7,7,released UDF/query source analysis
+SELECTED_SUBSET,containing_data_dependent_work,6,7,released UDF source analysis
+SELECTED_SUBSET,containing_relational_selection,3,7,released SQL source
+SELECTED_SUBSET,containing_multiple_udfs,7,7,released SQL source
+SELECTED_SUBSET,containing_data_access_inside_udf,3,7,released UDF source
+SELECTED_SUBSET,containing_opaque_or_library_calls,6,7,released UDF source
+SELECTED_SUBSET,fully_observable_structurally_to_tested_optimizers,0,7,visibility matrix: no tested optimizer exposes loop/branch bodies structurally
+SELECTED_SUBSET,opaque_to_optimizer,7,7,visibility matrix
+SELECTED_EXECUTION,successfully_executed_at_least_one_system,7,7,semantic_validation.json
+SELECTED_EXECUTION,SQLite_released_port_executed,3,7,"Q1,Q8,Q14"
+SELECTED_EXECUTION,DuckDB_semantically_valid,7,7,all selected workloads
+SELECTED_EXECUTION,PostgreSQL_semantically_valid,4,7,"Q1,Q7,Q8,Q14; Q10 excluded; Q9/Q17 fail"
+SELECTED_EXECUTION,semantically_equivalent_across_multiple_systems,4,7,Q1 DuckDB/PostgreSQL; Q7 DuckDB/PostgreSQL; Q8/Q14 all three

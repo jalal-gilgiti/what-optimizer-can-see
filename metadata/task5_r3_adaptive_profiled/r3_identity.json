@@ -1,0 +1,28 @@
+{
+  "closest_candidate": {
+    "artifact": null,
+    "canonical_paper": "https://bslee.w3.uvm.edu/papers/STM_costUDF_TODS_2005.pdf",
+    "doi": "10.1145/1093382.1093387",
+    "publication": "Self-Tuning Cost Modeling of User-Defined Functions in an Object-Relational DBMS",
+    "system": "He-Lee-Snapp MLKNN/MLQ"
+  },
+  "execution_confirmed": false,
+  "highest_consumer_reach_candidate": {
+    "doi": "10.1145/3318464.3389728",
+    "optimizer_source_present": false,
+    "overview_pdf_sha256": "d13f511d608b06cb4ae136ed5025e16b58500a5c81e9ad366babd05ca0261db1",
+    "paper_linked_repository": "https://bitbucket.org/sikdarsourav/monsoonqueries.git",
+    "publication": "MONSOON: Multi-Step Optimization and Execution of Queries with Partially Obscured Predicates",
+    "repository_commit": "685f446790707fcbb0ce0e5b4b073e116a498eda",
+    "repository_contents": [
+      "UDFBenchmark/Overview.pdf"
+    ],
+    "repository_tree": "59318cd655c8e3ee2a34468d87b97be5f14af295",
+    "system": "MONSOON"
+  },
+  "paper_identity_only": true,
+  "run_id": "task5-r3-audit-20260903T031908Z",
+  "schema_version": 1,
+  "selected_method": null,
+  "status": "NOT_CREATED_FOR_A_SELECTED_METHOD"
+}

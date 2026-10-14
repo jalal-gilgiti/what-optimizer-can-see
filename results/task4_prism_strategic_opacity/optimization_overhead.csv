@@ -1,0 +1,22 @@
+workload_id,variant,metric,value,unit,source,availability,note
+tpch_q6,PRISM_SELECTIVE,SSAConstruction,51,ms,q6_transpile_unsigned.log,AVAILABLE,artifact per-pass output
+tpch_q6,PRISM_SELECTIVE,InstructionElimination_first,28,ms,q6_transpile_unsigned.log,AVAILABLE,artifact per-pass output
+tpch_q6,PRISM_SELECTIVE,QueryMotion,0,ms,q6_transpile_unsigned.log,AVAILABLE,artifact per-pass output
+tpch_q6,PRISM_SELECTIVE,Outlining_compile_load,5548,ms,q6_transpile_unsigned.log,AVAILABLE,includes generated-extension compile and load
+tpch_q6,PRISM_SELECTIVE,transpile_wall,6,s,script timestamps,AVAILABLE_COARSE,one-second timestamp resolution
+tpch_q6,PRISM_SELECTIVE,explain_wall_median,0.001,s,q6_plan_trials.csv,AVAILABLE,10 EXPLAIN statements in persistent session
+tpch_q6,PRISM_SELECTIVE,physical_plan_nodes,4,nodes,tpch_q6_prism_selective.txt,AVAILABLE,aggregate; projection; filter; scan
+tpch_q6,FULL_NATIVE_SQL,prism_transformation,0,ms,not applicable,NOT_APPLICABLE,native repository SQL
+tpch_q6,FULL_NATIVE_SQL,explain_wall_median,0.001,s,q6_plan_trials.csv,AVAILABLE,10 EXPLAIN statements in persistent session
+tpch_q6,FULL_NATIVE_SQL,physical_plan_nodes,3,nodes,tpch_q6_full_native_sql.txt,AVAILABLE,aggregate; projection; filtered scan
+tpch_q19,PRISM_SELECTIVE,SSAConstruction,60,ms,q19_transpile.log,AVAILABLE,artifact per-pass output
+tpch_q19,PRISM_SELECTIVE,InstructionElimination_first,20,ms,q19_transpile.log,AVAILABLE,artifact per-pass output
+tpch_q19,PRISM_SELECTIVE,Outlining_compile_load,5461,ms,q19_transpile.log,AVAILABLE,pair excluded after semantic failure
+tpch_q19,PRISM_SELECTIVE,physical_plan_nodes,8,nodes,tpch_q19_prism_selective.txt,AVAILABLE,captured before semantic exclusion
+tpch_q19,FULL_NATIVE_SQL,physical_plan_nodes,9,nodes,tpch_q19_full_native_sql.txt,AVAILABLE,captured before semantic exclusion
+getManufact_complex_boundary,PRISM_PARTIAL_REPRESENTATION,QueryMotion,6,ms,getManufact_complex_transpile.log,AVAILABLE,artifact per-pass output
+getManufact_complex_boundary,PRISM_PARTIAL_REPRESENTATION,Outlining_compile_load,10447,ms,getManufact_complex_transpile.log,AVAILABLE,two outlined C++ functions compiled/loaded
+getManufact_complex_boundary,PRISM_PARTIAL_REPRESENTATION,memo_search_space,NOT_AVAILABLE,,artifact,NOT_AVAILABLE,not exposed by released artifact
+all,all,parsing_time,NOT_AVAILABLE,,artifact,NOT_AVAILABLE,not separately instrumented
+all,all,binding_time,NOT_AVAILABLE,,artifact,NOT_AVAILABLE,not separately instrumented
+all,all,peak_memory,NOT_AVAILABLE,,artifact,NOT_AVAILABLE,not directly reported

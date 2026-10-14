@@ -1,0 +1,16 @@
+{
+  "H": 100,
+  "correlation": "independent",
+  "estimated_total_cost": null,
+  "plan": [
+    [
+      3,
+      0,
+      0,
+      "SCAN e4_independent"
+    ]
+  ],
+  "query": "SELECT COUNT(*), SUM(e4_branch_loop(value, flag, loop_count)) FROM e4_independent",
+  "run_id": "e4-20260830T044613Z",
+  "system": "sqlite"
+}

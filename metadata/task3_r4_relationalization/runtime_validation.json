@@ -1,0 +1,11 @@
+{
+  "isolated": true,
+  "run_id": "task3-r4-pg14-20260903T021000Z",
+  "server": [
+    "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, 64-bit",
+    "14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+    "55443",
+    "<PROJECT_ROOT>/runtime/task3_r4_relationalization/task3-r4-pg14-20260903T021000Z/postgresql/data"
+  ],
+  "socket": "/tmp/pg-task3-r4-55443"
+}

@@ -1,0 +1,16 @@
+{
+  "classification_input": "unmodified released natural SQL; released PostgreSQL EXPLAIN wrapper removed",
+  "plan": [
+    [
+      "physical_plan",
+      "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502   \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500 \u2500   \u2502\n\u2502     20.920851063829787    \u2502\n\u2502     10.835868694955964    \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518                             \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         DUMMY_SCAN        \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518                             \n"
+    ]
+  ],
+  "plan_capture_wall_ms": 89.066337,
+  "run_id": "task11-udfbench-small-20260906",
+  "scale": "small",
+  "sql": "select aggregate_avg('Select jsoncount(target) as target\nfrom artifact_citations,artifact_authorlists where artifact_citations.artifactid=artifact_authorlists.artifactid','target') as avg_cit,\n     aggregate_avg('Select jsoncount(authorlist) as authorlist\nfrom artifact_citations,artifact_authorlists where artifact_citations.artifactid=artifact_authorlists.artifactid','authorlist') as avg_auth",
+  "status": "CAPTURED",
+  "system": "DuckDB",
+  "workload": "Q8"
+}

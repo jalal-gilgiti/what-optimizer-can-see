@@ -1,0 +1,21 @@
+{
+  "controls": {
+    "duckdb_threads": 1,
+    "postgres_data": "<PROJECT_ROOT>/runtime/task11_udfbench_scale_validation/postgresql/data",
+    "postgres_jit": false,
+    "postgres_parallel_gather": 0,
+    "postgres_port": 55451,
+    "postgres_socket": "/tmp/pg-task11-55451"
+  },
+  "created_utc": "2026-09-06T04:24:38.335366+00:00",
+  "python_executable": "<PROJECT_ROOT>/runtime/task2_udfbench_validation/env/bin/python",
+  "run_id": "task11-udfbench-small-20260906",
+  "versions": {
+    "duckdb": "1.0.0",
+    "numpy": "1.26.4",
+    "postgres": "postgres (PostgreSQL) 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+    "psycopg2": "2.9.10 (dt dec pq3 ext lo64)",
+    "python": "Python 3.10.12",
+    "sqlite": "3.37.2"
+  }
+}

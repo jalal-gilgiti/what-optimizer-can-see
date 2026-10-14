@@ -1,0 +1,218 @@
+{
+  "captured_at": "2026-08-29T14:54:25.235798+09:00",
+  "captured_at_utc": "2026-08-29T05:54:25.235798+00:00",
+  "cpu": {
+    "architecture": "x86_64",
+    "hypervisor": "VMware",
+    "logical_cpus": 14,
+    "model": "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz",
+    "note": "Virtual-machine topology may not represent host physical topology.",
+    "physical_cores_reported": 14,
+    "sockets_reported": "14",
+    "threads_per_core": "1"
+  },
+  "experiment_root": "<PROJECT_ROOT>",
+  "git_commit": null,
+  "memory": {
+    "available_bytes": 157559808000,
+    "swap_total_bytes": 8589930496,
+    "total_bytes": 168789504000
+  },
+  "operating_system": {
+    "hostname": "<REDACTED_HOSTNAME>",
+    "machine": "x86_64",
+    "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+    "release": "5.15.0-186-generic",
+    "system": "Linux"
+  },
+  "python_modules": {
+    "duckdb": {
+      "available": true,
+      "path": "<USER_HOME>/.local/lib/python3.10/site-packages/duckdb.cpython-310-x86_64-linux-gnu.so",
+      "version": "0.6.1"
+    },
+    "matplotlib": {
+      "available": true,
+      "path": "<USER_HOME>/.local/lib/python3.10/site-packages/matplotlib/__init__.py",
+      "version": "3.9.0"
+    },
+    "numpy": {
+      "available": true,
+      "path": "<USER_HOME>/.local/lib/python3.10/site-packages/numpy/__init__.py",
+      "version": "2.2.6"
+    },
+    "pandas": {
+      "available": true,
+      "path": "<USER_HOME>/.local/lib/python3.10/site-packages/pandas/__init__.py",
+      "version": "2.3.3"
+    },
+    "pyspark": {
+      "available": true,
+      "path": "<USER_HOME>/.local/lib/python3.10/site-packages/pyspark/__init__.py",
+      "version": "3.3.1"
+    },
+    "yaml": {
+      "available": true,
+      "path": "<USER_HOME>/.local/lib/python3.10/site-packages/yaml/__init__.py",
+      "version": "6.0.1"
+    }
+  },
+  "raw_lscpu": {
+    "Address sizes": "45 bits physical, 48 bits virtual",
+    "Architecture": "x86_64",
+    "BogoMIPS": "5787.36",
+    "Byte Order": "Little Endian",
+    "CPU family": "6",
+    "CPU op-mode(s)": "32-bit, 64-bit",
+    "CPU(s)": "14",
+    "Core(s) per socket": "1",
+    "Flags": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat pku ospke avx512_vnni md_clear flush_l1d arch_capabilities",
+    "Hypervisor vendor": "VMware",
+    "L1d cache": "448 KiB (14 instances)",
+    "L1i cache": "448 KiB (14 instances)",
+    "L2 cache": "14 MiB (14 instances)",
+    "L3 cache": "308 MiB (14 instances)",
+    "Model": "85",
+    "Model name": "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz",
+    "NUMA node(s)": "1",
+    "NUMA node0 CPU(s)": "0-13",
+    "On-line CPU(s) list": "0-13",
+    "Socket(s)": "14",
+    "Stepping": "7",
+    "Thread(s) per core": "1",
+    "Vendor ID": "GenuineIntel",
+    "Virtualization type": "full",
+    "Vulnerability Gather data sampling": "Unknown: Dependent on hypervisor status",
+    "Vulnerability Indirect target selection": "Mitigation; Aligned branch/return thunks",
+    "Vulnerability Itlb multihit": "KVM: Mitigation: VMX unsupported",
+    "Vulnerability L1tf": "Not affected",
+    "Vulnerability Mds": "Not affected",
+    "Vulnerability Meltdown": "Not affected",
+    "Vulnerability Mmio stale data": "Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown",
+    "Vulnerability Reg file data sampling": "Not affected",
+    "Vulnerability Retbleed": "Mitigation; Enhanced IBRS",
+    "Vulnerability Spec rstack overflow": "Not affected",
+    "Vulnerability Spec store bypass": "Mitigation; Speculative Store Bypass disabled via prctl and seccomp",
+    "Vulnerability Spectre v1": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization",
+    "Vulnerability Spectre v2": "Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop",
+    "Vulnerability Srbds": "Not affected",
+    "Vulnerability Tsa": "Not affected",
+    "Vulnerability Tsx async abort": "Not affected",
+    "Vulnerability Vmscape": "Not affected"
+  },
+  "schema_version": "1.0.0",
+  "sqlite_library_version": "3.37.2",
+  "storage": {
+    "block_devices": {
+      "available": true,
+      "exit_code": 0,
+      "output": "NAME  ROTA TYPE   SIZE MODEL                          TRAN\nloop0    0 loop  63.8M                                \nloop1    0 loop  63.8M                                \nloop2    0 loop    74M                                \nloop3    0 loop    74M                                \nloop5    0 loop 115.3M                                \nloop6    0 loop 115.3M                                \nloop7    0 loop  50.1M                                \nloop8    0 loop  50.1M                                \nsda      0 disk   350G Virtual disk                   \nsr0      1 rom   1024M VMware Virtual SATA CDRW Drive sata",
+      "path": "/usr/bin/lsblk"
+    },
+    "workspace_df": {
+      "available": true,
+      "exit_code": 0,
+      "output": "Filesystem                                                1B-blocks          Used    Available Use% Mounted on\n163.180.160.110:<WORKSPACE_ROOT> 1838679064576 1614348812288 130854944768  93% <WORKSPACE_ROOT>",
+      "path": "/usr/bin/df"
+    },
+    "workspace_mount": {
+      "available": true,
+      "exit_code": 0,
+      "output": "163.180.160.110:<WORKSPACE_ROOT> nfs4   rw,nosuid,nodev,relatime,vers=4.2,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=163.180.160.114,local_lock=none,addr=163.180.160.110",
+      "path": "/usr/bin/findmnt"
+    }
+  },
+  "timezone": "KST",
+  "tools": {
+    "clang": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "cmake": {
+      "available": true,
+      "exit_code": 0,
+      "output": "cmake version 3.22.1\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).",
+      "path": "/usr/bin/cmake"
+    },
+    "docker": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "duckdb_cli": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "gcc": {
+      "available": true,
+      "exit_code": 0,
+      "output": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "path": "/usr/bin/gcc"
+    },
+    "git": {
+      "available": true,
+      "exit_code": 0,
+      "output": "git version 2.34.1",
+      "path": "/usr/bin/git"
+    },
+    "java": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "javac": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "monetdb": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "monetdb_client": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "podman": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "postgres_client": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "postgres_server": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "python3": {
+      "available": true,
+      "exit_code": 0,
+      "output": "Python 3.10.12",
+      "path": "/usr/bin/python3"
+    },
+    "spark_submit": {
+      "available": true,
+      "exit_code": 1,
+      "output": "JAVA_HOME is not set",
+      "path": "<USER_HOME>/.local/bin/spark-submit"
+    },
+    "sqlite_cli": {
+      "available": false,
+      "output": null,
+      "path": null
+    },
+    "sqlserver_client": {
+      "available": false,
+      "output": null,
+      "path": null
+    }
+  }
+}

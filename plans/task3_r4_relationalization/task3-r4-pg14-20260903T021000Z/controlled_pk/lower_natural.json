@@ -1,0 +1,56 @@
+{
+  "case_id": "CONTROLLED_PK",
+  "classification_input": "natural SQL, EXPLAIN without ANALYZE",
+  "plan": {
+    "Plan": {
+      "Async Capable": false,
+      "Node Type": "Aggregate",
+      "Output": [
+        "count(*)"
+      ],
+      "Parallel Aware": false,
+      "Partial Mode": "Simple",
+      "Plan Rows": 1,
+      "Plan Width": 8,
+      "Plans": [
+        {
+          "Alias": "a",
+          "Async Capable": false,
+          "Filter": "task3_r4.id_match_lower(a.id, '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54'::text)",
+          "Node Type": "Seq Scan",
+          "Output": [
+            "id",
+            "title",
+            "publisher",
+            "journal",
+            "date",
+            "year",
+            "access_mode",
+            "embargo_end_date",
+            "delayed",
+            "authors",
+            "source",
+            "abstract",
+            "type",
+            "peer_reviewed",
+            "green",
+            "gold"
+          ],
+          "Parallel Aware": false,
+          "Parent Relationship": "Outer",
+          "Plan Rows": 16667,
+          "Plan Width": 0,
+          "Relation Name": "artifacts",
+          "Schema": "public",
+          "Startup Cost": 0.0,
+          "Total Cost": 14987.0
+        }
+      ],
+      "Startup Cost": 15028.67,
+      "Strategy": "Plain",
+      "Total Cost": 15028.68
+    }
+  },
+  "submitted_sql": "SELECT count(*) FROM public.artifacts AS a WHERE task3_r4.id_match_lower(a.id, '355e65625b88::0f8da977d9edf5c6deb0ce2b064e3b54')",
+  "variant": "lower"
+}

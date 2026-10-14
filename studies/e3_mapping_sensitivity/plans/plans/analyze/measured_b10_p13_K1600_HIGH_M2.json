@@ -1,0 +1,49 @@
+{
+  "Execution Time": 1024.412,
+  "Plan": {
+    "Actual Loops": 1,
+    "Actual Rows": 1,
+    "Async Capable": false,
+    "Node Type": "Aggregate",
+    "Output": [
+      "count(*)",
+      "sum(e3_dynamic_loop(value, loop_count))"
+    ],
+    "Parallel Aware": false,
+    "Partial Mode": "Simple",
+    "Plan Rows": 1,
+    "Plan Width": 40,
+    "Plans": [
+      {
+        "Actual Loops": 1,
+        "Actual Rows": 5000,
+        "Alias": "e3_data",
+        "Async Capable": false,
+        "Index Cond": "((e3_data.population = 'HIGH'::text) AND (e3_dynamic_loop(e3_data.value, e3_data.loop_count) >= 0))",
+        "Index Name": "e3_population_expression_idx",
+        "Node Type": "Index Scan",
+        "Output": [
+          "id",
+          "value",
+          "population",
+          "loop_count"
+        ],
+        "Parallel Aware": false,
+        "Parent Relationship": "Outer",
+        "Plan Rows": 4999,
+        "Plan Width": 16,
+        "Relation Name": "e3_data",
+        "Rows Removed by Index Recheck": 0,
+        "Scan Direction": "Forward",
+        "Schema": "public",
+        "Startup Cost": 0.29,
+        "Total Cost": 444.76
+      }
+    ],
+    "Startup Cost": 3594.14,
+    "Strategy": "Plain",
+    "Total Cost": 3594.15
+  },
+  "Planning Time": 0.116,
+  "Triggers": []
+}

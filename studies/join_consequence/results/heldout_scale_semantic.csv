@@ -1,0 +1,21 @@
+phase,K,segment,representation,result,udf_calls,udf_work_units
+heldout_scale,100,COSTLY,M1,"[[1599, ""821585""]]",81600,81600000
+heldout_scale,100,COSTLY,M2,"[[1599, ""821585""]]",3198,3198000
+heldout_scale,100,CHEAP,M1,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,100,CHEAP,M2,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,200,COSTLY,M1,"[[1599, ""821585""]]",81600,81600000
+heldout_scale,200,COSTLY,M2,"[[1599, ""821585""]]",3198,3198000
+heldout_scale,200,CHEAP,M1,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,200,CHEAP,M2,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,400,COSTLY,M1,"[[1599, ""821585""]]",81600,81600000
+heldout_scale,400,COSTLY,M2,"[[1599, ""821585""]]",3198,3198000
+heldout_scale,400,CHEAP,M1,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,400,CHEAP,M2,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,800,COSTLY,M1,"[[1599, ""821585""]]",81600,81600000
+heldout_scale,800,COSTLY,M2,"[[1599, ""821585""]]",3198,3198000
+heldout_scale,800,CHEAP,M1,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,800,CHEAP,M2,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,1600,COSTLY,M1,"[[1599, ""821585""]]",81600,81600000
+heldout_scale,1600,COSTLY,M2,"[[1599, ""821585""]]",81600,81600000
+heldout_scale,1600,CHEAP,M1,"[[30462, ""15271023""]]",60924,609240
+heldout_scale,1600,CHEAP,M2,"[[30462, ""15271023""]]",1550461,15504610

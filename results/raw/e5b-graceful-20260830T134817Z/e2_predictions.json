@@ -1,0 +1,202 @@
+{
+  "batch_graph_edge_counts": {
+    "('BRANCH', 'BRANCH_BRANCH', 'BRANCH')": 0,
+    "('BRANCH', 'BRANCH_COMP', 'COMP')": 0,
+    "('BRANCH', 'BRANCH_LOOP', 'LOOP')": 0,
+    "('COMP', 'COMP_BRANCH', 'BRANCH')": 0,
+    "('COMP', 'COMP_COMP', 'COMP')": 8,
+    "('COMP', 'COMP_LOOP', 'LOOP')": 2,
+    "('COMP', 'COMP_LOOPEND', 'LOOPEND')": 2,
+    "('COMP', 'COMP_RET', 'RET')": 0,
+    "('INV', 'INV_BRANCH', 'BRANCH')": 0,
+    "('INV', 'INV_COMP', 'COMP')": 0,
+    "('INV', 'INV_LOOP', 'LOOP')": 2,
+    "('INV', 'INV_RET', 'RET')": 0,
+    "('LOOP', 'LOOP_BRANCH', 'BRANCH')": 0,
+    "('LOOP', 'LOOP_COMP', 'COMP')": 4,
+    "('LOOP', 'LOOP_LOOP', 'LOOP')": 0,
+    "('LOOP', 'LOOP_LOOPEND', 'LOOPEND')": 4,
+    "('LOOP', 'LOOP_RET', 'RET')": 0,
+    "('LOOPEND', 'LOOPEND_BRANCH', 'BRANCH')": 0,
+    "('LOOPEND', 'LOOPEND_COMP', 'COMP')": 0,
+    "('LOOPEND', 'LOOPEND_LOOP', 'LOOP')": 0,
+    "('LOOPEND', 'LOOPEND_LOOPEND', 'LOOPEND')": 2,
+    "('LOOPEND', 'LOOPEND_RET', 'RET')": 2,
+    "('RET', 'RET_outcol', 'output_column')": 2,
+    "('column', 'col_COMP', 'COMP')": 0,
+    "('column', 'col_INV', 'INV')": 2,
+    "('column', 'col_output_col', 'output_column')": 3,
+    "('filter_column', 'to_plan', 'plan1')": 2,
+    "('output_column', 'to_plan', 'plan0')": 1,
+    "('output_column', 'to_plan', 'plan1')": 2,
+    "('output_column', 'to_plan', 'plan2')": 1,
+    "('output_column', 'to_plan', 'plan3')": 1,
+    "('plan1', 'intra_plan', 'plan0')": 2,
+    "('plan2', 'intra_plan', 'plan1')": 1,
+    "('plan3', 'intra_plan', 'plan2')": 1,
+    "('table', 'to_plan', 'plan1')": 1,
+    "('table', 'to_plan', 'plan3')": 1
+  },
+  "batch_graph_node_counts": {
+    "BRANCH": 0,
+    "COMP": 12,
+    "INV": 2,
+    "LOOP": 4,
+    "LOOPEND": 4,
+    "RET": 2,
+    "column": 2,
+    "filter_column": 2,
+    "logical_pred_0": 0,
+    "output_column": 5,
+    "plan0": 2,
+    "plan1": 2,
+    "plan2": 1,
+    "plan3": 1,
+    "table": 1
+  },
+  "batch_graph_total_edges": 46,
+  "batch_graph_total_nodes": 40,
+  "batch_sample_indices": [
+    0,
+    1
+  ],
+  "batch_stats": {
+    "database_name": [
+      "e5b_e2",
+      "e5b_e2"
+    ],
+    "graph_num_edges": [
+      23,
+      23
+    ],
+    "graph_num_nodes": [
+      21,
+      19
+    ],
+    "num_filters": [
+      1,
+      1
+    ],
+    "num_joins": [
+      0,
+      0
+    ],
+    "sql_list": [
+      "SELECT SUM(e5b_e2_l100_filter_before(value)) FROM input_rows WHERE retained = 1",
+      "SELECT SUM(v) FROM (SELECT e5b_e2_l100_udf_before(value) AS v, retained FROM input_rows OFFSET 0) t WHERE retained = 1"
+    ],
+    "udf_filter_num_literals": [
+      -1,
+      -1
+    ],
+    "udf_filter_num_logicals": [
+      -1,
+      -1
+    ],
+    "udf_in_card": [
+      1000,
+      10000
+    ],
+    "udf_num_branches": [
+      0,
+      0
+    ],
+    "udf_num_comp_nodes": [
+      6,
+      6
+    ],
+    "udf_num_loops": [
+      2,
+      2
+    ],
+    "udf_num_math_calls": [
+      3,
+      3
+    ],
+    "udf_num_np_calls": [
+      0,
+      0
+    ],
+    "udf_pos_in_query": [
+      "select",
+      "select"
+    ]
+  },
+  "inference_latencies_ms": [
+    85.36863327026367
+  ],
+  "inference_stats": {
+    "database_name": [
+      "e5b_e2",
+      "e5b_e2"
+    ],
+    "labels": [
+      0.1925419569015503,
+      2.244051933288574
+    ],
+    "num_filters": [
+      1,
+      1
+    ],
+    "num_joins": [
+      0,
+      0
+    ],
+    "preds": [
+      0.1590947061777115,
+      0.8008614778518677
+    ],
+    "sql": [
+      "SELECT SUM(e5b_e2_l100_filter_before(value)) FROM input_rows WHERE retained = 1",
+      "SELECT SUM(v) FROM (SELECT e5b_e2_l100_udf_before(value) AS v, retained FROM input_rows OFFSET 0) t WHERE retained = 1"
+    ],
+    "udf_filter_num_literals": [
+      -1,
+      -1
+    ],
+    "udf_filter_num_logicals": [
+      -1,
+      -1
+    ],
+    "udf_in_card": [
+      1000,
+      10000
+    ],
+    "udf_num_branches": [
+      0,
+      0
+    ],
+    "udf_num_comp_nodes": [
+      6,
+      6
+    ],
+    "udf_num_loops": [
+      2,
+      2
+    ],
+    "udf_num_math_calls": [
+      3,
+      3
+    ],
+    "udf_num_np_calls": [
+      0,
+      0
+    ],
+    "udf_pos_in_query": [
+      "select",
+      "select"
+    ]
+  },
+  "labels_seconds": [
+    0.1925419569015503,
+    2.244051933288574
+  ],
+  "predictions_seconds": [
+    0.1590947061777115,
+    0.8008614778518677
+  ],
+  "sample_indices": [
+    0,
+    1
+  ]
+}

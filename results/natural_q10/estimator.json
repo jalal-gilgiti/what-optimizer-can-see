@@ -1,0 +1,12 @@
+{
+  "acquisition_ms": 14.077373,
+  "cpu_operator_cost": 0.0025,
+  "incremental_per_call_ms": 9.999999999999999e-11,
+  "matched_rows": 187,
+  "native_matched_rows": 187,
+  "native_profile_ms": 0.815587,
+  "sample_rows": 10000,
+  "sample_selectivity": 0.0187,
+  "sampled_procost": 1.226110764394234e-06,
+  "udf_profile_ms": 0.806243
+}

@@ -1,0 +1,38 @@
+{
+  "DuckDB": {
+    "artifact_abstracts": 137454,
+    "artifact_authorlists": 127269,
+    "artifact_authors": 1022184,
+    "artifact_charges": 17057,
+    "artifact_citations": 15218,
+    "artifacts": 376152,
+    "project_artifactcount": 469604,
+    "projects": 469604,
+    "projects_artifacts": 628274,
+    "views_stats": 9686539
+  },
+  "PostgreSQL": {
+    "artifact_abstracts": 137454,
+    "artifact_authorlists": 127269,
+    "artifact_authors": 1022184,
+    "artifact_charges": 17057,
+    "artifact_citations": 15218,
+    "artifacts": 376152,
+    "project_artifactcount": 469604,
+    "projects": 469604,
+    "projects_artifacts": 628274,
+    "views_stats": 9686539
+  },
+  "SQLite": {
+    "artifact_abstracts": 137454,
+    "artifact_authorlists": 127269,
+    "artifact_authors": 1022184,
+    "artifact_charges": 17057,
+    "artifact_citations": 15218,
+    "artifacts": 376152,
+    "project_artifactcount": 469604,
+    "projects": 469604,
+    "projects_artifacts": 628274,
+    "views_stats": 9686539
+  }
+}

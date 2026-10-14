@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "execution_status": "E1_E2_completed; E3_E6_definitions_only_not_run",
+  "studies": [
+    {
+      "experiment_id": "E1",
+      "status": "completed_sqlite_2026-08-29",
+      "name": "amplification_sweep",
+      "vary": {"input_cardinality": [1000, 10000, 100000], "Lambda": [1, 10, 100, 960]},
+      "measure": ["wall_time_ms", "estimated_cost_if_exposed", "cost_qerror", "udf_invocations"]
+    },
+    {
+      "experiment_id": "E2",
+      "status": "completed_sqlite_2026-08-29",
+      "name": "relational_selectivity_by_amplification",
+      "vary": {"filter_selectivity": [0.01, 0.1, 0.5, 1.0], "Lambda": [1, 10, 100, 960]},
+      "alternatives": ["udf_before_filter", "filter_before_udf"],
+      "constraint": "Only verified semantically equivalent and legal alternatives are compared.",
+      "measure": ["wall_time_ms", "chosen_plan", "plan_regret"]
+    },
+    {
+      "experiment_id": "E3",
+      "status": "not_run",
+      "name": "dynamic_loop_distribution",
+      "vary": {"distribution": ["constant", "uniform", "skewed", "bimodal"]},
+      "compare": ["global_average", "query_conditioned_if_implementable", "observed"]
+    },
+    {
+      "experiment_id": "E4",
+      "status": "not_run",
+      "name": "branch_loop_correlation",
+      "vary": {"correlation": ["independent", "positive", "negative"]},
+      "compare": ["E[Z]*E[I]", "E[Z*I]", "observed_work"]
+    },
+    {
+      "experiment_id": "E5",
+      "status": "not_run",
+      "name": "representation_variants",
+      "variants": ["opaque_udf", "native_relational", "inlined_or_relationalized", "vectorized_or_compiled_if_supported"],
+      "constraint": "Correctness and semantic equivalence must be verified before timing."
+    },
+    {
+      "experiment_id": "E6",
+      "status": "not_run",
+      "name": "multi_udf_pipeline",
+      "vary": {"chain_length": [2, 3], "selectivity": [0.1, 0.5, 1.0], "shared_computation": [false, true]},
+      "measure": ["wall_time_ms", "materializations", "udf_invocations", "fusion_or_batching_if_exposed"]
+    }
+  ]
+}

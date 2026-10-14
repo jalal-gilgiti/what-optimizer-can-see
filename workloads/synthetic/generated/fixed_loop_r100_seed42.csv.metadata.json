@@ -1,0 +1,28 @@
+{
+  "Lambda": 960,
+  "branch_loop_correlation": "independent",
+  "data_access_pattern": "none",
+  "dataset_path": "<PROJECT_ROOT>/workloads/synthetic/generated/fixed_loop_r100_seed42.csv",
+  "dataset_sha256": "db63e72ce57022d51f7cdb2c84975d1207d3b6107dbdd182071fb44c0179024f",
+  "e_branch_times_i_realized": 480.0,
+  "e_i_given_branch_realized": 960.0,
+  "e_i_realized": 960.0,
+  "expected_work_after_filter_units": 48000,
+  "expected_work_before_filter_units": 96000,
+  "family": "fixed_loop",
+  "filter_selectivity_realized": 0.5,
+  "loop_bounds": [
+    8,
+    10,
+    12
+  ],
+  "opaque_component": null,
+  "p_branch_realized": 0.5,
+  "requested_branch_selectivity": 0.5,
+  "requested_distribution": "constant",
+  "requested_filter_selectivity": 0.5,
+  "row_count": 100,
+  "schema_version": "1.0.0",
+  "seed": 42,
+  "udf_chain_length": 1
+}

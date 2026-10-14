@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "e5-graceful-20260830T064548Z",
+  "scope": "E5 Graceful released-checkpoint CPU smoke test and one adapter-only controlled compatibility probe",
+  "decision": "NO-GO",
+  "source": {
+    "repository": "https://github.com/DataManagementLab/Graceful.git",
+    "commit": "df053f641722102f9f9a07162e58665a9ecfb40b",
+    "checkout": "<PROJECT_ROOT>/runtime/graceful/e5-graceful-20260830T064548Z/source",
+    "clean_after_execution": true,
+    "clone_command": "git clone --filter=blob:none --no-tags https://github.com/DataManagementLab/Graceful.git experiments/runtime/graceful/e5-graceful-20260830T064548Z/source",
+    "credential_bearing_remote_reused": false
+  },
+  "environment": {
+    "path": "<PROJECT_ROOT>/runtime/graceful/e5-graceful-20260830T064548Z/env",
+    "creation": "Independent full file copy of the existing matching Graceful virtual environment; completed and verified with rsync -a after the initial cp -a command exceeded one tool yield",
+    "commands": [
+      "cp -a <USER_HOME>/envs/Genv experiments/runtime/graceful/e5-graceful-20260830T064548Z/env",
+      "rsync -a <USER_HOME>/envs/Genv/ experiments/runtime/graceful/e5-graceful-20260830T064548Z/env/"
+    ],
+    "system_package_changes": [],
+    "dependency_install_commands": [],
+    "python": "3.10.12",
+    "packages": {
+      "torch": "1.13.1+cu116",
+      "dgl": "0.9.1post1",
+      "duckdb": "0.10.1",
+      "numpy": "1.23.5",
+      "pandas": "1.5.3",
+      "networkx": "2.8.8",
+      "gast": "0.5.4",
+      "transformers": "4.34.1"
+    },
+    "pip_freeze": {
+      "path": "metadata/e5-graceful-20260830T064548Z/pip_freeze.txt",
+      "sha256": "19ab9efb63702743d1bfed0b1e5c583127a5b2793ce5e67152c42f03e7ed660e"
+    },
+    "device": "cpu",
+    "cuda_visible_devices": "",
+    "torch_cuda_available": false,
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "Linux 5.15.0-186-generic x86_64"
+  },
+  "external_compatibility_adapters": [
+    {
+      "path": "runtime/graceful/e5-graceful-20260830T064548Z/adapter_stubs/wandb.py",
+      "purpose": "Disable the unrelated unconditional wandb.Api construction without changing model or feature semantics"
+    },
+    {
+      "path": "runtime/graceful/e5-graceful-20260830T064548Z/adapter_stubs/sitecustomize.py",
+      "purpose": "Supply the two omitted false inference flags, discard the new latency return for the older driver, force socket-free num_workers=0, and optionally capture raw predictions"
+    },
+    {
+      "path": "scripts/run/run_e5_graceful_probe.py",
+      "purpose": "Verify frozen-kernel semantic equivalence and exercise the released CFG builder outside the immutable checkout"
+    }
+  ],
+  "released_checkpoint": {
+    "model_name": "act_minrt50ms_complex_dd_wpullupdata_wnoUDFdata_ddactfonudf_liboh_gradnorm_mldupl_loopend_loopedge_genome_stratDBs_ep60_maxr30_20240503_115437_074",
+    "checkpoint_path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/graceful_artifacts/leave_out_genome/act_minrt50ms_complex_dd_wpullupdata_wnoUDFdata_ddactfonudf_liboh_gradnorm_mldupl_loopend_loopedge_genome_stratDBs_ep60_maxr30_20240503_115437_074.pt",
+    "checkpoint_sha256": "105f756a80111c281de207f69d03bc4913574e1fa6bee8b01aea5906d0f70969",
+    "label_normalizer_path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/graceful_artifacts/leave_out_genome/act_minrt50ms_complex_dd_wpullupdata_wnoUDFdata_ddactfonudf_liboh_gradnorm_mldupl_loopend_loopedge_genome_stratDBs_ep60_maxr30_20240503_115437_074_label_norm.pkl",
+    "label_normalizer_sha256": "15a4ff9117ad50bbb46a676869060ccdf5bdb2218abaf36db94550a55b5dc070",
+    "load_epoch": 60,
+    "training_occurred": false
+  },
+  "released_inputs": [
+    {
+      "path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/workload_runs/duckdb_pullup/parsed_plans/genome/workload.json",
+      "sha256": "5e0dae78ecf9729709a88095175a5268a6c871af820be7610163fe2de6622105"
+    },
+    {
+      "path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/workload_runs/duckdb_pushdown/parsed_plans/genome/workload.json",
+      "sha256": "b3adae8f131e5190198464facd80543e41c94dde0a852d6ffbcbc73b344e0353"
+    },
+    {
+      "path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/workload_runs/duckdb_pushdown/parsed_plans/statistics_workload_combined.json",
+      "sha256": "d9ac1ee473e836a21a57588594c1f529a3989a896929353a7da40f5ecbc84375"
+    },
+    {
+      "path": "<EXTERNAL_DATA_ROOT>/dataset/Graceful_data/workload_runs/duckdb_pushdown/dbs/genome/created_graphs/func_14397.loopend.gpickle",
+      "sha256": "2ad62de1393b882ffe92612ef2beafb7e40a68fdcf902c5330061d65e8ebb9fe"
+    }
+  ],
+  "frozen_controlled_inputs": [
+    {
+      "path": "workloads/synthetic/generated/fixed_loop_r10000_rho1p0_seed42.csv",
+      "sha256": "ecb6cb46ef9a6ba6ccbd041c4f2dddd25a64a3c24cb06e73dedd3661b5c815c5"
+    },
+    {
+      "path": "workloads/synthetic/generated/relational_selectivity_r10000_rho0p1_seed42.csv",
+      "sha256": "8a6c67bf992140d5c60ebfda3697fbe98e4bba1f87c018818fd7e523abcba1a8"
+    },
+    {
+      "path": "results/normalized/e1_duckdb.csv",
+      "sha256": "41922d1a49504bd0d80b0e10930ec5483218ff7ff75882725c1180a5811da689"
+    },
+    {
+      "path": "results/normalized/e2_duckdb.csv",
+      "sha256": "23ce06534e76d4b9ca48d212b9a655ef89f850f1779ea9776e5fae3c72571a58"
+    }
+  ],
+  "phase_a": {
+    "status": "PASS",
+    "released_pairs": 87,
+    "fresh_process_repetitions": 3,
+    "metric_groups_compared_per_process": 38,
+    "reproducibility_relative_tolerance": 1e-6,
+    "maximum_observed_relative_delta": 6.223594322885607e-7,
+    "maximum_observed_absolute_delta": 2.1362304693184342e-5,
+    "checkpoint_load": "PASS",
+    "graph_construction": "PASS",
+    "inference": "PASS",
+    "advisor": "PASS",
+    "raw_predictions": "results/raw/e5-graceful-20260830T064548Z/phase_a_released_predictions.jsonl",
+    "logs": [
+      "results/raw/e5-graceful-20260830T064548Z/phase_a_run1_final.log",
+      "results/raw/e5-graceful-20260830T064548Z/phase_a_run2.log",
+      "results/raw/e5-graceful-20260830T064548Z/phase_a_run3.log"
+    ]
+  },
+  "phase_b": {
+    "status": "PASS",
+    "inspected_udf": "func_14397",
+    "udf_graph_nodes": 52,
+    "udf_graph_edges": 81,
+    "node_types": {
+      "VAR": 2,
+      "INVOCATION": 1,
+      "LOOP_HEAD": 1,
+      "LOOP_END": 1,
+      "BRANCH": 2,
+      "COMP": 44,
+      "RETURN": 1
+    },
+    "artifact": "results/plans/e5-graceful-20260830T064548Z/graceful_features/representation_and_compatibility.json"
+  },
+  "phase_c": {
+    "status": "INCOMPATIBLE_WITH_RELEASED_CHECKPOINT",
+    "lambda1_semantic_equivalence_rows": 10000,
+    "lambda1_graph_build": "PASS",
+    "lambda1_graph_sha256": "822d14eac1b67788bb7f378bd1aedd4f817de573a0b6fdb611e0442cb25e8f28",
+    "lambda960_semantic_equivalence_rows": 10000,
+    "lambda960_graph_build": "FAIL",
+    "exact_blocker": "AssertionError: a third while loop is not supported in the featurization",
+    "controlled_predictions_executed": false,
+    "q_errors": {
+      "Lambda_1": null,
+      "Lambda_960": null
+    },
+    "e2_placement_pair": "NOT_RUN",
+    "reason_for_stop": "Flattening the exact [8,10,12] source into one range(960) loop would alter the source structure under study."
+  },
+  "phase_d": {
+    "status": "NOT_REACHED_AFTER_PHASE_C_STOP",
+    "ablation_executed": false
+  },
+  "freeze_audit": {
+    "before": "metadata/e5-graceful-20260830T064548Z/frozen_artifacts_before.json",
+    "before_file_count": 5668,
+    "after": "metadata/e5-graceful-20260830T064548Z/frozen_artifacts_after.json",
+    "status": "PASS",
+    "unchanged_count": 5668
+  }
+}
